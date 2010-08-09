@@ -57,7 +57,7 @@ public class TorchService extends Service {
 
         this.mStrobeRunnable = new Runnable() {
             private int mCounter = 4;
-            
+
             @Override
             public void run() {
                 if (FlashDevice.instance().getFlashMode() < FlashDevice.DEATH_RAY) {
@@ -99,6 +99,7 @@ public class TorchService extends Service {
                 System.currentTimeMillis());
         this.mNotification.setLatestEventInfo(this, "Torch on", "Torch currently on",
                 PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0));
+        this.mNotification.flags = Notification.FLAG_NO_CLEAR | Notification.FLAG_ONGOING_EVENT;
 
         this.mNotificationManager.notify(0, this.mNotification);
 
