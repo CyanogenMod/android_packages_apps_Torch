@@ -1,5 +1,7 @@
 package net.cactii.flash2;
 
+import android.os.Build;
+
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -11,8 +13,11 @@ public class FlashDevice {
 	public static final int OFF       = 0;
 	public static final int ON        = 1;
 	public static final int DEATH_RAY = 3;
-
+	public static final int HIGH      = 128;
+	
 	private static FlashDevice instance;
+	
+	private static boolean useDeathRay = !Build.DEVICE.equals("supersonic");
 	
 	private FileWriter mWriter = null;
 	
@@ -32,9 +37,20 @@ public class FlashDevice {
 	        if (mWriter == null) {
 	            mWriter = new FileWriter(DEVICE);
 	        }
-	        mWriter.write(String.valueOf(mode == STROBE ? OFF : mode));
+	        
+	        int value = mode;
+	        switch (mode) {
+	            case STROBE:
+	                value = OFF;
+	                break;
+	            case DEATH_RAY:
+	                value = useDeathRay ? DEATH_RAY : HIGH;
+	                break;
+	        }
+	        mWriter.write(String.valueOf(value));
 	        mWriter.flush();
 	        mFlashMode = mode;
+	        
 	        if (mode == OFF) {
 	            mWriter.close();
 	            mWriter = null;
