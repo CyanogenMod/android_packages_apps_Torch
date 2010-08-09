@@ -89,9 +89,9 @@ public class RootTorchService extends Service {
         Toast.makeText(this, "Torch - cannot get root", Toast.LENGTH_SHORT).show();
         this.stopSelf();
       }
-      su.Run("chmod 666 /dev/msm_camera/config0");
+      su.Run("chmod 666 " + FlashDevice.getInstance().getDevice());
     }
-    
+
     this.mDevice.Open();
     Log.d(MSG_TAG, "Starting torch");
     if (intent == null)

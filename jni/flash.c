@@ -6,29 +6,34 @@
 #include <sys/syscall.h>
 #include <sys/ioctl.h>
 #include <jni.h>
+#include <utils/Log.h>
 
 int dev;
 int led_mode;
 int ioctlRetVal = 1;
 
-JNIEXPORT jstring JNICALL Java_net_cactii_flash2_FlashDevice_openFlash(JNIEnv* env)
+JNIEXPORT jstring JNICALL Java_net_cactii_flash2_FlashDevice_openFlash(JNIEnv* env, jclass class, jstring deviceObj)
 {
-
-  dev = open("/dev/msm_camera/config0", O_RDWR);
-  if (dev < 0) {
-    return (*env)->NewStringUTF(env, "Failed");
-  }
-  return (*env)->NewStringUTF(env, "OK");
+  const char *device = (*env)->GetStringUTFChars(env, deviceObj, 0);
+  dev = open(device, O_RDWR);
+  jstring ret = (*env)->NewStringUTF(env, dev < 0 ? "Failed" : "OK");
+  LOGD("open %s fd=%d", device, dev);
+  (*env)->ReleaseStringUTFChars(env, deviceObj, device);
+  return ret;
 }
 
-JNIEXPORT jstring JNICALL Java_net_cactii_flash2_FlashDevice_flashWritable(JNIEnv* env)
+JNIEXPORT jstring JNICALL Java_net_cactii_flash2_FlashDevice_flashWritable(JNIEnv* env, jclass class, jstring deviceObj)
 {
+  const char *device = NULL;
+  if (deviceObj == NULL) {
+    return (*env)->NewStringUTF(env, "Failed");
+  }
+  device = (*env)->GetStringUTFChars(env, deviceObj, 0);
+  LOGI("stat: %s", device);
   struct stat st;
-  if (stat("/dev/msm_camera/config0", &st) < 0)
-    return (*env)->NewStringUTF(env, "Failed open");
-  
-  else
-    return (*env)->NewStringUTF(env, "OK");
+  jstring ret = (*env)->NewStringUTF(env, stat(device, &st) < 0 ? "Failed open" : "OK");
+  (*env)->ReleaseStringUTFChars(env, deviceObj, device);
+  return ret;
 }
 
 JNIEXPORT jstring JNICALL Java_net_cactii_flash2_FlashDevice_setFlashOff(JNIEnv *env)

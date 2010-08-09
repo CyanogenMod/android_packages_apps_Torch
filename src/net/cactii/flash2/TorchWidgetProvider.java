@@ -134,7 +134,7 @@ public class TorchWidgetProvider extends AppWidgetProvider {
     Log.d("Torch", "Cant open flash RW");
     Su su = new Su();
     if (su.can_su) {
-      su.Run("chmod 666 /dev/msm_camera/config0");
+      su.Run("chmod 666 " + FlashDevice.getInstance().getDevice());
     } else {
       Toast.makeText(context, "Torch - cannot get root", Toast.LENGTH_SHORT).show();
     }

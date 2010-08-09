@@ -142,24 +142,12 @@ public class MainActivity extends Activity {
           @Override
           public void onClick(View v) {
             Intent intent;
-            
-            if (Build.VERSION.RELEASE.equals("2.2")) {
-              if (bright) {
-                if (device.Writable()) {
-                  intent = new Intent(MainActivity.this, RootTorchService.class);
-                } else {
-                  Toast.makeText(context, "No root, cant go high brightness.", Toast.LENGTH_SHORT).show();
-                  intent = new Intent(MainActivity.this, TorchService.class);
-                }
-              } else {
-                intent = new Intent(MainActivity.this, TorchService.class);
-              }
-            } else {  // Pre-Froyo
-              if (!device.Writable()) {
-                Toast.makeText(context, "No root, cant open LED.", Toast.LENGTH_SHORT).show();
-                return;
-              }
+
+            if (device.Writable()) {
               intent = new Intent(MainActivity.this, RootTorchService.class);
+            } else {
+              Toast.makeText(context, "No root, cant go high brightness.", Toast.LENGTH_SHORT).show();
+              intent = new Intent(MainActivity.this, TorchService.class);
             }
 
             intent.putExtra("strobe", buttonStrobe.isChecked());
@@ -224,8 +212,8 @@ public class MainActivity extends Activity {
         this.mPrefsEditor.putBoolean("aboutSeen", true);
       }
 
-        
-      if (new File("/dev/msm_camera/config0").exists() == false) {
+
+      if (new File(FlashDevice.getInstance().getDevice()).exists() == false) {
       	Toast.makeText(context, "Only Nexus One is supported, sorry!", Toast.LENGTH_LONG).show();
       	has_root = false;
       }
@@ -242,9 +230,9 @@ public class MainActivity extends Activity {
           labelBright.setText("High brightness (needs root)");
           labelBright.setTextColor(0xffaaaaaa);
           buttonBright.setEnabled(false);
-      		
+
       	} else
-      		su_command.Run("chmod 666 /dev/msm_camera/config0");
+      		su_command.Run(FlashDevice.getInstance().getDevice());
       }
     }
 

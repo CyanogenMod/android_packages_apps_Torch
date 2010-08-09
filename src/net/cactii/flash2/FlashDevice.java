@@ -1,5 +1,6 @@
 package net.cactii.flash2;
 
+import android.os.Build;
 import android.util.Log;
 
 public class FlashDevice {
@@ -15,10 +16,14 @@ public class FlashDevice {
 		return currentInstance;
 	}
 
-	
+	public String getDevice() {
+	    String dev = "/dev/msm_camera/config" + (Build.DEVICE.equals("supersonic") ? "1" : "0");
+	    return dev;
+	}
+
 	public void Open() {
 
-		if (!open && "Failed".equals(openFlash()))
+		if (!open && "Failed".equals(openFlash(getDevice())))
 			open = false;
 		else
 			open = true;
@@ -26,13 +31,13 @@ public class FlashDevice {
 		Log.d("Torch", "flash opened: " + open);
 
 	}
-	
+
 	public boolean Writable() {
-		String result = flashWritable();
+		String result = flashWritable(getDevice());
 		Log.d("Torch", "Writable: " + result);
 		return "OK".equals(result);
 	}
-	
+
 	public void Close() {
 		Log.d("Torch", "Closing: " + closeFlash());
 		open = false;
@@ -47,14 +52,14 @@ public class FlashDevice {
 		on = false;
 		return setFlashOff();
 	}
-    
+
     // These functions are defined in the native libflash library.
-    public static native String  openFlash();
+    public static native String  openFlash(String device);
     public static native String  setFlashOff();
     public static native String  setFlashOn();
     public static native String  setFlashFlash();
     public static native String  closeFlash();
-    public static native String  flashWritable();
+    public static native String  flashWritable(String device);
    	// Load libflash once on app startup.
    	static {
    		System.loadLibrary("jni_flash");
