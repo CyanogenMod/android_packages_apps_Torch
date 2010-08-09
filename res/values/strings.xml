@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Torch</string>
     <string name="about">About: </string>
-    <string name="description">This program manipulates the camera LED.\n\nRequires root, pre-Froyo, otherwise only requires root for \'Bright\' mode.\n</string>
+    <string name="description">This program manipulates the camera LED.\n</string>
     <string name="warning">Warning: Leaving the LED on for a long time might overheat it.\n\nFull brightness \'always on\' has been tested running for 1/2 hr, but there is the risk this could damage the LED.\n</string>
     <string name="license">Released under the GPL, v3.\nhttp://n1torch.googlecode.com/\n\nThanks to David Prieto for new UI design.\n\nContact: bbuxton@gmail.com\n\n20/6/2010</string>
 
@@ -16,8 +16,6 @@
     <string name="label_frequency">Frequency: (slide to change)</string>
     <string name="label_info">\'Menu\' for info.</string>
 
-    <string name="label_no_root">No root</string>
-    <string name="no_root">Sorry, but your phone requires root privileges to run this. You dont appear to have set this up.\n\nYou can continue, but the light wont work.\n\nFor assistance http://www.google.com/search?q=nexus+one+root</string>
     <string name="setting_frequency_title">Strobe frequency</string>
     <string name="setting_frequency_summary">Frequency of strobe light</string>
     <string name="setting_frequency_dialog">Frequency</string>
