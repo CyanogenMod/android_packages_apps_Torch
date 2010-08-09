@@ -1,0 +1,7 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="72dp"
+    android:minHeight="72dp"
+    android:updatePeriodMillis="3600000"
+    android:configure="net.cactii.flash2.WidgetOptionsActivity"
+    android:initialLayout="@layout/widget" >
+</appwidget-provider>
