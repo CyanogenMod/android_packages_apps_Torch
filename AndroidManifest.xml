@@ -27,7 +27,6 @@
 		               android:resource="@xml/appwidget_info" />
 		</receiver>
 		<service android:enabled="true" android:name=".TorchService" />
-		<service android:enabled="true" android:name=".RootTorchService" />
 		
     </application>
     

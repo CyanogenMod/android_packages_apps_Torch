@@ -17,14 +17,6 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES:= jni/flash.c
-LOCAL_MODULE := libjni_flash
-LOCAL_C_INCLUDES += $(JNI_H_INCLUDE)
-LOCAL_PRELINK_MODULE := false
-LOCAL_SHARED_LIBRARIES := libutils
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
 LOCAL_SRC_FILES := $(call all-subdir-java-files)
 LOCAL_PACKAGE_NAME := Torch
 LOCAL_CERTIFICATE := platform

@@ -1,67 +1,50 @@
 package net.cactii.flash2;
 
-import android.os.Build;
-import android.util.Log;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class FlashDevice {
-	private static FlashDevice currentInstance;
-	public boolean open;
-	public boolean on;
+    
+    private static final String DEVICE = "/sys/devices/platform/flashlight.0/leds/flashlight/brightness";
 	
-	static synchronized FlashDevice getInstance() {
-		if (currentInstance == null) {
-			currentInstance = new FlashDevice();
-			currentInstance.on = currentInstance.open = false;
-		}
-		return currentInstance;
-	}
+    public static final int STROBE    = -1;
+	public static final int OFF       = 0;
+	public static final int ON        = 1;
+	public static final int DEATH_RAY = 3;
 
-	public String getDevice() {
-	    String dev = "/dev/msm_camera/config" + (Build.DEVICE.equals("supersonic") ? "1" : "0");
-	    return dev;
-	}
-
-	public void Open() {
-
-		if (!open && "Failed".equals(openFlash(getDevice())))
-			open = false;
-		else
-			open = true;
-
-		Log.d("Torch", "flash opened: " + open);
-
-	}
-
-	public boolean Writable() {
-		String result = flashWritable(getDevice());
-		Log.d("Torch", "Writable: " + result);
-		return "OK".equals(result);
-	}
-
-	public void Close() {
-		Log.d("Torch", "Closing: " + closeFlash());
-		open = false;
+	private static FlashDevice instance;
+	
+	private FileWriter mWriter = null;
+	
+	private int mFlashMode = OFF;
+	
+	private FlashDevice() {}
+	
+	public static synchronized FlashDevice instance() {
+	    if (instance == null) {
+	        instance = new FlashDevice();
+	    }
+	    return instance;
 	}
 	
-	public String FlashOn() {
-		on = true;
-		return setFlashOn();
-	}
-	
-	public String FlashOff() {
-		on = false;
-		return setFlashOff();
+	public synchronized void setFlashMode(int mode) {
+	    try {
+	        if (mWriter == null) {
+	            mWriter = new FileWriter(DEVICE);
+	        }
+	        mWriter.write(String.valueOf(mode == STROBE ? OFF : mode));
+	        mWriter.flush();
+	        mFlashMode = mode;
+	        if (mode == OFF) {
+	            mWriter.close();
+	            mWriter = null;
+	        }
+	    } catch (IOException e) {
+	        throw new RuntimeException("Can't open flash device: " + DEVICE, e);
+	    }
 	}
 
-    // These functions are defined in the native libflash library.
-    public static native String  openFlash(String device);
-    public static native String  setFlashOff();
-    public static native String  setFlashOn();
-    public static native String  setFlashFlash();
-    public static native String  closeFlash();
-    public static native String  flashWritable(String device);
-   	// Load libflash once on app startup.
-   	static {
-   		System.loadLibrary("jni_flash");
-   	}
+	public synchronized int getFlashMode() {
+	    return mFlashMode;
+	}
 }
