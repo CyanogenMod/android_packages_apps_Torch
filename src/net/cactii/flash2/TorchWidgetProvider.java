@@ -22,7 +22,7 @@ public class TorchWidgetProvider extends AppWidgetProvider {
 
     private static TorchWidgetProvider sInstance;
 
-    private static final ComponentName THIS_APPWIDGET = new ComponentName("net.cactii.flash",
+    private static final ComponentName THIS_APPWIDGET = new ComponentName("net.cactii.flash2",
             "net.cactii.flash2.TorchWidgetProvider");
 
     static synchronized TorchWidgetProvider getInstance() {
