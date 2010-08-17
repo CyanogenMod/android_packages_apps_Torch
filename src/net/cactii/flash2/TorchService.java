@@ -50,7 +50,7 @@ public class TorchService extends Service {
 
         this.mTorchTask = new TimerTask() {
             public void run() {
-                FlashDevice.instance().setFlashMode(FlashDevice.DEATH_RAY);
+                FlashDevice.instance().setFlashMode(mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON);
             }
         };
         this.mTorchTimer = new Timer();
@@ -60,9 +60,10 @@ public class TorchService extends Service {
 
             @Override
             public void run() {
-                if (FlashDevice.instance().getFlashMode() < FlashDevice.DEATH_RAY) {
+                int flashMode = mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON;
+                if (FlashDevice.instance().getFlashMode() < flashMode) {
                     if (this.mCounter-- < 1) {
-                        FlashDevice.instance().setFlashMode(FlashDevice.DEATH_RAY);
+                        FlashDevice.instance().setFlashMode(flashMode);
                     }
                 } else {
                     FlashDevice.instance().setFlashMode(FlashDevice.STROBE);
@@ -86,10 +87,8 @@ public class TorchService extends Service {
         if (intent.getBooleanExtra("strobe", false)) {
             this.mStrobePeriod = intent.getIntExtra("period", 200) / 4;
             this.mStrobeTimer.schedule(this.mStrobeTask, 0, this.mStrobePeriod);
-        } else if (this.mBright) {
-            this.mTorchTimer.schedule(this.mTorchTask, 0, 200);
         } else {
-            FlashDevice.instance().setFlashMode(FlashDevice.ON);
+            this.mTorchTimer.schedule(this.mTorchTask, 0, 200);
         }
 
         this.mReceiver = new IntentReceiver();
