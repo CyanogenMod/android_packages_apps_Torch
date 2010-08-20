@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="about">情報: </string>
+    <string name="about_btn">Torchについて</string>
+    <string name="about_title">情報</string>
+    <string name="about_close">閉じる</string>
     <string name="description">このプログラムはカメラのLEDを操作します。・\n</string>
     <string name="warning">注意: 長時間LEDをこのままにするとオーバーヒートするかもしれません。\n\n最大明度を\'常に有効\'にしたテストは 30分ほど行ないましたが、LEDにダメージを与える危険性があります。\n</string>
     <string name="license">オリジナルソースコードはBen BuxtonによるNexus One Torchで、GPLv3の下にリリースされています。\nhttp://n1torch.googlecode.com/\n\n新しいUIのデザインをしてくれたDavid Prietoに感謝。\n\nCyanogenMod向けの変更はSteve Kondikが行ないました。</string>
 
     <string name="warning_label">危険</string>
     <string name="brightwarn">最大明度は30分のテストに成功しましたが、とても熱くなり、45分ほど一時的に明滅するようになりました。長時間使用の影響はわかりません。\n\nウィジェットのサポートはまだありません。.\n\n\自己責任での使用を望むのなら\'了解\'を押してください。</string>
+    <string name="brightwarn_title">高明度を\'有効\'にします!!!</string>
+    <string name="brightwarn_negative">やめます</string>
+    <string name="brightwarn_accept">了解</string>
 
     <string name="label_on">オン</string>
     <string name="label_off">オフ</string>
