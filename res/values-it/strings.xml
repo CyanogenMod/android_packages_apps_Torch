@@ -21,12 +21,18 @@
     <string name="label_strobe">Strobo</string>
     <string name="label_frequency">Frequenza: (scorri per cambiare)</string>
     <string name="label_info">\'Menu\' per info.</string>
-
+    
+    <string name="widget_options">Impostazioni generali</string>
+    <string name="setting_widget_bright">Widget Alta Luminosità</string>
+    <string name="setting_widget_strobe">Flash strobo</string>
     <string name="setting_frequency_title">Frequenza strobo</string>
     <string name="setting_frequency_summary">Frequenza della luce strobo</string>
     <string name="setting_frequency_dialog">Frequenza</string>
     <string name="setting_frequency_hz"> Hz</string>
     <string name="setting_add_widget">Aggiungi widget</string>
+    
+    <string name="not_torch_title">Torcia attiva</string>
+    <string name="not_torch_summary">La Torcia è attiva</string>
 
     <string name="widget_label">Torch</string>
 </resources>
