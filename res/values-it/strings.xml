@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Torch</string>
+    <string name="about">Info: </string>
+    <string name="about_btn">Info su Torch</string>
+    <string name="about_title">Info</string>
+    <string name="about_close">Chiudi</string>
+    
+    <string name="description">Questo programma manipola il LED della fotocamera.\n</string>
+    <string name="warning">Attenzione: Lasciare il LED acceso a lungo può surriscaldarlo.\n\nLa modalità Alta Luminosità è stata testata per 1/2 ora, ma c\'è il rischio che possa danneggiare il LED.\n</string>
+    <string name="license">Codice originale da Nexus One Torch scritto da Ben Buxton, rilasciato sotto GPL, v3.\nhttp://n1torch.googlecode.com/\n\nGrazie a David Prieto per il nuovo design della UI.\n\nModificato per CyanogenMod da Steve Kondik.\n\n</string>
+    <string name="warning_label">Attenzione</string>
+    <string name="brightwarn">L\'Alta Luminosità è stata testata con successo per 1/2 ora di attività, ma il LED si è scaldato notevolmente e dopo 45 min ha iniziato a tremolare (temporaneamete). Effetti a lungo termine sono sconosciuti.\n\nQuesta modalità non è ancora supportata nel widget.\n\nClicca \'Accetto\' se vuoi usarla a tuo rischio.</string>
+    <string name="brightwarn_title">Tasto \'On\' Alta Luminosità!!!</string>
+    <string name="brightwarn_negative">No grazie</string>
+    <string name="brightwarn_accept">Accetto</string>
+
+    <string name="label_on">On</string>
+    <string name="label_off">Off</string>
+    <string name="label_high">Alta Luminosità</string>
+    <string name="label_strobe">Strobo</string>
+    <string name="label_frequency">Frequenza: (scorri per cambiare)</string>
+    <string name="label_info">\'Menu\' per info.</string>
+
+    <string name="setting_frequency_title">Frequenza strobo</string>
+    <string name="setting_frequency_summary">Frequenza della luce strobo</string>
+    <string name="setting_frequency_dialog">Frequenza</string>
+    <string name="setting_frequency_hz"> Hz</string>
+    <string name="setting_add_widget">Aggiungi widget</string>
+
+    <string name="widget_label">Torch</string>
+</resources>
