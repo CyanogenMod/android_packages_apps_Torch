@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">トーチ</string>
     <string name="about">情報: </string>
     <string name="about_btn">Torchについて</string>
     <string name="about_title">情報</string>
@@ -20,6 +21,14 @@
     <string name="label_strobe">ストロボ</string>
     <string name="label_frequency">頻度: (スライドして変更)</string>
     <string name="label_info">\'メニュー\'で情報を表示</string>
+
+    <string name="widget_label">トーチ</string>
+    <string name="widget_options">オプション</string>
+    <string name="setting_widget_bright">高明度ウィジェット</string>
+    <string name="setting_widget_strobe">ストロボフラッシュ</string>
+
+    <string name="not_torch_title">トーチオン</string>
+    <string name="not_torch_summary">トーチは現在オンです</string>
 
     <string name="setting_frequency_title">ストロボ頻度</string>
     <string name="setting_frequency_summary">ストロボの頻度</string>
