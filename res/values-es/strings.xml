@@ -22,10 +22,17 @@
     <string name="label_frequency">Frecuencia: (Deslizar para cambiar)</string>
     <string name="label_info">\'Menu\' para más informacion.</string>
 
+	<string name="widget_options">Opciones</string>
+    <string name="setting_widget_bright">Widget con Brillo Alto</string>
+    <string name="setting_widget_strobe">Parpadeo activo</string>
     <string name="setting_frequency_title">Frecuencia del parpadeo</string>
     <string name="setting_frequency_summary">Frecuencia con la que parepadea el LED</string>
     <string name="setting_frequency_dialog">Frecuencia</string>
     <string name="setting_frequency_hz"> Hz</string>
     <string name="setting_add_widget">Añadir widget</string>
+    
+    <string name="not_torch_title">Torch activo</string>
+    <string name="not_torch_summary">Torch actualmente activo</string>
+    
     <string name="widget_label">Torch</string>
 </resources>
