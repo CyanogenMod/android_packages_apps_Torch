@@ -6,17 +6,17 @@
     <string name="about_title">О программе</string>
     <string name="about_close">Закрыть</string>
     
-    <string name="description">Эта программа маниплирует со вспышкой (LED) камеры.\n</string>
+    <string name="description">Эта программа манипулирует со вспышкой (LED) камеры.\n</string>
     <string name="warning">Внимание: если оставлять вспышку на долгое время включённой, то она может перегрется.\n\nПолная яркость была протестирована в течении 1/2 часа, но всё же есть риск, повредить сведодиод вспышки.\n</string>
-    <string name="license">Оригинальный код Nexus One Torch от Ben Buxton, выпущеный под GPL, v3.\nhttp://n1torch.googlecode.com/\n\nСпасибо David Prieto за новый дизайн интерфейса.\n\nИзмененно для CyanogenMod - Steve Kondik.\n\n</string>
+    <string name="license">Оригинальный код Nexus One Torch от Ben Buxton, выпущенный под GPL, v3.\nhttp://n1torch.googlecode.com/\n\nСпасибо David Prieto за новый дизайн интерфейса.\n\nИзмененно для CyanogenMod - Steve Kondik.\n\n</string>
     <string name="warning_label">Внимание</string>
-    <string name="brightwarn">Полная яркость была успешно протестирована в течении 1/2 часа работы, за это время светодиод сильно перегрелся, через 45 минут светодиод начал мерцать (временно). Что может случится дальше со всетодиодом, неизвестно\n\nЭто не поддерживается виджетом.\n\nНажмите \'Принимаю\', если вы хотите использовать эту функцию и понимаете риск этого.</string>
+    <string name="brightwarn">Полная яркость была успешно протестирована в течении 1/2 часа работы, за это время светодиод сильно перегрелся, через 45 минут светодиод начал мерцать (временно). Что может случится дальше со светодиодом, неизвестно\n\nЭто не поддерживается виджетом.\n\nНажмите \'Принимаю\', если вы хотите использовать эту функцию и понимаете риск этого.</string>
     <string name="brightwarn_title">Полная яркость!!!</string>
     <string name="brightwarn_negative">Нет, спасибо</string>
     <string name="brightwarn_accept">Принимаю</string>
 
-    <string name="label_on">Включен</string>
-    <string name="label_off">Выключен</string>
+    <string name="label_on">Включить</string>
+    <string name="label_off">Выключить</string>
     <string name="label_high">Полная яркость</string>
     <string name="label_strobe">Стробоскоп</string>
     <string name="label_frequency">Частота: (проведите для изменения)</string>
@@ -25,7 +25,7 @@
     <string name="widget_options">Основные настройки</string>
     <string name="setting_widget_bright">Полная яркость</string>
     <string name="setting_widget_strobe">Стробоскоп</string>
-    <string name="setting_frequency_title">Частота сторобоскопа</string>
+    <string name="setting_frequency_title">Частота стробоскопа</string>
     <string name="setting_frequency_summary">Частота вспышек стробоскопа</string>
     <string name="setting_frequency_dialog">Частота</string>
     <string name="setting_frequency_hz"> Hz</string>
