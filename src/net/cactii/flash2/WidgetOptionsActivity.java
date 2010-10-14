@@ -1,4 +1,3 @@
-
 package net.cactii.flash2;
 
 import android.appwidget.AppWidgetManager;
@@ -12,7 +11,6 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 public class WidgetOptionsActivity extends PreferenceActivity implements
         OnSharedPreferenceChangeListener {
@@ -32,7 +30,6 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
         if (extras != null) {
             mAppWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID,
                     AppWidgetManager.INVALID_APPWIDGET_ID);
-            Log.d("TorchOptions", "Widget id: " + mAppWidgetId);
         }
 
         CheckBoxPreference mBrightPref = (CheckBoxPreference) findPreference("widget_bright");
@@ -59,6 +56,31 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
                 editor.putBoolean("widget_bright_" + mAppWidgetId,
                         mPreferences.getBoolean("widget_bright", false));
                 editor.commit();
+
+                //Initialize widget view for first update
+                Context context = getApplicationContext();
+                RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
+                Intent launchIntent = new Intent();
+                launchIntent.setClass(context, TorchWidgetProvider.class);
+                launchIntent.addCategory(Intent.CATEGORY_ALTERNATIVE);
+                launchIntent.setData(Uri.parse("custom:" + mAppWidgetId + "/0"));
+                PendingIntent pi = PendingIntent.getBroadcast(context, 0 /*
+                                                                          * no
+                                                                          * requestCode
+                                                                          */, launchIntent, 0 /*
+                                                                                               * no
+                                                                                               * flags
+                                                                                               */);
+                views.setOnClickPendingIntent(R.id.btn, pi);
+                if (mPreferences.getBoolean("widget_strobe_" + mAppWidgetId, false))
+                    views.setTextViewText(R.id.ind, "Strobe");
+                else if (mPreferences.getBoolean("widget_bright_" + mAppWidgetId, false))
+                    views.setTextViewText(R.id.ind, "Bright");
+                else
+                    views.setTextViewText(R.id.ind, "Torch");
+                final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+                appWidgetManager.updateAppWidget(mAppWidgetId, views);
+
                 Intent resultValue = new Intent();
                 resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
                 setResult(RESULT_OK, resultValue);
