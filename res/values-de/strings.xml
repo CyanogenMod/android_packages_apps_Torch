@@ -22,11 +22,17 @@
     <string name="label_frequency">Frequenz: (zum Ändern schieben)</string>
     <string name="label_info">\'Menü\' für Info.</string>
 
+    <string name="widget_options">Allgemeine Optionen</string>
+    <string name="setting_widget_bright">Helles Widget</string>
+    <string name="setting_widget_strobe">Stroboskop</string>
     <string name="setting_frequency_title">Blitzfrequenz</string>
     <string name="setting_frequency_summary">Frequenz des Blitzlichts</string>
     <string name="setting_frequency_dialog">Frequenz</string>
     <string name="setting_frequency_hz"> Hz</string>
     <string name="setting_add_widget">Widget hinzufügen</string>
 
-    <string name="widget_label">Taschenlampe</string>
+    <string name="not_torch_title">Taschenlampe ein</string>
+    <string name="not_torch_summary">Taschenlampe ist eingeschaltet</string>
+
+    <string name="widget_label">Licht</string>
 </resources>
