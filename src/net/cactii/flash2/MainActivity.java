@@ -147,19 +147,19 @@ public class MainActivity extends Activity {
         // Strobe frequency slider bar handling
         setProgressBarVisibility(true);
         slider.setHorizontalScrollBarEnabled(true);
-        slider.setProgress(200 - this.mPrefs.getInt("strobeperiod", 100));
+        slider.setProgress(400 - this.mPrefs.getInt("strobeperiod", 100));
         strobeperiod = this.mPrefs.getInt("strobeperiod", 100);
-        final String strStrobeLabel = this.getString(R.string.setting_frequency_title); 
-        strobeLabel.setText(strStrobeLabel + ": " + 500 / strobeperiod + "Hz");
+        final String strStrobeLabel = this.getString(R.string.setting_frequency_title);
+        strobeLabel.setText(strStrobeLabel + ": " + 666 / strobeperiod + "Hz / " + 40000 / strobeperiod + "BPM");
         slider.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                strobeperiod = 201 - progress;
+                strobeperiod = 401 - progress;
                 if (strobeperiod < 20)
                     strobeperiod = 20;
                 
-                strobeLabel.setText(strStrobeLabel + ": " + 500 / strobeperiod + "Hz");
+                strobeLabel.setText(strStrobeLabel + ": " + 666 / strobeperiod + "Hz / " + 40000 / strobeperiod + "BPM");
 
                 Intent intent = new Intent("net.cactii.flash2.SET_STROBE");
                 intent.putExtra("period", strobeperiod);

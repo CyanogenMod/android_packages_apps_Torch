@@ -96,9 +96,9 @@
 	   	
         <SeekBar
                 android:id="@+id/slider"
-                android:layout_width="250dip"
+                android:layout_width="300dip"
                 android:layout_height="30dip"
-                android:max="200"
+                android:max="400"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_marginTop="1mm"
                 android:layout_below="@+id/strobeTimeLabel"
