@@ -18,7 +18,7 @@
     <string name="label_on">Ein</string>
     <string name="label_off">Aus</string>
     <string name="label_high">Hohe Helligkeit</string>
-    <string name="label_strobe">Blitz</string>
+    <string name="label_strobe">Stroboskop</string>
     <string name="label_frequency">Frequenz: (zum Ändern schieben)</string>
     <string name="label_info">\'Menü\' für Info.</string>
 
@@ -31,7 +31,7 @@
     <string name="setting_frequency_hz"> Hz</string>
     <string name="setting_add_widget">Widget hinzufügen</string>
 
-    <string name="not_torch_title">Taschenlampe ein</string>
+    <string name="not_torch_title">Taschenlampe an</string>
     <string name="not_torch_summary">Taschenlampe ist eingeschaltet</string>
 
     <string name="widget_label">Licht</string>

@@ -5,130 +5,130 @@
     android:layout_height="fill_parent"
     >
 
-	<Button  
-		android:id="@+id/buttonOn"
-	    android:layout_width="40mm" 
-	    android:layout_height="23mm" 
-	    android:layout_marginTop="9mm"
-	    	    android:layout_marginBottom="9mm"
-	    
-	    android:layout_marginLeft="20dp"
-	    android:layout_marginRight="20dp"
-	    android:text="@string/label_on"
-	    android:textSize="18pt"
-	    />
-	<View
-		android:id="@+id/ruler1"
-		android:layout_height="1dp"
-				android:layout_marginTop="3mm"
-		
-		android:layout_width="fill_parent"
-		android:background="#555"
-		android:layout_below="@id/buttonOn"
-	/>
-	<RelativeLayout
-		android:id="@+id/brightRow"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginBottom="1mm"	
-		android:layout_marginTop="1mm"
-		
-		android:orientation="horizontal"
-		android:layout_below="@id/ruler1"
-		>
-	<TextView
-		android:id="@+id/brightLabel"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/label_high"
-		android:textStyle="bold"
-		android:textColor="#fff"
-		android:textSize="18dp"
-		android:layout_marginLeft="3mm"
-		android:layout_marginTop="2mm"
-		android:layout_centerVertical="true"
-		android:layout_alignParentLeft="true"
-		/>
+    <Button
+        android:id="@+id/buttonOn"
+        android:layout_width="40mm"
+        android:layout_height="23mm"
+        android:layout_marginTop="9mm"
+                android:layout_marginBottom="9mm"
 
-	<CheckBox
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_centerVertical="true"
-		android:id="@+id/bright"
-		android:layout_alignParentRight="true"
-		/>	
-	</RelativeLayout>
-	<View
-		android:id="@+id/ruler2"
-		android:layout_height="1dp"
-		android:layout_width="fill_parent"	
-		android:background="#555"
-		android:layout_below="@id/brightRow"
-	/>
-		<RelativeLayout
-		android:id="@+id/strobeRow"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
-		android:layout_below="@id/ruler2"
-		>
-	<TextView
-		android:id="@+id/strobeLabel"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:textColor="#fff"
-		android:layout_marginLeft="3mm"
-		android:textSize="18dp"
-		android:layout_marginTop="2mm"
-		android:text="@string/label_strobe"
-		android:textStyle="bold"
-		android:layout_alignParentLeft="true"
-		/>
-	   <TextView
-	   	android:id="@+id/strobeTimeLabel"
-	   	android:layout_width="wrap_content"
-	   	android:layout_height="wrap_content"
-	   	android:layout_marginLeft="3mm"
-	   	
-		android:text="@string/label_frequency"
-	   	android:layout_below="@id/strobeLabel"
-	   	/>
-	   	
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/label_on"
+        android:textSize="18pt"
+        />
+    <View
+        android:id="@+id/ruler1"
+        android:layout_height="1dp"
+                android:layout_marginTop="3mm"
+
+        android:layout_width="fill_parent"
+        android:background="#555"
+        android:layout_below="@id/buttonOn"
+    />
+    <RelativeLayout
+        android:id="@+id/brightRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1mm"
+        android:layout_marginTop="1mm"
+
+        android:orientation="horizontal"
+        android:layout_below="@id/ruler1"
+        >
+    <TextView
+        android:id="@+id/brightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_high"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:textSize="18dp"
+        android:layout_marginLeft="3mm"
+        android:layout_marginTop="2mm"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:id="@+id/bright"
+        android:layout_alignParentRight="true"
+        />
+    </RelativeLayout>
+    <View
+        android:id="@+id/ruler2"
+        android:layout_height="1dp"
+        android:layout_width="fill_parent"
+        android:background="#555"
+        android:layout_below="@id/brightRow"
+    />
+        <RelativeLayout
+        android:id="@+id/strobeRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ruler2"
+        >
+    <TextView
+        android:id="@+id/strobeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:layout_marginLeft="3mm"
+        android:textSize="18dp"
+        android:layout_marginTop="2mm"
+        android:text="@string/label_strobe"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        />
+        <TextView
+            android:id="@+id/strobeTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3mm"
+
+        android:text="@string/label_frequency"
+            android:layout_below="@id/strobeLabel"
+           />
+
         <SeekBar
-                android:id="@+id/slider"
-                android:layout_width="250dip"
-                android:layout_height="30dip"
-                android:max="200"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_marginTop="1mm"
-                android:layout_below="@+id/strobeTimeLabel"
-                android:layout_centerHorizontal="true" />
-	   	
-	<CheckBox
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/strobe"
-		android:layout_alignParentRight="true"
-		android:layout_marginTop="1mm"
-		/>	
-	</RelativeLayout>
-	
-	<View
-		android:id="@+id/ruler3"
-		android:layout_height="1dp"
-		android:layout_width="fill_parent"	
-		android:layout_marginTop="2mm"
-		android:background="#555"
-		android:layout_below="@id/strobeRow"
-	/>
+            android:id="@+id/slider"
+            android:layout_width="300dip"
+            android:layout_height="30dip"
+            android:max="400"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_marginTop="1mm"
+            android:layout_below="@+id/strobeTimeLabel"
+            android:layout_centerHorizontal="true" />
 
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/label_info"
-		android:textColor="#ffffd0"
-		android:background="#000040"
-		android:layout_centerHorizontal="true"
-		/>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/strobe"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="1mm"
+        />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/ruler3"
+        android:layout_height="1dp"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="2mm"
+        android:background="#555"
+        android:layout_below="@id/strobeRow"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_info"
+        android:textColor="#ffffd0"
+        android:background="#000040"
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>
