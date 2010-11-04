@@ -55,8 +55,9 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
 
                 editor.putBoolean("widget_strobe_" + mAppWidgetId,
                         mPreferences.getBoolean("widget_strobe", false));
+                //had to do +1 to fix division by zero crash, only temporary fix:
                 editor.putInt("widget_strobe_freq_" + mAppWidgetId,
-                        500 / mPreferences.getInt("widget_strobe_freq", 5));
+                        666 / (1 + mPreferences.getInt("widget_strobe_freq", 5)));
                 editor.putBoolean("widget_bright_" + mAppWidgetId,
                         mPreferences.getBoolean("widget_bright", false));
                 editor.commit();
