@@ -36,7 +36,7 @@ public class FlashDevice {
 	public synchronized void setFlashMode(int mode) {
 	    try {
 	        if (mWriter == null) {
-	            if (Build.DEVICE.equals("sholes")) {
+	            if (Build.DEVICE.contains("sholes")) {
 	                mWriter = new FileWriter(DEVICE_SHOLES);
 	            } else {
 	                mWriter = new FileWriter(DEVICE);
