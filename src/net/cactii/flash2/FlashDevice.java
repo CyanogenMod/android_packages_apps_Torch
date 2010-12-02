@@ -8,6 +8,7 @@ import java.io.IOException;
 public class FlashDevice {
     
     private static final String DEVICE = "/sys/devices/platform/flashlight.0/leds/flashlight/brightness";
+    private static final String DEVICE_SHOLES = "/sys/class/leds/spotlight/brightness";
 	
     public static final int STROBE    = -1;
 	public static final int OFF       = 0;
@@ -35,7 +36,11 @@ public class FlashDevice {
 	public synchronized void setFlashMode(int mode) {
 	    try {
 	        if (mWriter == null) {
-	            mWriter = new FileWriter(DEVICE);
+	            if (Build.DEVICE.equals("sholes")) {
+	                mWriter = new FileWriter(DEVICE_SHOLES);
+	            } else {
+	                mWriter = new FileWriter(DEVICE);
+	            }
 	        }
 	        
 	        int value = mode;
