@@ -10,6 +10,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 
 public class TorchSwitch extends BroadcastReceiver {
 
@@ -21,8 +22,10 @@ public class TorchSwitch extends BroadcastReceiver {
             Intent i = new Intent(context, TorchService.class);
             if (this.TorchServiceRunning(context)) {
                 context.stopService(i);
+                Settings.System.putInt(context.getContentResolver(), Settings.System.TORCH_STATE, 0);
             } else {
                 context.startService(i);
+                Settings.System.putInt(context.getContentResolver(), Settings.System.TORCH_STATE, 1);
             }
         }
     }
