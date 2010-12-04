@@ -10,20 +10,24 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 
 public class TorchSwitch extends BroadcastReceiver {
 
     public static final String TOGGLE_FLASHLIGHT = "net.cactii.flash2.TOGGLE_FLASHLIGHT";
-
+    public static final String TORCH_STATE_CHANGED = "net.cactii.flash2.TORCH_STATE_CHANGED";
     @Override
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals(TOGGLE_FLASHLIGHT)) {
             Intent i = new Intent(context, TorchService.class);
             if (this.TorchServiceRunning(context)) {
                 context.stopService(i);
+                Settings.System.putInt(context.getContentResolver(), Settings.System.TORCH_STATE, 0);
             } else {
                 context.startService(i);
+                Settings.System.putInt(context.getContentResolver(), Settings.System.TORCH_STATE, 1);
             }
+            context.sendBroadcast(new Intent(TORCH_STATE_CHANGED));
         }
     }
 
