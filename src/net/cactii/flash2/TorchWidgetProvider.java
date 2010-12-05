@@ -63,6 +63,7 @@ public class TorchWidgetProvider extends AppWidgetProvider {
                 if (this.TorchServiceRunning(context)) {
                     context.stopService(new Intent(context, TorchService.class));
                     this.updateAllStates(context);
+                    context.sendBroadcast(new Intent(TorchSwitch.TORCH_WIDGET_PRESSED));
                     return;
                 }
 
@@ -87,6 +88,9 @@ public class TorchWidgetProvider extends AppWidgetProvider {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
+            this.updateAllStates(context);
+            context.sendBroadcast(new Intent(TorchSwitch.TORCH_WIDGET_PRESSED));
+        } else if (intent.getAction().equals(TorchSwitch.TORCH_STATE_CHANGED)) {
             this.updateAllStates(context);
         }
     }
