@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -28,6 +29,8 @@ import android.widget.TextView;
 import java.util.List;
 
 public class MainActivity extends Activity {
+
+    private static final String TORCH_STATE_CHANGED = "net.cactii.flash2.TORCH_STATE_CHANGED";
 
     private TorchWidgetProvider mWidgetProvider;
 
@@ -126,6 +129,7 @@ public class MainActivity extends Activity {
 
                 if (!mTorchOn) {
                     startService(intent);
+                    Settings.System.putInt(context.getContentResolver(), Settings.System.TORCH_STATE, 1);
                     mTorchOn = true;
                     buttonOn.setText(labelOff);
                     buttonBright.setEnabled(false);
@@ -134,12 +138,14 @@ public class MainActivity extends Activity {
                         slider.setEnabled(false);
                 } else {
                     stopService(intent);
+                    Settings.System.putInt(context.getContentResolver(), Settings.System.TORCH_STATE, 0);
                     mTorchOn = false;
                     buttonOn.setText(labelOn);
                     buttonBright.setEnabled(true);
                     buttonStrobe.setEnabled(true);
                     slider.setEnabled(true);
                 }
+                context.sendBroadcast(new Intent(TORCH_STATE_CHANGED));
             }
 
         });
