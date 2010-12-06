@@ -86,8 +86,10 @@ public class TorchService extends Service {
         this.mBright = intent.getBooleanExtra("bright", false);
         if (intent.getBooleanExtra("strobe", false)) {
             this.mStrobePeriod = intent.getIntExtra("period", 200) / 4;
+            this.mStrobeTimer.cancel();
             this.mStrobeTimer.schedule(this.mStrobeTask, 0, this.mStrobePeriod);
         } else {
+            this.mTorchTimer.cancel();
             this.mTorchTimer.schedule(this.mTorchTask, 0, 100);
         }
 
@@ -100,6 +102,7 @@ public class TorchService extends Service {
                 PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0));
         this.mNotification.flags = Notification.FLAG_NO_CLEAR | Notification.FLAG_ONGOING_EVENT;
 
+        this.mNotificationManager.cancelAll();
         this.mNotificationManager.notify(0, this.mNotification);
 
         startForeground(0, this.mNotification);
