@@ -10,6 +10,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="net.cactii.flash2.TORCH_STATE_CHANGED" />
             </intent-filter>
         </activity>
         <activity android:name=".WidgetOptionsActivity">
@@ -32,7 +33,6 @@
         <receiver android:name="TorchSwitch" android:enabled="true" android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="net.cactii.flash2.TOGGLE_FLASHLIGHT"></action>
-                <action android:name="net.cactii.flash2.TORCH_WIDGET_PRESSED"></action>
             </intent-filter>
         </receiver>
     </application>

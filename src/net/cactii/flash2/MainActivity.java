@@ -2,13 +2,12 @@
 package net.cactii.flash2;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningServiceInfo;
 import android.app.AlertDialog;
-import android.content.ComponentName;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -26,11 +25,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
-import java.util.List;
-
 public class MainActivity extends Activity {
-
-    private static final String TORCH_STATE_CHANGED = "net.cactii.flash2.TORCH_STATE_CHANGED";
 
     private TorchWidgetProvider mWidgetProvider;
 
@@ -80,7 +75,7 @@ public class MainActivity extends Activity {
 
         strobeperiod = 100;
         mTorchOn = false;
-        
+
         labelOn = this.getString(R.string.label_on);
         labelOff = this.getString(R.string.label_off);
 
@@ -109,45 +104,22 @@ public class MainActivity extends Activity {
                 }
             }
         });
-
         strobeLabel.setOnClickListener(new OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 buttonStrobe.setChecked(!buttonStrobe.isChecked());
             }
-
         });
 
         buttonOn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TorchService.class);
+                Intent intent = new Intent(TorchSwitch.TOGGLE_FLASHLIGHT);
                 intent.putExtra("strobe", buttonStrobe.isChecked());
                 intent.putExtra("period", strobeperiod);
                 intent.putExtra("bright", bright);
-
-                if (!mTorchOn) {
-                    startService(intent);
-                    Settings.System.putInt(context.getContentResolver(), Settings.System.TORCH_STATE, 1);
-                    mTorchOn = true;
-                    buttonOn.setText(labelOff);
-                    buttonBright.setEnabled(false);
-                    buttonStrobe.setEnabled(false);
-                    if (!buttonStrobe.isChecked())
-                        slider.setEnabled(false);
-                } else {
-                    stopService(intent);
-                    Settings.System.putInt(context.getContentResolver(), Settings.System.TORCH_STATE, 0);
-                    mTorchOn = false;
-                    buttonOn.setText(labelOn);
-                    buttonBright.setEnabled(true);
-                    buttonStrobe.setEnabled(true);
-                    slider.setEnabled(true);
-                }
-                context.sendBroadcast(new Intent(TORCH_STATE_CHANGED));
+                context.sendBroadcast(intent);
             }
-
         });
 
         // Strobe frequency slider bar handling
@@ -189,10 +161,10 @@ public class MainActivity extends Activity {
             this.openAboutDialog();
             this.mPrefsEditor.putBoolean("aboutSeen", true);
         }
+        context.registerReceiver(mStateReceiver, new IntentFilter(TorchSwitch.TORCH_STATE_CHANGED));
     }
 
     public void onPause() {
-
         this.mPrefsEditor.putInt("strobeperiod", this.strobeperiod);
         this.mPrefsEditor.commit();
         this.updateWidget();
@@ -205,33 +177,9 @@ public class MainActivity extends Activity {
     }
 
     public void onResume() {
-        if (this.TorchServiceRunning(context)) {
-            buttonOn.setText(labelOff);
-            buttonBright.setEnabled(false);
-            buttonStrobe.setEnabled(false);
-            if (!buttonStrobe.isChecked())
-                slider.setEnabled(false);
-            this.mTorchOn = true;
-        }
+        updateBigButtonState();
         this.updateWidget();
         super.onResume();
-    }
-
-    private boolean TorchServiceRunning(Context context) {
-        ActivityManager am = (ActivityManager) context.getSystemService(Activity.ACTIVITY_SERVICE);
-
-        List<ActivityManager.RunningServiceInfo> svcList = am.getRunningServices(100);
-
-        if (!(svcList.size() > 0))
-            return false;
-        for (int i = 0; i < svcList.size(); i++) {
-            RunningServiceInfo serviceInfo = svcList.get(i);
-            ComponentName serviceName = serviceInfo.service;
-            if (serviceName.getClassName().endsWith(".TorchService")
-                    || serviceName.getClassName().endsWith(".RootTorchService"))
-                return true;
-        }
-        return false;
     }
 
     @Override
@@ -281,4 +229,29 @@ public class MainActivity extends Activity {
         this.mWidgetProvider.updateAllStates(context);
     }
 
+    private void updateBigButtonState() {
+        if (Settings.System.getInt(context.getContentResolver(), Settings.System.TORCH_STATE, 0) == 1) {
+            mTorchOn = true;
+            buttonOn.setText(labelOff);
+            buttonBright.setEnabled(false);
+            buttonStrobe.setEnabled(false);
+            if (!buttonStrobe.isChecked())
+                slider.setEnabled(false);
+        } else {
+            mTorchOn = false;
+            buttonOn.setText(labelOn);
+            buttonBright.setEnabled(true);
+            buttonStrobe.setEnabled(true);
+            slider.setEnabled(true);
+        }
+    }
+
+    private BroadcastReceiver mStateReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(TorchSwitch.TORCH_STATE_CHANGED)) {
+                updateBigButtonState();
+            }
+        }
+    };
 }
