@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zseblámpa</string>
+    <string name="about">Készítők:</string>
+    <string name="about_btn">A Zseblámpáról</string>
+    <string name="about_title">Készítők</string>
+    <string name="about_close">Bezárás</string>
+
+    <string name="description">Ez a program műlödteti a kamera LED-et.\n</string>
+    <string name="warning">Figyelem: A LED hosszú ideig való működtetése túlmelegedést okozhat.\n Teljes fényerőn fél óráig volt tesztelve.\n</string>
+    <string name="license">Az eredeti kód a Nexus One Torch-ból amit Ben Buxton készített.\nKöszönet az új dizájn elkészítéséért David Prieto-nak.\n\n</string>
+    <string name="warning_label">Figyelmeztetés</string>
+	<string name="brightwarn">Teljes fényerőn való működés fél órán át volt tesztelve sikeresen, de forróvá válhat és 45 perc használat után vibrálni kezdhet. Hosszú távú hatások nem ismertek. Ez a widget jelenleg nem támogatott. Kattintson az "Elfogadás"-ra, ha saját felelősségre használni kívánja.</string>
+    <string name="brightwarn_title">Nagy fényerő "Be" gomb megnyomásakor!</string>
+    <string name="brightwarn_negative">Nem, köszönöm</string>
+    <string name="brightwarn_accept">Elfogadás</string>
+
+    <string name="label_on">Be</string>
+    <string name="label_off">Ki</string>
+    <string name="label_high">Nagy fényerő</string>
+    <string name="label_strobe">Vaku</string>
+    <string name="label_frequency">Dia váltásának gyakorisága</string>
+    <string name="label_info">Segítség: \'Menu\'.</string>
+
+    <string name="widget_options">Általános beállítások</string>
+    <string name="setting_widget_bright">Fényerő widget</string>
+    <string name="setting_widget_strobe">Vaku</string>
+    <string name="setting_frequency_title">Vaku gyakorisága</string>
+    <string name="setting_frequency_summary">Stroboszkóp gyakorisága</string>
+    <string name="setting_frequency_dialog">Gyakoriság</string>
+    <string name="setting_frequency_hz">Hz</string>
+    <string name="setting_add_widget">Widget hozzáadása</string>
+
+    <string name="not_torch_title">Zseblámpa be</string>
+    <string name="not_torch_summary">Zseblámpa jelenleg bekapcsolva</string>
+
+    <string name="widget_label">Zseblámpa</string>
+</resources>
