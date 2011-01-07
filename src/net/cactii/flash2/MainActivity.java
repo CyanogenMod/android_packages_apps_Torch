@@ -18,7 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ToggleButton;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
     private TorchWidgetProvider mWidgetProvider;
 
     // On button
-    private Button buttonOn;
+    private ToggleButton buttonOn;
 
     // Strobe toggle
     private CheckBox buttonStrobe;
@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mainnew);
         context = this.getApplicationContext();
-        buttonOn = (Button) findViewById(R.id.buttonOn);
+        buttonOn = (ToggleButton) findViewById(R.id.buttonOn);
         buttonStrobe = (CheckBox) findViewById(R.id.strobe);
         strobeLabel = (TextView) findViewById(R.id.strobeTimeLabel);
         slider = (SeekBar) findViewById(R.id.slider);
@@ -235,7 +235,7 @@ public class MainActivity extends Activity {
         if (Settings.System.getInt(context.getContentResolver(),
                 Settings.System.TORCH_STATE, 0) == 1) {
             mTorchOn = true;
-            buttonOn.setText(labelOff);
+            buttonOn.setChecked(true);
             buttonBright.setEnabled(false);
             buttonStrobe.setEnabled(false);
             if (!buttonStrobe.isChecked()) {
@@ -243,7 +243,7 @@ public class MainActivity extends Activity {
             }
         } else {
             mTorchOn = false;
-            buttonOn.setText(labelOn);
+            buttonOn.setChecked(false);
             buttonBright.setEnabled(true);
             buttonStrobe.setEnabled(true);
             slider.setEnabled(true);

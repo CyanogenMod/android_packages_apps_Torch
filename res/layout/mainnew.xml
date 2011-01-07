@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
 
-    <Button
+    <ToggleButton
         android:id="@+id/buttonOn"
-        android:layout_width="40mm"
-        android:layout_height="23mm"
-        android:layout_marginTop="9mm"
-                android:layout_marginBottom="9mm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
 
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:text="@string/label_on"
-        android:textSize="18pt"
+        android:background="@drawable/bulb"
+
+        android:textOff=""
+        android:textOn=""
         />
     <View
         android:id="@+id/ruler1"
         android:layout_height="1dp"
-                android:layout_marginTop="3mm"
+        android:layout_marginTop="3mm"
 
         android:layout_width="fill_parent"
         android:background="#555"
-        android:layout_below="@id/buttonOn"
     />
     <RelativeLayout
         android:id="@+id/brightRow"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1mm"
         android:layout_marginTop="1mm"
+        android:layout_marginBottom="1mm"
 
         android:orientation="horizontal"
-        android:layout_below="@id/ruler1"
         >
     <TextView
         android:id="@+id/brightLabel"
@@ -63,22 +60,20 @@
         android:layout_height="1dp"
         android:layout_width="fill_parent"
         android:background="#555"
-        android:layout_below="@id/brightRow"
     />
         <RelativeLayout
         android:id="@+id/strobeRow"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@id/ruler2"
         >
     <TextView
         android:id="@+id/strobeLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#fff"
-        android:layout_marginLeft="3mm"
         android:textSize="18dp"
+        android:layout_marginLeft="3mm"
         android:layout_marginTop="2mm"
         android:text="@string/label_strobe"
         android:textStyle="bold"
@@ -89,8 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3mm"
-
-        android:text="@string/label_frequency"
+            android:text="@string/label_frequency"
             android:layout_below="@id/strobeLabel"
            />
 
@@ -110,6 +104,7 @@
         android:id="@+id/strobe"
         android:layout_alignParentRight="true"
         android:layout_marginTop="1mm"
+        android:layout_below="@id/strobeRow"
         />
     </RelativeLayout>
 
@@ -119,7 +114,6 @@
         android:layout_width="fill_parent"
         android:layout_marginTop="2mm"
         android:background="#555"
-        android:layout_below="@id/strobeRow"
     />
 
-</RelativeLayout>
+</LinearLayout>
