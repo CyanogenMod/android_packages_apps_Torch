@@ -20,7 +20,6 @@
     <string name="label_high">高明度</string>
     <string name="label_strobe">ストロボ</string>
     <string name="label_frequency">頻度: (スライドして変更)</string>
-    <string name="label_info">\'メニュー\'で情報を表示</string>
 
     <string name="widget_label">トーチ</string>
     <string name="widget_options">オプション</string>

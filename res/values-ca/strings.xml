@@ -18,7 +18,6 @@
   <string name="label_high">Brillantor alta</string>
   <string name="label_strobe">Estroboscòpic</string>
   <string name="label_frequency">Freqüència: (llisqueu per canviar)</string>
-  <string name="label_info">«Menú» per informació.</string>
   <string name="widget_options">Opcions generals</string>
   <string name="setting_widget_bright">Giny de brillantor</string>
   <string name="setting_widget_strobe">Flash estroboscòpic</string>

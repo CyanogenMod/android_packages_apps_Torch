@@ -20,7 +20,6 @@
     <string name="label_high">Luminosité maximale</string>
     <string name="label_strobe">Stroboscope</string>
     <string name="label_frequency">Fréquence : (glisser pour changer)</string>
-    <string name="label_info">\"Menu\" pour infos</string>
 
     <string name="widget_options">Options générales</string>
     <string name="setting_widget_bright">Widget luminosité maximale</string>

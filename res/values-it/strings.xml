@@ -20,7 +20,6 @@
     <string name="label_high">Alta Luminosità</string>
     <string name="label_strobe">Strobo</string>
     <string name="label_frequency">Frequenza: (scorri per cambiare)</string>
-    <string name="label_info">\'Menu\' per info.</string>
     
     <string name="widget_options">Impostazioni generali</string>
     <string name="setting_widget_bright">Widget Alta Luminosità</string>

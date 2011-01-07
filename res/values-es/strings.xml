@@ -20,7 +20,6 @@
     <string name="label_high">Brillo Alto</string>
     <string name="label_strobe">Parpadeo</string>
     <string name="label_frequency">Frecuencia: (Deslizar para cambiar)</string>
-    <string name="label_info">\'Menu\' para más informacion.</string>
 
 	<string name="widget_options">Opciones</string>
     <string name="setting_widget_bright">Widget con Brillo Alto</string>
