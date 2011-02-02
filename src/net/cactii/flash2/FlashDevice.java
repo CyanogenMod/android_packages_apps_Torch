@@ -4,46 +4,42 @@ import android.os.Build;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import android.hardware.Camera;
 
 public class FlashDevice {
     
     private static final String DEVICE = "/sys/devices/platform/flashlight.0/leds/flashlight/brightness";
     private static final String DEVICE_SHOLES = "/sys/class/leds/spotlight/brightness";
-	
+
     public static final int STROBE    = -1;
 	public static final int OFF       = 0;
 	public static final int ON        = 1;
 	public static final int DEATH_RAY = 3;
 	public static final int HIGH      = 128;
-	
+
 	private static FlashDevice instance;
-	
+
 	private static boolean useDeathRay = !Build.DEVICE.equals("supersonic") && !Build.DEVICE.equals("glacier");
-	
+
 	private FileWriter mWriter = null;
-	
+
 	private int mFlashMode = OFF;
-	
+
+        private Camera mCamera = null;
+        private Camera.Parameters mParams;
+
 	private FlashDevice() {}
-	
+
 	public static synchronized FlashDevice instance() {
 	    if (instance == null) {
 	        instance = new FlashDevice();
 	    }
 	    return instance;
 	}
-	
+
 	public synchronized void setFlashMode(int mode) {
 	    try {
-	        if (mWriter == null) {
-	            if (Build.DEVICE.contains("sholes")) {
-	                mWriter = new FileWriter(DEVICE_SHOLES);
-	            } else {
-	                mWriter = new FileWriter(DEVICE);
-	            }
-	        }
-	        
-	        int value = mode;
+                int value = mode;
 	        switch (mode) {
 	            case STROBE:
 	                value = OFF;
@@ -51,15 +47,44 @@ public class FlashDevice {
 	            case DEATH_RAY:
 	                value = useDeathRay ? DEATH_RAY : HIGH;
 	                break;
-	        }
-	        mWriter.write(String.valueOf(value));
-	        mWriter.flush();
+                }        
+                if (Build.DEVICE.contains("crespo")) {
+                    if (mCamera == null) {
+                        mCamera = Camera.open();
+                    }
+                    if (value == OFF) {
+                        mParams = mCamera.getParameters();
+                        mParams.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+                        mCamera.setParameters(mParams);
+                        if (mode != STROBE) {
+                            mCamera.stopPreview();
+                            mCamera.release();
+                            mCamera = null;
+                        }
+                    } else {
+                        mParams = mCamera.getParameters();
+                        mParams.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                        mCamera.setParameters(mParams);
+                        if (mFlashMode != STROBE) {
+                            mCamera.startPreview();
+                        }
+                    }
+                } else {
+                    if (mWriter == null) {
+	                if (Build.DEVICE.contains("sholes")) {
+	                    mWriter = new FileWriter(DEVICE_SHOLES);
+	                } else {
+	                    mWriter = new FileWriter(DEVICE);
+	                }
+	            }
+                    mWriter.write(String.valueOf(value));
+                    mWriter.flush();
+                    if (mode == OFF) {
+                        mWriter.close();
+                        mWriter = null;
+                    }
+                }    	        
 	        mFlashMode = mode;
-	        
-	        if (mode == OFF) {
-	            mWriter.close();
-	            mWriter = null;
-	        }
 	    } catch (IOException e) {
 	        throw new RuntimeException("Can't open flash device: " + DEVICE, e);
 	    }

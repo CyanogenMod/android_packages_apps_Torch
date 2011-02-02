@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.preference.PreferenceManager;
@@ -62,6 +63,8 @@ public class MainActivity extends Activity {
     private String labelOn = null;
     private String labelOff = null;
 
+    private static boolean useBrightSetting = !Build.DEVICE.equals("crespo");
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,23 +91,26 @@ public class MainActivity extends Activity {
         // preferenceEditor
         this.mPrefsEditor = this.mPrefs.edit();
 
-        bright = this.mPrefs.getBoolean("bright", false);
-        buttonBright.setChecked(bright);
-        buttonBright.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked && mPrefs.getBoolean("bright", false))
-                    MainActivity.this.bright = true;
-                else if (isChecked)
-                    openBrightDialog();
-                else {
-                    bright = false;
-                    mPrefsEditor.putBoolean("bright", false);
-                    mPrefsEditor.commit();
+        if (useBrightSetting) {
+            bright = this.mPrefs.getBoolean("bright", false);
+            buttonBright.setChecked(bright);
+            buttonBright.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if (isChecked && mPrefs.getBoolean("bright", false))
+                        MainActivity.this.bright = true;
+                    else if (isChecked)
+                        openBrightDialog();
+                    else {
+                        bright = false;
+                        mPrefsEditor.putBoolean("bright", false);
+                        mPrefsEditor.commit();
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            buttonBright.setEnabled(false);
+        }
         strobeLabel.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -244,7 +250,7 @@ public class MainActivity extends Activity {
         } else {
             mTorchOn = false;
             buttonOn.setChecked(false);
-            buttonBright.setEnabled(true);
+            buttonBright.setEnabled(useBrightSetting);
             buttonStrobe.setEnabled(true);
             slider.setEnabled(true);
         }
