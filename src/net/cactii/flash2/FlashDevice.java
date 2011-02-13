@@ -10,12 +10,15 @@ public class FlashDevice {
     
     private static final String DEVICE = "/sys/devices/platform/flashlight.0/leds/flashlight/brightness";
     private static final String DEVICE_SHOLES = "/sys/class/leds/spotlight/brightness";
+    private static final String DEVICE_ZEPPELIN = "/sys/class/leds/flashlight/brightness";
 
     public static final int STROBE    = -1;
 	public static final int OFF       = 0;
 	public static final int ON        = 1;
 	public static final int DEATH_RAY = 3;
 	public static final int HIGH      = 128;
+	public static final int ZEPP_ON   = 100;
+	public static final int ZEPP_DEATH_RAY = 255;
 
 	private static FlashDevice instance;
 
@@ -46,6 +49,10 @@ public class FlashDevice {
 	                break;
 	            case DEATH_RAY:
 	                value = useDeathRay ? DEATH_RAY : HIGH;
+	                value = (Build.DEVICE.contains("zepp") && useDeathRay) ? ZEPP_DEATH_RAY : ZEPP_ON;
+	                break;
+	            case ON:
+	                value = (Build.DEVICE.contains("zepp")) ? ZEPP_ON : value;
 	                break;
                 }        
                 if (Build.DEVICE.contains("crespo")) {
@@ -73,6 +80,8 @@ public class FlashDevice {
                     if (mWriter == null) {
 	                if (Build.DEVICE.contains("sholes")) {
 	                    mWriter = new FileWriter(DEVICE_SHOLES);
+	                } else if (Build.DEVICE.contains("zepp")) {
+	                    mWriter = new FileWriter(DEVICE_ZEPPELIN);
 	                } else {
 	                    mWriter = new FileWriter(DEVICE);
 	                }
