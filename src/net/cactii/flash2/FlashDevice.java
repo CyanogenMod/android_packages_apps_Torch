@@ -8,7 +8,7 @@ import android.hardware.Camera;
 
 public class FlashDevice {
     
-    private static final String DEVICE = "/sys/devices/platform/flashlight.0/leds/flashlight/brightness";
+    private static final String DEVICE = "/sys/class/leds/flashlight/brightness";
     private static final String DEVICE_SHOLES = "/sys/class/leds/spotlight/brightness";
 
     public static final int STROBE    = -1;
@@ -16,6 +16,8 @@ public class FlashDevice {
 	public static final int ON        = 1;
 	public static final int DEATH_RAY = 3;
 	public static final int HIGH      = 128;
+	public static final int ZEPP_ON   = 100;
+	public static final int ZEPP_DEATH_RAY = 255;
 
 	private static FlashDevice instance;
 
@@ -46,6 +48,10 @@ public class FlashDevice {
 	                break;
 	            case DEATH_RAY:
 	                value = useDeathRay ? DEATH_RAY : HIGH;
+	                value = (Build.DEVICE.contains("zepp") && useDeathRay) ? ZEPP_DEATH_RAY : value;
+	                break;
+	            case ON:
+	                value = (Build.DEVICE.contains("zepp")) ? ZEPP_ON : value;
 	                break;
                 }        
                 if (Build.DEVICE.contains("crespo")) {
