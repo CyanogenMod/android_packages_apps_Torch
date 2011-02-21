@@ -15,9 +15,9 @@ public class FlashDevice {
 	public static final int OFF       = 0;
 	public static final int ON        = 1;
 	public static final int DEATH_RAY = 3;
-	public static final int HIGH      = 128;
+	public static final int HIGH      = 115;
 	public static final int ZEPP_ON   = 100;
-	public static final int ZEPP_DEATH_RAY = 255;
+	public static final int ZEPP_DEATH_RAY = 200;
 
 	private static FlashDevice instance;
 
@@ -47,7 +47,7 @@ public class FlashDevice {
 	                value = OFF;
 	                break;
 	            case DEATH_RAY:
-	                value = useDeathRay ? DEATH_RAY : HIGH;
+	                value = useDeathRay ? DEATH_RAY : HIGHz;
 	                value = (Build.DEVICE.contains("zepp") && useDeathRay) ? ZEPP_DEATH_RAY : value;
 	                break;
 	            case ON:
