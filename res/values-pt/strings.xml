@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tocha</string>
+    <string name="about">Sobre: </string>
+    <string name="about_btn">Sobre Tocha</string>
+    <string name="about_title">Tocha</string>
+    <string name="about_close">Fechar</string>
+
+    <string name="description">Esse programa manipula o LED da câmera.\n</string>
+    <string name="warning">Aviso: Deixar o LED aceso por muito tempo pode sobreaquecê-lo.\n\nBrilho máximo \'sempre ativo\' foi textado por 30min, mas há um risco de dano ao LED.\n</string>
+    <string name="license">Código original do Nexus One por by Ben Buxton, lançado sobre a GPL, v3.\nhttp://n1torch.googlecode.com/\n\nObrigado a David Prieto pelo novo design de IU.\n\nModificado por CyanogenMod por Steve Kondik.\n\n</string>
+    <string name="warning_label">Aviso</string>
+    <string name="brightwarn">Brilho máximo foi testado bem sucedido por 30min de operação, mas ficou bem quente, e começou a oscilar (temporariamente) em 45 mins. Efeito a longo prazo é desconhecido.\n\nIsto não é suportado no widget ainda.\n\nClique \'Aceitar\' se você quer usar em seu próprio risco.</string>
+    <string name="brightwarn_title">Botão Alto-Brilho \'Ligado\'!!!</string>
+    <string name="brightwarn_negative">Não obrigado</string>
+    <string name="brightwarn_accept">Aceitar</string>
+
+    <string name="label_on">Ligado</string>
+    <string name="label_off">Desligado</string>
+    <string name="label_high">Brilho Alto</string>
+    <string name="label_strobe">Piscar</string>
+    <string name="label_frequency">Frequência: (deslize para mudar)</string>
+
+    <string name="widget_options">Opções Gerais</string>
+    <string name="setting_widget_bright">Widget de Brilho</string>
+    <string name="setting_widget_strobe">Flash do pisca pisca</string>
+    <string name="setting_frequency_title">Frequência de piscagem</string>
+    <string name="setting_frequency_summary">Frquência da luz de piscagem</string>
+    <string name="setting_frequency_dialog">Frequência</string>
+    <string name="setting_frequency_hz"> Hz</string>
+    <string name="setting_add_widget">Adicionar widget</string>
+
+    <string name="not_torch_title">Tocha ligada</string>
+    <string name="not_torch_summary">Tocha atualmente ligada</string>
+
+    <string name="widget_label">Tocha</string>
+</resources>
