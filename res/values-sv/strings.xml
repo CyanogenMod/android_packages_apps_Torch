@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Torch</string>
+    <string name="about">Om: </string>
+    <string name="about_btn">Om Torch</string>
+    <string name="about_title">Om</string>
+    <string name="about_close">Stäng</string>
+
+    <string name="description">Detta program manipulerar kamerans LED.\n</string>
+    <string name="warning">Varning: Att lämna LED-lampan på under en längre tid kan överhetta den.\n\nMaximal ljusstyrka \'alltid på\' har testats i 30 minuter, men risken finns att detta skadar LED-lampan.\n</string>
+    <string name="license">Ursprunglig kod från Nexus One Torch av Ben Buxton, släppt under GPL, v3.\nhttp://n1torch.googlecode.com/\n\nTack till David Prieto för ny UI design.\n\nModifierad för CyanogenMod av Steve Kondik.\n\n</string>
+    <string name="warning_label">Varning</string>
+    <string name="brightwarn">Maximal ljusstyrka har testats med framgång under en halvtimmes drift. Dock blev lampan ganska varm och började fladdra (temporärt) efter 45 minuter.Långtidseffekter är okända.\n\nDetta stöds inte av widgeten än.\n\nKlicka på \'Acceptera\' om du vill använda detta på egen risk.</string>
+    <string name="brightwarn_title">Hi-brite \'På\' knapp!!!</string>
+    <string name="brightwarn_negative">Nej tack</string>
+    <string name="brightwarn_accept">Acceptera</string>
+
+    <string name="label_on">På</string>
+    <string name="label_off">Av</string>
+    <string name="label_high">Hög ljusstyrka</string>
+    <string name="label_strobe">Strobe</string>
+    <string name="label_frequency">Frekvens: (dra för att ändra)</string>
+
+    <string name="widget_options">Generella inställningar</string>
+    <string name="setting_widget_bright">Ljus widget</string>
+    <string name="setting_widget_strobe">Strobe-blixt</string>
+    <string name="setting_frequency_title">Strobe-frekvens</string>
+    <string name="setting_frequency_summary">Frekvens för strobe-ljus</string>
+    <string name="setting_frequency_dialog">Frekvens</string>
+    <string name="setting_frequency_hz"> Hz</string>
+    <string name="setting_add_widget">Lägg till widget</string>
+
+    <string name="not_torch_title">Torch på</string>
+    <string name="not_torch_summary">Torch just nu på</string>
+
+    <string name="widget_label">Torch</string>
+</resources>
