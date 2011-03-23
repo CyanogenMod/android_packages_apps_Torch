@@ -22,6 +22,7 @@ public class FlashDevice {
 	private static FlashDevice instance;
 
 	private static boolean useDeathRay = !Build.DEVICE.equals("supersonic") && !Build.DEVICE.equals("glacier");
+	private static boolean useZeppDeathRay = Build.DEVICE.equals("sholes");
 
 	private FileWriter mWriter = null;
 
@@ -48,7 +49,7 @@ public class FlashDevice {
 	                break;
 	            case DEATH_RAY:
 	                value = useDeathRay ? DEATH_RAY : HIGH;
-	                value = ((Build.DEVICE.contains("zepp") || Build.DEVICE.contains("sholes")) && useDeathRay) ? ZEPP_DEATH_RAY : value;
+	                value = ((Build.DEVICE.contains("zepp") || useZeppDeathRay) && useDeathRay) ? ZEPP_DEATH_RAY : value;
 	                break;
 	            case ON:
 	                value = (Build.DEVICE.contains("zepp")) ? ZEPP_ON : value;
