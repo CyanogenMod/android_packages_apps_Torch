@@ -48,7 +48,7 @@ public class FlashDevice {
 	                break;
 	            case DEATH_RAY:
 	                value = useDeathRay ? DEATH_RAY : HIGH;
-	                value = (Build.DEVICE.contains("zepp") && useDeathRay) ? ZEPP_DEATH_RAY : value;
+	                value = ((Build.DEVICE.contains("zepp") || Build.DEVICE.contains("sholes")) && useDeathRay) ? ZEPP_DEATH_RAY : value;
 	                break;
 	            case ON:
 	                value = (Build.DEVICE.contains("zepp")) ? ZEPP_ON : value;
