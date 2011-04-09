@@ -14,6 +14,8 @@ public class FlashDevice {
     public static final int STROBE    = -1;
 	public static final int OFF       = 0;
 	public static final int ON        = 1;
+        // device speedy has 4 brightness levels: 125, 126, 127, 128
+	public static final int SPEEDY_ON = 125; 
 	public static final int DEATH_RAY = 3;
 	public static final int HIGH      = 128;
 	public static final int ZEPP_ON   = 100;
@@ -53,6 +55,7 @@ public class FlashDevice {
 	                break;
 	            case ON:
 	                value = (Build.DEVICE.contains("zepp")) ? ZEPP_ON : value;
+	                value = (Build.DEVICE.contains("speedy")) ? SPEEDY_ON : value;
 	                break;
                 }        
                 if (Build.DEVICE.contains("crespo")) {
