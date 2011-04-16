@@ -25,6 +25,7 @@ public class FlashDevice {
 
 	private static boolean useDeathRay = !Build.DEVICE.equals("supersonic") && !Build.DEVICE.equals("glacier") && !Build.DEVICE.equals("speedy");
 	private static boolean useZeppDeathRay = Build.DEVICE.contains("zepp") || Build.DEVICE.equals("sholes");
+	private static boolean useCameraInterface = Build.DEVICE.contains("crespo") || Build.DEVICE.contains("p990") || Build.DEVICE.contains("p999");
 
 	private FileWriter mWriter = null;
 
@@ -58,7 +59,7 @@ public class FlashDevice {
 	                value = (Build.DEVICE.contains("speedy")) ? SPEEDY_ON : value;
 	                break;
                 }        
-                if (Build.DEVICE.contains("crespo")) {
+                if (useCameraInterface) {
                     if (mCamera == null) {
                         mCamera = Camera.open();
                     }
