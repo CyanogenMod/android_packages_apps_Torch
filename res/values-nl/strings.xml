@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Torch</string>
+    <string name="about">Over: </string>
+    <string name="about_btn">Over Torch</string>
+    <string name="about_title">Over</string>
+    <string name="about_close">Sluiten</string>
+
+    <string name="description">Deze app manipuleerd de camera LED.\n</string>
+    <string name="warning">Waarschuwing: Wanneer de LED te lang aanstaat kan dit oververhitting als gevolg hebben.\n\nVolledige helderheid \'altijd aan\' is 1/2 uur lang getest zonder problemen, maar het risico bestaat dat dit de LED kapot maaakt.\n</string>
+    <string name="license">Originele code geript van Nexus One Torch ontwikkeld door Ben Buxton, uitgegeven onder GPL, v3.\nhttp://n1torch.googlecode.com/\n\nDavid Prieto bedankt voor de nieuwe layout.\n\nAangepast voor CyanogenMod door Steve Kondik.\n\n</string>
+    <string name="warning_label">Waarschuwing</string>
+    <string name="brightwarn">Volledige helderheid is 1/2 uur lang getest zonder problemen, maar de LED werd heet en begon bij 45 minuten te flikkeren. Lange termijn effecten zijn niet bekend.\n\nDit is not niet bruikbaar in de widget.\n\nKlik op \'Accepteren\' als je dit op eigen risico wil gebruiken.</string>
+    <string name="brightwarn_title">Hoge helderheid \'Aan\' knop!!!</string>
+    <string name="brightwarn_negative">Nee, bedankt</string>
+    <string name="brightwarn_accept">Accepteren</string>
+
+    <string name="label_on">Aan</string>
+    <string name="label_off">Uit</string>
+    <string name="label_high">Hoge helderheid</string>
+    <string name="label_strobe">Flikkeren</string>
+    <string name="label_frequency">Frequentie: (slide om te veranderen)</string>
+
+    <string name="widget_options">Algemene opties</string>
+    <string name="setting_widget_bright">Helderheid widget</string>
+    <string name="setting_widget_strobe">Flikker flash licht</string>
+    <string name="setting_frequency_title">Flikker frequentie</string>
+    <string name="setting_frequency_summary">Frequentie van flikker licht</string>
+    <string name="setting_frequency_dialog">Frequentie</string>
+    <string name="setting_frequency_hz"> Hz</string>
+    <string name="setting_add_widget">Widget toevoegen</string>
+
+    <string name="not_torch_title">Torch aan</string>
+    <string name="not_torch_summary">Torch staat op dit moment aan</string>
+
+    <string name="widget_label">Torch</string>
+</resources>
