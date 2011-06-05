@@ -8,8 +8,8 @@ import android.hardware.Camera;
 
 public class FlashDevice {
 
-    private static final String DEVICE = "/sys/class/leds/flashlight/brightness";
-    private static final String DEVICE_SHOLES = "/sys/class/leds/spotlight/brightness";
+    private static final String DEVICE_FLASH = "/sys/class/leds/flashlight/brightness";
+    private static final String DEVICE_SPOTL = "/sys/class/leds/spotlight/brightness";
 
     public static final int STROBE    = -1;
     public static final int OFF       = 0;
@@ -25,10 +25,10 @@ public class FlashDevice {
     private static FlashDevice instance;
 
     private static boolean useDeathRay = !Build.DEVICE.equals("supersonic") && !Build.DEVICE.equals("glacier") && !Build.DEVICE.equals("speedy");
-    private static boolean useMotoDeathRay = Build.DEVICE.contains("jordan") || Build.DEVICE.equals("sholes") || Build.DEVICE.contains("zepp");
+    private static boolean useMotoDeathRay = Build.DEVICE.contains("jordan") || Build.DEVICE.contains("sholes") || Build.DEVICE.contains("zepp");
     private static boolean useCameraInterface = Build.DEVICE.contains("crespo") || Build.DEVICE.contains("p990") || Build.DEVICE.contains("p999");
 
-    private static boolean useMotoWriter = Build.DEVICE.contains("jordan") || Build.DEVICE.equals("sholes");
+    private static boolean useMotoWriter = Build.DEVICE.contains("jordan") || Build.DEVICE.contains("sholes");
 
     private FileWriter mWriter = null;
 
@@ -86,9 +86,9 @@ public class FlashDevice {
             } else {
                 if (mWriter == null) {
                     if (useMotoWriter) {
-                        mWriter = new FileWriter(DEVICE_SHOLES);
+                        mWriter = new FileWriter(DEVICE_SPOTL);
                     } else {
-                        mWriter = new FileWriter(DEVICE);
+                        mWriter = new FileWriter(DEVICE_FLASH);
                     }
                 }
                 mWriter.write(String.valueOf(value));
@@ -100,7 +100,7 @@ public class FlashDevice {
             }
             mFlashMode = mode;
         } catch (IOException e) {
-            throw new RuntimeException("Can't open flash device: " + DEVICE, e);
+            throw new RuntimeException("Can't open flash device", e);
         }
     }
 
