@@ -6,10 +6,26 @@ import java.io.FileWriter;
 import java.io.IOException;
 import android.hardware.Camera;
 
-public class FlashDevice {
+import java.io.File;
 
-    private static final String DEVICE_FLASH = "/sys/class/leds/flashlight/brightness";
+public class FlashDevice {
+    
+    private static String DEVICE_FLASH = "/sys/class/leds/flashlight/brightness";
     private static final String DEVICE_SPOTL = "/sys/class/leds/spotlight/brightness";
+
+/* 
+   some motorola devices don't have the flashlight file under flashlight
+   instead it's located under torch-flash, so first check for the default
+   and if it's not there, redefine it to torch-flash
+*/
+    static {
+        File ff = new File(DEVICE_FLASH);
+        if (ff.exists()) {
+            DEVICE_FLASH = DEVICE_FLASH;
+        } else {
+            DEVICE_FLASH = "/sys/class/leds/torch-flash/brightness";
+        }
+    }
 
     public static final int STROBE    = -1;
     public static final int OFF       = 0;
@@ -25,10 +41,10 @@ public class FlashDevice {
     private static FlashDevice instance;
 
     private static boolean useDeathRay = !Build.DEVICE.equals("supersonic") && !Build.DEVICE.equals("glacier") && !Build.DEVICE.equals("speedy");
-    private static boolean useMotoDeathRay = Build.DEVICE.contains("jordan") || Build.DEVICE.contains("sholes") || Build.DEVICE.contains("zepp");
+    private static boolean useMotoDeathRay = Build.DEVICE.contains("jordan") || Build.DEVICE.contains("sholes") || Build.DEVICE.contains("zepp") || Build.DEVICE.contains("droid2");
     private static boolean useCameraInterface = Build.DEVICE.contains("crespo") || Build.DEVICE.contains("p990") || Build.DEVICE.contains("p999") || Build.DEVICE.contains("galaxys2");
 
-    private static boolean useMotoWriter = Build.DEVICE.contains("jordan") || Build.DEVICE.contains("sholes");
+    private static boolean useMotoWriter = Build.DEVICE.contains("jordan") || Build.DEVICE.contains("sholes") || Build.DEVICE.contains("droid2");
 
     private FileWriter mWriter = null;
 
