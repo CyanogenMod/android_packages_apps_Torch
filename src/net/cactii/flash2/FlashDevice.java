@@ -11,6 +11,8 @@ import java.io.File;
 public class FlashDevice {
 
     private static String DEVICE_FLASH = "/sys/class/leds/flashlight/brightness";
+    private static String DEVICE_TORCH = "/sys/devices/i2c-0/0-0053/torch_enable";
+    private static String DEVICE_CURRENT = "/sys/devices/i2c-0/0-0053/torch_current";
     private static final String DEVICE_SPOTL = "/sys/class/leds/spotlight/brightness";
 
 /*
@@ -22,6 +24,14 @@ public class FlashDevice {
         File ff = new File(DEVICE_FLASH);
         if (! ff.exists()) {
             DEVICE_FLASH = "/sys/class/leds/torch-flash/brightness";
+        }
+        File ft = new File(DEVICE_TORCH);
+        if (! ft.exists()) {
+            DEVICE_TORCH = "/sys/devices/i2c-0/0-0053/torch_enable";
+        }
+        File fc = new File(DEVICE_CURRENT);
+        if (! fc.exists()) {
+            DEVICE_CURRENT = "/sys/devices/i2c-0/0-0053/torch_current";
         }
     }
 
@@ -35,6 +45,9 @@ public class FlashDevice {
     public static final int HIGH      = 128;
     public static final int MOTO_ON   = 100;
     public static final int MOTO_DEATH_RAY = 255;
+    public static final int SEMC_CURRENT_LO = 175000;
+    public static final int SEMC_CURRENT_HI = 500000;
+
 
     private static FlashDevice instance;
 
@@ -43,8 +56,10 @@ public class FlashDevice {
     private static boolean useCameraInterface = Build.DEVICE.contains("crespo") || Build.DEVICE.contains("p990") || Build.DEVICE.contains("p999") || Build.DEVICE.contains("galaxys2");
 
     private static boolean useMotoWriter = Build.DEVICE.contains("droid2") || Build.DEVICE.contains("jordan") || Build.DEVICE.contains("sholes");
+    private static boolean useSemcWriter = Build.DEVICE.contains("anzu");
 
     private FileWriter mWriter = null;
+    private FileWriter cWriter = null;
 
     private int mFlashMode = OFF;
 
@@ -63,17 +78,24 @@ public class FlashDevice {
     public synchronized void setFlashMode(int mode) {
         try {
             int value = mode;
+            int cvalue = SEMC_CURRENT_LO;
             switch (mode) {
                 case STROBE:
                     value = OFF;
                     break;
                 case DEATH_RAY:
                     value = useMotoDeathRay ? MOTO_DEATH_RAY : DEATH_RAY;
+                    if (Build.DEVICE.contains("anzu")) {
+                    value = ON;
+                    cvalue = SEMC_CURRENT_HI;
+                    } else {
                     value = useDeathRay ? value : HIGH;
+                    }
                     break;
                 case ON:
                     value = useMotoDeathRay ? MOTO_ON : ON;
                     value = (Build.DEVICE.contains("speedy")) ? SPEEDY_ON : value;
+                    cvalue = SEMC_CURRENT_LO;
                     break;
             }
             if (useCameraInterface) {
@@ -101,7 +123,10 @@ public class FlashDevice {
                 if (mWriter == null) {
                     if (useMotoWriter) {
                         mWriter = new FileWriter(DEVICE_SPOTL);
-                    } else {
+                    } if (useSemcWriter) {
+                        mWriter = new FileWriter(DEVICE_TORCH);
+                        cWriter = new FileWriter(DEVICE_CURRENT);
+			}else {
                         mWriter = new FileWriter(DEVICE_FLASH);
                     }
                 }
@@ -111,6 +136,15 @@ public class FlashDevice {
                     mWriter.close();
                     mWriter = null;
                 }
+		if (Build.DEVICE.contains("anzu")) {
+
+                cWriter.write(String.valueOf(cvalue));
+                cWriter.flush();
+                if (mode == OFF) {
+                    cWriter.close();
+                    cWriter = null;
+                }
+		}
             }
             mFlashMode = mode;
         } catch (IOException e) {
