@@ -39,7 +39,7 @@ public class FlashDevice {
     private static FlashDevice instance;
 
     private static boolean useDeathRay = !Build.DEVICE.equals("supersonic") && !Build.DEVICE.equals("glacier") && !Build.DEVICE.equals("speedy");
-    private static boolean useMotoDeathRay = Build.DEVICE.contains("droid2") || Build.DEVICE.contains("jordan") || Build.DEVICE.contains("motus") || Build.DEVICE.contains("shadow") || Build.DEVICE.contains("sholes") || Build.DEVICE.contains("zepp");
+    private static boolean useMotoDeathRay = Build.DEVICE.contains("droid2") || Build.DEVICE.contains("jordan") || Build.DEVICE.contains("motus") || Build.DEVICE.contains("shadow") || Build.DEVICE.contains("sholes") || Build.DEVICE.contains("zepp") || Build.DEVICE.contains("begonia");
     private static boolean useCameraInterface = Build.DEVICE.contains("crespo") || Build.DEVICE.contains("olympus") || Build.DEVICE.contains("p990") || Build.DEVICE.contains("p999") || Build.DEVICE.contains("galaxys2");
 
     private static boolean useMotoWriter = Build.DEVICE.contains("droid2") || Build.DEVICE.contains("jordan") || Build.DEVICE.contains("shadow") || Build.DEVICE.contains("sholes");
