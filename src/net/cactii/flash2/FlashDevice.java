@@ -42,7 +42,7 @@ public class FlashDevice {
     private static boolean useMotoDeathRay = Build.DEVICE.contains("droid2") || Build.DEVICE.contains("jordan") || Build.DEVICE.contains("motus") || Build.DEVICE.contains("shadow") || Build.DEVICE.contains("sholes") || Build.DEVICE.contains("zepp") || Build.DEVICE.contains("begonia");
     private static boolean useCameraInterface = Build.DEVICE.contains("crespo") || Build.DEVICE.contains("olympus") || Build.DEVICE.contains("p990") || Build.DEVICE.contains("p999") || Build.DEVICE.contains("galaxys2");
 
-    private static boolean useMotoWriter = Build.DEVICE.contains("droid2") || Build.DEVICE.contains("jordan") || Build.DEVICE.contains("shadow") || Build.DEVICE.contains("sholes");
+    private static boolean useMotoWriter = Build.DEVICE.contains("droid2") || Build.DEVICE.contains("jordan") || Build.DEVICE.contains("shadow") || Build.DEVICE.contains("sholes") || Build.DEVICE.contains("begonia");
 
     private FileWriter mWriter = null;
 
