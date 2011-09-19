@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Louč</string>
+  <string name="about">A aplikace: </string>
+  <string name="about_btn">O aplikaci Louč</string>
+  <string name="about_title">O aplikaci</string>
+  <string name="about_close">Zavřít</string>
+
+  <string name="description">Tento program ovládá LED osvětlení fotoaparátu.\n</string>
+  <string name="warning">Upozornění: Ponechání zapnuté osvětlení LED může způsobit jeho přehřání.\n\nSpuštění na vysoký jas bylo testováno po dobu půl hodiny, tím je ale riskováno poškození osvětlení LED.\n</string>
+  <string name="license">Autorem původního kódu pro Nexus One je Ben Buxton uvolěný pod licencí GPL, v3.\nhttp://n1torch.googlecode.com/\n\nPoděkování Davidu Prietovi pro vylepšní uživatelského rozhraní.\n\nUpraveno pro CyanogenMod přímo Steve Kondikem.\n\n</string>
+  <string name="warning_label">Upozornění</string>
+  <string name="brightwarn">Vysoký jas byl úspěšně testován po dobu půl hodiny, ale poté bylo osvětlení velmi horké a poblikávalo (dočasně pod dobu 45 minut). Dlouhodobé účinky nejsou známi.\n\nToto zatím není ve widgetu podporováno.\n\nKlikněte na \'Přijmout\' pokud chcete vyzkoušet na vlastní nebezpečí.</string>
+  <string name="brightwarn_title">Tlačítko vysokého jasu!!!</string>
+  <string name="brightwarn_negative">Ne děkuji</string>
+  <string name="brightwarn_accept">Přijmout</string>
+
+  <string name="label_on">Zapnout</string>
+  <string name="label_off">Vypnout</string>
+  <string name="label_high">Vysoký jas</string>
+  <string name="label_strobe">Blikání</string>
+  <string name="label_frequency">Frekvence: (změníte posunutím)</string>
+
+  <string name="widget_options">Obecné nastavení</string>
+  <string name="setting_widget_bright">Widget jasu</string>
+  <string name="setting_widget_strobe">Blikání</string>
+  <string name="setting_frequency_title">Frekvence blikání</string>
+  <string name="setting_frequency_summary">Frekvence blikání světla</string>
+  <string name="setting_frequency_dialog">Frekvence</string>
+  <string name="setting_frequency_hz"> Hz</string>
+  <string name="setting_add_widget">Přidat widget</string>
+
+  <string name="not_torch_title">Louč zapnuta</string>
+  <string name="not_torch_summary">Louč je právě zapnuta</string>
+
+  <string name="widget_label">Louč</string>
+</resources>
