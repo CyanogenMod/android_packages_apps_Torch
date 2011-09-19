@@ -42,16 +42,19 @@ public class TorchService extends Service {
 
     private Runnable mStrobeRunnable;
 
+    private Context mContext;
+
     public void onCreate() {
         String ns = Context.NOTIFICATION_SERVICE;
         this.mNotificationManager = (NotificationManager) getSystemService(ns);
+        this.mContext = getApplicationContext();
 
         this.mHandler = new Handler() {
         };
 
         this.mTorchTask = new TimerTask() {
             public void run() {
-                FlashDevice.instance().setFlashMode(mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON);
+                FlashDevice.instance(mContext).setFlashMode(mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON);
             }
         };
         this.mTorchTimer = new Timer();
@@ -62,12 +65,12 @@ public class TorchService extends Service {
             @Override
             public void run() {
                 int flashMode = mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON;
-                if (FlashDevice.instance().getFlashMode() < flashMode) {
+                if (FlashDevice.instance(mContext).getFlashMode() < flashMode) {
                     if (this.mCounter-- < 1) {
-                        FlashDevice.instance().setFlashMode(flashMode);
+                        FlashDevice.instance(mContext).setFlashMode(flashMode);
                     }
                 } else {
-                    FlashDevice.instance().setFlashMode(FlashDevice.STROBE);
+                    FlashDevice.instance(mContext).setFlashMode(FlashDevice.STROBE);
                     this.mCounter = 4;
                 }
             }
@@ -115,7 +118,7 @@ public class TorchService extends Service {
         stopForeground(true);
         this.mTorchTimer.cancel();
         this.mStrobeTimer.cancel();
-        FlashDevice.instance().setFlashMode(FlashDevice.OFF);
+        FlashDevice.instance(mContext).setFlashMode(FlashDevice.OFF);
         Settings.System.putInt(this.getContentResolver(), Settings.System.TORCH_STATE, 0);
         this.sendBroadcast(new Intent(TorchSwitch.TORCH_STATE_CHANGED));
     }

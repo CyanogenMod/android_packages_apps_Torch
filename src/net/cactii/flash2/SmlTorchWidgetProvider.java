@@ -26,7 +26,7 @@ public class SmlTorchWidgetProvider extends TorchWidgetProvider {
 	public void updateState(Context context, int appWidgetId) {
 		RemoteViews views = new RemoteViews(context.getPackageName(),
                 R.layout.widget);
-		if (FlashDevice.instance().getFlashMode() > 0) {
+		if (FlashDevice.instance(context).getFlashMode() > 0) {
 			views.setImageViewResource(R.id.img_torch, R.drawable.icon);
 		} else {
 			views.setImageViewResource(R.id.img_torch, R.drawable.widget_off);
