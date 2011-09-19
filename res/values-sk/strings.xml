@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fakľa</string>
+    <string name="about">O aplikácii: </string>
+    <string name="about_btn">O Fakle</string>
+    <string name="about_title">O</string>
+    <string name="about_close">Zavrieť</string>
+    <string name="description">Tento program ovláda LED svetlo fotoaparátu.\n</string>
+    <string name="warning">Upozornenie: Ponechanie zapnutej LED dlhý čas môže zapríčiniť prehriatie.\n\nPlný jas \'zapnutý\' bol testovaný pol hodinu, ale je riziko že dôjde ku poškodeniu LED.\n</string>
+    <string name="license">Originálny kód z Nexus One Torch od Ben Buxton, vydanej pod GPL, v3.\nhttp://n1torch.googlecode.com/\n\nVďaka David Prieto za nový vzhľad UI.\n\nPre CyanogenMod upravil Steve Kondik.\n\n</string>
+    <string name="warning_label">Upozornenie</string>
+    <string name="brightwarn">Plný jas bol úspešne testovaný pol hodinu, ale nastalo dosť silné zahriatie a nastalo blikanie po 45 minútach. Efekt dlhšieho použitia je neznámy.\n\nToto nie je podporované widgetom.\n\nStlačte \'Prijať\' ak si to prajete použiť na vlastné riziko.</string>
+    <string name="brightwarn_title">Tlačidlo vysoký jas \'Zap\'!!!</string>
+    <string name="brightwarn_negative">Nie ďakujem</string>
+    <string name="brightwarn_accept">Prijať</string>
+    <string name="label_on">Zap</string>
+    <string name="label_off">Vyp</string>
+    <string name="label_high">Vysoký jas</string>
+    <string name="label_strobe">Prerušované</string>
+    <string name="label_frequency">Opakovanie: (potiahnite pre zmenu)</string>
+    <string name="widget_options">Všeobecné nastavenia</string>
+    <string name="setting_widget_bright">Widget jasu</string>
+    <string name="setting_widget_strobe">Prerušovaný blesk</string>
+    <string name="setting_frequency_title">Opakovanie prerušovania</string>
+    <string name="setting_frequency_summary">Opakovanie prerušovaného svetla</string>
+    <string name="setting_frequency_dialog">Opakovanie</string>
+    <string name="setting_frequency_hz"> Hz</string>
+    <string name="setting_add_widget">Pridať widget</string>
+    <string name="not_torch_title">Fakľa zap</string>
+    <string name="not_torch_summary">Fakľa zapnutá</string>
+    <string name="widget_label">Fakľa</string>
+</resources>
