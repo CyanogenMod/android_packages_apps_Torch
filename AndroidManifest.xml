@@ -40,5 +40,6 @@
     <uses-feature android:name="android.hardware.camera.flash" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 </manifest> 
