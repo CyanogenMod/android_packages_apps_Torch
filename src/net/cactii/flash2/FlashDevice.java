@@ -9,6 +9,9 @@ import net.cactii.flash2.R;
 import android.content.Context;
 import android.util.Log;
 
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
+
 import java.io.File;
 
 
@@ -22,6 +25,7 @@ public class FlashDevice {
     private static int mValueDeathRay;
     private static String mFlashDevice;
     private static boolean mUseCameraInterface;
+    private WakeLock mWakeLock;
 
     public static final int STROBE    = -1;
     public static final int OFF       = 0;
@@ -44,6 +48,11 @@ public class FlashDevice {
         this.mValueDeathRay = context.getResources().getInteger(R.integer.valueDeathRay);
         this.mFlashDevice = context.getResources().getString(R.string.flashDevice);
         this.mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
+        if (this.mUseCameraInterface) {
+            PowerManager pm
+                = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            this.mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Torch");
+        }
     }
 
     public static synchronized FlashDevice instance(Context context) {
@@ -92,10 +101,13 @@ public class FlashDevice {
                         mCamera.release();
                         mCamera = null;
                     }
+                    if (mWakeLock.isHeld())
+                        mWakeLock.release();
                 } else {
                     mParams = mCamera.getParameters();
                     mParams.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                     mCamera.setParameters(mParams);
+                    mWakeLock.acquire(); // we don't want to go to sleep while cam is up
                     if (mFlashMode != STROBE) {
                         mCamera.startPreview();
                     }
