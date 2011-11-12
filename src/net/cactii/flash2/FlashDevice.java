@@ -107,7 +107,9 @@ public class FlashDevice {
                     mParams = mCamera.getParameters();
                     mParams.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                     mCamera.setParameters(mParams);
-                    mWakeLock.acquire(); // we don't want to go to sleep while cam is up
+                    if (!mWakeLock.isHeld()) {  // only get the wakelock if we don't have it already
+                        mWakeLock.acquire(); // we don't want to go to sleep while cam is up
+                    }
                     if (mFlashMode != STROBE) {
                         mCamera.startPreview();
                     }
