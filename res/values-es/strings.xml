@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Torch</string>
+    <string name="app_name">Linterna</string>
     <string name="about">Sobre: </string>
-    <string name="about_btn">Sobre Torch</string>
+    <string name="about_btn">Sobre Linterna</string>
     <string name="about_title">Sobre</string>
     <string name="about_close">Cerrar</string>
     
     <string name="description">Este programa manipula el LED de la camara.\n</string>
-    <string name="warning">Aviso: Dejar el flash LED encendido demasiado tiempo puede producir sobrecalentamiento del mismo.\n\nEl modo Brillo Alto ha sido testeado durante 1 o 2 horas, pero podría ser peligroso para el LED, llegando incluso a dañarlo.\n</string>
+    <string name="warning">Aviso: Dejar el flash LED encendido demasiado tiempo puede producir sobrecalentamiento del mismo.\n\nEl modo \'Brillo Alto\' ha sido testeado durante 1 ó 2 horas, pero podría ser peligroso para el LED, llegando incluso a dañarlo.\n</string>
     <string name="license">Código original para Nexus One Torch escrito por Ben Buxton, liberado bajo licencia GPL, v3.\nhttp://n1torch.googlecode.com/\n\nGracias a David Prieto por el nuevo diseño.\n\nModificado para CyanogenMod por Steve Kondik.\n\n</string>
     <string name="warning_label">Aviso</string>
-    <string name="brightwarn">El modo Brillo Alto ha sido testeado durante 1 o 2 horas de operación, pero se sobrecalienta a los 45 minutos, pudiendo ocasionar efectos secundarios desconocidos.\n\nEsto modo no está soportado por el widget todavía.\n\nClick \'Aceptar\' si quieres usarlo y asumir el peligro.</string>
-    <string name="brightwarn_title">Brillo Alto \'On\'!!!</string>
-    <string name="brightwarn_negative">No Gracias</string>
+    <string name="brightwarn">El modo \'Brillo Alto\' ha sido testeado durante 1 ó 2 horas de operación, pero se sobrecalienta a los 45 minutos, pudiendo ocasionar efectos secundarios desconocidos.\n\nClic en \'Aceptar\' si quieres usarlo y asumir el riesgo.</string>
+    <string name="brightwarn_title">¡Activación de Brillo Alto!</string>
+    <string name="brightwarn_negative">No, Gracias</string>
     <string name="brightwarn_accept">Aceptar</string>
 
     <string name="label_on">Activar</string>
@@ -21,7 +21,7 @@
     <string name="label_strobe">Parpadeo</string>
     <string name="label_frequency">Frecuencia: (Deslizar para cambiar)</string>
 
-	<string name="widget_options">Opciones</string>
+    <string name="widget_options">Opciones</string>
     <string name="setting_widget_bright">Widget con Brillo Alto</string>
     <string name="setting_widget_strobe">Parpadeo activo</string>
     <string name="setting_frequency_title">Frecuencia del parpadeo</string>
@@ -30,8 +30,8 @@
     <string name="setting_frequency_hz"> Hz</string>
     <string name="setting_add_widget">Añadir widget</string>
     
-    <string name="not_torch_title">Torch activo</string>
-    <string name="not_torch_summary">Torch actualmente activo</string>
-    
-    <string name="widget_label">Torch</string>
+    <string name="not_torch_title">Linterna activa</string>
+    <string name="not_torch_summary">Linterna actualmente activa</string>
+
+    <string name="widget_label">Linterna</string>
 </resources>
