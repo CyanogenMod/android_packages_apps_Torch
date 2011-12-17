@@ -41,7 +41,6 @@ public class MainActivity extends Activity {
 
     private boolean bright;
 
-    private boolean mTorchOn;
 
     // Strobe frequency slider.
     private SeekBar slider;
@@ -58,10 +57,8 @@ public class MainActivity extends Activity {
     private SharedPreferences mPrefs;
 
     private SharedPreferences.Editor mPrefsEditor = null;
-    
-    // Labels
-    private String labelOn = null;
-    private String labelOff = null;
+
+
 
     private static boolean useBrightSetting = !Build.DEVICE.equals("crespo");
 
@@ -78,10 +75,6 @@ public class MainActivity extends Activity {
         buttonBright = (CheckBox) findViewById(R.id.bright);
 
         strobeperiod = 100;
-        mTorchOn = false;
-
-        labelOn = this.getString(R.string.label_on);
-        labelOff = this.getString(R.string.label_off);
 
         mWidgetProvider = TorchWidgetProvider.getInstance();
 
@@ -240,7 +233,6 @@ public class MainActivity extends Activity {
     private void updateBigButtonState() {
         if (Settings.System.getInt(context.getContentResolver(),
                 Settings.System.TORCH_STATE, 0) == 1) {
-            mTorchOn = true;
             buttonOn.setChecked(true);
             buttonBright.setEnabled(false);
             buttonStrobe.setEnabled(false);
@@ -248,7 +240,6 @@ public class MainActivity extends Activity {
                 slider.setEnabled(false);
             }
         } else {
-            mTorchOn = false;
             buttonOn.setChecked(false);
             buttonBright.setEnabled(useBrightSetting);
             buttonStrobe.setEnabled(true);
