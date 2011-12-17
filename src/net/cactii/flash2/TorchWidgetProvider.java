@@ -34,14 +34,13 @@ public class TorchWidgetProvider extends AppWidgetProvider {
         launchIntent.setClass(context, TorchWidgetProvider.class);
         launchIntent.addCategory(Intent.CATEGORY_ALTERNATIVE);
         launchIntent.setData(Uri.parse("custom:" + appWidgetId + "/" + buttonId));
-        PendingIntent pi = PendingIntent.getBroadcast(context, 0 /*
+        return PendingIntent.getBroadcast(context, 0 /*
                                                                   * no
                                                                   * requestCode
                                                                   */, launchIntent, 0 /*
                                                                                        * no
                                                                                        * flags
                                                                                        */);
-        return pi;
     }
 
     public void onReceive(Context context, Intent intent) {
@@ -67,7 +66,6 @@ public class TorchWidgetProvider extends AppWidgetProvider {
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             this.updateAllStates(context);

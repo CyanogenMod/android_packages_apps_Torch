@@ -18,20 +18,18 @@ public class TorchSwitch extends BroadcastReceiver {
     public static final String TOGGLE_FLASHLIGHT = "net.cactii.flash2.TOGGLE_FLASHLIGHT";
     public static final String TORCH_STATE_CHANGED = "net.cactii.flash2.TORCH_STATE_CHANGED";
 
-    private SharedPreferences mPrefs;
-
     @Override
     public void onReceive(Context context, Intent receivingIntent) {
-        mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         if (receivingIntent.getAction().equals(TOGGLE_FLASHLIGHT)) {
             // bright setting can come from intent or from prefs depending on
             // on what send the broadcast
             //
             // Unload intent extras if they exist:
             boolean bright = receivingIntent.getBooleanExtra("bright", false) |
-                    mPrefs.getBoolean("bright", false);
+                    prefs.getBoolean("bright", false);
             boolean strobe = receivingIntent.getBooleanExtra("strobe", false) |
-                    mPrefs.getBoolean("strobe", false);
+                    prefs.getBoolean("strobe", false);
             int period = receivingIntent.getIntExtra("period", 200);
             Intent i = new Intent(context, TorchService.class);
             if (this.TorchServiceRunning(context)) {
