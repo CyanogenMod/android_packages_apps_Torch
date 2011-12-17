@@ -1,7 +1,5 @@
 package net.cactii.flash2;
 
-import net.cactii.flash2.R;
-
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
