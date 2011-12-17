@@ -8,7 +8,7 @@
 
     <string name="description">Esta aplicação manipula o LED da câmara.\n</string>
     <string name="warning">Advertência: Deixar a LED ligada por longos períodos de tempo pode levar ao sobreaquecimento da mesma.\n\nA luminosidade no máximo \'sempre ativa\' foi testada durante meia hora mas há um risco de que isto possa danificar da LED.\n</string>
-    <string name="license">Código original proveniente de Nexus One Torch por Ben Buxton, lançado sob a licença GPL, v3.\nhttp://n1torch.googlecode.com/\n\nObrigado a David Prieto pelo redesenho da interface gráfica.\n\Modificado para CyanogenMod por Steve Kondik.\n\n</string>
+    <string name="license">Código original proveniente de Nexus One Torch por Ben Buxton, lançado sob a licença GPL, v3.\nhttp://n1torch.googlecode.com/\n\nObrigado a David Prieto pelo redesenho da interface gráfica.\n\nModificado para CyanogenMod por Steve Kondik.\n\n</string>
     <string name="warning_label">Advertência</string>
     <string name="brightwarn">A luminosidade no máximo foi testada durante meia hora, mas ficou demasiado quente, e começou com flickering (temporário) por 45 min. Efeitos a longo prazo desconhecidos.\n\nIsto não é suportado no widget ainda.\n\nClique \'Aceitar\' se concorda usar isto assumindo responsabilidade que daí pode advir.</string>
     <string name="brightwarn_title">Botão de Alto-Brilho \'Ligado\'!!!</string>
