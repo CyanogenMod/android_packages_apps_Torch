@@ -33,4 +33,7 @@
     <!-- Highest setting, leave -1 if it doesn't exist -->
     <integer name="valueDeathRay">3</integer>
 
+    <!-- Found out that SEMC devices don't actually need a timer to refresh the LED state. The symptom was little flickering even with strobe setting OFF -->
+    <bool name="needsRefresh">true</bool>
+
 </resources>

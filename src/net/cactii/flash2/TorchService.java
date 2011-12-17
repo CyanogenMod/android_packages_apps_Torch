@@ -89,10 +89,14 @@ public class TorchService extends Service {
             this.stopSelf();
         this.mBright = intent.getBooleanExtra("bright", false);
         if (intent.getBooleanExtra("strobe", false)) {
-            this.mStrobePeriod = intent.getIntExtra("period", 200) / 4;
-            this.mStrobeTimer.schedule(this.mStrobeTask, 0, this.mStrobePeriod);
+                this.mStrobePeriod = intent.getIntExtra("period", 200) / 4;
+                this.mStrobeTimer.schedule(this.mStrobeTask, 0, this.mStrobePeriod);
         } else {
-            this.mTorchTimer.schedule(this.mTorchTask, 0, 100);
+            // SEMC devices don't need to periodically refresh
+            if (getResources().getBoolean(R.bool.needsRefresh))
+                this.mTorchTimer.schedule(this.mTorchTask, 0, 100);
+            else
+                this.mTorchTimer.schedule(this.mTorchTask, 0);
         }
 
         this.mReceiver = new IntentReceiver();
