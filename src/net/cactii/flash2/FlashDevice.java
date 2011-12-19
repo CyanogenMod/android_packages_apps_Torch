@@ -1,6 +1,8 @@
 package net.cactii.flash2;
 
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import android.hardware.Camera;
@@ -111,19 +113,39 @@ public class FlashDevice {
                     }
                 }
             } else {
-                if (mWriter == null) {
-                    mWriter = new FileWriter(mFlashDevice);
+                // read the value before writing to device
+                // if the same, no point in re-writing, also this avoids flickering on some devices
+                // but is general good behavior for all of them
+                FileReader lReader = new FileReader(mFlashDevice);
+                BufferedReader lBufferedReader = new BufferedReader(lReader);
+                String s;
+                if((s = lBufferedReader.readLine()) != null) {
+                    lBufferedReader.close();
+                    lReader.close();
+                    Integer readValue = new Integer(s);
+                    if (!readValue.equals(value)){
+                        writeFlashMode(mode,value);
+                    }
                 }
-                mWriter.write(String.valueOf(value));
-                mWriter.flush();
-                if (mode == OFF) {
-                    mWriter.close();
-                    mWriter = null;
+                else{
+                    writeFlashMode(mode,value);
                 }
             }
             mFlashMode = mode;
         } catch (IOException e) {
             throw new RuntimeException("Can't open flash device", e);
+        }
+    }
+
+    private void writeFlashMode(int mode, int value ) throws IOException {
+        if (mWriter == null) {
+            mWriter = new FileWriter(mFlashDevice);
+        }
+        mWriter.write(String.valueOf(value));
+        mWriter.flush();
+        if (mode == OFF) {
+            mWriter.close();
+            mWriter = null;
         }
     }
 

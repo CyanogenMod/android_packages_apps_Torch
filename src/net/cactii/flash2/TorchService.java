@@ -92,7 +92,8 @@ public class TorchService extends Service {
             this.mStrobePeriod = intent.getIntExtra("period", 200) / 4;
             this.mStrobeTimer.schedule(this.mStrobeTask, 0, this.mStrobePeriod);
         } else {
-            this.mTorchTimer.schedule(this.mTorchTask, 0, 100);
+            // realistically we only need to re-check every 1 second
+            this.mTorchTimer.schedule(this.mTorchTask, 0, 1000);
         }
 
         this.mReceiver = new IntentReceiver();
