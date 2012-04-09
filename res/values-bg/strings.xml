@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Фенерче</string>
+    <string name="about">Как работи: </string>
+    <string name="about_btn">Относно фенерчето</string>
+    <string name="about_title">Относно</string>
+    <string name="about_close">Затвори</string>
+
+    <string name="description">Това приложение използва светкавицата на камерата.\n</string>
+    <string name="warning">Внимание: Продължителната работа на светкавицата може да я прегрее.\n\nПълната яркост е тествана успешно в продължение на 1/2 час, но съществува риск от повреда на светодиода.\n</string>
+    <string name="license">Оригинален код от Nexus One Torch на Ben Buxton, лицензиран под GPL, v3.\nhttp://n1torch.googlecode.com/\n\nБлагодарности на David Prieto за новия дизайн.\n\nМодифицирано за CyanogenMod от Steve Kondik.\n\n</string>
+    <string name="warning_label">Внимание</string>
+    <string name="brightwarn">Пълната яркост е тествана в продължение на 1/2 час, но светодиодът прегрява и започва да трепти след 45 минути. Дълготрайните ефекти са неизвестни.\n\nТова все още не се поддържа от уиджета.\n\nНатиснете \'Приемам\', ако искате да използвате на свой риск.</string>
+    <string name="brightwarn_title">Пълна яркост</string>
+    <string name="brightwarn_negative">Отказ</string>
+    <string name="brightwarn_accept">Приемам</string>
+
+    <string name="label_on">Включено</string>
+    <string name="label_off">Изключено</string>
+    <string name="label_high">Пълна яркост</string>
+    <string name="label_strobe">Мигаща светлина</string>
+    <string name="label_frequency">Честота: (променете чрез плъзгане)</string>
+
+    <string name="widget_options">Общи настройки</string>
+    <string name="setting_widget_bright">Пълна яркост</string>
+    <string name="setting_widget_strobe">Мигаща светлина</string>
+    <string name="setting_frequency_title">Честота</string>
+    <string name="setting_frequency_summary">Честота на премигванията</string>
+    <string name="setting_frequency_dialog">Честота</string>
+    <string name="setting_frequency_hz"> Hz</string>
+    <string name="setting_add_widget">Добави уиджета</string>
+
+    <string name="not_torch_title">Фенерче</string>
+    <string name="not_torch_summary">Фенерчето е включено</string>
+
+    <string name="widget_label">Фенерче</string>
+</resources>
