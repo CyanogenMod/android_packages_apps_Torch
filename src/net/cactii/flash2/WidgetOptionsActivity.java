@@ -78,11 +78,11 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
                                                                                                */);
                 views.setOnClickPendingIntent(R.id.btn, pi);
                 if (mPreferences.getBoolean("widget_strobe_" + mAppWidgetId, false))
-                    views.setTextViewText(R.id.ind, "Strobe");
+                    views.setTextViewText(R.id.ind, context.getString(R.string.label_strobe));
                 else if (mPreferences.getBoolean("widget_bright_" + mAppWidgetId, false))
-                    views.setTextViewText(R.id.ind, "Bright");
+                    views.setTextViewText(R.id.ind, context.getString(R.string.label_high));
                 else
-                    views.setTextViewText(R.id.ind, "Torch");
+                    views.setTextViewText(R.id.ind, context.getString(R.string.widget_label));
                 final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
                 appWidgetManager.updateAppWidget(mAppWidgetId, views);
 

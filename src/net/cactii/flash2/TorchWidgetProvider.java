@@ -98,11 +98,11 @@ public class TorchWidgetProvider extends AppWidgetProvider {
         }
 
         if (prefs.getBoolean("widget_strobe_" + appWidgetId, false)) {
-            views.setTextViewText(R.id.ind, "Strobe");
+            views.setTextViewText(R.id.ind, context.getString(R.string.label_strobe));
         } else if (prefs.getBoolean("widget_bright_" + appWidgetId, false)) {
-            views.setTextViewText(R.id.ind, "Bright");
+            views.setTextViewText(R.id.ind, context.getString(R.string.label_high));
         } else {
-            views.setTextViewText(R.id.ind, "Torch");
+            views.setTextViewText(R.id.ind, context.getString(R.string.widget_label));
         }
 
         final AppWidgetManager gm = AppWidgetManager.getInstance(context);
