@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Zseblámpa</string>
+    <string name="about">Leírás: </string>
+    <string name="about_btn">Névjegy</string>
+    <string name="about_title">Zseblámpa</string>
+    <string name="about_close">Bezárás</string>
+
+    <string name="description">Ezzel a programmal a telefon kamerájához tartozó LED-et lehet vezérelni.\n</string>
+    <string name="warning">Figyelmeztetés: A LED hosszú ideig történő használata túlmelegedéshez vezethet.\n\nAz alkalmazást 1/2 órán át teszteltük \'Folyamatos fény\' opcióval, de ettől még fennáll az esélye hogy károsodhat a LED.\n</string>
+    <string name="license">Az eredeti forráskód a Nexus One Torch kódjából származik. Ben Buxton adta ki a GNU GPL v3 licensz alatt. http://n1torch.googlecode.com/\n\nKöszönet David Prieto-nak az új dizájnért.\n\nA CyanogenMod-hoz optimalizálta: Steve Kondik.\n\n</string>
+    <string name="warning_label">Figyelmeztetés</string>
+    <string name="brightwarn">A folyamatos LED használattal futtatott tesztünk során az alkalmazás megfelelően működött, viszont a készülék eléggé melegedett, valamint 3/4 óra elteltével ideiglenes villogásba is kezdett. Hosszabb távú hatásai nem ismertek.\n\nJelenleg nincs modul gomb az alkalmazáshoz.\n\nKattintson az \'Elfogadás\' gombra, ha saját felelősségre mégis használni kívánja.</string>
+    <string name="brightwarn_title">Folyamatos LED használat!!!</string>
+    <string name="brightwarn_negative">Nem, köszönöm</string>
+    <string name="brightwarn_accept">Elfogadás</string>
+
+    <string name="label_frequency">Frekvencia: (Változtatás elhúzással)</string>
+    <string name="label_high">Zseblámpa</string>
+    <string name="label_off">Ki</string>
+    <string name="label_on">Be</string>
+    <string name="label_strobe">Stroboszkóp</string>
+
+    <string name="setting_frequency_title">Stroboszkóp frekvencia</string>
+    <string name="setting_frequency_summary">A villogás gyakorisága</string>
+    <string name="setting_frequency_dialog">Frekvencia</string>
+    <string name="setting_frequency_hz"> Hz</string>
+    <string name="setting_add_widget">Modul hozzáadása</string>
+
+    <string name="setting_widget_bright">Zseblámpa</string>
+    <string name="setting_widget_strobe">Stroboszkóp</string>
+
+    <string name="not_torch_summary">A zseblámpa jelenleg be van kapcsolva</string>
+    <string name="not_torch_title">Zseblámpa</string>
+
+    <string name="widget_label">Zseblámpa</string>
+    <string name="widget_options">Általános opciók</string>
+</resources>
