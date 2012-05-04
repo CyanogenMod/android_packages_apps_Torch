@@ -10,7 +10,7 @@
     <string name="warning">Figyelmeztetés: A LED hosszú ideig történő használata túlmelegedéshez vezethet.\n\nAz alkalmazást 1/2 órán át teszteltük \'Folyamatos fény\' opcióval, de ettől még fennáll az esélye hogy károsodhat a LED.\n</string>
     <string name="license">Az eredeti forráskód a Nexus One Torch kódjából származik. Ben Buxton adta ki a v3-at, GPL licensz alatt. http://n1torch.googlecode.com/\n\nKöszönet David Prieto-nak az új dizájnért.\n\nA CyanogenMod-hoz optimalizálta: Steve Kondik.\n\n</string>
     <string name="warning_label">Figyelmeztetés</string>
-    <string name="brightwarn">A folyamatos LED használattal futtatott tesztünk során az alkalmazás megfelelően működött, viszont a készülék eléggé melegedett, valamint 3/4 óra elteltével ideiglenes villogásba is kezdett. A hosszabbtávú hatásai még nem ismertek.\n\nJelenleg még nincs modul gomb az alkalmazáshoz.\n\nKattintson az \'Elfogadás\' gombra, ha saját felelőségre még is használni kívánja.</string>
+    <string name="brightwarn">A folyamatos LED használattal futtatott tesztünk során az alkalmazás megfelelően működött, viszont a készülék eléggé melegedett, valamint 3/4 óra elteltével ideiglenes villogásba is kezdett. Hosszabb távú hatásai nem ismertek.\n\nJelenleg nincs modul gomb az alkalmazáshoz.\n\nKattintson az \'Elfogadás\' gombra, ha saját felelősségre még is használni kívánja.</string>
     <string name="brightwarn_title">Folyamatos LED használat!!!</string>
     <string name="brightwarn_negative">Nem köszönöm</string>
     <string name="brightwarn_accept">Elfogadás</string>
