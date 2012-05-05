@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lommelygte</string>
+    <string name="about">Om: </string>
+    <string name="about_btn">Om Lommelygte</string>
+    <string name="about_title">Om</string>
+    <string name="about_close">Luk</string>
+
+    <string name="description">Dette program manipulere med kameraets LED lys.\n</string>
+    <string name="warning">Advarsel: Hvis man efterlader LED lyset tændt i lang tid er der risiko for overophedning.\n\nFuld lysstyrke er blevet testet i en 1/2 time i træk uden problemer, men der er risiko for at det kan skade LED pæren.\n</string>
+    <string name="license">Den originale kode kommer fra Nexus One Torch af Ben Buxtun, frigivet under GPL, v3\nhttp://n1torch.googlecode.com/\n\nTak til David Prieto for nyt UI design.\n\nTilpasset til CyanogenMod af Steve Kondik.\n\n</string>
+    <string name="warning_label">Advarsel</string>
+    <string name="brightwarn">Fuld lysstyrke er blevet tested uden problemer i 1/2 time i træk, men efter 45 minutter blev den ret varm og begyndte at flimre (midlertidigt). Langtidseffekten er ukendt.\n\nWidgeten understøtter ikke denne funktionalitet endnu.\n\nTryk \'Accepter\' hvis du ønsker at bruge det på eget ansvar.</string>
+    <string name="brightwarn_title">Hi-brite \'Tænd\' knap!!!</string>
+    <string name="brightwarn_negative">Nej tak</string>
+    <string name="brightwarn_accept">Accepter</string>
+
+    <string name="label_on">Tændt</string>
+    <string name="label_off">Slukket</string>
+    <string name="label_high">Høj lysstyrke</string>
+    <string name="label_strobe">Stroboskop</string>
+    <string name="label_frequency">Frekvens: (træk for at ændre)</string>
+
+    <string name="widget_options">Generelle Indstillinger</string>
+    <string name="setting_widget_bright">Høj lysstyrke widget</string>
+    <string name="setting_widget_strobe">Stroboskop flash</string>
+    <string name="setting_frequency_title">Stroboskop frequency</string>
+    <string name="setting_frequency_summary">Frekvens for stroboskopet</string>
+    <string name="setting_frequency_dialog">Frekvens</string>
+    <string name="setting_frequency_hz"> Hz</string>
+    <string name="setting_add_widget">Tilføj widget</string>
+
+    <string name="not_torch_title">Lommelygte tændt</string>
+    <string name="not_torch_summary">Lommelygte er tændt</string>
+
+    <string name="widget_label">Lommelygte</string>
+</resources>
