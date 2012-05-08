@@ -193,7 +193,7 @@ public class MainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         boolean supRetVal = super.onCreateOptionsMenu(menu);
-        menu.addSubMenu(0, 0, 0, this.getString(R.string.about_btn));
+        menu.addSubMenu(0, 0, 0, this.getString(R.string.about_title));
         return supRetVal;
     }
 
@@ -218,7 +218,7 @@ public class MainActivity extends Activity {
     private void openBrightDialog() {
         LayoutInflater li = LayoutInflater.from(this);
         View view = li.inflate(R.layout.brightwarn, null);
-        new AlertDialog.Builder(MainActivity.this).setTitle(this.getString(R.string.brightwarn_title))
+        new AlertDialog.Builder(MainActivity.this).setTitle(this.getString(R.string.warning_label))
                 .setView(view)
                 .setNegativeButton(this.getString(R.string.brightwarn_negative), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {

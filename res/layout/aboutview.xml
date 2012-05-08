@@ -11,13 +11,6 @@
 		    android:orientation="vertical"
 		    android:layout_width="fill_parent"
 		    android:layout_height="fill_parent">
-		    	<TextView android:text="@string/about"
-				android:layout_width="fill_parent" 
-				android:layout_height="wrap_content"
-				android:paddingTop="15px"
-				android:paddingLeft="15px"
-				android:textStyle="bold"
-				android:textColor="#ffffff" />
 			<TextView android:text="@string/description"
 				android:layout_width="fill_parent" 
 				android:layout_height="wrap_content"
