@@ -11,23 +11,13 @@
                     android:key="widget_strobe"
                     android:title="@string/setting_widget_strobe"
                     android:defaultValue="false" />          
-             <net.cactii.flash2.SeekBarPreference android:key="widget_strobe_freq"
-		     		android:title="@string/setting_frequency_title"
-			     	android:summary="@string/setting_frequency_summary"
-			     	android:dialogMessage="@string/setting_frequency_dialog"
-			        android:defaultValue="5"
-				android:text="@string/setting_frequency_hz"
-			        android:max="25"
+	            <net.cactii.flash2.SeekBarPreference 
+	               	android:key="widget_strobe_freq"
+			    	android:title="@string/setting_frequency_title"
+				   	android:dialogMessage="@string/setting_frequency_dialog"
+				    android:defaultValue="5"
+					android:text="@string/setting_frequency_hz"
+				    android:max="25"
 			        />
-			<Preference
-				android:key="empty"
-				android:title=""
-				android:enabled="false"
-				/>
-			<Preference
-				android:id="@+id/saveSetting"
-				android:key="saveSettings"
-				android:title="@string/setting_add_widget"
-				/>
         </PreferenceCategory>
 </PreferenceScreen>  
