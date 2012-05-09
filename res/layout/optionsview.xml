@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen  
-    xmlns:android="http://schemas.android.com/apk/res/android">  
-        <PreferenceCategory android:title="@string/widget_options">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">  
+
+    <PreferenceCategory
+        android:title="@string/widget_options">
 
             <CheckBoxPreference
-                    android:key="widget_bright"
-                    android:title="@string/setting_widget_bright"
-                    android:defaultValue="false" />
+                android:key="widget_bright"
+                android:title="@string/setting_widget_bright"
+                android:defaultValue="false" />
+
             <CheckBoxPreference
-                    android:key="widget_strobe"
-                    android:title="@string/setting_widget_strobe"
-                    android:defaultValue="false" />          
-             <net.cactii.flash2.SeekBarPreference android:key="widget_strobe_freq"
-		     		android:title="@string/setting_frequency_title"
-			     	android:summary="@string/setting_frequency_summary"
-			     	android:dialogMessage="@string/setting_frequency_dialog"
-			        android:defaultValue="5"
-				android:text="@string/setting_frequency_hz"
-			        android:max="25"
-			        />
-			<Preference
-				android:key="empty"
-				android:title=""
-				android:enabled="false"
-				/>
-			<Preference
-				android:id="@+id/saveSetting"
-				android:key="saveSettings"
-				android:title="@string/setting_add_widget"
-				/>
-        </PreferenceCategory>
+                android:key="widget_strobe"
+                android:title="@string/setting_widget_strobe"
+                android:defaultValue="false" />    
+
+                    <net.cactii.flash2.SeekBarPreference 
+                        android:key="widget_strobe_freq"
+                        android:title="@string/setting_frequency_title"
+                        android:dialogMessage="@string/setting_frequency_dialog"
+                        android:defaultValue="5"
+                        android:text="@string/setting_frequency_hz"
+                        android:max="25" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>  
