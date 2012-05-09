@@ -1,7 +1,5 @@
 package net.cactii.flash2;
 
-import android.os.Build;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import android.hardware.Camera;
@@ -11,9 +9,6 @@ import android.util.Log;
 
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
-
-import java.io.File;
-
 
 public class FlashDevice {
 
@@ -43,12 +38,12 @@ public class FlashDevice {
     private Camera.Parameters mParams;
 
     private FlashDevice(Context context) {
-        this.mValueOn = context.getResources().getInteger(R.integer.valueOn);
-        this.mValueHigh = context.getResources().getInteger(R.integer.valueHigh);
-        this.mValueDeathRay = context.getResources().getInteger(R.integer.valueDeathRay);
-        this.mFlashDevice = context.getResources().getString(R.string.flashDevice);
-        this.mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
-        if (this.mUseCameraInterface) {
+        mValueOn = context.getResources().getInteger(R.integer.valueOn);
+        mValueHigh = context.getResources().getInteger(R.integer.valueHigh);
+        mValueDeathRay = context.getResources().getInteger(R.integer.valueDeathRay);
+        mFlashDevice = context.getResources().getString(R.string.flashDevice);
+        mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
+        if (mUseCameraInterface) {
             PowerManager pm
                 = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
             this.mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Torch");
