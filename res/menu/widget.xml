@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@+id/saveSetting"
+        android:icon="@drawable/ic_menu_accept"
+        android:title="@string/setting_add_widget"
+        android:showAsAction="always" />
+
+</menu>
