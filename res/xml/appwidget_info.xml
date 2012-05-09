@@ -1,6 +1,9 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="72dp"
-    android:minHeight="72dp"
+    android:minWidth="110dp"
+    android:minHeight="40dp"
+    android:minResizeWidth="40dp"
+    android:minResizeHeight="40dp"
+    android:resizeMode="horizontal"
     android:updatePeriodMillis="3600000"
     android:configure="net.cactii.flash2.WidgetOptionsActivity"
     android:initialLayout="@layout/widget" >
