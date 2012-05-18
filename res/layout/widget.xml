@@ -30,9 +30,13 @@
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
             android:gravity="center"
-            android:textStyle="bold"
-            android:textColor="#ffffffaa"
+            android:textStyle="normal"
+            android:textColor="#ffffff"
 	    android:text="@string/widget_label"
             />
         </LinearLayout>	
 </LinearLayout>
+
+<!-- these chagnes made to look more uniform with system -->
+<!-- android:textStyle="bold" -->
+<!-- android:textColor="#ffffffaa" -->
