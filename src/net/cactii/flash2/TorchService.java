@@ -34,6 +34,8 @@ public class TorchService extends Service {
 
     private Notification mNotification;
 
+    private Notification.Builder mNotificationBuilder;
+
     private boolean mBright;
 
     private int mStrobePeriod;
@@ -96,17 +98,21 @@ public class TorchService extends Service {
         }
 
         this.mReceiver = new IntentReceiver();
-        registerReceiver(this.mReceiver, new IntentFilter("net.cactii.flash2.SET_STROBE"));
+        registerReceiver(mReceiver, new IntentFilter("net.cactii.flash2.SET_STROBE"));
 
-        this.mNotification = new Notification(R.drawable.notification_icon, getString(R.string.not_torch_title),
-                System.currentTimeMillis());
-        this.mNotification.setLatestEventInfo(this, getString(R.string.not_torch_title), getString(R.string.not_torch_summary),
-                PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0));
-        this.mNotification.flags = Notification.FLAG_NO_CLEAR | Notification.FLAG_ONGOING_EVENT;
+        mNotificationBuilder = new Notification.Builder(this);
+        mNotificationBuilder.setSmallIcon(R.drawable.notification_icon);
+        mNotificationBuilder.setTicker(getString(R.string.not_torch_title));
+        mNotificationBuilder.setContentTitle(getString(R.string.not_torch_title));
+        mNotificationBuilder.setContentText(getString(R.string.not_torch_summary));
+        mNotificationBuilder.setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0));
+        mNotificationBuilder.setAutoCancel(false);
+        mNotificationBuilder.setOngoing(true);
 
-        this.mNotificationManager.notify(0, this.mNotification);
+        mNotification = mNotificationBuilder.getNotification();
+        mNotificationManager.notify(getString(R.string.app_name).hashCode(), mNotification);
 
-        startForeground(0, this.mNotification);
+        startForeground(getString(R.string.app_name).hashCode(), mNotification);
         Settings.System.putInt(this.getContentResolver(), Settings.System.TORCH_STATE, 1);
         this.sendBroadcast(new Intent(TorchSwitch.TORCH_STATE_CHANGED));
         return START_STICKY;
