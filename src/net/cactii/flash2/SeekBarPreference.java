@@ -16,8 +16,6 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class SeekBarPreference extends DialogPreference implements SeekBar.OnSeekBarChangeListener {
-    
-    private static final String androidns = "http://schemas.android.com/apk/res/android";
 
     private SeekBar mSeekBar;
 
@@ -33,10 +31,11 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
         super(context, attrs);
         mContext = context;
 
-        mDialogMessage = attrs.getAttributeValue(androidns, "dialogMessage");
-        mSuffix = attrs.getAttributeValue(androidns, "text");
-        mDefault = attrs.getAttributeIntValue(androidns, "defaultValue", 0);
-        mMax = attrs.getAttributeIntValue(androidns, "max", 100);
+        mDialogMessage = context.getString(R.string.setting_frequency_dialog);
+        mSuffix = context.getString(R.string.setting_frequency_hz);
+        //has min value of 1hz but displays 0hz
+        mDefault = 4;
+        mMax = 24;
 
     }
 
@@ -55,14 +54,14 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
         mValueText = new TextView(mContext);
         mValueText.setGravity(Gravity.CENTER_HORIZONTAL);
         mValueText.setTextSize(32);
-        params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,
+        params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
         layout.addView(mValueText, params);
 
         mSeekBar = new SeekBar(mContext);
         mSeekBar.setOnSeekBarChangeListener(this);
         layout.addView(mSeekBar, new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
         if (shouldPersist())
             mValue = getPersistedInt(mDefault);
@@ -89,7 +88,7 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
     }
 
     public void onProgressChanged(SeekBar seek, int value, boolean fromTouch) {
-        String t = String.valueOf(value);
+        String t = String.valueOf(value+1);
         mValueText.setText(mSuffix == null ? t : t.concat(mSuffix));
         if (shouldPersist())
             persistInt(value);

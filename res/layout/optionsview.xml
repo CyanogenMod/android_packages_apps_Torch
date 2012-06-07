@@ -16,11 +16,7 @@
 
                     <net.cactii.flash2.SeekBarPreference 
                         android:key="widget_strobe_freq"
-                        android:title="@string/setting_frequency_title"
-                        android:dialogMessage="@string/setting_frequency_dialog"
-                        android:defaultValue="5"
-                        android:text="@string/setting_frequency_hz"
-                        android:max="25" />
+                        android:title="@string/setting_frequency_title" />
 
     </PreferenceCategory>
 

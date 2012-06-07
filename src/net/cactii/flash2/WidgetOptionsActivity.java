@@ -44,7 +44,6 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
         CheckBoxPreference mStrobePref = (CheckBoxPreference) findPreference("widget_strobe");
         mStrobePref.setChecked(false);
 
-        //TODO: Loading from res doesn't work. Also Hz range should be same as main app.
         mStrobeFrequency = (SeekBarPreference) findPreference("widget_strobe_freq");
         mStrobeFrequency.setEnabled(false);
 
