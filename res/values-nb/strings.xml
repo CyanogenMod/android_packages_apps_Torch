@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lommelykt</string>
-    <string name="about">Om: </string>
-    <string name="about_btn">Om Lommelykt</string>
     <string name="about_title">Om</string>
     <string name="about_close">Lukk</string>
 
@@ -11,7 +9,6 @@
     <string name="license">Original kode fra Nexus One Torch av Ben Buxton, gitt ut under GPLv3.\nhttp://n1torch.googlecode.com/\n\nTakk til David Prieto for nytt UI-design\n\nModifisert for CyanogenMOD av Steve Kondik\n\n</string>
     <string name="warning_label">Advarsel</string>
     <string name="brightwarn">Full lysstyrke har blitt testet i en halvtime noe som forårsaket mye varme og midlertidig flimring etter 45 min. Langvarig effekter er ukjente.\n\nDette er ikke støttet av Widget\'en enda.\n\nVelg \'Godta\', hvis du ønsker å bruke programmet på eget ansvar.</string>
-    <string name="brightwarn_title">Full lysstyrke \'På\' Knapp!!!</string>
     <string name="brightwarn_negative">Nei takk</string>
     <string name="brightwarn_accept">Godta</string>
 
@@ -25,7 +22,6 @@
     <string name="setting_widget_bright">Sterkt lys widget</string>
     <string name="setting_widget_strobe">Strobeblits</string>
     <string name="setting_frequency_title">Strobeblitsfrekvens</string>
-    <string name="setting_frequency_summary">Frekvensen til strobeblitsen</string>
     <string name="setting_frequency_dialog">Frekvens</string>
     <string name="setting_frequency_hz"> Hz</string>
     <string name="setting_add_widget">Legg til widget</string>

@@ -3,11 +3,13 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
+    android:baselineAligned="false"
     android:background="@drawable/appwidget_bg" >
 
     <LinearLayout
         android:id="@+id/btn"
         android:layout_width="0dip"
+        android:gravity="center"
         android:layout_weight="1"
         android:layout_height="fill_parent"
         android:background="@drawable/appwidget_button_left"
@@ -17,9 +19,9 @@
 
         <ImageView
             android:id="@+id/img_torch"
+            android:contentDescription="@string/app_name"
             android:layout_width="fill_parent"
-            android:layout_height="0dip"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:scaleType="center"
             android:src="@drawable/widget_off"
             />
@@ -32,7 +34,7 @@
             android:gravity="center"
             android:textStyle="normal"
             android:textColor="#ffffff"
-	    android:text="@string/widget_label"
+        android:text="@string/widget_label"
             />
         </LinearLayout>	
 </LinearLayout>

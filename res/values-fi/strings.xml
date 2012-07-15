@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lamppu</string>
-    <string name="about">Tietoja: </string>
-    <string name="about_btn">Tietoja</string>
     <string name="about_title">Tietoja</string>
     <string name="about_close">Sulje</string>
 
@@ -11,7 +9,6 @@
     <string name="license">Alkuperäinen koodi: Nexus One Torch by Ben Buxton, released under the GPL, v3.\nhttp://n1torch.googlecode.com/\n\nKiitos David Prieto uudesta ulkoasusta.\n\nMuokannut CyanogenModiin Steve Kondik.\n\n</string>
     <string name="warning_label">Varoitus</string>
     <string name="brightwarn">Täyttä kirkkautta on testattu onnistuneesti puolen tunnin ajan, jonka aikana LED-salama kuumeni ja 45 minuutin kohdalla alkoi vilkkua. Pitkäaikainen käyttö voi vahingoittaa LED-salamaa.\n\nWidget ei vielä tue tämä toimintoa.\n\nValitse \'Hyväksy\' jos haluat kuitenkin käyttää tätä omalla vastuulla.</string>
-    <string name="brightwarn_title">Täysi kirkkaus \'Päällä\' painike!!!</string>
     <string name="brightwarn_negative">Hylkää</string>
     <string name="brightwarn_accept">Hyväksy</string>
 
@@ -25,7 +22,6 @@
     <string name="setting_widget_bright">Kirkas widget</string>
     <string name="setting_widget_strobe">Strobo</string>
     <string name="setting_frequency_title">Strobon taajuus</string>
-    <string name="setting_frequency_summary">Strobovalon taajuus</string>
     <string name="setting_frequency_dialog">Taajuus</string>
     <string name="setting_frequency_hz"> Hz</string>
     <string name="setting_add_widget">Lisää widget</string>

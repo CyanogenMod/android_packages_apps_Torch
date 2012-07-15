@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">トーチ</string>
-    <string name="about">情報: </string>
-    <string name="about_btn">Torchについて</string>
     <string name="about_title">情報</string>
     <string name="about_close">閉じる</string>
     <string name="description">このプログラムはカメラのLEDを操作します。・\n</string>
@@ -11,7 +9,6 @@
 
     <string name="warning_label">危険</string>
     <string name="brightwarn">最大明度は30分のテストに成功しましたが、とても熱くなり、45分ほど一時的に明滅するようになりました。長時間使用の影響はわかりません。\n\nウィジェットのサポートはまだありません。.\n\n\自己責任での使用を望むのなら\'了解\'を押してください。</string>
-    <string name="brightwarn_title">高明度を\'有効\'にします!!!</string>
     <string name="brightwarn_negative">やめます</string>
     <string name="brightwarn_accept">了解</string>
 
@@ -30,7 +27,6 @@
     <string name="not_torch_summary">トーチは現在オンです</string>
 
     <string name="setting_frequency_title">ストロボ頻度</string>
-    <string name="setting_frequency_summary">ストロボの頻度</string>
     <string name="setting_frequency_dialog">頻度</string>
     <string name="setting_frequency_hz"> Hz</string>
     <string name="setting_add_widget">ウィジェットを追加</string>

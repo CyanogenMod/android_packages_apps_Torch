@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Linterna</string>
-    <string name="about">Sobre: </string>
-    <string name="about_btn">Sobre Linterna</string>
     <string name="about_title">Sobre</string>
     <string name="about_close">Cerrar</string>
     
@@ -11,7 +9,6 @@
     <string name="license">Código original para Nexus One Torch escrito por Ben Buxton, liberado bajo licencia GPL, v3.\nhttp://n1torch.googlecode.com/\n\nGracias a David Prieto por el nuevo diseño.\n\nModificado para CyanogenMod por Steve Kondik.\n\n</string>
     <string name="warning_label">Aviso</string>
     <string name="brightwarn">El modo \'Brillo Alto\' ha sido testeado durante 1 ó 2 horas de operación, pero se sobrecalienta a los 45 minutos, pudiendo ocasionar efectos secundarios desconocidos.\n\nClic en \'Aceptar\' si quieres usarlo y asumir el riesgo.</string>
-    <string name="brightwarn_title">¡Activación de Brillo Alto!</string>
     <string name="brightwarn_negative">No, Gracias</string>
     <string name="brightwarn_accept">Aceptar</string>
 
@@ -25,7 +22,6 @@
     <string name="setting_widget_bright">Widget con Brillo Alto</string>
     <string name="setting_widget_strobe">Parpadeo activo</string>
     <string name="setting_frequency_title">Frecuencia del parpadeo</string>
-    <string name="setting_frequency_summary">Frecuencia con la que parpadea el LED</string>
     <string name="setting_frequency_dialog">Frecuencia</string>
     <string name="setting_frequency_hz"> Hz</string>
     <string name="setting_add_widget">Añadir widget</string>
