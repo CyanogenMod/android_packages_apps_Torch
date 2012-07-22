@@ -102,7 +102,7 @@ public class TorchWidgetProvider extends AppWidgetProvider {
         } else if (prefs.getBoolean("widget_bright_" + appWidgetId, false)) {
             views.setTextViewText(R.id.ind, context.getString(R.string.label_high));
         } else {
-            views.setTextViewText(R.id.ind, context.getString(R.string.widget_label));
+            views.setTextViewText(R.id.ind, context.getString(R.string.app_name));
         }
 
         final AppWidgetManager gm = AppWidgetManager.getInstance(context);

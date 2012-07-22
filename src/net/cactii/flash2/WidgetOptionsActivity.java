@@ -81,7 +81,7 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
         } else if (mPreferences.getBoolean("widget_bright_" + mAppWidgetId, false)) {
             views.setTextViewText(R.id.ind, context.getString(R.string.label_high));
         } else {
-            views.setTextViewText(R.id.ind, context.getString(R.string.widget_label));
+            views.setTextViewText(R.id.ind, context.getString(R.string.app_name));
         }
 
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);

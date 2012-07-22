@@ -34,7 +34,7 @@
             android:gravity="center"
             android:textStyle="normal"
             android:textColor="#ffffff"
-        android:text="@string/widget_label"
+            android:text="@string/app_name"
             />
         </LinearLayout>	
 </LinearLayout>

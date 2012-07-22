@@ -4,11 +4,11 @@
     <string name="about_title">情報</string>
     <string name="about_close">閉じる</string>
     <string name="description">このプログラムはカメラのLEDを操作します。・\n</string>
-    <string name="warning">注意: 長時間LEDをこのままにするとオーバーヒートするかもしれません。\n\n最大明度を\'常に有効\'にしたテストは 30分ほど行ないましたが、LEDにダメージを与える危険性があります。\n</string>
+    <string name="warning">注意: 長時間LEDをこのままにするとオーバーヒートするかもしれません。\n\n最大明度を&#8220;常に有効&#8221;にしたテストは 30分ほど行ないましたが、LEDにダメージを与える危険性があります。\n</string>
     <string name="license">オリジナルソースコードはBen BuxtonによるNexus One Torchで、GPLv3の下にリリースされています。\nhttp://n1torch.googlecode.com/\n\n新しいUIのデザインをしてくれたDavid Prietoに感謝。\n\nCyanogenMod向けの変更はSteve Kondikが行ないました。</string>
 
     <string name="warning_label">危険</string>
-    <string name="brightwarn">最大明度は30分のテストに成功しましたが、とても熱くなり、45分ほど一時的に明滅するようになりました。長時間使用の影響はわかりません。\n\nウィジェットのサポートはまだありません。.\n\n\自己責任での使用を望むのなら\'了解\'を押してください。</string>
+    <string name="brightwarn">最大明度は30分のテストに成功しましたが、とても熱くなり、45分ほど一時的に明滅するようになりました。長時間使用の影響はわかりません。\n\nウィジェットのサポートはまだありません。.\n\n\自己責任での使用を望むのなら&#8220;了解&#8221;を押してください。</string>
     <string name="brightwarn_negative">やめます</string>
     <string name="brightwarn_accept">了解</string>
 
@@ -18,7 +18,6 @@
     <string name="label_strobe">ストロボ</string>
     <string name="label_frequency">頻度: (スライドして変更)</string>
 
-    <string name="widget_label">トーチ</string>
     <string name="widget_options">オプション</string>
     <string name="setting_widget_bright">高明度ウィジェット</string>
     <string name="setting_widget_strobe">ストロボフラッシュ</string>
@@ -28,7 +27,6 @@
 
     <string name="setting_frequency_title">ストロボ頻度</string>
     <string name="setting_frequency_dialog">頻度</string>
-    <string name="setting_frequency_hz"> Hz</string>
     <string name="setting_add_widget">ウィジェットを追加</string>
 
 </resources>

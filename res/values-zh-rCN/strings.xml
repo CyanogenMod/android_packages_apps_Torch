@@ -23,11 +23,8 @@
     <string name="setting_widget_strobe">闪烁</string>
     <string name="setting_frequency_title">频率</string>
     <string name="setting_frequency_dialog">频率</string>
-    <string name="setting_frequency_hz"> 次 / 秒</string>
     <string name="setting_add_widget">添加小工具</string>
 
     <string name="not_torch_title">手电筒开启</string>
     <string name="not_torch_summary">手电筒已开启</string>
-
-    <string name="widget_label">手电筒</string>
 </resources>
