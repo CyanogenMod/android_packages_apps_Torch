@@ -12,8 +12,8 @@
     <string name="brightwarn_negative">No grazie</string>
     <string name="brightwarn_accept">Accetto</string>
 
-    <string name="label_on">Acceso</string>
-    <string name="label_off">Spento</string>
+    <string name="label_on">On</string>
+    <string name="label_off">Off</string>
     <string name="label_high">Alta Luminosità</string>
     <string name="label_strobe">Strobo</string>
     <string name="label_frequency">Frequenza: (scorri per cambiare)</string>
