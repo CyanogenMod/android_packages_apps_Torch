@@ -1,3 +1,23 @@
+/*
+ * Copyright (C) 2010 Ben Buxton
+ * Copyright (C) 2012 The CyanogenMod Project
+ *
+ * This file is part of n1torch.
+ *
+ * n1torch is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * n1torch is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with n1torch.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package net.cactii.flash2;
 
 import android.app.Notification;
@@ -48,39 +68,39 @@ public class TorchService extends Service {
 
     public void onCreate() {
         String ns = Context.NOTIFICATION_SERVICE;
-        this.mNotificationManager = (NotificationManager) getSystemService(ns);
-        this.mContext = getApplicationContext();
+        mNotificationManager = (NotificationManager) getSystemService(ns);
+        mContext = getApplicationContext();
 
-        this.mHandler = new Handler() {
+        mHandler = new Handler() {
         };
 
-        this.mTorchTask = new TimerTask() {
+        mTorchTask = new TimerTask() {
             public void run() {
                 FlashDevice.instance(mContext).setFlashMode(mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON);
             }
         };
-        this.mTorchTimer = new Timer();
+        mTorchTimer = new Timer();
 
-        this.mStrobeRunnable = new Runnable() {
+        mStrobeRunnable = new Runnable() {
             private int mCounter = 4;
 
             @Override
             public void run() {
                 int flashMode = mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON;
                 if (FlashDevice.instance(mContext).getFlashMode() < flashMode) {
-                    if (this.mCounter-- < 1) {
+                    if (mCounter-- < 1) {
                         FlashDevice.instance(mContext).setFlashMode(flashMode);
                     }
                 } else {
                     FlashDevice.instance(mContext).setFlashMode(FlashDevice.STROBE);
-                    this.mCounter = 4;
+                    mCounter = 4;
                 }
             }
 
         };
-        this.mStrobeTask = new WrapperTask(this.mStrobeRunnable);
+        mStrobeTask = new WrapperTask(mStrobeRunnable);
 
-        this.mStrobeTimer = new Timer();
+        mStrobeTimer = new Timer();
 
     }
 
@@ -88,16 +108,16 @@ public class TorchService extends Service {
 
         Log.d(MSG_TAG, "Starting torch");
         if (intent == null)
-            this.stopSelf();
-        this.mBright = intent.getBooleanExtra("bright", false);
+            stopSelf();
+        mBright = intent.getBooleanExtra("bright", false);
         if (intent.getBooleanExtra("strobe", false)) {
-            this.mStrobePeriod = intent.getIntExtra("period", 200) / 4;
-            this.mStrobeTimer.schedule(this.mStrobeTask, 0, this.mStrobePeriod);
+            mStrobePeriod = intent.getIntExtra("period", 200) / 4;
+            mStrobeTimer.schedule(this.mStrobeTask, 0, this.mStrobePeriod);
         } else {
             this.mTorchTimer.schedule(this.mTorchTask, 0, 100);
         }
 
-        this.mReceiver = new IntentReceiver();
+        mReceiver = new IntentReceiver();
         registerReceiver(mReceiver, new IntentFilter("net.cactii.flash2.SET_STROBE"));
 
         mNotificationBuilder = new Notification.Builder(this);
@@ -114,39 +134,39 @@ public class TorchService extends Service {
         mNotificationManager.notify(getString(R.string.app_name).hashCode(), mNotification);
 
         startForeground(getString(R.string.app_name).hashCode(), mNotification);
-        Settings.System.putInt(this.getContentResolver(), Settings.System.TORCH_STATE, 1);
-        this.sendBroadcast(new Intent(TorchSwitch.TORCH_STATE_CHANGED));
+        Settings.System.putInt(getContentResolver(), Settings.System.TORCH_STATE, 1);
+        sendBroadcast(new Intent(TorchSwitch.TORCH_STATE_CHANGED));
         return START_STICKY;
     }
 
     public void onDestroy() {
-        this.mNotificationManager.cancelAll();
-        this.unregisterReceiver(this.mReceiver);
+        mNotificationManager.cancelAll();
+        unregisterReceiver(mReceiver);
         stopForeground(true);
-        this.mTorchTimer.cancel();
-        this.mStrobeTimer.cancel();
+        mTorchTimer.cancel();
+        mStrobeTimer.cancel();
         FlashDevice.instance(mContext).setFlashMode(FlashDevice.OFF);
-        Settings.System.putInt(this.getContentResolver(), Settings.System.TORCH_STATE, 0);
-        this.sendBroadcast(new Intent(TorchSwitch.TORCH_STATE_CHANGED));
+        Settings.System.putInt(getContentResolver(), Settings.System.TORCH_STATE, 0);
+        sendBroadcast(new Intent(TorchSwitch.TORCH_STATE_CHANGED));
     }
 
     public void Reshedule(int period) {
-        this.mStrobeTask.cancel();
-        this.mStrobeTask = new WrapperTask(this.mStrobeRunnable);
+        mStrobeTask.cancel();
+        mStrobeTask = new WrapperTask(mStrobeRunnable);
 
-        this.mStrobePeriod = period / 4;
-        this.mStrobeTimer.schedule(this.mStrobeTask, 0, this.mStrobePeriod);
+        mStrobePeriod = period / 4;
+        mStrobeTimer.schedule(mStrobeTask, 0, mStrobePeriod);
     }
 
     public class WrapperTask extends TimerTask {
-        private final Runnable target;
+        private final Runnable mTarget;
 
         public WrapperTask(Runnable target) {
-            this.target = target;
+            mTarget = target;
         }
 
         public void run() {
-            target.run();
+            mTarget.run();
         }
     }
 
