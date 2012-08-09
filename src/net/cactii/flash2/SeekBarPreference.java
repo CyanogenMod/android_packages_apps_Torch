@@ -33,7 +33,7 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
 
         mDialogMessage = context.getString(R.string.setting_frequency_dialog);
         mSuffix = context.getString(R.string.setting_frequency_hz);
-        //has min value of 1hz but displays 0hz
+        // has min value of 1hz but displays 0hz
         mDefault = 4;
         mMax = 24;
 
@@ -87,17 +87,20 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
             mValue = (Integer) defaultValue;
     }
 
+    @Override
     public void onProgressChanged(SeekBar seek, int value, boolean fromTouch) {
-        String t = String.valueOf(value+1);
+        String t = String.valueOf(value + 1);
         mValueText.setText(mSuffix == null ? t : t.concat(mSuffix));
         if (shouldPersist())
             persistInt(value);
         callChangeListener(Integer.valueOf(value));
     }
 
+    @Override
     public void onStartTrackingTouch(SeekBar seek) {
     }
 
+    @Override
     public void onStopTrackingTouch(SeekBar seek) {
     }
 

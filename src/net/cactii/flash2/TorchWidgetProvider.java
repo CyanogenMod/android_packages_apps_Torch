@@ -1,3 +1,23 @@
+/*
+ * Copyright (C) 2010 Ben Buxton
+ * Copyright (C) 2012 The CyanogenMod Project
+ *
+ * This file is part of n1torch.
+ *
+ * n1torch is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * n1torch is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with n1torch.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package net.cactii.flash2;
 
 import android.app.PendingIntent;
@@ -10,6 +30,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 public class TorchWidgetProvider extends AppWidgetProvider {
@@ -59,7 +80,7 @@ public class TorchWidgetProvider extends AppWidgetProvider {
                 pendingIntent.putExtra("bright",
                         mPrefs.getBoolean("widget_bright_" + widgetId, false));
                 pendingIntent.putExtra("strobe",
-                        mPrefs.getBoolean("widget_strobe_" + widgetId, false)); 
+                        mPrefs.getBoolean("widget_strobe_" + widgetId, false));
                 pendingIntent.putExtra("period",
                         mPrefs.getInt("widget_strobe_freq_" + widgetId, 200));
                 context.sendBroadcast(pendingIntent);
@@ -67,7 +88,7 @@ public class TorchWidgetProvider extends AppWidgetProvider {
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
+                Log.i("Torch widget provider", "The thread was interrupted.");
                 e.printStackTrace();
             }
             this.updateAllStates(context);

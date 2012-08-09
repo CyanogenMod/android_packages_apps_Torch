@@ -1,3 +1,23 @@
+/*
+ * Copyright (C) 2010 Ben Buxton
+ * Copyright (C) 2012 The CyanogenMod Project
+ *
+ * This file is part of n1torch.
+ *
+ * n1torch is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * n1torch is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with n1torch.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package net.cactii.flash2;
 
 import java.io.FileWriter;
@@ -15,20 +35,20 @@ public class FlashDevice {
     private static final String MSG_TAG = "TorchDevice";
 
     /* New variables, init'ed by resource items */
-    private static int mValueOn;
-    private static int mValueHigh;
-    private static int mValueDeathRay;
-    private static String mFlashDevice;
-    private static boolean mUseCameraInterface;
+    private static int sValueOn;
+    private static int sValueHigh;
+    private static int sValueDeathRay;
+    private static String sFlashDevice;
+    private static boolean sUseCameraInterface;
     private WakeLock mWakeLock;
 
-    public static final int STROBE    = -1;
-    public static final int OFF       = 0;
-    public static final int ON        = 1;
-    public static final int HIGH      = 128;
+    public static final int STROBE = -1;
+    public static final int OFF = 0;
+    public static final int ON = 1;
+    public static final int HIGH = 128;
     public static final int DEATH_RAY = 3;
 
-    private static FlashDevice instance;
+    private static FlashDevice sInstance;
 
     private FileWriter mWriter = null;
 
@@ -38,23 +58,22 @@ public class FlashDevice {
     private Camera.Parameters mParams;
 
     private FlashDevice(Context context) {
-        mValueOn = context.getResources().getInteger(R.integer.valueOn);
-        mValueHigh = context.getResources().getInteger(R.integer.valueHigh);
-        mValueDeathRay = context.getResources().getInteger(R.integer.valueDeathRay);
-        mFlashDevice = context.getResources().getString(R.string.flashDevice);
-        mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
-        if (mUseCameraInterface) {
-            PowerManager pm
-                = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        sValueOn = context.getResources().getInteger(R.integer.valueOn);
+        sValueHigh = context.getResources().getInteger(R.integer.valueHigh);
+        sValueDeathRay = context.getResources().getInteger(R.integer.valueDeathRay);
+        sFlashDevice = context.getResources().getString(R.string.flashDevice);
+        sUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
+        if (sUseCameraInterface) {
+            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
             this.mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Torch");
         }
     }
 
     public static synchronized FlashDevice instance(Context context) {
-        if (instance == null) {
-            instance = new FlashDevice(context);
+        if (sInstance == null) {
+            sInstance = new FlashDevice(context);
         }
-        return instance;
+        return sInstance;
     }
 
     public synchronized void setFlashMode(int mode) {
@@ -65,25 +84,25 @@ public class FlashDevice {
                     value = OFF;
                     break;
                 case DEATH_RAY:
-                    if (mValueDeathRay >= 0) {
-                        value = mValueDeathRay;
-                    } else if (mValueHigh >= 0) {
-                        value = mValueHigh;
+                    if (sValueDeathRay >= 0) {
+                        value = sValueDeathRay;
+                    } else if (sValueHigh >= 0) {
+                        value = sValueHigh;
                     } else {
                         value = 0;
-                        Log.d(MSG_TAG,"Broken device configuration");
+                        Log.d(MSG_TAG, "Broken device configuration");
                     }
                     break;
                 case ON:
-                    if (mValueOn >= 0) {
-                        value = mValueOn;
+                    if (sValueOn >= 0) {
+                        value = sValueOn;
                     } else {
                         value = 0;
-                        Log.d(MSG_TAG,"Broken device configuration");
+                        Log.d(MSG_TAG, "Broken device configuration");
                     }
                     break;
             }
-            if (mUseCameraInterface) {
+            if (sUseCameraInterface) {
                 if (mCamera == null) {
                     mCamera = Camera.open();
                 }
@@ -102,8 +121,10 @@ public class FlashDevice {
                     mParams = mCamera.getParameters();
                     mParams.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                     mCamera.setParameters(mParams);
-                    if (!mWakeLock.isHeld()) {  // only get the wakelock if we don't have it already
-                        mWakeLock.acquire(); // we don't want to go to sleep while cam is up
+                    if (!mWakeLock.isHeld()) { // only get the wakelock if we
+                                               // don't have it already
+                        mWakeLock.acquire(); // we don't want to go to sleep
+                                             // while cam is up
                     }
                     if (mFlashMode != STROBE) {
                         mCamera.startPreview();
@@ -111,7 +132,7 @@ public class FlashDevice {
                 }
             } else {
                 if (mWriter == null) {
-                    mWriter = new FileWriter(mFlashDevice);
+                    mWriter = new FileWriter(sFlashDevice);
                 }
                 mWriter.write(String.valueOf(value));
                 mWriter.flush();
