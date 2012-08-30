@@ -2,11 +2,17 @@ package net.cactii.flash2;
 
 import java.io.FileWriter;
 import java.io.IOException;
+
+import javax.microedition.khronos.opengles.GL10;
+
+import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import net.cactii.flash2.R;
 import android.content.Context;
 import android.util.Log;
 
+import android.opengl.GLES11Ext;
+import android.opengl.GLES20;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 
@@ -29,6 +35,7 @@ public class FlashDevice {
     public static final int DEATH_RAY = 3;
 
     private static FlashDevice instance;
+    private static boolean surfaceCreated = false;
 
     private FileWriter mWriter = null;
 
@@ -95,19 +102,51 @@ public class FlashDevice {
                         mCamera.stopPreview();
                         mCamera.release();
                         mCamera = null;
+                        surfaceCreated = false;
                     }
                     if (mWakeLock.isHeld())
                         mWakeLock.release();
                 } else {
+                    if (!surfaceCreated) {
+                        Log.d(MSG_TAG,
+                        "KalimAz Prepare surface ...........................................................................");
+
+                        int[] textures = new int[1];
+                        // generate one texture pointer and bind it as an
+                        // external texture.
+                        GLES20.glGenTextures(1, textures, 0);
+                        GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
+                                textures[0]);
+                        // No mip-mapping with camera source.
+                        GLES20.glTexParameterf(
+                                GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
+                                GL10.GL_TEXTURE_MIN_FILTER, GL10.GL_LINEAR);
+                        GLES20.glTexParameterf(
+                                GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
+                                GL10.GL_TEXTURE_MAG_FILTER, GL10.GL_LINEAR);
+                        // Clamp to edge is only option.
+                        GLES20.glTexParameteri(
+                                GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
+                                GL10.GL_TEXTURE_WRAP_S, GL10.GL_CLAMP_TO_EDGE);
+                        GLES20.glTexParameteri(
+                                GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
+                                GL10.GL_TEXTURE_WRAP_T, GL10.GL_CLAMP_TO_EDGE);
+
+                        mCamera.setPreviewTexture(new SurfaceTexture(
+                                textures[0]));
+                        surfaceCreated = true;
+                        mCamera.startPreview();
+                    }
                     mParams = mCamera.getParameters();
                     mParams.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                     mCamera.setParameters(mParams);
                     if (!mWakeLock.isHeld()) {  // only get the wakelock if we don't have it already
                         mWakeLock.acquire(); // we don't want to go to sleep while cam is up
                     }
-                    if (mFlashMode != STROBE) {
+                    /*if (mFlashMode != STROBE) {
+                        Log.d(MSG_TAG, "KalimAz Preview no strobe .............................................................................");
                         mCamera.startPreview();
-                    }
+                    }*/
                 }
             } else {
                 if (mWriter == null) {
