@@ -77,11 +77,9 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
                                                                                        */);
         views.setOnClickPendingIntent(R.id.btn, pi);
         if (mPreferences.getBoolean("widget_strobe_" + mAppWidgetId, false)) {
-            views.setTextViewText(R.id.ind, context.getString(R.string.label_strobe));
+            views.setTextViewText(R.id.ind_text, context.getString(R.string.label_strobe));
         } else if (mPreferences.getBoolean("widget_bright_" + mAppWidgetId, false)) {
-            views.setTextViewText(R.id.ind, context.getString(R.string.label_high));
-        } else {
-            views.setTextViewText(R.id.ind, context.getString(R.string.app_name));
+            views.setTextViewText(R.id.ind_text, context.getString(R.string.label_high));
         }
 
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
