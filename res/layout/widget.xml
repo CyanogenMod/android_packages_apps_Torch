@@ -1,44 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:baselineAligned="false"
-    android:background="@drawable/appwidget_bg" >
+    android:layout_height="fill_parent"
+    android:background="@drawable/appwidget_bg"
+    android:gravity="center" >
 
     <LinearLayout
         android:id="@+id/btn"
-        android:layout_width="0dip"
-        android:gravity="center"
-        android:layout_weight="1"
+        android:layout_width="0.0dip"
         android:layout_height="fill_parent"
-        android:background="@drawable/appwidget_button_left"
+        android:layout_weight="1.0"
+        android:background="@drawable/appwidget_button"
         android:clickable="true"
         android:focusable="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="12.0dip" >
 
         <ImageView
             android:id="@+id/img_torch"
-            android:contentDescription="@string/app_name"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0"
+            android:paddingTop="16.0dip"
             android:scaleType="center"
-            android:src="@drawable/widget_off"
+            android:src="@drawable/ic_appwidget_torch_off" />
+
+        <TextView
+            android:id="@+id/ind_text"
+            android:layout_width="fill_parent"
+            android:layout_height="16.0dip"
+            android:scaleType="fitXY"
+            android:gravity="center"
+            android:textSize="11dp"
+            android:textStyle="normal"
+            android:textColor="#ffffff"
             />
-            
-         <TextView
-            android:id="@+id/ind"
+
+        <ImageView
+            android:id="@+id/ind_torch"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:gravity="center"
-            android:textStyle="normal"
-            android:textColor="#ffffff"
-            android:text="@string/app_name"
-            />
-        </LinearLayout>	
-</LinearLayout>
+            android:src="@drawable/ind_bar_off" />
+    </LinearLayout>
 
-<!-- these chagnes made to look more uniform with system -->
-<!-- android:textStyle="bold" -->
-<!-- android:textColor="#ffffffaa" -->
+</LinearLayout>

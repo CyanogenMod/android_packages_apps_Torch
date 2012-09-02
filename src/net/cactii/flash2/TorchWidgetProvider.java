@@ -23,6 +23,30 @@ public class TorchWidgetProvider extends AppWidgetProvider {
         return sInstance;
     }
 
+    private enum WidgetState {
+        OFF     (R.drawable.ic_appwidget_torch_off,R.drawable.ind_bar_off),
+        ON      (R.drawable.ic_appwidget_torch_on,R.drawable.ind_bar_on);
+
+        /**
+         * The drawable resources associated with this widget state.
+         */
+        private final int mDrawImgRes;
+        private final int mDrawIndRes;
+
+        private WidgetState(int drawImgRes, int drawIndRes) {
+            mDrawImgRes = drawImgRes;
+            mDrawIndRes = drawIndRes;
+        }
+
+        public int getImgDrawable() {
+            return mDrawImgRes;
+        }
+
+        public int getIndDrawable() {
+            return mDrawIndRes;
+        }
+    }
+
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         for (int appWidgetId : appWidgetIds)
             this.updateState(context, appWidgetId);
@@ -92,17 +116,17 @@ public class TorchWidgetProvider extends AppWidgetProvider {
 
         if ((Settings.System.getInt(context.getContentResolver(),
                 Settings.System.TORCH_STATE, 0) == 1)) {
-            views.setImageViewResource(R.id.img_torch, R.drawable.icon);
+            views.setImageViewResource(R.id.img_torch, WidgetState.ON.getImgDrawable());
+            views.setImageViewResource(R.id.ind_torch, WidgetState.ON.getIndDrawable());
         } else {
-            views.setImageViewResource(R.id.img_torch, R.drawable.widget_off);
+            views.setImageViewResource(R.id.img_torch, WidgetState.OFF.getImgDrawable());
+            views.setImageViewResource(R.id.ind_torch, WidgetState.OFF.getIndDrawable());
         }
 
         if (prefs.getBoolean("widget_strobe_" + appWidgetId, false)) {
-            views.setTextViewText(R.id.ind, context.getString(R.string.label_strobe));
+            views.setTextViewText(R.id.ind_text, context.getString(R.string.label_strobe));
         } else if (prefs.getBoolean("widget_bright_" + appWidgetId, false)) {
-            views.setTextViewText(R.id.ind, context.getString(R.string.label_high));
-        } else {
-            views.setTextViewText(R.id.ind, context.getString(R.string.app_name));
+            views.setTextViewText(R.id.ind_text, context.getString(R.string.label_high));
         }
 
         final AppWidgetManager gm = AppWidgetManager.getInstance(context);
