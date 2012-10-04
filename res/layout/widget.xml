@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/appwidget_bg"
     android:gravity="center" >
 
     <LinearLayout
         android:id="@+id/btn"
         android:layout_width="0.0dip"
-        android:layout_height="fill_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1.0"
         android:background="@drawable/appwidget_button"
         android:clickable="true"
@@ -19,7 +19,7 @@
 
         <ImageView
             android:id="@+id/img_torch"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="0.0dip"
             android:layout_weight="1.0"
             android:paddingTop="16.0dip"
@@ -28,7 +28,7 @@
 
         <TextView
             android:id="@+id/ind_text"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="16.0dip"
             android:scaleType="fitXY"
             android:gravity="center"
@@ -39,7 +39,7 @@
 
         <ImageView
             android:id="@+id/ind_torch"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
             android:src="@drawable/ind_bar_off" />
