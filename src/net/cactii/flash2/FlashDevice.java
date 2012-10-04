@@ -21,10 +21,13 @@ public class FlashDevice {
     private static final String MSG_TAG = "TorchDevice";
 
     /* New variables, init'ed by resource items */
+    private static int mValueOff;
     private static int mValueOn;
+    private static int mValueLow;
     private static int mValueHigh;
     private static int mValueDeathRay;
     private static String mFlashDevice;
+    private static String mFlashDeviceLuminosity;
     private static boolean mUseCameraInterface;
     private WakeLock mWakeLock;
 
@@ -38,7 +41,8 @@ public class FlashDevice {
     private static boolean surfaceCreated = false;
     private static SurfaceTexture surfaceTexture;
 
-    private FileWriter mWriter = null;
+    private FileWriter mFlashDeviceWriter = null;
+    private FileWriter mFlashDeviceLuminosityWriter = null;
 
     private int mFlashMode = OFF;
 
@@ -46,10 +50,13 @@ public class FlashDevice {
     private Camera.Parameters mParams;
 
     private FlashDevice(Context context) {
+        mValueOff = context.getResources().getInteger(R.integer.valueOff);
         mValueOn = context.getResources().getInteger(R.integer.valueOn);
+        mValueLow = context.getResources().getInteger(R.integer.valueLow);
         mValueHigh = context.getResources().getInteger(R.integer.valueHigh);
         mValueDeathRay = context.getResources().getInteger(R.integer.valueDeathRay);
         mFlashDevice = context.getResources().getString(R.string.flashDevice);
+        mFlashDeviceLuminosity = context.getResources().getString(R.string.flashDeviceLuminosity);
         mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
         if (mUseCameraInterface) {
             PowerManager pm
@@ -143,14 +150,58 @@ public class FlashDevice {
                     }
                 }
             } else {
-                if (mWriter == null) {
-                    mWriter = new FileWriter(mFlashDevice);
-                }
-                mWriter.write(String.valueOf(value));
-                mWriter.flush();
-                if (mode == OFF) {
-                    mWriter.close();
-                    mWriter = null;
+                if (mFlashDeviceLuminosity != null && mFlashDeviceLuminosity.length() > 0) {
+                    if (mFlashDeviceWriter == null) {
+                        mFlashDeviceWriter = new FileWriter(mFlashDevice);
+                    }
+                    if (mFlashDeviceLuminosityWriter == null) {
+                        mFlashDeviceLuminosityWriter = new FileWriter(mFlashDeviceLuminosity);
+                    }
+
+                    mFlashDeviceWriter.write(String.valueOf(mValueOn));
+                    mFlashDeviceWriter.flush();
+
+                    switch (mode) {
+                        case ON:
+                            mFlashDeviceLuminosityWriter.write(String.valueOf(mValueLow));
+                            mFlashDeviceLuminosityWriter.flush();
+                            break;
+                        case OFF:
+                            mFlashDeviceLuminosityWriter.write(String.valueOf(mValueLow));
+                            mFlashDeviceLuminosityWriter.close();
+                            mFlashDeviceLuminosityWriter = null;
+                            mFlashDeviceWriter.write(String.valueOf(mValueOff));
+                            mFlashDeviceWriter.close();
+                            mFlashDeviceWriter = null;
+                            break;
+                        case STROBE:
+                            mFlashDeviceWriter.write(String.valueOf(OFF));
+                            mFlashDeviceWriter.flush();
+                            break;
+                        case DEATH_RAY:
+                            if (mValueDeathRay >= 0) {
+                                mFlashDeviceLuminosityWriter.write(String.valueOf(mValueDeathRay));
+                                mFlashDeviceLuminosityWriter.flush();
+                            } else if (mValueHigh >= 0) {
+                                mFlashDeviceLuminosityWriter.write(String.valueOf(mValueHigh));
+                                mFlashDeviceLuminosityWriter.flush();
+                            } else {
+                                mFlashDeviceLuminosityWriter.write(String.valueOf(OFF));
+                                mFlashDeviceLuminosityWriter.flush();
+                                Log.d(MSG_TAG,"Broken device configuration");
+                            }
+                            break;
+                    }
+                } else {
+                    if (mFlashDeviceWriter == null) {
+                        mFlashDeviceWriter = new FileWriter(mFlashDevice);
+                    }
+                    mFlashDeviceWriter.write(String.valueOf(value));
+                    mFlashDeviceWriter.flush();
+                    if (mode == OFF) {
+                        mFlashDeviceWriter.close();
+                        mFlashDeviceWriter = null;
+                    }
                 }
             }
             mFlashMode = mode;
