@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
     <ToggleButton
         android:id="@+id/buttonOn"
@@ -17,12 +17,12 @@
         android:id="@+id/ruler1"
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:background="#555" />
 
     <RelativeLayout
         android:id="@+id/brightRow"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginRight="16dp"
@@ -53,12 +53,12 @@
         android:id="@+id/ruler2"
         android:layout_height="1dp"
         android:layout_marginTop="8dp"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:background="#555" />
 
     <RelativeLayout
         android:id="@+id/strobeRow"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
@@ -107,7 +107,7 @@
     <View
         android:id="@+id/ruler3"
         android:layout_height="1dp"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_marginTop="8dp"
         android:background="#555" />
 
