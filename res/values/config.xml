@@ -22,7 +22,8 @@
 <resources>
     <!-- If there is no sysfs-based control mechanism, enable this -->
     <bool name="useCameraInterface">false</bool>
-
+    <!-- Some samsung boards have different led device control mechanism -->
+    <bool name="useSamsungLedDevice">false</bool>
     <!-- Full path to the sysfs toggle -->
     <string name="flashDevice">/sys/class/leds/flashlight/brightness</string>
     <!-- Full path to the sysfs luminosity -->

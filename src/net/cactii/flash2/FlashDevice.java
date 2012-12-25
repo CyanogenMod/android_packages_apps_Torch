@@ -1,6 +1,8 @@
 package net.cactii.flash2;
 
 import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.BufferedReader;
 import java.io.IOException;
 
 import javax.microedition.khronos.opengles.GL10;
@@ -29,6 +31,7 @@ public class FlashDevice {
     private static String mFlashDevice;
     private static String mFlashDeviceLuminosity;
     private static boolean mUseCameraInterface;
+    private static boolean mUseSamsungLedDevice;
     private WakeLock mWakeLock;
 
     public static final int STROBE    = -1;
@@ -58,6 +61,7 @@ public class FlashDevice {
         mFlashDevice = context.getResources().getString(R.string.flashDevice);
         mFlashDeviceLuminosity = context.getResources().getString(R.string.flashDeviceLuminosity);
         mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
+        mUseSamsungLedDevice = context.getResources().getBoolean(R.bool.useSamsungLedDevice);
         if (mUseCameraInterface) {
             PowerManager pm
                 = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
@@ -149,6 +153,29 @@ public class FlashDevice {
                         mWakeLock.acquire(); // we don't want to go to sleep while cam is up
                     }
                 }
+            } else if (mUseSamsungLedDevice) {
+                switch (mode) {
+                    case STROBE:
+                    case OFF:
+                        FileReader mReader = new FileReader(mFlashDevice);
+                        BufferedReader br = new BufferedReader(mReader);
+                        String s;
+                        // To turn off flash device, we need read file to the end
+                        while((s = br.readLine()) != null) {
+                        }
+                        mReader.close();
+                        mReader = null;
+                    break;
+                    case DEATH_RAY:
+                    case ON:
+                        FileWriter mWriter = new FileWriter(mFlashDevice);
+                        mWriter.write(String.valueOf(mode));
+                        mWriter.flush();
+                        mWriter.close();
+                        mWriter = null;
+                    break;
+                }
+                mFlashMode = mode;
             } else {
                 // Devices with sysfs toggle and sysfs luminosity
                 if (mFlashDeviceLuminosity != null && mFlashDeviceLuminosity.length() > 0) {
