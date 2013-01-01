@@ -44,7 +44,7 @@ De led fel aan is een half uur lang getest zonder problemen, maar het risico bes
     </string>
 
     <string name="license">
-Originele code van \'Nexus One Torch\', ontwikkeld door Ben Buxton, uitgegeven onder de GPL versie 3.
+Originele code van \'Nexus One Torch\u2019, ontwikkeld door Ben Buxton, uitgegeven onder de GPL versie 3.
 \n
 http://n1torch.googlecode.com/
 \n
@@ -63,5 +63,5 @@ Fel licht is een half uur lang getest zonder problemen, maar de led werd heet en
 \n
 Dit is nog niet beschikbaar in de widget.
 \n
-Druk op \'Accepteren\u2019 om het op eigen risico te gebruiken.</string>
+Tik op \'Accepteren\u2019 om het op eigen risico te gebruiken.</string>
 </resources>
