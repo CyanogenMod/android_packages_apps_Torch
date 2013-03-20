@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tocha</string>
-    <string name="about_title">Tocha</string>
+    <string name="app_name">Lanterna</string>
+    <string name="about_title">Sobre Lanterna</string>
     <string name="about_close">Fechar</string>
 
     <string name="description">Esse programa manipula o LED da câmera.\n</string>
@@ -25,6 +25,6 @@
     <string name="setting_frequency_dialog">Frequência</string>
     <string name="setting_add_widget">Adicionar widget</string>
 
-    <string name="not_torch_title">Tocha ligada</string>
-    <string name="not_torch_summary">Tocha atualmente ligada</string>
+    <string name="not_torch_title">Lanterna ligada</string>
+    <string name="not_torch_summary">Lanterna atualmente ligada</string>
 </resources>
