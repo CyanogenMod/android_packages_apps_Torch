@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Фонарь</string>
+    <string name="app_name">Фонарик</string>
     <string name="about_title">О программе</string>
     <string name="about_close">Закрыть</string>
     
@@ -25,6 +25,6 @@
     <string name="setting_frequency_dialog">Частота</string>
     <string name="setting_add_widget">Добавить виджет</string>
 
-    <string name="not_torch_title">Фонарь включен</string>
-    <string name="not_torch_summary">Фонарь сейчас включен</string>
+    <string name="not_torch_title">Фонарик включён</string>
+    <string name="not_torch_summary">Фонарик сейчас включён</string>
 </resources>
