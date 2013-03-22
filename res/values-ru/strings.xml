@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Фонарь</string>
+    <string name="app_name">Фонарик</string>
     <string name="about_title">О программе</string>
     <string name="about_close">Закрыть</string>
     
-    <string name="description">Эта программа манипулирует со вспышкой (LED) камеры.\n</string>
-    <string name="warning">Внимание: если оставлять вспышку на долгое время включённой, то она может перегрется.\n\nПолная яркость была протестирована в течении &#189; часа, но всё же есть риск, повредить сведодиод вспышки.\n</string>
-    <string name="license">Оригинальный код Nexus One Torch от Ben Buxton, выпущенный под GPL, v3.\nhttp://n1torch.googlecode.com/\n\nСпасибо David Prieto за новый дизайн интерфейса.\n\nИзмененно для CyanogenMod - Steve Kondik.\n\n</string>
+    <string name="description">Эта программа управляет вспышкой (LED) камеры.\n</string>
+    <string name="warning">Внимание: если оставлять вспышку на долгое время включённой, то она может перегреться.\n\nПолная яркость была протестирована в течение &#189; часа, но всё же есть риск повредить светодиод вспышки.\n</string>
+    <string name="license">Оригинальный код Nexus One Torch от Ben Buxton, выпущенный под GPL, v3.\nhttp://n1torch.googlecode.com/\n\nСпасибо David Prieto за новый дизайн интерфейса.\n\nИзменено для CyanogenMod - Steve Kondik.\n\n</string>
     <string name="warning_label">Внимание</string>
-    <string name="brightwarn">Полная яркость была успешно протестирована в течении &#189; часа работы, за это время светодиод сильно перегрелся, через 45 минут светодиод начал мерцать (временно). Что может случится дальше со светодиодом, неизвестно\n\nЭто не поддерживается виджетом.\n\nНажмите &#8220;Принимаю&#8221;, если вы хотите использовать эту функцию и понимаете риск этого.</string>
+    <string name="brightwarn">Полная яркость была успешно протестирована в течение &#189; часа работы, за это время светодиод сильно перегрелся, через 45 минут светодиод начал мерцать (временно). Что может случится дальше со светодиодом, неизвестно\n\nЭто не поддерживается виджетом.\n\nНажмите &#8220;Согласиться&#8221;, если вы хотите использовать эту функцию и понимаете риск этого.</string>
     <string name="brightwarn_negative">Нет, спасибо</string>
-    <string name="brightwarn_accept">Принимаю</string>
+    <string name="brightwarn_accept">Согласиться</string>
 
     <string name="label_on">Включить</string>
     <string name="label_off">Выключить</string>
@@ -25,6 +25,6 @@
     <string name="setting_frequency_dialog">Частота</string>
     <string name="setting_add_widget">Добавить виджет</string>
 
-    <string name="not_torch_title">Фонарь включен</string>
-    <string name="not_torch_summary">Фонарь сейчас включен</string>
+    <string name="not_torch_title">Фонарик</string>
+    <string name="not_torch_summary">Фонарик сейчас включён</string>
 </resources>
