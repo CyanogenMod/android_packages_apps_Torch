@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Flits</string>
+    <string name="about_title">Meer oor</string>
+    <string name="about_close">Sluit</string>
+
+    <string name="description">Hierdie program manipuleer die kamera LED.\n</string>
+    <string name="warning">Waarskuwing: Om die LED aan te hou vir 'n lang tyd kan dit laat oorverhit.\n\nVolle helderheid &#8220;altyd aan&#8220; is getoets vir 'n ½ uur, maar daar is die risiko dat dit kan skade verig aan die LED.\n</string>
+    <string name="license">Oorspronklike kode van die Nexus One Flits deur Ben Buxton, vrygestel onder die GPL, v3.\nhttp://n1torch.googlecode.com/\n\nDankie aan Dawid Prieto vir die nuwe UI ontwerp\n\ngemodifiseer vir CyanogenMod deur Steve Kondik.\n\n</string>
+    <string name="warning_label">Waarskuwing</string>
+    <string name="brightwarn">Volle helderheid is suksesvol getoets vir 'n ½ uur, maar het baie warm gewort en begin flikker (tydelik) op 45 min. Lang termyn effekte is onbekend.\n\nHierdie word nie op die legstuk ondersteun nie.\n\nKliek op &#8220;Aanvaar&#8220; as jy dit wil gebruik op jou eie risiko.</string>
+    <string name="brightwarn_negative">Nee dankie</string>
+    <string name="brightwarn_accept">Aanvaar</string>
+
+    <string name="label_on">Aan</string>
+    <string name="label_off">Af</string>
+    <string name="label_high">Hoë helderheid</string>
+    <string name="label_strobe">Flikker</string>
+    <string name="label_frequency">Gereeldheid: (skuif om te verander)</string>
+
+    <string name="widget_options">Algemene opsies</string>
+    <string name="setting_widget_bright">Helder legstuk</string>
+    <string name="setting_widget_strobe">Flikker flits</string>
+    <string name="setting_frequency_title">flikker gereeldheid</string>
+    <string name="setting_frequency_dialog">Gereeldheid</string>
+    <string name="setting_add_widget">Voeg by: legstuk</string>
+
+    <string name="not_torch_title">Flits aan</string>
+    <string name="not_torch_summary">Flits is huidiglik aan</string>
+</resources>
