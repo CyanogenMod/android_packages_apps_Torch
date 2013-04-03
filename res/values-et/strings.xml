@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lamp</string>
+    <string name="about_title">Teavet</string>
+    <string name="about_close">Sule</string>
+    <string name="description">"See programm kasutab kaamera LED-välku.
+"</string>
+    <string name="warning">"Hoiatus: märgutule pikaajaline pidev kasutamine võib põhjustada ülekuumenemist. Täielikku heledust alati peal on proovitud pidevalt pool tundi, kuid on olemas oht, et see kahjustab LED-välku. "</string>
+    <string name="license">"Originaalne kood: Nexus One Torch by Ben Buxton, released under the GPL, v3.
+http://n1torch.googlecode.com/
+
+Aitäh David Prieto uuest välimusest.
+
+Muutnud CyanogenModile: Steve Kondik.
+
+"</string>
+    <string name="warning_label">Hoiatus</string>
+    <string name="brightwarn">"Täielikku heledust on edukalt testitud poole tunni ajal, mille jooksul LED-välk kuumenes ja 45 minuti kohal hakkas vilkuma. Pikaajaline kasutamine võib kahjustada LED-välku.
+
+Vidin ei toeta veel seda funktsiooni.
+
+Valige Nõustu, kui soovite siiski kasutada seda omal vastutusel."</string>
+    <string name="brightwarn_negative">Keeldu</string>
+    <string name="brightwarn_accept">Nõustu</string>
+    <string name="label_on">Sees</string>
+    <string name="label_off">Väljas</string>
+    <string name="label_high">täielik heledus</string>
+    <string name="label_strobe">Strobo</string>
+    <string name="label_frequency">Sagedus: (lükake, et muuta)</string>
+    <string name="widget_options">Üldised seaded</string>
+    <string name="setting_widget_bright">Hele vidin</string>
+    <string name="setting_widget_strobe">Strobo</string>
+    <string name="setting_frequency_title">Strobo segadus</string>
+    <string name="setting_frequency_dialog">Segadus</string>
+    <string name="setting_add_widget">Lisa vidin</string>
+    <string name="not_torch_title">Lamp on peal</string>
+    <string name="not_torch_summary">Lamp ei ole peal</string>
+</resources>
