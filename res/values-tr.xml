@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">El Feneri</string>
+    <string name="about_title">Hakkında</string>
+    <string name="about_close">Çıkış</string>
+
+    <string name="description">Bu program kamera LED ini kullanır.\n</string>
+    <string name="warning">Dikkat: Leaving the LED on for a long time might overheat it.\n\nFull brightness &#8220;always on&#8221; has been tested running for &#189; hr, but there is the risk this could damage the LED.\n</string>
+    <string name="license">Original code from Nexus One Torch by Ben Buxton, released under the GPL, v3.\nhttp://n1torch.googlecode.com/\n\nThanks to David Prieto for new UI design.\n\nModified for CyanogenMod by Steve Kondik.\n\n</string>
+    <string name="warning_label">Dikkat</string>
+    <string name="brightwarn">Güçlü ışık modunda &#189; saat test edildi, bir sorun görülmedi.Fakat 45 dakikadan sonra LED de titremeler oluşmaya başladı. Daha uzun süre test edilmedi.\n\nDaha uzun süre kullanacaksanız uyarıyı kabul edin.\n\nClick &#8220;Accept&#8221;</string>
+    <string name="brightwarn_negative">Hayır, teşekkürler</string>
+    <string name="brightwarn_accept">Kabul</string>
+
+    <string name="label_on">Açık</string>
+    <string name="label_off">Kapalı</string>
+    <string name="label_high">Güçlü Işık</string>
+    <string name="label_strobe">Flaşör</string>
+    <string name="label_frequency">Frekans: (değiştirmek için kaydır)</string>
+
+    <string name="widget_options">Genel Ayarlar</string>
+    <string name="setting_widget_bright">El Feneri aracı</string>
+    <string name="setting_widget_strobe">Patlayan Flaş</string>
+    <string name="setting_frequency_title">Flaşör frekansı</string>
+    <string name="setting_frequency_dialog">Frekans</string>
+    <string name="setting_frequency_hz" translatable="false"> Hz</string>
+    <string name="setting_add_widget">Araç ekle</string>
+
+    <string name="not_torch_title">El feneri açık</string>
+    <string name="not_torch_summary">Şu an El feneri açık</string>
+</resources>
