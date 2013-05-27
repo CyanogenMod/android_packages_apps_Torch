@@ -87,8 +87,10 @@ public class TorchService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         Log.d(MSG_TAG, "Starting torch");
-        if (intent == null)
+        if (intent == null) {
             this.stopSelf();
+            return START_NOT_STICKY;
+        }
         this.mBright = intent.getBooleanExtra("bright", false);
         if (intent.getBooleanExtra("strobe", false)) {
             this.mStrobePeriod = intent.getIntExtra("period", 200) / 4;
