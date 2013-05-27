@@ -56,7 +56,9 @@ public class TorchService extends Service {
 
         this.mTorchTask = new TimerTask() {
             public void run() {
-                FlashDevice.instance(mContext).setFlashMode(mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON);
+                if (FlashDevice.instance(mContext).setFlashMode(mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON)) {
+                    Settings.System.putInt(mContext.getContentResolver(), Settings.System.TORCH_STATE, 1);
+                }
             }
         };
         this.mTorchTimer = new Timer();
@@ -67,13 +69,17 @@ public class TorchService extends Service {
             @Override
             public void run() {
                 int flashMode = mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON;
+                boolean ret = false;
                 if (FlashDevice.instance(mContext).getFlashMode() < flashMode) {
                     if (this.mCounter-- < 1) {
-                        FlashDevice.instance(mContext).setFlashMode(flashMode);
+                        ret = FlashDevice.instance(mContext).setFlashMode(flashMode);
                     }
                 } else {
-                    FlashDevice.instance(mContext).setFlashMode(FlashDevice.STROBE);
+                    ret = FlashDevice.instance(mContext).setFlashMode(FlashDevice.STROBE);
                     this.mCounter = 4;
+                }
+                if (ret) {
+                    Settings.System.putInt(mContext.getContentResolver(), Settings.System.TORCH_STATE, 1);
                 }
             }
 
@@ -116,7 +122,6 @@ public class TorchService extends Service {
         mNotificationManager.notify(getString(R.string.app_name).hashCode(), mNotification);
 
         startForeground(getString(R.string.app_name).hashCode(), mNotification);
-        Settings.System.putInt(this.getContentResolver(), Settings.System.TORCH_STATE, 1);
         this.sendBroadcast(new Intent(TorchSwitch.TORCH_STATE_CHANGED));
         return START_STICKY;
     }
@@ -127,9 +132,10 @@ public class TorchService extends Service {
         stopForeground(true);
         this.mTorchTimer.cancel();
         this.mStrobeTimer.cancel();
-        FlashDevice.instance(mContext).setFlashMode(FlashDevice.OFF);
-        Settings.System.putInt(this.getContentResolver(), Settings.System.TORCH_STATE, 0);
-        this.sendBroadcast(new Intent(TorchSwitch.TORCH_STATE_CHANGED));
+        if (FlashDevice.instance(mContext).setFlashMode(FlashDevice.OFF)) {
+            Settings.System.putInt(this.getContentResolver(), Settings.System.TORCH_STATE, 0);
+            this.sendBroadcast(new Intent(TorchSwitch.TORCH_STATE_CHANGED));
+        }
     }
 
     public void Reshedule(int period) {

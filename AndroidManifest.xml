@@ -38,6 +38,7 @@
         <receiver android:name="TorchSwitch" android:enabled="true" android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="net.cactii.flash2.TOGGLE_FLASHLIGHT"></action>
+                <action android:name="net.cactii.flash2.TURN_OFF_FLASHLIGHT"></action>
             </intent-filter>
         </receiver>
     </application>

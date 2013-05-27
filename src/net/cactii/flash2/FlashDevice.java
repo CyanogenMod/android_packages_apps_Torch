@@ -72,7 +72,7 @@ public class FlashDevice {
         return instance;
     }
 
-    public synchronized void setFlashMode(int mode) {
+    public synchronized boolean setFlashMode(int mode) {
         try {
             int value = mode;
             switch (mode) {
@@ -107,10 +107,7 @@ public class FlashDevice {
                     mParams.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
                     mCamera.setParameters(mParams);
                     if (mode != STROBE) {
-                        mCamera.stopPreview();
-                        mCamera.release();
-                        mCamera = null;
-                        surfaceCreated = false;
+                        releaseCamera();
                     }
                     if (mWakeLock.isHeld())
                         mWakeLock.release();
@@ -208,8 +205,24 @@ public class FlashDevice {
             }
             mFlashMode = mode;
         } catch (IOException e) {
-            throw new RuntimeException("Can't open flash device", e);
+            Log.e(MSG_TAG, "Can't open flash device", e);
+            releaseCamera();
+            return false;
+        } catch (RuntimeException e) {
+            Log.e(MSG_TAG, "Can't open camera", e);
+            releaseCamera();
+            return false;
         }
+        return true;
+    }
+
+    private void releaseCamera() {
+        if (mCamera != null) {
+            mCamera.stopPreview();
+            mCamera.release();
+        }
+        mCamera = null;
+        surfaceCreated = false;
     }
 
     public synchronized int getFlashMode() {
