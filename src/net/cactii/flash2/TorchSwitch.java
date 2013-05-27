@@ -16,6 +16,7 @@ import android.provider.Settings;
 public class TorchSwitch extends BroadcastReceiver {
 
     public static final String TOGGLE_FLASHLIGHT = "net.cactii.flash2.TOGGLE_FLASHLIGHT";
+    public static final String TURNOFF_FLASHLIGHT = "net.cactii.flash2.TURN_OFF_FLASHLIGHT";
     public static final String TORCH_STATE_CHANGED = "net.cactii.flash2.TORCH_STATE_CHANGED";
 
     private SharedPreferences mPrefs;
@@ -23,6 +24,7 @@ public class TorchSwitch extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent receivingIntent) {
         mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+        Intent i = new Intent(context, TorchService.class);
         if (receivingIntent.getAction().equals(TOGGLE_FLASHLIGHT)) {
             // bright setting can come from intent or from prefs depending on
             // on what send the broadcast
@@ -33,19 +35,23 @@ public class TorchSwitch extends BroadcastReceiver {
             boolean strobe = receivingIntent.getBooleanExtra("strobe", false) |
                     mPrefs.getBoolean("strobe", false);
             int period = receivingIntent.getIntExtra("period", 200);
-            Intent i = new Intent(context, TorchService.class);
-            if (this.TorchServiceRunning(context)) {
+            if (isTorchServiceRunning(context)) {
                 context.stopService(i);
             } else {
+                // Just ensure a correct behaviour
+                Settings.System.putInt(context.getContentResolver(), Settings.System.TORCH_STATE, 0);
+
                 i.putExtra("bright", bright);
                 i.putExtra("strobe", strobe);
                 i.putExtra("period", period);
                 context.startService(i);
             }
+        } else if (receivingIntent.getAction().equals(TURNOFF_FLASHLIGHT)) {
+            context.stopService(i);
         }
     }
 
-    private boolean TorchServiceRunning(Context context) {
+    private boolean isTorchServiceRunning(Context context) {
         ActivityManager am = (ActivityManager) context.getSystemService(Activity.ACTIVITY_SERVICE);
 
         List<ActivityManager.RunningServiceInfo> svcList = am.getRunningServices(100);
