@@ -28,4 +28,5 @@
 
     <string name="not_torch_title">Torch on</string>
     <string name="not_torch_summary">Torch currently on</string>
+    <string name="not_torch_toggle">Turn torch off</string>
 </resources>
