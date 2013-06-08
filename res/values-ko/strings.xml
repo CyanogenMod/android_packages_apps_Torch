@@ -26,5 +26,4 @@
     <string name="setting_add_widget">위젯 추가</string>
 
     <string name="not_torch_title">전등 켜짐</string>
-    <string name="not_torch_summary">현재 전등이 켜져있습니다</string>
 </resources>

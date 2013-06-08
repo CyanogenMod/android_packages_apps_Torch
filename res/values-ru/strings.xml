@@ -26,5 +26,4 @@
     <string name="setting_add_widget">Добавить виджет</string>
 
     <string name="not_torch_title">Фонарик</string>
-    <string name="not_torch_summary">Фонарик сейчас включён</string>
 </resources>

@@ -31,7 +31,6 @@
     <string name="setting_frequency_dialog">Frequentie</string>
     <string name="setting_add_widget">Widget toevoegen</string>
     <string name="not_torch_title">Zaklamp actief</string>
-    <string name="not_torch_summary">De led staat momenteel aan</string>
     <string name="description">Deze app manipuleert de cameraled.\n</string>
     <string name="warning_label">Let op</string>
 

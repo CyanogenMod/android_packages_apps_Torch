@@ -26,5 +26,4 @@
     <string name="setting_add_widget">新增小工具</string>
 
     <string name="not_torch_title">手電筒已開</string>
-    <string name="not_torch_summary">手電筒目前開啟</string>
 </resources>

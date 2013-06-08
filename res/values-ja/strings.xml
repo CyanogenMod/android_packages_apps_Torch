@@ -23,7 +23,6 @@
     <string name="setting_widget_strobe">ストロボフラッシュ</string>
 
     <string name="not_torch_title">トーチオン</string>
-    <string name="not_torch_summary">トーチは現在オンです</string>
 
     <string name="setting_frequency_title">ストロボ頻度</string>
     <string name="setting_frequency_dialog">頻度</string>

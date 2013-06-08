@@ -26,5 +26,4 @@
     <string name="setting_add_widget">Añadir widget</string>
     
     <string name="not_torch_title">Linterna encendida</string>
-    <string name="not_torch_summary">Linterna actualmente encendida</string>
 </resources>

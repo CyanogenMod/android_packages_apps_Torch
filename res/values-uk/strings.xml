@@ -22,5 +22,4 @@
     <string name="setting_frequency_dialog">Частота</string>
     <string name="setting_add_widget">Додати віджет</string>
     <string name="not_torch_title">Ліхтарик увімкнений</string>
-    <string name="not_torch_summary">Ліхтарик зараз увімкнений</string>
 </resources>

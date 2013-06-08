@@ -25,7 +25,6 @@
     <string name="setting_widget_bright">Zseblámpa</string>
     <string name="setting_widget_strobe">Stroboszkóp</string>
 
-    <string name="not_torch_summary">A zseblámpa jelenleg be van kapcsolva</string>
     <string name="not_torch_title">Zseblámpa</string>
 
     <string name="widget_options">Általános opciók</string>
