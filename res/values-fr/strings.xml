@@ -26,4 +26,5 @@
     <string name="setting_add_widget">Ajouter le widget</string>
 
     <string name="not_torch_title">Torche active</string>
+    <string name="not_torch_toggle">Éteindre la torche</string>
 </resources>
