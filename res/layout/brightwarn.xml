@@ -9,8 +9,7 @@
         android:layout_height="wrap_content"
         android:autoLink="web"
         android:gravity="center_vertical|center_horizontal"
-        android:paddingLeft="8dp"
-        android:paddingTop="8dp"
+        android:padding="8dp"
         android:text="@string/brightwarn"
         android:textColor="#ff0000"
         android:textStyle="bold" />
