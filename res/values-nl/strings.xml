@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 The CyanogenMod Project
+<!-- Copyright (C) 2012-2013 The CyanogenMod Project
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
 
-        http://www.apache.org/licenses/LICENSE-2.0
+          http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-<resources>
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Zaklamp</string>
     <string name="about_title">Over</string>
     <string name="about_close">Sluiten</string>
@@ -31,11 +31,12 @@
     <string name="setting_frequency_dialog">Frequentie</string>
     <string name="setting_add_widget">Widget toevoegen</string>
     <string name="not_torch_title">Zaklamp actief</string>
+    <string name="not_torch_toggle">Zaklamp uitschakelen</string>
     <string name="description">Deze app manipuleert de cameraled.\n</string>
     <string name="warning_label">Let op</string>
 
     <string name="warning">
-Let op: als de led te lang aanstaat, kan dit leiden tot oververhitting.
+Let op: als de led te lang aan staat, kan dit leiden tot oververhitting.
 \n
 \n
 De led fel aan is een half uur lang getest zonder problemen, maar het risico bestaat dat dit schadelijk kan zijn voor de led.
@@ -62,5 +63,5 @@ Fel licht is een half uur lang getest zonder problemen, maar de led werd heet en
 \n
 Dit is nog niet beschikbaar in de widget.
 \n
-Tik op \'Accepteren\u2019 om het op eigen risico te gebruiken.</string>
+Tik op \'Accepteren\u2019 om op eigen risico te gebruiken.</string>
 </resources>
