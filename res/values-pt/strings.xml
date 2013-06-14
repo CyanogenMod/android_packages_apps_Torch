@@ -26,4 +26,5 @@
     <string name="setting_add_widget">Adicionar widget</string>
 
     <string name="not_torch_title">Lanterna ligada</string>
+    <string name="not_torch_toggle">Desligar lanterna</string>
 </resources>
