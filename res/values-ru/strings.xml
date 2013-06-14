@@ -25,5 +25,6 @@
     <string name="setting_frequency_dialog">Частота</string>
     <string name="setting_add_widget">Добавить виджет</string>
 
-    <string name="not_torch_title">Фонарик</string>
+    <string name="not_torch_title">Фонарик включён</string>
+    <string name="not_torch_toggle">Выключить фонарик</string>
 </resources>
