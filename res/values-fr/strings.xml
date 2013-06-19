@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012-2013 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources>
     <string name="app_name">Lampe de poche</string>
     <string name="about_title">À propos de</string>
     <string name="about_close">Fermer</string>
-
     <string name="description">Ce programme agit sur la LED de l\'appareil photo.\n</string>
     <string name="warning">Attention : Laisser la LED activée pendant un long moment pourrait la faire surchauffer.\n\nLe réglage &#8220;Luminosité maximale&#8221; a été testé pendant une demi-heure, mais le risque d\'endomager la LED existe.\n</string>
     <string name="license">Code original de Nexus One Torch par Ben Buxton, licensié sous GPL, v3.\nhttp://n1torch.googlecode.com/\n\nRemerciements à David Prieto pour le nouveau design de l\'interface.\n\nModifié pour CyanogenMod par Steve Kondik.\n\n</string>
@@ -11,19 +24,17 @@
     <string name="brightwarn">La luminosité maximale a été testée avec succès pendant une demi-heure, mais la LED est devenue plutôt chaude, et a commencé a scintiller (temporairement) après 45 minutes. Les effets à long terme sont inconnus.\n\nCeci n\'est pas encore supporté par le widget.\n\nChoisissez Accepter si vous souhaitez l\'utiliser à vos risques.</string>
     <string name="brightwarn_negative">Non merci</string>
     <string name="brightwarn_accept">Accepter</string>
-
     <string name="label_on">Activé</string>
     <string name="label_off">Désactivé</string>
     <string name="label_high">Luminosité maximale</string>
     <string name="label_strobe">Stroboscope</string>
     <string name="label_frequency">Fréquence : (glisser pour changer)</string>
-
     <string name="widget_options">Options générales</string>
     <string name="setting_widget_bright">Widget luminosité maximale</string>
     <string name="setting_widget_strobe">Flash stroboscopique</string>
     <string name="setting_frequency_title">Fréquence stroboscope</string>
     <string name="setting_frequency_dialog">Fréquence</string>
     <string name="setting_add_widget">Ajouter le widget</string>
-
     <string name="not_torch_title">Torche active</string>
+    <string name="not_torch_toggle">Éteindre la torche</string>
 </resources>
