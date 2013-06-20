@@ -26,4 +26,5 @@
     <string name="setting_add_widget">Voeg legstuk by</string>
 
     <string name="not_torch_title">Flits aan</string>
+    <string name="not_torch_toggle">Skakel flits af</string>
 </resources>
