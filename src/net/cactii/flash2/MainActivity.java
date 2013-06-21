@@ -238,20 +238,12 @@ public class MainActivity extends Activity {
     }
 
     private void updateBigButtonState() {
-        if (Settings.System.getInt(context.getContentResolver(),
-                Settings.System.TORCH_STATE, 0) == 1) {
-            mTorchOn = true;
-            buttonOn.setChecked(true);
-            buttonBright.setEnabled(false);
-            buttonStrobe.setEnabled(false);
-            if (!buttonStrobe.isChecked()) {
-                slider.setEnabled(false);
-            }
-        } else {
-            mTorchOn = false;
-            buttonOn.setChecked(false);
-            buttonBright.setEnabled(useBrightSetting);
-            buttonStrobe.setEnabled(true);
+        buttonOn.setChecked(mTorchOn);
+        buttonBright.setEnabled(!mTorchOn && useBrightSetting);
+        buttonStrobe.setEnabled(!mTorchOn);
+        if (mTorchOn && buttonStrobe.isChecked()) {
+            slider.setEnabled(false);
+        } else if (!mTorchOn) {
             slider.setEnabled(true);
         }
     }
@@ -260,6 +252,7 @@ public class MainActivity extends Activity {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(TorchSwitch.TORCH_STATE_CHANGED)) {
+                mTorchOn = intent.getIntExtra("state", 0) != 0;
                 updateBigButtonState();
             }
         }
