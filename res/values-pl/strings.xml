@@ -16,7 +16,7 @@
     <string name="label_off">Wyłączony</string>
     <string name="label_high">Maksymalna jasność</string>
     <string name="label_strobe">Miganie</string>
-    <string name="label_frequency">Częstotliwośc: </string>
+    <string name="label_frequency">Częstotliwość: </string>
 
     <string name="widget_options">Ustawienia ogólne</string>
     <string name="setting_widget_bright">Widget</string>
@@ -26,4 +26,5 @@
     <string name="setting_add_widget">Dodaj widget</string>
 
     <string name="not_torch_title">Latarka włączona</string>
+    <string name="not_torch_toggle">Wyłącz latarkę</string>
 </resources>
