@@ -26,4 +26,5 @@
     <string name="setting_add_widget">Tilføj widget</string>
 
     <string name="not_torch_title">Lommelygte tændt</string>
+    <string name="not_torch_toggle">Sluk lommelygte</string>
 </resources>
