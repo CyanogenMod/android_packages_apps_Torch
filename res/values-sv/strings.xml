@@ -26,4 +26,5 @@
     <string name="setting_add_widget">Lägg till widget</string>
 
     <string name="not_torch_title">Torch på</string>
+    <string name="not_torch_toggle">Torch av</string>
 </resources>
