@@ -18,10 +18,10 @@
     <string name="about_title">À propos de</string>
     <string name="about_close">Fermer</string>
     <string name="description">Ce programme agit sur la LED de l\'appareil photo.\n</string>
-    <string name="warning">Attention : Laisser la LED activée pendant un long moment pourrait la faire surchauffer.\n\nLe réglage &#8220;Luminosité maximale&#8221; a été testé pendant une demi-heure, mais le risque d\'endomager la LED existe.\n</string>
-    <string name="license">Code original de Nexus One Torch par Ben Buxton, licensié sous GPL, v3.\nhttp://n1torch.googlecode.com/\n\nRemerciements à David Prieto pour le nouveau design de l\'interface.\n\nModifié pour CyanogenMod par Steve Kondik.\n\n</string>
+    <string name="warning">Attention : Laisser la LED activée pendant un long moment pourrait la faire surchauffer.\n\nLe réglage &#8220;Luminosité maximale&#8221; a été testé pendant une demi-heure, mais le risque d\'endommager la LED existe.\n</string>
+    <string name="license">Code original de Nexus One Torch par Ben Buxton, licencié sous GPL, v3.\nhttp://n1torch.googlecode.com/\n\nRemerciements à David Prieto pour le nouveau design de l\'interface.\n\nModifié pour CyanogenMod par Steve Kondik.\n\n</string>
     <string name="warning_label">Attention</string>
-    <string name="brightwarn">La luminosité maximale a été testée avec succès pendant une demi-heure, mais la LED est devenue plutôt chaude, et a commencé a scintiller (temporairement) après 45 minutes. Les effets à long terme sont inconnus.\n\nCeci n\'est pas encore supporté par le widget.\n\nChoisissez Accepter si vous souhaitez l\'utiliser à vos risques.</string>
+    <string name="brightwarn">La luminosité maximale a été testée avec succès pendant une demi-heure, mais la LED est devenue plutôt chaude, et a commencé a scintiller (temporairement) après 45 minutes. Les effets à long terme sont inconnus.\n\nCeci n\'est pas encore supporté par le widget.\n\nChoisissez Accepter si vous souhaitez l\'utiliser à vos risques et périls.</string>
     <string name="brightwarn_negative">Non merci</string>
     <string name="brightwarn_accept">Accepter</string>
     <string name="label_on">Activé</string>
