@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012-2013 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Svjetlo</string>
+    <string name="about_title">O programu</string>
+    <string name="about_close">Zatvori</string>
+
+    <string name="description">Ovaj program koristi LED bljeskalicu kamere.\n</string>
+    <string name="warning">Upozorenje: Korištenje LED svjetla dugo vremena može ga pregrijati.\n\nPuna svjetlina &#8220;uvijek uključena&#8221; je bila testirana na &#189; hr, ali uvijek postoji šansa da bi ovo moglo oštetiti LED.\n</string>
+    <string name="license">Originalni kod od Nexus One Torch programa od Ben Buxtona, izdanog pod licencom GPL, v3.\nhttp://n1torch.googlecode.com/\n\nHvala David Prieto za novi dizajn.\n\nPrilagodio CyanogenModu Steve Kondik.\n\n</string>
+    <string name="warning_label">Upozorenje</string>
+    <string name="brightwarn">Puna svjetilna je bila uspješno testirana za &#189; sati, ali zbilja je bila vruća, i počela bljeskati (povremeno) nakon 45 minuta. Dugotrajne posljedice nisu poznate.\n\n Ovo još nije podržano kao widget.\n\nClick &#8220;Accept&#8221; koristi na vlastiti rizik.</string>
+    <string name="brightwarn_negative">Ne hvala</string>
+    <string name="brightwarn_accept">Prihvati</string>
+
+    <string name="label_on">Uključeno</string>
+    <string name="label_off">Isključeno</string>
+    <string name="label_high">Visoka svjetlina</string>
+    <string name="label_strobe">Bljeskanje</string>
+    <string name="label_frequency">Učestalost: (klizni za promjenu)</string>
+
+    <string name="widget_options">Općenite postavke</string>
+    <string name="setting_widget_bright">Svijetli widget</string>
+    <string name="setting_widget_strobe">Bljeskanje</string>
+    <string name="setting_frequency_title">Učestalost bljeskanja</string>
+    <string name="setting_frequency_dialog">Učestalost</string>
+    <string name="setting_frequency_hz" translatable="false"> Hz</string>
+    <string name="setting_add_widget">Dodaj widget</string>
+
+    <string name="not_torch_title">Svjetlo uključeno</string>
+    <string name="not_torch_toggle">Isključi svjetlo</string>
+</resources>
