@@ -29,6 +29,7 @@ public class FlashDevice {
     private static String mFlashDevice;
     private static String mFlashDeviceLuminosity;
     private static boolean mUseCameraInterface;
+    private static boolean mWriteSysfsOnce;
     private WakeLock mWakeLock;
 
     public static final int STROBE    = -1;
@@ -49,6 +50,8 @@ public class FlashDevice {
     private Camera mCamera = null;
     private Camera.Parameters mParams;
 
+    private int count = 0;
+
     private FlashDevice(Context context) {
         mValueOff = context.getResources().getInteger(R.integer.valueOff);
         mValueOn = context.getResources().getInteger(R.integer.valueOn);
@@ -58,6 +61,7 @@ public class FlashDevice {
         mFlashDevice = context.getResources().getString(R.string.flashDevice);
         mFlashDeviceLuminosity = context.getResources().getString(R.string.flashDeviceLuminosity);
         mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
+        mWriteSysfsOnce = context.getResources().getBoolean(R.bool.writeSysfsOnce);
         if (mUseCameraInterface) {
             PowerManager pm
                 = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
@@ -198,11 +202,16 @@ public class FlashDevice {
                     if (mFlashDeviceWriter == null) {
                         mFlashDeviceWriter = new FileWriter(mFlashDevice);
                     }
-                    mFlashDeviceWriter.write(String.valueOf(value));
-                    mFlashDeviceWriter.flush();
+                    if (!(value == 1 && count > 0 && mWriteSysfsOnce)) {
+                        mFlashDeviceWriter.write(String.valueOf(value));
+                        mFlashDeviceWriter.flush();
+                    }
                     if (mode == OFF) {
                         mFlashDeviceWriter.close();
                         mFlashDeviceWriter = null;
+                        count = 0;
+                    } else {
+                        count++;
                     }
                 }
             }
