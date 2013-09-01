@@ -49,6 +49,8 @@ public class FlashDevice {
     private Camera mCamera = null;
     private Camera.Parameters mParams;
 
+    private int isOn = 0;
+
     private FlashDevice(Context context) {
         mValueOff = context.getResources().getInteger(R.integer.valueOff);
         mValueOn = context.getResources().getInteger(R.integer.valueOn);
@@ -198,11 +200,16 @@ public class FlashDevice {
                     if (mFlashDeviceWriter == null) {
                         mFlashDeviceWriter = new FileWriter(mFlashDevice);
                     }
-                    mFlashDeviceWriter.write(String.valueOf(value));
-                    mFlashDeviceWriter.flush();
+                    // Write to sysfs only if not already on, or if turning off
+                    if (isOn == 0 || mode == OFF) {
+                        isOn = 1;
+                        mFlashDeviceWriter.write(String.valueOf(value));
+                        mFlashDeviceWriter.flush();
+                        }
                     if (mode == OFF) {
                         mFlashDeviceWriter.close();
                         mFlashDeviceWriter = null;
+                        isOn = 0;
                     }
                 }
             }
