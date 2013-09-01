@@ -198,8 +198,11 @@ public class FlashDevice {
                     if (mFlashDeviceWriter == null) {
                         mFlashDeviceWriter = new FileWriter(mFlashDevice);
                     }
-                    mFlashDeviceWriter.write(String.valueOf(value));
-                    mFlashDeviceWriter.flush();
+                    // Write to sysfs only if not already on
+                    if (!(mode == ON && mFlashMode == ON)) {
+                        mFlashDeviceWriter.write(String.valueOf(value));
+                        mFlashDeviceWriter.flush();
+                    }
                     if (mode == OFF) {
                         mFlashDeviceWriter.close();
                         mFlashDeviceWriter = null;
