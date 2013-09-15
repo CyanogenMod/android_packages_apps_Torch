@@ -34,7 +34,7 @@
             android:gravity="center"
             android:textSize="11dp"
             android:textStyle="normal"
-            android:textColor="#ffffff"
+            android:textColor="@color/text_color"
             />
 
         <ImageView

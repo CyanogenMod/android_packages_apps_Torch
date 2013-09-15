@@ -10,7 +10,7 @@
         android:layout_gravity="center_vertical"
         android:paddingLeft="8dp"
         android:text="@string/description"
-        android:textColor="#ffffffff" />
+        android:textColor="@color/text_color" />
 
     <TextView
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         android:layout_gravity="center_vertical"
         android:paddingLeft="8dp"
         android:text="@string/warning"
-        android:textColor="#ffff8080"
+        android:textColor="@color/text_about"
         android:textStyle="bold" />
 
     <TextView
@@ -27,6 +27,6 @@
         android:layout_gravity="center_vertical"
         android:paddingLeft="8dp"
         android:text="@string/license"
-        android:textColor="#ffffff" />
+        android:textColor="@color/text_color" />
 
 </LinearLayout>
