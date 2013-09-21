@@ -22,4 +22,5 @@
     <string name="setting_frequency_dialog">Freqüència</string>
     <string name="setting_add_widget">Afegeix un giny</string>
     <string name="not_torch_title">Torxa engegada</string>
+    <string name="not_torch_toggle">Apaga la torxa</string>
 </resources>
