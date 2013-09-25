@@ -24,11 +24,8 @@
     <string name="brightwarn">Fuld lysstyrke er blevet tested uden problemer i &#189; time i træk, men efter 45 minutter blev den ret varm og begyndte at flimre (midlertidigt). Langtidseffekten er ukendt.\n\nWidgeten understøtter ikke denne funktionalitet endnu.\n\nTryk &#8220;Accepter&#8221; hvis du ønsker at bruge det på eget ansvar.</string>
     <string name="brightwarn_negative">Nej tak</string>
     <string name="brightwarn_accept">Accepter</string>
-    <string name="label_on">Tænd</string>
-    <string name="label_off">Sluk</string>
     <string name="label_high">Høj lysstyrke</string>
     <string name="label_strobe">Stroboskoplys</string>
-    <string name="label_frequency">Frekvens: (træk for at ændre)</string>
     <string name="widget_options">Generelle Indstillinger</string>
     <string name="setting_widget_bright">Høj lysstyrke widget</string>
     <string name="setting_widget_strobe">Stroboskop flash</string>

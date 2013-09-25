@@ -12,11 +12,8 @@
     <string name="brightwarn_negative">Não obrigado</string>
     <string name="brightwarn_accept">Aceitar</string>
 
-    <string name="label_on">Ligado</string>
-    <string name="label_off">Desligado</string>
     <string name="label_high">Brilho Alto</string>
     <string name="label_strobe">Piscar</string>
-    <string name="label_frequency">Frequência: (deslize para mudar)</string>
 
     <string name="widget_options">Opções Gerais</string>
     <string name="setting_widget_bright">Widget de Brilho</string>

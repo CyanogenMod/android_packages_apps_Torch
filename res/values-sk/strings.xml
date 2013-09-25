@@ -10,11 +10,8 @@
     <string name="brightwarn">Vysoký jas bol úspešne odskúšaný po dobu pol hodiny, ale dióda sa zahriala a začala blikať (dočasne) po 45-tich minútach. Dlhodobé účinky nie sú známe.\n\nToto zatiaľ nie je podporované v miniaplikácii.\n\nKliknite na &#8222;Prijímam&#8221;, ak chcete pokračovať na vlastné riziko.</string>
     <string name="brightwarn_negative">Nie, ďakujem</string>
     <string name="brightwarn_accept">Prijímam</string>
-    <string name="label_on">Zapnuté</string>
-    <string name="label_off">Vypnuté</string>
     <string name="label_high">Vysoký jas</string>
     <string name="label_strobe">Prerušované svietenie</string>
-    <string name="label_frequency">Frekvencia: (posunutím zmeníte)</string>
     <string name="widget_options">Všeobecné voľbys</string>
     <string name="setting_widget_bright">Miniaplikácia pre vysoký jas</string>
     <string name="setting_widget_strobe">Prerušované svietenie</string>
