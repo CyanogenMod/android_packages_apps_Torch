@@ -12,11 +12,8 @@
     <string name="brightwarn_negative">Нет, спасибо</string>
     <string name="brightwarn_accept">Согласиться</string>
 
-    <string name="label_on">Включить</string>
-    <string name="label_off">Выключить</string>
     <string name="label_high">Максимальная яркость</string>
     <string name="label_strobe">Стробоскоп</string>
-    <string name="label_frequency">Частота: (проведите для изменения)</string>
 
     <string name="widget_options">Настройки виджета</string>
     <string name="setting_widget_bright">Максимальная яркость</string>

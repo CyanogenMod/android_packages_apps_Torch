@@ -27,11 +27,8 @@
     <string name="brightwarn_negative">Не, хвала</string>
     <string name="brightwarn_accept">Прихватам</string>
 
-    <string name="label_on">Укључити</string>
-    <string name="label_off">Искључити</string>
     <string name="label_high">Пуна јачина</string>
     <string name="label_strobe">Стробоскоп</string>
-    <string name="label_frequency">Фреквенција: (превуци за промену)</string>
 
     <string name="widget_options">Опште поставке</string>
     <string name="setting_widget_bright">Пуна јачина</string>

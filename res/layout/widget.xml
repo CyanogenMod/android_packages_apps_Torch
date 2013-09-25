@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/appwidget_bg"
-    android:gravity="center" >
+    android:gravity="center"
+    android:baselineAligned="false">
 
     <LinearLayout
         android:id="@+id/btn"
@@ -32,7 +33,7 @@
             android:layout_height="16.0dip"
             android:scaleType="fitXY"
             android:gravity="center"
-            android:textSize="11dp"
+            android:textSize="12sp"
             android:textStyle="normal"
             android:textColor="@color/text_color"
             />

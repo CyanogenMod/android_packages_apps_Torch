@@ -12,11 +12,8 @@
     <string name="brightwarn_negative">Hylkää</string>
     <string name="brightwarn_accept">Hyväksy</string>
 
-    <string name="label_on">Päällä</string>
-    <string name="label_off">Pois</string>
     <string name="label_high">Täysi kirkkaus</string>
     <string name="label_strobe">Strobo</string>
-    <string name="label_frequency">Taajuus: (liu\'uta muuttaaksesi)</string>
 
     <string name="widget_options">Yleiset asetukset</string>
     <string name="setting_widget_bright">Kirkas widget</string>
