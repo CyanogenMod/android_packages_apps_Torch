@@ -24,11 +24,8 @@
     <string name="brightwarn">Η υψηλή φωτεινότητα έχει δοκιμαστεί επιτυχώς για μισή ώρα, αλλά το LED ανέπτυξε μεγάλη θερμοκρασία και άρχισε να τρεμοπαίζει στα 45 λεπτά. Οι μακροπρόθεσμες επιπτώσεις είναι άγνωστες.\n\nΚάντε κλικ στο κουμπί &#8220;Αποδοχή&#8221;, αν θέλετε να το χρησιμοποιήσετε με δική σας ευθύνη.</string>
     <string name="brightwarn_negative">Όχι, ευχαριστώ</string>
     <string name="brightwarn_accept">Αποδοχή</string>
-    <string name="label_on">Ενεργός</string>
-    <string name="label_off">Ανενεργός</string>
     <string name="label_high">Υψηλή φωτεινότητα</string>
     <string name="label_strobe">Στροβιλισμός</string>
-    <string name="label_frequency">Συχνότητα: (σύρετε για αλλαγή)</string>
     <string name="widget_options">Γενικές ρυθμίσεις</string>
     <string name="setting_widget_bright">Υψηλή φωτεινότητα</string>
     <string name="setting_widget_strobe">Στροβιλισμός</string>

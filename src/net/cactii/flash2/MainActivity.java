@@ -11,9 +11,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -59,10 +57,6 @@ public class MainActivity extends Activity {
 
     private SharedPreferences.Editor mPrefsEditor = null;
     
-    // Labels
-    private String labelOn = null;
-    private String labelOff = null;
-
     private static boolean useBrightSetting = !Build.DEVICE.equals("crespo");
 
     /** Called when the activity is first created. */
@@ -79,9 +73,6 @@ public class MainActivity extends Activity {
 
         strobeperiod = 100;
         mTorchOn = false;
-
-        labelOn = this.getString(R.string.label_on);
-        labelOff = this.getString(R.string.label_off);
 
         mWidgetProvider = TorchWidgetProvider.getInstance();
 

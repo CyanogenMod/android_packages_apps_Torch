@@ -10,11 +10,8 @@
     <string name="brightwarn">Робота спалаху в режимі повної яскравості була успішно протестована протягом півгодини, але викликала сильне нагрівання та тимчасове мерехтіння спалаху (через 45 хвилин). Наслідки довгострокового застосування невідомі.\n\nПідтримка режиму віджетом поки що не реалізована.\n\nНатисніть &#8220;Прийняти&#8221;, якщо бажаєте використовувати режим на свій страх і ризик.</string>
     <string name="brightwarn_negative">Ні, дякую</string>
     <string name="brightwarn_accept">Прийняти</string>
-    <string name="label_on">Увімкнути</string>
-    <string name="label_off">Вимкнути</string>
     <string name="label_high">Висока яскравість</string>
     <string name="label_strobe">Стробоскоп</string>
-    <string name="label_frequency">Частота: (перетягніть, щоб змінити)</string>
     <string name="widget_options">Основні налаштування</string>
     <string name="setting_widget_bright">Віджет ліхтарика</string>
     <string name="setting_widget_strobe">Стробоскоп</string>
