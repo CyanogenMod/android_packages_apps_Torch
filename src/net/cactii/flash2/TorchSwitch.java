@@ -1,7 +1,5 @@
 package net.cactii.flash2;
 
-import java.util.List;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
@@ -13,28 +11,27 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 
+import java.util.List;
+
 public class TorchSwitch extends BroadcastReceiver {
 
     public static final String TOGGLE_FLASHLIGHT = "net.cactii.flash2.TOGGLE_FLASHLIGHT";
     public static final String TORCH_STATE_CHANGED = "net.cactii.flash2.TORCH_STATE_CHANGED";
 
-    private SharedPreferences mPrefs;
-
     @Override
-    public void onReceive(Context context, Intent receivingIntent) {
-        mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-        if (receivingIntent.getAction().equals(TOGGLE_FLASHLIGHT)) {
+    public void onReceive(Context context, Intent intent) {
+        if (intent.getAction().equals(TOGGLE_FLASHLIGHT)) {
             // bright setting can come from intent or from prefs depending on
             // on what send the broadcast
             //
             // Unload intent extras if they exist:
-            boolean bright = receivingIntent.getBooleanExtra("bright", false) |
-                    mPrefs.getBoolean("bright", false);
-            boolean strobe = receivingIntent.getBooleanExtra("strobe", false) |
-                    mPrefs.getBoolean("strobe", false);
-            int period = receivingIntent.getIntExtra("period", 200);
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+            boolean bright = intent.getBooleanExtra("bright", prefs.getBoolean("bright", false));
+            boolean strobe = intent.getBooleanExtra("strobe", prefs.getBoolean("strobe", false));
+            int period = intent.getIntExtra("period", 200);
+
             Intent i = new Intent(context, TorchService.class);
-            if (this.TorchServiceRunning(context)) {
+            if (this.torchServiceRunning(context)) {
                 context.stopService(i);
             } else {
                 i.putExtra("bright", bright);
@@ -45,13 +42,10 @@ public class TorchSwitch extends BroadcastReceiver {
         }
     }
 
-    private boolean TorchServiceRunning(Context context) {
+    private boolean torchServiceRunning(Context context) {
         ActivityManager am = (ActivityManager) context.getSystemService(Activity.ACTIVITY_SERVICE);
-
         List<ActivityManager.RunningServiceInfo> svcList = am.getRunningServices(100);
 
-        if (!(svcList.size() > 0))
-            return false;
         for (RunningServiceInfo serviceInfo : svcList) {
             ComponentName serviceName = serviceInfo.service;
             if (serviceName.getClassName().endsWith(".TorchService")
