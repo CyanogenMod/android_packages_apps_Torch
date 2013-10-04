@@ -1,20 +1,20 @@
 package net.cactii.flash2;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
-import javax.microedition.khronos.opengles.GL10;
-
+import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
-import net.cactii.flash2.R;
-import android.content.Context;
-import android.util.Log;
-
 import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import android.util.Log;
+
+import net.cactii.flash2.R;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+import javax.microedition.khronos.opengles.GL10;
 
 public class FlashDevice {
 
@@ -37,9 +37,10 @@ public class FlashDevice {
     public static final int HIGH      = 128;
     public static final int DEATH_RAY = 3;
 
-    private static FlashDevice instance;
-    private static boolean surfaceCreated = false;
-    private static SurfaceTexture surfaceTexture;
+    private static FlashDevice sInstance;
+
+    private boolean mSurfaceCreated = false;
+    private SurfaceTexture mSurfaceTexture;
 
     private FileWriter mFlashDeviceWriter = null;
     private FileWriter mFlashDeviceLuminosityWriter = null;
@@ -66,10 +67,10 @@ public class FlashDevice {
     }
 
     public static synchronized FlashDevice instance(Context context) {
-        if (instance == null) {
-            instance = new FlashDevice(context);
+        if (sInstance == null) {
+            sInstance = new FlashDevice(context.getApplicationContext());
         }
-        return instance;
+        return sInstance;
     }
 
     public synchronized void setFlashMode(int mode) {
@@ -110,12 +111,12 @@ public class FlashDevice {
                         mCamera.stopPreview();
                         mCamera.release();
                         mCamera = null;
-                        surfaceCreated = false;
+                        mSurfaceCreated = false;
                     }
                     if (mWakeLock.isHeld())
                         mWakeLock.release();
                 } else {
-                    if (!surfaceCreated) {
+                    if (!mSurfaceCreated) {
                         int[] textures = new int[1];
                         // generate one texture pointer and bind it as an
                         // external texture.
@@ -137,9 +138,9 @@ public class FlashDevice {
                                 GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
                                 GL10.GL_TEXTURE_WRAP_T, GL10.GL_CLAMP_TO_EDGE);
 
-                        FlashDevice.surfaceTexture = new SurfaceTexture(textures[0]);
-                        mCamera.setPreviewTexture(FlashDevice.surfaceTexture);
-                        surfaceCreated = true;
+                        mSurfaceTexture = new SurfaceTexture(textures[0]);
+                        mCamera.setPreviewTexture(mSurfaceTexture);
+                        mSurfaceCreated = true;
                         mCamera.startPreview();
                     }
                     mParams = mCamera.getParameters();

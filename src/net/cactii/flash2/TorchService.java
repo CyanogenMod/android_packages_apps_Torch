@@ -17,97 +17,85 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TorchService extends Service {
-
     private static final String MSG_TAG = "TorchRoot";
 
     private Handler mHandler;
-
     private TimerTask mTorchTask;
-
     private Timer mTorchTimer;
-
     private WrapperTask mStrobeTask;
-
     private Timer mStrobeTimer;
 
     private NotificationManager mNotificationManager;
-
     private Notification mNotification;
-
     private Notification.Builder mNotificationBuilder;
 
     private boolean mBright;
-
     private int mStrobePeriod;
 
     private IntentReceiver mReceiver;
-
     private Runnable mStrobeRunnable;
 
-    private Context mContext;
-
+    @Override
     public void onCreate() {
-        String ns = Context.NOTIFICATION_SERVICE;
-        this.mNotificationManager = (NotificationManager) getSystemService(ns);
-        this.mContext = getApplicationContext();
+        mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        mHandler = new Handler();
 
-        this.mHandler = new Handler() {
-        };
-
-        this.mTorchTask = new TimerTask() {
+        mTorchTask = new TimerTask() {
+            @Override
             public void run() {
-                FlashDevice.instance(mContext).setFlashMode(mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON);
+                FlashDevice.instance(TorchService.this).setFlashMode(
+                        mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON);
             }
         };
-        this.mTorchTimer = new Timer();
+        mTorchTimer = new Timer();
 
-        this.mStrobeRunnable = new Runnable() {
+        mStrobeRunnable = new Runnable() {
             private int mCounter = 4;
 
             @Override
             public void run() {
+                final FlashDevice flash = FlashDevice.instance(TorchService.this);
                 int flashMode = mBright ? FlashDevice.DEATH_RAY : FlashDevice.ON;
-                if (FlashDevice.instance(mContext).getFlashMode() < flashMode) {
+                if (flash.getFlashMode() < flashMode) {
                     if (this.mCounter-- < 1) {
-                        FlashDevice.instance(mContext).setFlashMode(flashMode);
+                        flash.setFlashMode(flashMode);
                     }
                 } else {
-                    FlashDevice.instance(mContext).setFlashMode(FlashDevice.STROBE);
+                    flash.setFlashMode(FlashDevice.STROBE);
                     this.mCounter = 4;
                 }
             }
-
         };
-        this.mStrobeTask = new WrapperTask(this.mStrobeRunnable);
-
-        this.mStrobeTimer = new Timer();
-
+        mStrobeTask = new WrapperTask(this.mStrobeRunnable);
+        mStrobeTimer = new Timer();
     }
 
+    @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
         Log.d(MSG_TAG, "Starting torch");
+
         if (intent == null) {
             this.stopSelf();
             return START_NOT_STICKY;
         }
-        this.mBright = intent.getBooleanExtra("bright", false);
+
+        mBright = intent.getBooleanExtra("bright", false);
         if (intent.getBooleanExtra("strobe", false)) {
-            this.mStrobePeriod = intent.getIntExtra("period", 200) / 4;
-            this.mStrobeTimer.schedule(this.mStrobeTask, 0, this.mStrobePeriod);
+            mStrobePeriod = intent.getIntExtra("period", 200) / 4;
+            mStrobeTimer.schedule(mStrobeTask, 0, mStrobePeriod);
         } else {
-            this.mTorchTimer.schedule(this.mTorchTask, 0, 100);
+            mTorchTimer.schedule(mTorchTask, 0, 100);
         }
 
-        this.mReceiver = new IntentReceiver();
+        mReceiver = new IntentReceiver();
         registerReceiver(mReceiver, new IntentFilter("net.cactii.flash2.SET_STROBE"));
 
         mNotificationBuilder = new Notification.Builder(this);
         mNotificationBuilder.setSmallIcon(R.drawable.notification_icon);
         mNotificationBuilder.setTicker(getString(R.string.not_torch_title));
         mNotificationBuilder.setContentTitle(getString(R.string.not_torch_title));
-        mNotificationBuilder.setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this,
-                MainActivity.class), 0));
+        mNotificationBuilder.setContentIntent(PendingIntent.getActivity(this,
+                0, new Intent(this, MainActivity.class), 0));
         mNotificationBuilder.setAutoCancel(false);
         mNotificationBuilder.setOngoing(true);
 
@@ -121,16 +109,18 @@ public class TorchService extends Service {
 
         startForeground(getString(R.string.app_name).hashCode(), mNotification);
         updateState(true);
+
         return START_STICKY;
     }
 
+    @Override
     public void onDestroy() {
         this.mNotificationManager.cancelAll();
         this.unregisterReceiver(this.mReceiver);
         stopForeground(true);
         this.mTorchTimer.cancel();
         this.mStrobeTimer.cancel();
-        FlashDevice.instance(mContext).setFlashMode(FlashDevice.OFF);
+        FlashDevice.instance(this).setFlashMode(FlashDevice.OFF);
         updateState(false);
     }
 
@@ -140,12 +130,12 @@ public class TorchService extends Service {
         sendStickyBroadcast(intent);
     }
 
-    public void Reshedule(int period) {
-        this.mStrobeTask.cancel();
-        this.mStrobeTask = new WrapperTask(this.mStrobeRunnable);
+    public void reschedule(int period) {
+        mStrobeTask.cancel();
+        mStrobeTask = new WrapperTask(mStrobeRunnable);
 
-        this.mStrobePeriod = period / 4;
-        this.mStrobeTimer.schedule(this.mStrobeTask, 0, this.mStrobePeriod);
+        mStrobePeriod = period / 4;
+        mStrobeTimer.schedule(mStrobeTask, 0, mStrobePeriod);
     }
 
     public class WrapperTask extends TimerTask {
@@ -166,16 +156,13 @@ public class TorchService extends Service {
     }
 
     public class IntentReceiver extends BroadcastReceiver {
-
         @Override
         public void onReceive(Context context, final Intent intent) {
             mHandler.post(new Runnable() {
-
                 @Override
                 public void run() {
-                    Reshedule(intent.getIntExtra("period", 200));
+                    reschedule(intent.getIntExtra("period", 200));
                 }
-
             });
         }
     }
