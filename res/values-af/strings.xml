@@ -12,8 +12,6 @@
     <string name="brightwarn_negative">Kanselleer</string>
     <string name="brightwarn_accept">Aanvaar</string>
 
-    <string name="label_on">Aan</string>
-    <string name="label_off">Af</string>
     <string name="label_high">Volle helderheid</string>
     <string name="label_strobe">Flikker</string>
     <string name="label_frequency">Frekwensie: (skuif om te verander)</string>

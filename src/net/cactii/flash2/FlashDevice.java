@@ -1,20 +1,20 @@
 package net.cactii.flash2;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
-import javax.microedition.khronos.opengles.GL10;
-
+import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
-import net.cactii.flash2.R;
-import android.content.Context;
-import android.util.Log;
-
 import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import android.util.Log;
+
+import net.cactii.flash2.R;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+import javax.microedition.khronos.opengles.GL10;
 
 public class FlashDevice {
 
@@ -37,9 +37,9 @@ public class FlashDevice {
     public static final int HIGH      = 128;
     public static final int DEATH_RAY = 3;
 
-    private static FlashDevice instance;
-    private static boolean surfaceCreated = false;
-    private static SurfaceTexture surfaceTexture;
+    private static FlashDevice sInstance;
+
+    private boolean mSurfaceCreated = false;
 
     private FileWriter mFlashDeviceWriter = null;
     private FileWriter mFlashDeviceLuminosityWriter = null;
@@ -47,7 +47,6 @@ public class FlashDevice {
     private int mFlashMode = OFF;
 
     private Camera mCamera = null;
-    private Camera.Parameters mParams;
 
     private FlashDevice(Context context) {
         mValueOff = context.getResources().getInteger(R.integer.valueOff);
@@ -66,13 +65,14 @@ public class FlashDevice {
     }
 
     public static synchronized FlashDevice instance(Context context) {
-        if (instance == null) {
-            instance = new FlashDevice(context);
+        if (sInstance == null) {
+            sInstance = new FlashDevice(context.getApplicationContext());
         }
-        return instance;
+        return sInstance;
     }
 
     public synchronized void setFlashMode(int mode) {
+	Log.d(MSG_TAG, "setFlashMode " + mode);
         try {
             int value = mode;
             switch (mode) {
@@ -103,19 +103,19 @@ public class FlashDevice {
                     mCamera = Camera.open();
                 }
                 if (value == OFF) {
-                    mParams = mCamera.getParameters();
-                    mParams.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
-                    mCamera.setParameters(mParams);
+                    Camera.Parameters params = mCamera.getParameters();
+                    params.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+                    mCamera.setParameters(params);
                     if (mode != STROBE) {
                         mCamera.stopPreview();
                         mCamera.release();
                         mCamera = null;
-                        surfaceCreated = false;
+                        mSurfaceCreated = false;
                     }
                     if (mWakeLock.isHeld())
                         mWakeLock.release();
                 } else {
-                    if (!surfaceCreated) {
+                    if (!mSurfaceCreated) {
                         int[] textures = new int[1];
                         // generate one texture pointer and bind it as an
                         // external texture.
@@ -137,14 +137,14 @@ public class FlashDevice {
                                 GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
                                 GL10.GL_TEXTURE_WRAP_T, GL10.GL_CLAMP_TO_EDGE);
 
-                        FlashDevice.surfaceTexture = new SurfaceTexture(textures[0]);
-                        mCamera.setPreviewTexture(FlashDevice.surfaceTexture);
-                        surfaceCreated = true;
+                        SurfaceTexture surfaceTexture = new SurfaceTexture(textures[0]);
+                        mCamera.setPreviewTexture(surfaceTexture);
+                        mSurfaceCreated = true;
                         mCamera.startPreview();
                     }
-                    mParams = mCamera.getParameters();
-                    mParams.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-                    mCamera.setParameters(mParams);
+                    Camera.Parameters params = mCamera.getParameters();
+                    params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                    mCamera.setParameters(params);
                     if (!mWakeLock.isHeld()) {  // only get the wakelock if we don't have it already
                         mWakeLock.acquire(); // we don't want to go to sleep while cam is up
                     }

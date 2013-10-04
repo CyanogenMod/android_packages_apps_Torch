@@ -12,8 +12,6 @@
     <string name="brightwarn_negative">לא תודה</string>
     <string name="brightwarn_accept">קבל</string>
 
-    <string name="label_on">דולק</string>
-    <string name="label_off">כבוי</string>
     <string name="label_high">בהירות גבוהה</string>
     <string name="label_strobe">הבהוב</string>
     <string name="label_frequency">תדירות: (החלק כדי לשנות)</string>
