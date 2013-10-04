@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
+
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
+-->
 <resources>
     <string name="app_name">トーチ</string>
     <string name="about_title">情報</string>
@@ -10,8 +27,6 @@
     <string name="brightwarn">最大明度は30分のテストに成功しましたが、とても熱くなり、45分ほど一時的に明滅するようになりました。長時間使用の影響はわかりません。\n\nウィジェットのサポートはまだありません。.\n\n\自己責任での使用を望むのなら&#8220;了解&#8221;を押してください。</string>
     <string name="brightwarn_negative">やめます</string>
     <string name="brightwarn_accept">了解</string>
-    <string name="label_on">オン</string>
-    <string name="label_off">オフ</string>
     <string name="label_high">高明度</string>
     <string name="label_strobe">ストロボ</string>
     <string name="label_frequency">頻度: (スライドして変更)</string>

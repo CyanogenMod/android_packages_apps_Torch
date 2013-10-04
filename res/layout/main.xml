@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
+
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background" >
+
+    <ToggleButton
+        android:id="@+id/buttonOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/main_lamp_margin"
+        android:background="@drawable/bulb"
+        android:textOff=""
+        android:textOn="" />
+
+    <View
+        android:id="@+id/ruler1"
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/divider_color" />
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/label_high"
+        android:id="@+id/bright_switch"
+        android:checked="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+    <View
+        android:id="@+id/ruler2"
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/divider_color" />
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/label_strobe"
+        android:id="@+id/strobe_switch"
+        android:checked="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp" />
+
+    <LinearLayout
+        android:id="@+id/strobeRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/strobeTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_frequency" />
+
+        <SeekBar
+            android:id="@+id/slider"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:max="400"
+            android:maxHeight="48dp"
+            android:minHeight="48dp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/ruler3"
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/divider_color" />
+
+</LinearLayout>

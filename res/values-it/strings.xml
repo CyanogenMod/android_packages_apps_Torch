@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
+
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
+-->
 <resources>
     <string name="app_name">Torcia</string>
     <string name="about_title">Info</string>
@@ -10,8 +27,6 @@
     <string name="brightwarn">L\'Alta Luminosità è stata testata con successo per &#189; ora di attività, ma il LED si è scaldato notevolmente e dopo 45 min ha iniziato a tremolare (temporaneamete). Effetti a lungo termine sono sconosciuti.\n\nQuesta modalità non è ancora supportata nel widget.\n\nClicca &#8220;Accetto&#8221; se vuoi usarla a tuo rischio.</string>
     <string name="brightwarn_negative">No grazie</string>
     <string name="brightwarn_accept">Accetto</string>
-    <string name="label_on">Acceso</string>
-    <string name="label_off">Spento</string>
     <string name="label_high">Alta Luminosità</string>
     <string name="label_strobe">Strobo</string>
     <string name="label_frequency">Frequenza: (scorri per cambiare)</string>

@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
+
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
+-->
 <resources>
     <string name="app_name">Torch</string>
     <string name="about_title">Quant a</string>
@@ -10,8 +27,6 @@
     <string name="brightwarn">La brillantor completa s\'ha provat amb èxit durant mitja hora d\'operació, però es va escalfar considerablement i als 45 minuts va començar a parpellejar. Els efectes a llarg termini són desconeguts.\n\nEncara no s\'ha creat un giny.\n\nPremeu «Accepta» si voleu fer-lo servir pel vostre propi risc.</string>
     <string name="brightwarn_negative">No, gràcies</string>
     <string name="brightwarn_accept">Accepta</string>
-    <string name="label_on">Engega</string>
-    <string name="label_off">Apaga</string>
     <string name="label_high">Brillantor alta</string>
     <string name="label_strobe">Estroboscòpic</string>
     <string name="label_frequency">Freqüència: (llisqueu per canviar)</string>

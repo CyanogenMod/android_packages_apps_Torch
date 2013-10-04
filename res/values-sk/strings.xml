@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
+
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
+-->
 <resources>
     <string name="app_name">Svietidlo</string>
     <string name="about_title">O programe</string>
@@ -10,8 +27,6 @@
     <string name="brightwarn">Vysoký jas bol úspešne odskúšaný po dobu pol hodiny, ale dióda sa zahriala a začala blikať (dočasne) po 45-tich minútach. Dlhodobé účinky nie sú známe.\n\nToto zatiaľ nie je podporované v miniaplikácii.\n\nKliknite na &#8222;Prijímam&#8221;, ak chcete pokračovať na vlastné riziko.</string>
     <string name="brightwarn_negative">Nie, ďakujem</string>
     <string name="brightwarn_accept">Prijímam</string>
-    <string name="label_on">Zapnuté</string>
-    <string name="label_off">Vypnuté</string>
     <string name="label_high">Vysoký jas</string>
     <string name="label_strobe">Prerušované svietenie</string>
     <string name="label_frequency">Frekvencia: (posunutím zmeníte)</string>
