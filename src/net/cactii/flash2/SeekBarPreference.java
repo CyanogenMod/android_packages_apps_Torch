@@ -1,7 +1,19 @@
-/* The following code was written by Matthew Wiggins 
- * and is released under the APACHE 2.0 license 
- * 
- * http://www.apache.org/licenses/LICENSE-2.0
+/*
+ * Copyright (C) 2013 The CyanogenMod Project
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * version 3 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA  02110-1301, USA.
  */
 
 package net.cactii.flash2;
@@ -16,55 +28,50 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class SeekBarPreference extends DialogPreference implements SeekBar.OnSeekBarChangeListener {
-
     private SeekBar mSeekBar;
-
     private TextView mSplashText, mValueText;
-
-    private Context mContext;
-
-    private String mDialogMessage, mSuffix;
-
+    private final String mDialogMessage, mSuffix;
     private int mDefault, mMax, mValue = 0;
 
     public SeekBarPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        mContext = context;
 
         mDialogMessage = context.getString(R.string.setting_frequency_dialog);
         mSuffix = context.getString(R.string.setting_frequency_hz);
         //has min value of 1hz but displays 0hz
         mDefault = 4;
         mMax = 24;
-
     }
 
     @Override
     protected View onCreateDialogView() {
+        final Context context = getContext();
         LinearLayout.LayoutParams params;
-        LinearLayout layout = new LinearLayout(mContext);
+        LinearLayout layout = new LinearLayout(context);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(6, 6, 6, 6);
 
-        mSplashText = new TextView(mContext);
-        if (mDialogMessage != null)
+        mSplashText = new TextView(context);
+        if (mDialogMessage != null) {
             mSplashText.setText(mDialogMessage);
+        }
         layout.addView(mSplashText);
 
-        mValueText = new TextView(mContext);
+        mValueText = new TextView(context);
         mValueText.setGravity(Gravity.CENTER_HORIZONTAL);
         mValueText.setTextSize(32);
         params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
         layout.addView(mValueText, params);
 
-        mSeekBar = new SeekBar(mContext);
+        mSeekBar = new SeekBar(context);
         mSeekBar.setOnSeekBarChangeListener(this);
         layout.addView(mSeekBar, new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
 
-        if (shouldPersist())
+        if (shouldPersist()) {
             mValue = getPersistedInt(mDefault);
+        }
 
         mSeekBar.setMax(mMax);
         mSeekBar.setProgress(mValue);
@@ -81,23 +88,28 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
     @Override
     protected void onSetInitialValue(boolean restore, Object defaultValue) {
         super.onSetInitialValue(restore, defaultValue);
-        if (restore)
+        if (restore) {
             mValue = shouldPersist() ? getPersistedInt(mDefault) : 0;
-        else
+        } else {
             mValue = (Integer) defaultValue;
+        }
     }
 
+    @Override
     public void onProgressChanged(SeekBar seek, int value, boolean fromTouch) {
-        String t = String.valueOf(value+1);
+        String t = String.valueOf(value + 1);
         mValueText.setText(mSuffix == null ? t : t.concat(mSuffix));
-        if (shouldPersist())
+        if (shouldPersist()) {
             persistInt(value);
-        callChangeListener(Integer.valueOf(value));
+        }
+        callChangeListener(value);
     }
 
+    @Override
     public void onStartTrackingTouch(SeekBar seek) {
     }
 
+    @Override
     public void onStopTrackingTouch(SeekBar seek) {
     }
 
@@ -111,8 +123,9 @@ public class SeekBarPreference extends DialogPreference implements SeekBar.OnSee
 
     public void setProgress(int progress) {
         mValue = progress;
-        if (mSeekBar != null)
+        if (mSeekBar != null) {
             mSeekBar.setProgress(progress);
+        }
     }
 
     public int getProgress() {

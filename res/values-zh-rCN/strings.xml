@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
+
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
+-->
 <resources>
     <string name="app_name">手电筒</string>
     <string name="about_title">关于</string>
@@ -12,8 +29,6 @@
     <string name="brightwarn_negative">拒绝</string>
     <string name="brightwarn_accept">接受</string>
 
-    <string name="label_on">开</string>
-    <string name="label_off">关</string>
     <string name="label_high">高亮模式</string>
     <string name="label_strobe">闪烁</string>
     <string name="label_frequency">频率：（拖动更改）</string>

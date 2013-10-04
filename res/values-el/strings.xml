@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 The CyanogenMod Project
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
 
-          http://www.apache.org/licenses/LICENSE-2.0
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
 
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
 -->
 <resources>
     <string name="app_name">Φακός</string>
@@ -24,8 +27,6 @@
     <string name="brightwarn">Η υψηλή φωτεινότητα έχει δοκιμαστεί επιτυχώς για μισή ώρα, αλλά το LED ανέπτυξε μεγάλη θερμοκρασία και άρχισε να τρεμοπαίζει στα 45 λεπτά. Οι μακροπρόθεσμες επιπτώσεις είναι άγνωστες.\n\nΚάντε κλικ στο κουμπί &#8220;Αποδοχή&#8221;, αν θέλετε να το χρησιμοποιήσετε με δική σας ευθύνη.</string>
     <string name="brightwarn_negative">Όχι, ευχαριστώ</string>
     <string name="brightwarn_accept">Αποδοχή</string>
-    <string name="label_on">Ενεργός</string>
-    <string name="label_off">Ανενεργός</string>
     <string name="label_high">Υψηλή φωτεινότητα</string>
     <string name="label_strobe">Στροβιλισμός</string>
     <string name="label_frequency">Συχνότητα: (σύρετε για αλλαγή)</string>

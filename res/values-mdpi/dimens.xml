@@ -16,18 +16,6 @@
      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
      MA  02110-1301, USA.
 -->
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:drawable="@drawable/widget_presslayer"
-        android:state_pressed="true" />
-
-    <item
-        android:drawable="@drawable/widget_presslayer"
-        android:state_enabled="true" android:state_focused="true"
-        android:state_window_focused="true" />
-
-    <item
-        android:drawable="@android:color/transparent" />
-
-</selector>
+<resources>
+    <dimen name="main_lamp_margin">-8dp</dimen>
+</resources>
