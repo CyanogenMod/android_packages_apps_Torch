@@ -19,8 +19,6 @@
     <string name="about_close">Sluiten</string>
     <string name="brightwarn_negative">Annuleren</string>
     <string name="brightwarn_accept">Accepteren</string>
-    <string name="label_on">Aan</string>
-    <string name="label_off">Uit</string>
     <string name="label_high">Fel licht</string>
     <string name="label_strobe">Knipperen</string>
     <string name="label_frequency">Frequentie (sleep om te veranderen):</string>
