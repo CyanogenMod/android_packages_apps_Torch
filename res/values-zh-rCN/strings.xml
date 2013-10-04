@@ -12,8 +12,6 @@
     <string name="brightwarn_negative">拒绝</string>
     <string name="brightwarn_accept">接受</string>
 
-    <string name="label_on">开</string>
-    <string name="label_off">关</string>
     <string name="label_high">高亮模式</string>
     <string name="label_strobe">闪烁</string>
     <string name="label_frequency">频率：（拖动更改）</string>

@@ -11,16 +11,15 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.ToggleButton;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.SeekBar;
@@ -34,10 +33,9 @@ public class MainActivity extends Activity {
     // On button
     private ToggleButton buttonOn;
 
-    // Strobe toggle
-    private CheckBox buttonStrobe;
+    private Switch strobeSwitch;
 
-    private CheckBox buttonBright;
+    private Switch brightSwitch;
 
     private boolean bright;
 
@@ -58,12 +56,8 @@ public class MainActivity extends Activity {
     private SharedPreferences mPrefs;
 
     private SharedPreferences.Editor mPrefsEditor = null;
-    
-    // Labels
-    private String labelOn = null;
-    private String labelOff = null;
 
-    private static boolean useBrightSetting = !Build.DEVICE.equals("crespo");
+    private static final boolean useBrightSetting = !Build.DEVICE.equals("crespo");
 
     /** Called when the activity is first created. */
     @Override
@@ -72,16 +66,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.mainnew);
         context = this.getApplicationContext();
         buttonOn = (ToggleButton) findViewById(R.id.buttonOn);
-        buttonStrobe = (CheckBox) findViewById(R.id.strobe);
+        strobeSwitch = (Switch) findViewById(R.id.strobe_switch);
         strobeLabel = (TextView) findViewById(R.id.strobeTimeLabel);
         slider = (SeekBar) findViewById(R.id.slider);
-        buttonBright = (CheckBox) findViewById(R.id.bright);
+        brightSwitch = (Switch) findViewById(R.id.bright_switch);
 
         strobeperiod = 100;
         mTorchOn = false;
-
-        labelOn = this.getString(R.string.label_on);
-        labelOff = this.getString(R.string.label_off);
 
         mWidgetProvider = TorchWidgetProvider.getInstance();
 
@@ -93,8 +84,8 @@ public class MainActivity extends Activity {
 
         if (useBrightSetting) {
             bright = this.mPrefs.getBoolean("bright", false);
-            buttonBright.setChecked(bright);
-            buttonBright.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            brightSwitch.setChecked(bright);
+            brightSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked && mPrefs.getBoolean("bright", false))
@@ -109,12 +100,27 @@ public class MainActivity extends Activity {
                 }
             });
         } else {
-            buttonBright.setEnabled(false);
+
+            // Fully hide the UI elements on Crespo since we can't use them
+            brightSwitch.setVisibility(View.GONE);
+            brightSwitch.setEnabled(false);
+            findViewById(R.id.ruler2).setVisibility(View.GONE);
         }
-        strobeLabel.setOnClickListener(new OnClickListener() {
+
+        // Set the state of the strobing section and hide as appropriate
+        final boolean isStrobing = mPrefs.getBoolean("strobe", false);
+        final LinearLayout strobeLayout = (LinearLayout) MainActivity.this.findViewById(R.id
+                .strobeRow);
+        int visibility = isStrobing ? View.VISIBLE : View.GONE;
+        strobeLayout.setVisibility(visibility);
+        strobeSwitch.setChecked(isStrobing);
+        strobeSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
             @Override
-            public void onClick(View v) {
-                buttonStrobe.setChecked(!buttonStrobe.isChecked());
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                int visibility = isChecked ? View.VISIBLE : View.GONE;
+                strobeLayout.setVisibility(visibility);
+                mPrefsEditor.putBoolean("strobe", isChecked).commit();
             }
         });
 
@@ -122,7 +128,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TorchSwitch.TOGGLE_FLASHLIGHT);
-                intent.putExtra("strobe", buttonStrobe.isChecked());
+                intent.putExtra("strobe", strobeSwitch.isChecked());
                 intent.putExtra("period", strobeperiod);
                 intent.putExtra("bright", bright);
                 context.sendBroadcast(intent);
@@ -192,16 +198,17 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        boolean supRetVal = super.onCreateOptionsMenu(menu);
-        menu.addSubMenu(0, 0, 0, this.getString(R.string.about_title));
-        return supRetVal;
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        boolean supRetVal = super.onOptionsItemSelected(menuItem);
-        this.openAboutDialog();
-        return supRetVal;
+        if (menuItem.getItemId() == R.id.action_about) {
+            openAboutDialog();
+            return true;
+        }
+        return false;
     }
 
     private void openAboutDialog() {
@@ -222,7 +229,7 @@ public class MainActivity extends Activity {
                 .setView(view)
                 .setNegativeButton(this.getString(R.string.brightwarn_negative), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        MainActivity.this.buttonBright.setChecked(false);
+                        MainActivity.this.brightSwitch.setChecked(false);
                     }
                 }).setNeutralButton(this.getString(R.string.brightwarn_accept), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
@@ -233,18 +240,18 @@ public class MainActivity extends Activity {
                 }).show();
     }
 
-    public void updateWidget() {
+    void updateWidget() {
         this.mWidgetProvider.updateAllStates(context);
     }
 
     private void updateBigButtonState() {
         buttonOn.setChecked(mTorchOn);
-        buttonBright.setEnabled(!mTorchOn && useBrightSetting);
-        buttonStrobe.setEnabled(!mTorchOn);
-        slider.setEnabled(!mTorchOn || buttonStrobe.isChecked());
+        brightSwitch.setEnabled(!mTorchOn && useBrightSetting);
+        strobeSwitch.setEnabled(!mTorchOn);
+        slider.setEnabled(!mTorchOn || strobeSwitch.isChecked());
     }
 
-    private BroadcastReceiver mStateReceiver = new BroadcastReceiver() {
+    private final BroadcastReceiver mStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(TorchSwitch.TORCH_STATE_CHANGED)) {
