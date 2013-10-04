@@ -12,8 +12,6 @@
     <string name="brightwarn_negative">Nei takk</string>
     <string name="brightwarn_accept">Godta</string>
 
-    <string name="label_on">På</string>
-    <string name="label_off">Av</string>
     <string name="label_high">Høy lysstyrke</string>
     <string name="label_strobe">Strobe</string>
     <string name="label_frequency">Frekvens: (dra for å endre)</string>

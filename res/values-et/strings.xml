@@ -12,8 +12,6 @@
     <string name="brightwarn_negative">Keeldu</string>
     <string name="brightwarn_accept">Nõustu</string>
 
-    <string name="label_on">Sees</string>
-    <string name="label_off">Väljas</string>
     <string name="label_high">täielik heledus</string>
     <string name="label_strobe">Strobo</string>
     <string name="label_frequency">Sagedus: (lükake, et muuta)</string>

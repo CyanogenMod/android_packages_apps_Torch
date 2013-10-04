@@ -10,8 +10,6 @@
     <string name="brightwarn">最大明度は30分のテストに成功しましたが、とても熱くなり、45分ほど一時的に明滅するようになりました。長時間使用の影響はわかりません。\n\nウィジェットのサポートはまだありません。.\n\n\自己責任での使用を望むのなら&#8220;了解&#8221;を押してください。</string>
     <string name="brightwarn_negative">やめます</string>
     <string name="brightwarn_accept">了解</string>
-    <string name="label_on">オン</string>
-    <string name="label_off">オフ</string>
     <string name="label_high">高明度</string>
     <string name="label_strobe">ストロボ</string>
     <string name="label_frequency">頻度: (スライドして変更)</string>

@@ -12,8 +12,6 @@
     <string name="brightwarn_negative">Отказ</string>
     <string name="brightwarn_accept">Приемам</string>
 
-    <string name="label_on">Включено</string>
-    <string name="label_off">Изключено</string>
     <string name="label_high">Пълна яркост</string>
     <string name="label_strobe">Мигаща светлина</string>
     <string name="label_frequency">Честота: (променете чрез плъзгане)</string>
