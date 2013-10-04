@@ -24,8 +24,6 @@
     <string name="brightwarn">La luminosité maximale a été testée avec succès pendant une demi-heure, mais la LED est devenue plutôt chaude, et a commencé a scintiller (temporairement) après 45 minutes. Les effets à long terme sont inconnus.\n\nCeci n\'est pas encore supporté par le widget.\n\nChoisissez Accepter si vous souhaitez l\'utiliser à vos propres risques.</string>
     <string name="brightwarn_negative">Non merci</string>
     <string name="brightwarn_accept">Accepter</string>
-    <string name="label_on">Activé</string>
-    <string name="label_off">Désactivé</string>
     <string name="label_high">Luminosité maximale</string>
     <string name="label_strobe">Stroboscope</string>
     <string name="label_frequency">Fréquence : (glisser pour changer)</string>
