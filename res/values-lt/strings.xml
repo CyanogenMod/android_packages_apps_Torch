@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012-2013 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Žibintuvėlis</string>
+    <string name="about_title">Apie</string>
+    <string name="about_close">Užverti</string>
+
+    <string name="description">Ši programa naudoja kameros šviesos diodą.\n</string>
+    <string name="warning">Dėmesio: Paliekant šviesos diodą įjungtą ilgam laikui jis gali perkaisti.\n\nVisu šviesumu „visada įjungta“ buvo bandoma 0,5 val., bet gali būti rizika sugadinti šviesos diodą.\n</string>
+    <string name="license">Originalus kodas iš Nexus One Torch, kurį sukūrė Ben Buxton, yra platinamas pagal GPL, v3.\nhttp://n1torch.googlecode.com/\n\nDėkojame David Prieto už naują naudotojo sąsajos dizainą.\n\nProgramą CyanogenMod pritaikė Steve Kondik.\n\n</string>
+    <string name="warning_label">Perspėjimas</string>
+    <string name="brightwarn">Pilnu šviesumas buvo bandoma 0,5 val., bet šviesos diodas tapo pakankamai karštas ir pradėjo mirksėti (laikinai) 45 minutes. Ilgalaikės pasekmės yra nežinomos.\n\nDar nepalaikoma kaip valdiklis.\n\nSpauskite „Sutinku“ jei norite naudoti savo rizikos sąskaita.</string>
+    <string name="brightwarn_negative">Ne, dėkui</string>
+    <string name="brightwarn_accept">Sutinku</string>
+
+    <string name="label_on">Įjungtas</string>
+    <string name="label_off">Išjungtas</string>
+    <string name="label_high">Visas šviesumas</string>
+    <string name="label_strobe">Stroboskopas</string>
+    <string name="label_frequency">Dažnis: (braukite, kad pakeisti)</string>
+
+    <string name="widget_options">Bendri nustatymai</string>
+    <string name="setting_widget_bright">Šviesumo valdiklis</string>
+    <string name="setting_widget_strobe">Mirgėjimas</string>
+    <string name="setting_frequency_title">Mirgėjimo dažnis</string>
+    <string name="setting_frequency_dialog">Dažnis</string>
+    <string name="setting_frequency_hz" translatable="false">Hz</string>
+    <string name="setting_add_widget">Pridėti valdiklį</string>
+
+    <string name="not_torch_title">Žibintuvėlis įjungtas</string>
+    <string name="not_torch_toggle">Išjungti žibintuvėlį</string>
+</resources>
