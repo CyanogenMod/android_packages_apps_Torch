@@ -31,7 +31,6 @@
 
     <string name="label_high">Høy lysstyrke</string>
     <string name="label_strobe">Strobe</string>
-    <string name="label_frequency">Frekvens: (dra for å endre)</string>
 
     <string name="widget_options">Generelle innstillinger</string>
     <string name="setting_widget_bright">Sterkt lys widget</string>

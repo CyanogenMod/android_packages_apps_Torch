@@ -31,7 +31,6 @@
 
     <string name="label_high">High brightness</string>
     <string name="label_strobe">Strobe</string>
-    <string name="label_frequency">Frequency: (slide to change)</string>
 
     <string name="widget_options">General options</string>
     <string name="setting_widget_bright">Bright widget</string>

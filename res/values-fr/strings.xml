@@ -29,7 +29,6 @@
     <string name="brightwarn_accept">Accepter</string>
     <string name="label_high">Luminosité maximale</string>
     <string name="label_strobe">Stroboscope</string>
-    <string name="label_frequency">Fréquence : (glisser pour changer)</string>
     <string name="widget_options">Options générales</string>
     <string name="setting_widget_bright">Widget luminosité maximale</string>
     <string name="setting_widget_strobe">Flash stroboscopique</string>

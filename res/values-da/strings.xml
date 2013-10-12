@@ -29,7 +29,6 @@
     <string name="brightwarn_accept">Accepter</string>
     <string name="label_high">Høj lysstyrke</string>
     <string name="label_strobe">Stroboskoplys</string>
-    <string name="label_frequency">Frekvens: (træk for at ændre)</string>
     <string name="widget_options">Generelle Indstillinger</string>
     <string name="setting_widget_bright">Høj lysstyrke widget</string>
     <string name="setting_widget_strobe">Stroboskop flash</string>

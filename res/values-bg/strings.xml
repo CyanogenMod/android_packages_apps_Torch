@@ -31,7 +31,6 @@
 
     <string name="label_high">Пълна яркост</string>
     <string name="label_strobe">Мигаща светлина</string>
-    <string name="label_frequency">Честота: (променете чрез плъзгане)</string>
 
     <string name="widget_options">Общи настройки</string>
     <string name="setting_widget_bright">Пълна яркост</string>

@@ -31,7 +31,6 @@
 
     <string name="label_high">고휘도</string>
     <string name="label_strobe">깜빡이기</string>
-    <string name="label_frequency">주기: (슬라이드하여 변경하세요)</string>
 
     <string name="widget_options">일반 옵션</string>
     <string name="setting_widget_bright">전등 위젯</string>

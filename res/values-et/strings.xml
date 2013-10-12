@@ -31,7 +31,6 @@
 
     <string name="label_high">täielik heledus</string>
     <string name="label_strobe">Strobo</string>
-    <string name="label_frequency">Sagedus: (lükake, et muuta)</string>
 
     <string name="widget_options">Üldised seaded</string>
     <string name="setting_widget_bright">Hele vidin</string>

@@ -29,7 +29,6 @@
     <string name="brightwarn_accept">Прийняти</string>
     <string name="label_high">Висока яскравість</string>
     <string name="label_strobe">Стробоскоп</string>
-    <string name="label_frequency">Частота: (перетягніть, щоб змінити)</string>
     <string name="widget_options">Основні налаштування</string>
     <string name="setting_widget_bright">Віджет ліхтарика</string>
     <string name="setting_widget_strobe">Стробоскоп</string>

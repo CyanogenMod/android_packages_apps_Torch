@@ -29,7 +29,6 @@
     <string name="brightwarn_accept">Αποδοχή</string>
     <string name="label_high">Υψηλή φωτεινότητα</string>
     <string name="label_strobe">Στροβιλισμός</string>
-    <string name="label_frequency">Συχνότητα: (σύρετε για αλλαγή)</string>
     <string name="widget_options">Γενικές ρυθμίσεις</string>
     <string name="setting_widget_bright">Υψηλή φωτεινότητα</string>
     <string name="setting_widget_strobe">Στροβιλισμός</string>

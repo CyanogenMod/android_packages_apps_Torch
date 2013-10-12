@@ -29,7 +29,6 @@
     <string name="brightwarn_accept">Prijímam</string>
     <string name="label_high">Vysoký jas</string>
     <string name="label_strobe">Prerušované svietenie</string>
-    <string name="label_frequency">Frekvencia: (posunutím zmeníte)</string>
     <string name="widget_options">Všeobecné voľbys</string>
     <string name="setting_widget_bright">Miniaplikácia pre vysoký jas</string>
     <string name="setting_widget_strobe">Prerušované svietenie</string>

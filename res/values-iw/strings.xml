@@ -31,7 +31,6 @@
 
     <string name="label_high">בהירות גבוהה</string>
     <string name="label_strobe">הבהוב</string>
-    <string name="label_frequency">תדירות: (החלק כדי לשנות)</string>
 
     <string name="widget_options">אפשרויות כלליות</string>
     <string name="setting_widget_bright">‏Widget אור בהיר</string>

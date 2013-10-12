@@ -31,7 +31,6 @@
 
     <string name="label_high">Hög ljusstyrka</string>
     <string name="label_strobe">Strobe</string>
-    <string name="label_frequency">Frekvens: (dra för att ändra)</string>
 
     <string name="widget_options">Generella inställningar</string>
     <string name="setting_widget_bright">Ljus widget</string>

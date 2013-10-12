@@ -29,7 +29,6 @@
     <string name="brightwarn_accept">Accetto</string>
     <string name="label_high">Alta Luminosità</string>
     <string name="label_strobe">Strobo</string>
-    <string name="label_frequency">Frequenza: (scorri per cambiare)</string>
     <string name="widget_options">Impostazioni generali</string>
     <string name="setting_widget_bright">Widget alta luminosità</string>
     <string name="setting_widget_strobe">Flash strobo</string>

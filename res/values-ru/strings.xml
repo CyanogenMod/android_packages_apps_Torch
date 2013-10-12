@@ -31,7 +31,6 @@
 
     <string name="label_high">Максимальная яркость</string>
     <string name="label_strobe">Стробоскоп</string>
-    <string name="label_frequency">Частота: (проведите для изменения)</string>
 
     <string name="widget_options">Настройки виджета</string>
     <string name="setting_widget_bright">Максимальная яркость</string>

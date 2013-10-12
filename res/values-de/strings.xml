@@ -31,7 +31,6 @@
 
     <string name="label_high">Hohe Helligkeit</string>
     <string name="label_strobe">Stroboskop</string>
-    <string name="label_frequency">Frequenz: (zum Ändern schieben)</string>
 
     <string name="widget_options">Allgemeine Optionen</string>
     <string name="setting_widget_bright">Helles Widget</string>

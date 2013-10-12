@@ -24,7 +24,6 @@
     <string name="brightwarn_accept">Accepteren</string>
     <string name="label_high">Fel licht</string>
     <string name="label_strobe">Knipperen</string>
-    <string name="label_frequency">Frequentie (sleep om te veranderen):</string>
     <string name="widget_options">Algemeen</string>
     <string name="setting_widget_bright">Helderheidswidget</string>
     <string name="setting_widget_strobe">Knipperend licht</string>

@@ -29,7 +29,6 @@
     <string name="brightwarn_accept">Aceptar</string>
     <string name="label_high">Brillo alto</string>
     <string name="label_strobe">Parpadeo</string>
-    <string name="label_frequency">Frecuencia: (deslizar para cambiar)</string>
     <string name="widget_options">Opciones</string>
     <string name="setting_widget_bright">Widget con brillo alto</string>
     <string name="setting_widget_strobe">Parpadeo activo</string>

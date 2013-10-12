@@ -27,7 +27,6 @@
     <string name="brightwarn">A folyamatos LED használattal futtatott tesztünk során az alkalmazás megfelelően működött, viszont a készülék eléggé melegedett, valamint &#190; óra elteltével ideiglenes villogásba is kezdett. Hosszabb távú hatásai nem ismertek.\n\nJelenleg nincs modul gomb az alkalmazáshoz.\n\nKattintson az &#8220;Elfogadás&#8221; gombra, ha saját felelősségre mégis használni kívánja.</string>
     <string name="brightwarn_negative">Nem, köszönöm</string>
     <string name="brightwarn_accept">Elfogadás</string>
-    <string name="label_frequency">Frekvencia: (Változtatás elhúzással)</string>
     <string name="label_high">Zseblámpa</string>
     <string name="label_strobe">Stroboszkóp</string>
     <string name="setting_frequency_title">Stroboszkóp frekvencia</string>

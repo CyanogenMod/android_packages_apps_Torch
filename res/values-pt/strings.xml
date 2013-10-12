@@ -31,7 +31,6 @@
 
     <string name="label_high">Brilho Alto</string>
     <string name="label_strobe">Piscar</string>
-    <string name="label_frequency">Frequência: (deslize para mudar)</string>
 
     <string name="widget_options">Opções Gerais</string>
     <string name="setting_widget_bright">Widget de Brilho</string>

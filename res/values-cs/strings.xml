@@ -31,7 +31,6 @@
 
     <string name="label_high">Vysoký jas</string>
     <string name="label_strobe">Blikání</string>
-    <string name="label_frequency">Frekvence: (změníte posunutím)</string>
 
     <string name="widget_options">Obecné nastavení</string>
     <string name="setting_widget_bright">Widget jasu</string>

@@ -31,7 +31,6 @@
 
     <string name="label_high">探射燈</string>
     <string name="label_strobe">閃光燈</string>
-    <string name="label_frequency">頻率：（拖曳來變更）</string>
 
     <string name="widget_options">小工具選項</string>
     <string name="setting_widget_bright">探射燈</string>
