@@ -17,28 +17,24 @@
      MA  02110-1301, USA.
 -->
 <resources>
-    <string name="app_name">Torch</string>
+    <string name="app_name">Ficklampa</string>
     <string name="about_title">Om</string>
     <string name="about_close">Stäng</string>
-
     <string name="description">Detta program manipulerar kamerans LED.\n</string>
     <string name="warning">Varning: Att lämna LED-lampan på under en längre tid kan överhetta den.\n\nMaximal ljusstyrka &#8220;alltid på&#8221; har testats i 30 minuter, men risken finns att detta skadar LED-lampan.\n</string>
-    <string name="license">Ursprunglig kod från Nexus One Torch av Ben Buxton, släppt under GPL, v3.\nhttp://n1torch.googlecode.com/\n\nTack till David Prieto för ny UI design.\n\nModifierad för CyanogenMod av Steve Kondik.\n\n</string>
+    <string name="license">Ursprunglig kod från Nexus One Torch av Ben Buxton, släppt under GPL, v3.\nhttp://n1torch.googlecode.com/\n\nTack till David Prieto för ny gränssnittsdesign.\n\nModifierad för CyanogenMod av Steve Kondik.\n\n</string>
     <string name="warning_label">Varning</string>
-    <string name="brightwarn">Maximal ljusstyrka har testats med framgång under en halvtimmes drift. Dock blev lampan ganska varm och började fladdra (temporärt) efter 45 minuter.Långtidseffekter är okända.\n\nDetta stöds inte av widgeten än.\n\nKlicka på &#8220;Acceptera&#8221; om du vill använda detta på egen risk.</string>
+    <string name="brightwarn">Maximal ljusstyrka har testats under en halvtimmes drift med framgång. Lampan blev dock ganska varm och började flimra (temporärt) efter 45 minuter. Långtidseffekter är okända.\n\nDetta stöds inte av widgeten än.\n\nKlicka på &#8220;Acceptera&#8221; om du vill använda detta på egen risk.</string>
     <string name="brightwarn_negative">Nej tack</string>
     <string name="brightwarn_accept">Acceptera</string>
-
     <string name="label_high">Hög ljusstyrka</string>
-    <string name="label_strobe">Strobe</string>
-
-    <string name="widget_options">Generella inställningar</string>
-    <string name="setting_widget_bright">Ljus widget</string>
-    <string name="setting_widget_strobe">Strobe-blixt</string>
-    <string name="setting_frequency_title">Strobe-frekvens</string>
+    <string name="label_strobe">Stroboskop</string>
+    <string name="widget_options">Allmänna inställningar</string>
+    <string name="setting_widget_bright">Hög ljusstyrka</string>
+    <string name="setting_widget_strobe">Stroboskop</string>
+    <string name="setting_frequency_title">Frekvens</string>
     <string name="setting_frequency_dialog">Frekvens</string>
     <string name="setting_add_widget">Lägg till widget</string>
-
-    <string name="not_torch_title">Torch på</string>
-    <string name="not_torch_toggle">Torch av</string>
+    <string name="not_torch_title">Ficklampa på</string>
+    <string name="not_torch_toggle">Ficklampa av</string>
 </resources>
