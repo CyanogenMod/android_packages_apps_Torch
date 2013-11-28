@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
     // Preferences
     private SharedPreferences mPrefs;
 
-    private static final boolean USE_BRIGHT_SETTING = !Build.DEVICE.equals("crespo");
+    private boolean mHasBrightSetting = false;
 
     private final BroadcastReceiver mStateReceiver = new BroadcastReceiver() {
         @Override
@@ -98,7 +98,8 @@ public class MainActivity extends Activity {
         // Preferences
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-        if (USE_BRIGHT_SETTING) {
+        mHasBrightSetting = getResources().getBoolean(R.bool.hasHighBrightness);
+        if (mHasBrightSetting) {
             mBright = mPrefs.getBoolean("bright", false);
             mBrightSwitch.setChecked(mBright);
             mBrightSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -262,7 +263,7 @@ public class MainActivity extends Activity {
 
     private void updateBigButtonState() {
         mButtonOn.setChecked(mTorchOn);
-        mBrightSwitch.setEnabled(!mTorchOn && USE_BRIGHT_SETTING);
+        mBrightSwitch.setEnabled(!mTorchOn && mHasBrightSetting);
         mStrobeSwitch.setEnabled(!mTorchOn);
         mSlider.setEnabled(!mTorchOn || mStrobeSwitch.isChecked());
     }
