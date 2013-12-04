@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
+
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Svetilka</string>
+    <string name="about_title">O programu</string>
+    <string name="about_close">Zapri</string>
+
+    <string name="description">Ta program upravlja z bliskavici fotoaparata.\n</string>
+    <string name="warning">Opozorilo: Puščanje prižgane bliskavice za dalj časa lahko privede do pregrevanja.\n\nPolna svetlost bliskavic smo preizkusili in je brezhibno delovala 1/2 ure, vendar vseeno obstaja možnost, da bliskavico poškodujete.\n</string>
+    <string name="license">Prvotna koda iz svetilke za Nexus One od Ben Buxton, izšla pod GPL, v3.\nhttp://n1torch.googlecode.com/\n\nHvala osebi David Prieto za novo obliko vmesnika.\n\nSpremenjeno za CyanogenMod od Steve Kondik.\n\n</string>
+    <string name="warning_label">Opozorilo</string>
+    <string name="brightwarn">Polna svetlost bliskavice je bila uspešno preizkušena za 1/2 ure delovanja, vendar je postala kar vroča, in začela utripati (občasno) pri 45 minutah. Učinki ob dolgem delovanju niso znani.\n\nTo še ni podprto na pripomočku.\n\nIzberi \'Sprejmi\' če jo želiš uporabljati na svojo odgovornost.</string>
+    <string name="brightwarn_negative">Ne hvala</string>
+    <string name="brightwarn_accept">Sprejmi</string>
+
+    <string name="label_high">Visoka kontrast</string>
+    <string name="label_strobe">Bliskavica</string>
+
+    <string name="widget_options">Splošne nastavitve</string>
+    <string name="setting_widget_bright">Pripomoček za svetlost</string>
+    <string name="setting_widget_strobe">Bliskavica</string>
+    <string name="setting_frequency_title">Ferkvenca bliskavice</string>
+    <string name="setting_frequency_dialog">Ferkvenca</string>
+    <string name="setting_frequency_hz" translatable="false"> Hz</string>
+    <string name="setting_add_widget">Dodaj pripomoček</string>
+
+    <string name="not_torch_title">Svetilka prižgana</string>
+    <string name="not_torch_toggle">Ugasni svetilko</string>
+</resources>
