@@ -22,5 +22,6 @@
     android:updatePeriodMillis="3600000"
     android:configure="net.cactii.flash2.WidgetOptionsActivity"
     android:initialLayout="@layout/widget"
-    android:widgetCategory="home_screen|keyguard" >
+    android:widgetCategory="home_screen|keyguard"
+    android:previewImage="@drawable/appwidget_preview" >
 </appwidget-provider>

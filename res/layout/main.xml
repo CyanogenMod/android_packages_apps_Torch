@@ -45,7 +45,6 @@
         android:id="@+id/bright_switch"
         android:checked="false"
         android:textSize="18sp"
-        android:textStyle="bold"
         android:paddingStart="16dp"
         android:paddingEnd="16dp" />
 
@@ -62,7 +61,6 @@
         android:id="@+id/strobe_switch"
         android:checked="false"
         android:textSize="18sp"
-        android:textStyle="bold"
         android:paddingStart="16dp"
         android:paddingEnd="16dp" />
 
