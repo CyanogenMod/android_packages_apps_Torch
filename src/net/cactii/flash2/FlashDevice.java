@@ -65,6 +65,8 @@ public class FlashDevice {
     private int mFlashMode = OFF;
 
     private Camera mCamera = null;
+    private SurfaceTexture mSurfaceTexture;
+    private int[] mTextures = new int[1];
 
     private FlashDevice(Context context) {
         mValueOff = context.getResources().getInteger(R.integer.valueOff);
@@ -134,12 +136,11 @@ public class FlashDevice {
                         mWakeLock.release();
                 } else {
                     if (!mSurfaceCreated) {
-                        int[] textures = new int[1];
                         // generate one texture pointer and bind it as an
                         // external texture.
-                        GLES20.glGenTextures(1, textures, 0);
+                        GLES20.glGenTextures(1, mTextures, 0);
                         GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
-                                textures[0]);
+                                mTextures[0]);
                         // No mip-mapping with camera source.
                         GLES20.glTexParameterf(
                                 GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
@@ -155,8 +156,8 @@ public class FlashDevice {
                                 GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
                                 GL10.GL_TEXTURE_WRAP_T, GL10.GL_CLAMP_TO_EDGE);
 
-                        SurfaceTexture surfaceTexture = new SurfaceTexture(textures[0]);
-                        mCamera.setPreviewTexture(surfaceTexture);
+                        mSurfaceTexture = new SurfaceTexture(mTextures[0]);
+                        mCamera.setPreviewTexture(mSurfaceTexture);
                         mSurfaceCreated = true;
                         mCamera.startPreview();
                     }
