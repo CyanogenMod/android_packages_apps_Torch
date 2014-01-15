@@ -21,8 +21,6 @@ package net.cactii.flash2;
 import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
-import android.opengl.GLES11Ext;
-import android.opengl.GLES20;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.util.Log;
@@ -31,8 +29,6 @@ import net.cactii.flash2.R;
 
 import java.io.FileWriter;
 import java.io.IOException;
-
-import javax.microedition.khronos.opengles.GL10;
 
 public class FlashDevice {
 
@@ -58,8 +54,6 @@ public class FlashDevice {
 
     private static FlashDevice sInstance;
 
-    private boolean mSurfaceCreated = false;
-
     private FileWriter mFlashDeviceWriter = null;
     private FileWriter mFlashDeviceLuminosityWriter = null;
     private FileWriter mFlashDeviceLuminosityWriter2 = null;
@@ -67,6 +61,7 @@ public class FlashDevice {
     private int mFlashMode = OFF;
 
     private Camera mCamera = null;
+    private SurfaceTexture mSurfaceTexture = null;
 
     private FlashDevice(Context context) {
         mValueOff = context.getResources().getInteger(R.integer.valueOff);
@@ -131,36 +126,18 @@ public class FlashDevice {
                         mCamera.stopPreview();
                         mCamera.release();
                         mCamera = null;
-                        mSurfaceCreated = false;
+                        if (mSurfaceTexture != null) {
+                            mSurfaceTexture.release();
+                            mSurfaceTexture = null;
+                        }
                     }
                     if (mWakeLock.isHeld())
                         mWakeLock.release();
                 } else {
-                    if (!mSurfaceCreated) {
-                        int[] textures = new int[1];
-                        // generate one texture pointer and bind it as an
-                        // external texture.
-                        GLES20.glGenTextures(1, textures, 0);
-                        GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
-                                textures[0]);
-                        // No mip-mapping with camera source.
-                        GLES20.glTexParameterf(
-                                GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
-                                GL10.GL_TEXTURE_MIN_FILTER, GL10.GL_LINEAR);
-                        GLES20.glTexParameterf(
-                                GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
-                                GL10.GL_TEXTURE_MAG_FILTER, GL10.GL_LINEAR);
-                        // Clamp to edge is only option.
-                        GLES20.glTexParameteri(
-                                GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
-                                GL10.GL_TEXTURE_WRAP_S, GL10.GL_CLAMP_TO_EDGE);
-                        GLES20.glTexParameteri(
-                                GLES11Ext.GL_TEXTURE_EXTERNAL_OES,
-                                GL10.GL_TEXTURE_WRAP_T, GL10.GL_CLAMP_TO_EDGE);
-
-                        SurfaceTexture surfaceTexture = new SurfaceTexture(textures[0]);
-                        mCamera.setPreviewTexture(surfaceTexture);
-                        mSurfaceCreated = true;
+                    if (mSurfaceTexture == null) {
+                        // Create a dummy texture, otherwise setPreview won't work on some devices
+                        mSurfaceTexture = new SurfaceTexture(0);
+                        mCamera.setPreviewTexture(mSurfaceTexture);
                         mCamera.startPreview();
                     }
                     Camera.Parameters params = mCamera.getParameters();
