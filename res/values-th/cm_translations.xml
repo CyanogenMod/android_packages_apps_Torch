@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
      Copyright (C) 2013 The CyanogenMod Project
 
@@ -21,11 +21,11 @@
   <string name="about_title">เกี่ยวกับ</string>
   <string name="about_close">ปิด</string>
   <string name="description">โปรแกรมนี้ใช้ไฟฉายจาก LED ของกล้อง\n</string>
-  <string name="warning">คำเตือน : การเปิด LED เป็นเวลานานจะทำให้มีความร้อนสูง\n\nการเปิดแสงเต็มที่ \"ตลอดเวลา\" ได้รับการทดสอบสำหรับ  ½ ชั่วโมง แต่มันทำอันตรายกับ LED ของคุณได้\n</string>
+  <string name="warning">คำเตือน : การเปิด LED เป็นเวลานานจะทำให้มีความร้อนสูง\n\nการเปิดแสงเต็มที่ "ตลอดเวลา" ได้รับการทดสอบสำหรับ  ½ ชั่วโมง แต่มันทำอันตรายกับ LED ของคุณได้\n</string>
   <string name="license">โปรแกรมดั้งเดิมจาก  Nexus One Torch โดย Ben Buxton,แจกจ่ายภายใต้  GPL, v3\nhttp://n1torch.googlecode.com/\n\nขอบคุณ David Prieto สำหรับหน้าตาโปรแกรมใหม่\n\nปรับแต่งสำหรับ CyanogenMod โดย Steve Kondik\n</string>
   <string name="warning_label">คำเตือน</string>
-  <string name="brightwarn">ไม่ควรเปิดเป็นเวลานาน แสงสว่างเต็มที่ได้รับการทดสอบเพียง ½ ชั่วโมง มันจะเริ่มช็อต (ชั่วคราว) เมื่อผ่านไป 45 นาที อาจมีผลกระทบระยะยาวได้\n\nตอบ \"ตกลง\" ถ้าคุณต้องการที่จะใช้แสงสว่างเต็มที่</string>
-  <string name="brightwarn_negative">ไม่เป็นไร</string>
+  <string name="brightwarn">แสงสว่าวเต็มที่ได้รับการทดสอบสำหรับการเปิด ½ ชั่วโมง แต่มันร้อนมากและเริ่มช็อต (ชั่วคราว) หลังจากผ่านไป 45 นาที แต่เราไม่ทราบผลที่จะตามมาระยะยาว\n\nไม่รองรับการใช้งานบนวิดเจ็ท\n\nตอบ "ตกลง" ถ้าคุณต้องการที่จะใช้ด้วยความเสี่ยงของคุณเอง</string>
+  <string name="brightwarn_negative">ไม่เป็นไร ขอบคุณ</string>
   <string name="brightwarn_accept">ตกลง</string>
   <string name="label_high">แสงสว่างเต็มที่</string>
   <string name="label_strobe">กระพริบ</string>
