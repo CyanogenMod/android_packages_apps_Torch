@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
+
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="app_name">Latarka</string>
+  <string name="about_title">O aplikacji</string>
+  <string name="about_close">Zamknij</string>
+  <string name="description">Ten program używa diody aparatu\n\n</string>
+  <string name="warning">Uwaga: Zostawienie diody włączonej na dłuższy czas może spowodować jej przegrzanie\n\nPrzeprowadzono pomyślne półgodzinne testy przy maksymalnej jasności, ale istnieje ryzyko uszkodzenia diody.\n\n</string>
+  <string name="license">Oryginalny kod pochodzi z aplikacji Latarki dla Nexusa One autorstwa Bena Buxtona na licencji GPL, v3.\nhttp://n1torch.googlecode.com/\n\nPodziękowania dla Davida Prieto za nowy interfejs\n\nZmodyfikowano na potrzeby CyanogenModa przez Steve\'a Kondika\n</string>
+  <string name="warning_label">Uwaga</string>
+  <string name="brightwarn">Przeprowadzono pomyślne półgodzinne testy przy maksymalnej jasności, ale po 45 minutach zaobserwowano zwiększoną temperaturę i migotanie (tymczasowe). Skutki długotrwałego użytkowania nie są znane.\n\nFunkcja ta nie jest jeszcze obsługiwana przez widżet.\n\nWybierz "Akceptuj" jeśli chcesz jej używać na własne ryzyko.</string>
+  <string name="brightwarn_negative">Nie, dzięki</string>
+  <string name="brightwarn_accept">Akceptuj</string>
+  <string name="label_high">Wysoka jasność</string>
+  <string name="label_strobe">Stroboskop</string>
+  <string name="widget_options">Główne ustawienia</string>
+  <string name="setting_widget_bright">Jasny widżet</string>
+  <string name="setting_widget_strobe">Świecenie stroboskopu</string>
+  <string name="setting_frequency_title">Częstotliwość stroboskopu</string>
+  <string name="setting_frequency_dialog">Częstotliwość</string>
+  <string name="setting_add_widget">Dodaj widżet</string>
+  <string name="not_torch_title">Latarka włączona</string>
+  <string name="not_torch_toggle">Wyłącz latarkę</string>
+</resources>
