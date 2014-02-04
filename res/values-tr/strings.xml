@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012-2013 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">El Feneri</string>
+    <string name="about_title">Hakkında</string>
+    <string name="about_close">Kapat</string>
+
+    <string name="description">Bu program kamera LED'ini kullanmaktadır.\n</string>
+    <string name="warning">Uyarı: LED'i uzun süre açık bırakmak aşırı ısınmasına neden olabilir.\n\nTam Parlaklık &#8220;her zaman açık&#8221; modu &#189; saat test edilmiştir, fakat LED'e zarar verme ihtimali bulunmaktadır.\n</string>
+    <string name="license">Bu programın orijinal kodu Ben Buxton tarafından yazılan Nexus One Torch'tan alınmıştır. Lisans GPL, v3.\nhttp://n1torch.googlecode.com/\n\nYeni arayüz dizaynı için David Prieto'ya teşekkürler.\n\nSteve Kondik tarafından CyanogenMod için modifiye edilmiştir.\n\n</string>
+    <string name="warning_label">Uyarı</string>
+    <string name="brightwarn">Tam parlaklık &#189; saat başarıyla test edilmiştir fakat oldukça ısınmış ve 45 dakika boyunca titremeye (geçici olarak) başlamıştır. Uzun süreli etkisi bilinmemektedir.\n\nBu özellik Widget'ta henüz desteklenmemektedir.\n\nEğer risk alıp kullanmak istiyorsanız &#8220;Onayla&#8221; butonuna basınız.</string>
+    <string name="brightwarn_negative">Hayır teşekkürler</string>
+    <string name="brightwarn_accept">Onayla</string>
+
+    <string name="label_on">Açık</string>
+    <string name="label_off">Kapalı</string>
+    <string name="label_high">Yüksek Parlaklık</string>
+    <string name="label_strobe">Flaş</string>
+    <string name="label_frequency">Sıklık: (değiştirmek için kaydırın)</string>
+
+    <string name="widget_options">Genel ayarlar</string>
+    <string name="setting_widget_bright">Bright widget</string>
+    <string name="setting_widget_strobe">Flaş</string>
+    <string name="setting_frequency_title">Flaş frekansı</string>
+    <string name="setting_frequency_dialog">Frekans</string>
+    <string name="setting_frequency_hz" translatable="false"> Hz</string>
+    <string name="setting_add_widget">Widget ekle</string>
+
+    <string name="not_torch_title">El Feneri açık</string>
+    <string name="not_torch_toggle">El Fenerini kapat</string>
+</resources>
