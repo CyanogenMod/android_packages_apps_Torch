@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">El feneri</string>
+    <string name="about_title">Hakkında</string>
+    <string name="about_close">Kapat</string>
+
+    <string name="description">Bu program kameranın LED'ini kullanır.\n</string>
+    <string name="warning">Uyarı: LED'i uzun süre açık bırakmak onu fazla ısıtabilir.\n\nTam parlaklık &#8220;sürekli açık olarak&#8221; yarım saat boyunca test edildi, ama bunun LED'e zarar verme riski var.\n</string>
+    <string name="license">Orijinal kod Ben Buxton'ın yazdığı Nexus One Torch'a aittir, GPL, sürüm 3 altında yayınlanmıştır.\nhttp://n1torch.googlecode.com/\n\nYeni KA (Kullanıcı Arayüzü) tasarımı için David Prieto'ya teşekkürler.\n\nCyanogenMod için Steve Kondik tarafından düzenlenmiştir.\n\n</string>
+    <string name="warning_label">Uyarı</string>
+    <string name="brightwarn">Tam parlaklık yarım saatlik işlem için başarıyla test edildi, ama 45 dakikada epey ısındı, ve (geçici olarak) ışığı titremeye başladı. Uzun vadedeki etkileri bilinmiyor.\n\nBu henüz widgetta desteklenmiyor.\n\nSorumluluğunu alarak kullanmak istiyorsanız &#8220;Kabul ediyorum&#8221;a tıklayın.</string>
+    <string name="brightwarn_negative">Hayır, teşekkürler</string>
+    <string name="brightwarn_accept">Kabul ediyorum</string>
+
+    <string name="label_on">Açık</string>
+    <string name="label_off">Kapalı</string>
+    <string name="label_high">Yüksek parlaklık</string>
+    <string name="label_strobe">Yanıp sönen ışık</string>
+    <string name="label_frequency">Frekans: (değiştirmek için kaydırın)</string>
+    
+    <string name="widget_options">Genel seçenekler</string>
+    <string name="setting_widget_bright">Parlak widget</string>
+    <string name="setting_widget_strobe">Yanıp sönen flaş</string>
+    <string name="setting_frequency_title">Yanıp sönme frekansı</string>
+    <string name="setting_frequency_dialog">Frekans</string>
+    <string name="setting_add_widget">Widgetı ekle</string>
+
+    <string name="not_torch_title">El feneri açık</string>
+    <string name="not_torch_toggle">El fenerini kapat</string>
+</resources>
