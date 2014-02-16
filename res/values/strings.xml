@@ -22,10 +22,10 @@
     <string name="about_close">Close</string>
 
     <string name="description">This program manipulates the camera LED.\n</string>
-    <string name="warning">Warning: Leaving the LED on for a long time might overheat it.\n\nFull brightness &#8220;always on&#8221; has been tested running for &#189; hr, but there is the risk this could damage the LED.\n</string>
+    <string name="warning">Warning: Leaving the LED on for a long time might overheat it.\n\nFull brightness \'always on\' has been tested running for \u00BD hr, but there is the risk this could damage the LED.\n</string>
     <string name="license">Original code from Nexus One Torch by Ben Buxton, released under the GPL, v3.\nhttp://n1torch.googlecode.com/\n\nThanks to David Prieto for new UI design.\n\nModified for CyanogenMod by Steve Kondik.\n\n</string>
     <string name="warning_label">Warning</string>
-    <string name="brightwarn">Full brightness has been tested successfully for &#189; hour of operation, but got quite hot, and started flickering (temporarily) at 45 mins. Long term effects are unknown.\n\nThis is not supported on the widget yet.\n\nClick &#8220;Accept&#8221; if you want to use it at your own risk.</string>
+    <string name="brightwarn">Full brightness has been tested successfully for \u00BD hour of operation, but got quite hot, and started flickering (temporarily) at 45 mins. Long term effects are unknown.\n\nThis is not supported on the widget yet.\n\nClick \'Accept\' if you want to use it at your own risk.</string>
     <string name="brightwarn_negative">No thanks</string>
     <string name="brightwarn_accept">Accept</string>
 
