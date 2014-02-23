@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
+
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
+-->
+<resources>
+    <string name="app_name">Linterna</string>
+    <string name="about_title">Acerca de</string>
+    <string name="about_close">Cerrar</string>
+    <string name="description">Este programa manipula el led de la cámara.\n</string>
+    <string name="warning">Aviso: Dejar el led encendido demasiado tiempo puede producir un sobrecalentamiento del mismo.\n\nEl modo \u00ABbrillo alto\u00BB ha sido probado durante media hora, pero hay riesgo de que se pueda dañar el led.\n</string>
+    <string name="license">Código original para Nexus One Torch escrito por Ben Buxton, liberado bajo licencia GPL, v3.\nhttp://n1torch.googlecode.com/\n\nGracias a David Prieto por el nuevo diseño.\n\nModificado para CyanogenMod por Steve Kondik.\n</string>
+    <string name="warning_label">Aviso</string>
+    <string name="brightwarn">El modo \u00ABbrillo alto\u00BB fue probado satisfactoriamente durante media hora continuada, pero a partir de los 45 minutos el led se calentó y empezó a parpadear (temporalmente). Los efectos a largo plazo son desconocidos.\n\nToca en \u00ABAceptar\u00BB si quieres usarlo y asumir el riesgo.</string>
+    <string name="brightwarn_negative">No gracias</string>
+    <string name="brightwarn_accept">Aceptar</string>
+    <string name="label_high">Brillo alto</string>
+    <string name="label_strobe">Parpadeo</string>
+    <string name="widget_options">Opciones</string>
+    <string name="setting_widget_bright">Widget con brillo alto</string>
+    <string name="setting_widget_strobe">Parpadeo activo</string>
+    <string name="setting_frequency_title">Frecuencia del parpadeo</string>
+    <string name="setting_frequency_dialog">Frecuencia</string>
+    <string name="setting_add_widget">Añadir widget</string>
+    <string name="not_torch_title">Linterna encendida</string>
+    <string name="not_torch_toggle">Apagar linterna</string>
+</resources>
