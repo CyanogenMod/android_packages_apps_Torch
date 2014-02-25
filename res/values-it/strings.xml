@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2013 The CyanogenMod Project
+     Copyright (C) 2010-2014 The CyanogenMod Project
 
      This program is free software; you can redistribute it and/or
      modify it under the terms of the GNU General Public License
@@ -16,15 +16,15 @@
      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
      MA  02110-1301, USA.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Torcia</string>
     <string name="about_title">Info</string>
     <string name="about_close">Chiudi</string>
     <string name="description">Questo programma manipola il LED della fotocamera.\n</string>
-    <string name="warning">Attenzione: Lasciare il LED acceso a lungo può surriscaldarlo.\n\nLa modalità Alta Luminosità è stata testata per &#189; ora, ma c\'è il rischio che possa danneggiare il LED.\n</string>
+    <string name="warning">Attenzione: Lasciare il LED acceso a lungo può surriscaldarlo.\n\nLa modalità Alta Luminosità è stata testata per \u00BD ora, ma c\'è il rischio che possa danneggiare il LED.\n</string>
     <string name="license">Codice originale da Nexus One Torch scritto da Ben Buxton, rilasciato sotto GPL, v3.\nhttp://n1torch.googlecode.com/\n\nGrazie a David Prieto per il nuovo design della UI.\n\nModificato per CyanogenMod da Steve Kondik.\n\n</string>
     <string name="warning_label">Attenzione</string>
-    <string name="brightwarn">L\'Alta Luminosità è stata testata con successo per &#189; ora di attività, ma il LED si è scaldato notevolmente e dopo 45 min ha iniziato a tremolare (temporaneamete). Effetti a lungo termine sono sconosciuti.\n\nQuesta modalità non è ancora supportata nel widget.\n\nClicca &#8220;Accetto&#8221; se vuoi usarla a tuo rischio.</string>
+    <string name="brightwarn">L\'Alta Luminosità è stata testata con successo per \u00BD ora di attività, ma il LED si è scaldato notevolmente e dopo 45 min ha iniziato a tremolare (temporaneamete). Effetti a lungo termine sono sconosciuti.\n\nQuesta modalità non è ancora supportata nel widget.\n\nClicca \'Accetto\' se vuoi usarla a tuo rischio.</string>
     <string name="brightwarn_negative">No grazie</string>
     <string name="brightwarn_accept">Accetto</string>
     <string name="label_high">Alta Luminosità</string>
