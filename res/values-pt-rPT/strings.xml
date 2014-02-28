@@ -18,14 +18,13 @@
      MA  02110-1301, USA.
 -->
 <resources>
-  <string name="app_name">Suluh</string>
-  <string name="about_title">Perihal</string>
-  <string name="about_close">Tutup</string>
-  <string name="description">Program ini memanipulasi LED kamera.\n</string>
-  <string name="license">Kod asal dari Nexus One Torch oleh Ben Buxton, dilepaskan dibawah GPL, v3.\nhttp://n1torch.googlecode.com/\n\nTerima kasih kepada David Prieto untuk rekaan baru UI.\n\nDimodifikasi untuk CyanogenMod oleh Steve Kondik.\n\n</string>
-  <string name="warning_label">Amaran</string>
-  <string name="brightwarn_negative">Terima kasih sahaja</string>
-  <string name="brightwarn_accept">Terima</string>
-  <string name="label_high">Kecerahan tinggi</string>
-  <string name="setting_frequency_dialog">Frekuensi</string>
+  <string name="app_name">Lanterna</string>
+  <string name="about_title">Sobre</string>
+  <string name="about_close">Fechar</string>
+  <string name="warning_label">Aviso</string>
+  <string name="brightwarn_negative">Não, obrigado</string>
+  <string name="brightwarn_accept">Aceitar</string>
+  <string name="setting_frequency_dialog">Frequência</string>
+  <string name="not_torch_title">Lanterna ligada</string>
+  <string name="not_torch_toggle">Desligar lanterna</string>
 </resources>
