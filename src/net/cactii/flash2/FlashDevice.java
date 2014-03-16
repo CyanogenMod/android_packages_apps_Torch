@@ -44,6 +44,7 @@ public class FlashDevice {
     private static String mFlashDeviceLuminosity;
     private static String mFlashDeviceLuminosity2;
     private static boolean mUseCameraInterface;
+    private static boolean mHasDecoupledBrightness;
     private WakeLock mWakeLock;
 
     public static final int STROBE    = -1;
@@ -78,6 +79,7 @@ public class FlashDevice {
                 = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
             this.mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Torch");
         }
+        mHasDecoupledBrightness = context.getResources().getBoolean(R.bool.hasDecoupledBrightness);
     }
 
     public static synchronized FlashDevice instance(Context context) {
@@ -139,6 +141,19 @@ public class FlashDevice {
                         mSurfaceTexture = new SurfaceTexture(0);
                         mCamera.setPreviewTexture(mSurfaceTexture);
                         mCamera.startPreview();
+                    }
+                    // Devices using camera interface with decoupled brightness settings
+                    if (mHasDecoupledBrightness && mode == DEATH_RAY) {
+                        if (mFlashDeviceWriter == null) {
+                            mFlashDeviceWriter = new FileWriter(mFlashDevice);
+                        }
+                        if (mValueDeathRay >= 0) {
+                            mFlashDeviceWriter.write(String.valueOf(mValueDeathRay));
+                            mFlashDeviceWriter.flush();
+                        } else if (mValueHigh >= 0) {
+                            mFlashDeviceWriter.write(String.valueOf(mValueHigh));
+                            mFlashDeviceWriter.flush();
+                        }
                     }
                     Camera.Parameters params = mCamera.getParameters();
                     params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);

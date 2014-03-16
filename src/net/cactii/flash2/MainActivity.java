@@ -98,7 +98,9 @@ public class MainActivity extends Activity {
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         mHasBrightSetting = getResources().getBoolean(R.bool.hasHighBrightness) &&
-                                !getResources().getBoolean(R.bool.useCameraInterface);
+                                (!getResources().getBoolean(R.bool.useCameraInterface) ||
+                                 getResources().getBoolean(R.bool.hasDecoupledBrightness));
+
         if (mHasBrightSetting) {
             mBright = mPrefs.getBoolean("bright", false);
             mBrightSwitch.setChecked(mBright);

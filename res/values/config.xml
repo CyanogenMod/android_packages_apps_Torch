@@ -44,4 +44,6 @@
 
     <!-- If the device does not support high brightness mode, disable this -->
     <bool name="hasHighBrightness">true</bool>
+    <!-- If device uses camera interface with decoupled torch brightness -->
+    <bool name="hasDecoupledBrightness">false</bool>
 </resources>
