@@ -44,6 +44,7 @@ public class FlashDevice {
     private static String mFlashDeviceLuminosity;
     private static String mFlashDeviceLuminosity2;
     private static boolean mUseCameraInterface;
+    private static boolean mNeedsContinuousSysFsWrite;
     private WakeLock mWakeLock;
 
     public static final int STROBE    = -1;
@@ -73,6 +74,8 @@ public class FlashDevice {
         mFlashDeviceLuminosity = context.getResources().getString(R.string.flashDeviceLuminosity);
         mFlashDeviceLuminosity2 = context.getResources().getString(R.string.flashDeviceLuminosity2);
         mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
+        mNeedsContinuousSysFsWrite = context.getResources()
+                                     .getBoolean(R.bool.needsContinuousSysFsWrite);
         if (mUseCameraInterface) {
             PowerManager pm
                 = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
@@ -221,7 +224,7 @@ public class FlashDevice {
                         mFlashDeviceWriter = new FileWriter(mFlashDevice);
                     }
                     // Write to sysfs only if not already on
-                    if (mode != mFlashMode) {
+                    if (mode != mFlashMode || mNeedsContinuousSysFsWrite) {
                         mFlashDeviceWriter.write(String.valueOf(value));
                         mFlashDeviceWriter.flush();
                     }
