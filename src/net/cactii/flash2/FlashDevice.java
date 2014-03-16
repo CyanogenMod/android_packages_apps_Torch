@@ -140,6 +140,14 @@ public class FlashDevice {
                         mCamera.setPreviewTexture(mSurfaceTexture);
                         mCamera.startPreview();
                     }
+                    // For devices with camera iface and variable brightness options (yes, these exist)
+                    if (mode == DEATH_RAY && mValueDeathRay >= 0) {
+                        if (mFlashDeviceWriter == null) {
+                            mFlashDeviceWriter = new FileWriter(mFlashDevice);
+                        }
+                        mFlashDeviceWriter.write(String.valueOf(mValueDeathRay));
+                        mFlashDeviceWriter.flush();
+                    }
                     Camera.Parameters params = mCamera.getParameters();
                     params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                     mCamera.setParameters(params);
