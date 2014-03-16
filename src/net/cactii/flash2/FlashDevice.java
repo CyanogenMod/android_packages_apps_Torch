@@ -140,6 +140,19 @@ public class FlashDevice {
                         mCamera.setPreviewTexture(mSurfaceTexture);
                         mCamera.startPreview();
                     }
+                    // Devices using camera interface and variable brightness options
+                    if (mode == DEATH_RAY) {
+                        if (mFlashDeviceWriter == null) {
+                            mFlashDeviceWriter = new FileWriter(mFlashDevice);
+                        }
+                        if (mValueDeathRay >= 0) {
+                            mFlashDeviceWriter.write(String.valueOf(mValueDeathRay));
+                            mFlashDeviceWriter.flush();
+                        } else if (mValueHigh >= 0) {
+                            mFlashDeviceWriter.write(String.valueOf(mValueHigh));
+                            mFlashDeviceWriter.flush();
+                        }
+                    }
                     Camera.Parameters params = mCamera.getParameters();
                     params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                     mCamera.setParameters(params);
