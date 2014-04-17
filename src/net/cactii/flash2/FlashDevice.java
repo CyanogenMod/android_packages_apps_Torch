@@ -73,11 +73,9 @@ public class FlashDevice {
         mFlashDeviceLuminosity = context.getResources().getString(R.string.flashDeviceLuminosity);
         mFlashDeviceLuminosity2 = context.getResources().getString(R.string.flashDeviceLuminosity2);
         mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
-        if (mUseCameraInterface) {
-            PowerManager pm
-                = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-            this.mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Torch");
-        }
+
+        PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        this.mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Torch");
     }
 
     public static synchronized FlashDevice instance(Context context) {
@@ -131,8 +129,9 @@ public class FlashDevice {
                             mSurfaceTexture = null;
                         }
                     }
-                    if (mWakeLock.isHeld())
+                    if (mWakeLock.isHeld()) {
                         mWakeLock.release();
+                    }
                 } else {
                     if (mSurfaceTexture == null) {
                         // Create a dummy texture, otherwise setPreview won't work on some devices
@@ -143,8 +142,8 @@ public class FlashDevice {
                     Camera.Parameters params = mCamera.getParameters();
                     params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
                     mCamera.setParameters(params);
-                    if (!mWakeLock.isHeld()) {  // only get the wakelock if we don't have it already
-                        mWakeLock.acquire(); // we don't want to go to sleep while cam is up
+                    if (!mWakeLock.isHeld()) {
+                        mWakeLock.acquire();
                     }
                 }
             } else {
@@ -171,6 +170,9 @@ public class FlashDevice {
                                 mFlashDeviceLuminosityWriter2.write(String.valueOf(mValueLow));
                                 mFlashDeviceLuminosityWriter2.flush();
                             }
+                            if (!mWakeLock.isHeld()) {
+                                mWakeLock.acquire();
+                            }
                             break;
                         case OFF:
                             mFlashDeviceLuminosityWriter.write(String.valueOf(mValueLow));
@@ -184,10 +186,16 @@ public class FlashDevice {
                             mFlashDeviceWriter.write(String.valueOf(mValueOff));
                             mFlashDeviceWriter.close();
                             mFlashDeviceWriter = null;
+                            if (mWakeLock.isHeld()) {
+                                mWakeLock.release();
+                            }
                             break;
                         case STROBE:
                             mFlashDeviceWriter.write(String.valueOf(OFF));
                             mFlashDeviceWriter.flush();
+                            if (!mWakeLock.isHeld()) {
+                                mWakeLock.acquire();
+                            }
                             break;
                         case DEATH_RAY:
                             if (mValueDeathRay >= 0) {
@@ -197,6 +205,9 @@ public class FlashDevice {
                                     mFlashDeviceLuminosityWriter2.write(String.valueOf(mValueDeathRay));
                                     mFlashDeviceLuminosityWriter2.flush();
                                 }
+                                if (!mWakeLock.isHeld()) {
+                                    mWakeLock.acquire();
+                                }
                             } else if (mValueHigh >= 0) {
                                 mFlashDeviceLuminosityWriter.write(String.valueOf(mValueHigh));
                                 mFlashDeviceLuminosityWriter.flush();
@@ -204,12 +215,18 @@ public class FlashDevice {
                                     mFlashDeviceLuminosityWriter2.write(String.valueOf(mValueHigh));
                                     mFlashDeviceLuminosityWriter2.flush();
                                 }
+                                if (!mWakeLock.isHeld()) {
+                                    mWakeLock.acquire();
+                                }
                             } else {
                                 mFlashDeviceLuminosityWriter.write(String.valueOf(OFF));
                                 mFlashDeviceLuminosityWriter.flush();
                                 if (mFlashDeviceLuminosityWriter2 != null) {
                                     mFlashDeviceLuminosityWriter2.write(String.valueOf(OFF));
                                     mFlashDeviceLuminosityWriter2.flush();
+                                }
+                                if (mWakeLock.isHeld()) {
+                                    mWakeLock.release();
                                 }
                                 Log.d(MSG_TAG,"Broken device configuration");
                             }
@@ -224,15 +241,24 @@ public class FlashDevice {
                     if (mode != mFlashMode) {
                         mFlashDeviceWriter.write(String.valueOf(value));
                         mFlashDeviceWriter.flush();
+                        if (mode != OFF && !mWakeLock.isHeld()) {
+                            mWakeLock.acquire();
+                        }
                     }
                     if (mode == OFF) {
                         mFlashDeviceWriter.close();
                         mFlashDeviceWriter = null;
+                        if (mWakeLock.isHeld()) {
+                            mWakeLock.release();
+                        }
                     }
                 }
             }
             mFlashMode = mode;
         } catch (IOException e) {
+            if (mWakeLock.isHeld()) {
+                mWakeLock.release();
+            }
             throw new RuntimeException("Can't open flash device", e);
         }
     }
