@@ -22,7 +22,7 @@
   <string name="about_title">Sobre</string>
   <string name="about_close">Fechar</string>
   <string name="description">Este programa manipula o LED da câmara.\n</string>
-  <string name="warning">Aviso: Deixar o LED ligado por um longo período de tempo pode sobreaquecê-lo.\n\nO Brilho máximo \'sempre ligado\' foi testado por \u00BD h, mas há o risco que danifique o LED.\n</string>
+  <string name="warning">Aviso: Deixar o LED ligado por um longo período de tempo pode sobreaquecê-lo.\n\nO Brilho máximo \'sempre ligado\' foi testado por \u00BD h, mas há o risco de danificar o LED.\n</string>
   <string name="license">Código original de Nexus One Torch por Ben Buxton, lançado sob a licença GPL, v3.\nhttp://n1torch.googlecode.com/\n\nObrigado a David Prieto pela nova interface.\n\nModificado para a CyanogenMod por Steve Kondik.\n\n</string>
   <string name="warning_label">Aviso</string>
   <string name="brightwarn">O brilho máximo foi testado com sucesso for \u00BD horas de operação, mas ficou bastante quente, e começou a piscar (temporariamente) aos 45 minutos. Os efeitos de longo termo são desconhecidos.\n\nIsto ainda não é suportado pelo widget.\n\nClique \'Aceitar\' se o quer usar por sua conta e risco.</string>
