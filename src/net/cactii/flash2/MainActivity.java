@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2014 The CyanogenMod Project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -28,148 +28,116 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.LinearLayout;
-import android.widget.Switch;
-import android.widget.ToggleButton;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
-import android.widget.TextView;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.OvershootInterpolator;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity {
+
+    private static final int ANIMATION_DURATION = 300;
+
     private TorchWidgetProvider mWidgetProvider;
 
-    private ToggleButton mButtonOn;
-    private Switch mStrobeSwitch;
-    private Switch mBrightSwitch;
+    private Context mContext;
 
     private boolean mBright;
     private boolean mTorchOn;
-
-    // Strobe frequency slider.
-    private SeekBar mSlider;
-
-    // Period of strobe, in milliseconds
-    private int mStrobePeriod;
-
-    // Label showing strobe frequency
-    private TextView mStrobeLabel;
 
     // Preferences
     private SharedPreferences mPrefs;
 
     private boolean mHasBrightSetting = false;
 
+    private float mFullScreenScale;
+
+    private ImageView mLightbulb, mLightbulbOn;
+    private ImageView mBackgroundShape;
+
     private final BroadcastReceiver mStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(TorchSwitch.TORCH_STATE_CHANGED)) {
                 mTorchOn = intent.getIntExtra("state", 0) != 0;
-                updateBigButtonState();
+                if (mTorchOn) {
+                    onFlashOn();
+                } else {
+                    onFlashOff();
+                }
             }
         }
     };
+
+    private void onFlashOn() {
+        if (mBackgroundShape == null) {
+            return;
+        }
+        getActionBar().hide();
+        mBackgroundShape.animate()
+                .scaleX(mFullScreenScale)
+                .scaleY(mFullScreenScale)
+                .setInterpolator(new AccelerateDecelerateInterpolator())
+                .setDuration(ANIMATION_DURATION);
+        mLightbulbOn.animate()
+                .alpha(1f)
+                .setDuration(ANIMATION_DURATION);
+    }
+
+    private void onFlashOff() {
+        if (mBackgroundShape == null) {
+            return;
+        }
+        getActionBar().show();
+        mBackgroundShape.animate()
+                .scaleX(1)
+                .scaleY(1)
+                .setInterpolator(new OvershootInterpolator())
+                .setDuration(ANIMATION_DURATION);
+        mLightbulbOn.animate()
+                .alpha(0f)
+                .setDuration(ANIMATION_DURATION);
+    }
 
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = this;
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+        getActionBar().show();
 
         setContentView(R.layout.main);
 
-        mButtonOn = (ToggleButton) findViewById(R.id.buttonOn);
-        mStrobeSwitch = (Switch) findViewById(R.id.strobe_switch);
-        mStrobeLabel = (TextView) findViewById(R.id.strobeTimeLabel);
-        mSlider = (SeekBar) findViewById(R.id.slider);
-        mBrightSwitch = (Switch) findViewById(R.id.bright_switch);
+        mBackgroundShape = (ImageView) findViewById(R.id.bg);
+        mLightbulb = (ImageView) findViewById(R.id.lightbulb);
+        mLightbulbOn = (ImageView) findViewById(R.id.lightbulb_on);
 
-        mStrobePeriod = 100;
         mTorchOn = false;
 
         mWidgetProvider = TorchWidgetProvider.getInstance();
 
         // Preferences
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        mBright = mPrefs.getBoolean("bright", false);
 
         mHasBrightSetting = getResources().getBoolean(R.bool.hasHighBrightness) &&
-                                !getResources().getBoolean(R.bool.useCameraInterface);
-        if (mHasBrightSetting) {
-            mBright = mPrefs.getBoolean("bright", false);
-            mBrightSwitch.setChecked(mBright);
-            mBrightSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (isChecked && mPrefs.getBoolean("bright", false)) {
-                        mBright = true;
-                    } else if (isChecked) {
-                        openBrightDialog();
-                    } else {
-                        mBright = false;
-                        mPrefs.edit().putBoolean("bright", false).commit();
-                    }
-                }
-            });
-        } else {
-            // Fully hide the UI elements on Crespo since we can't use them
-            mBrightSwitch.setVisibility(View.GONE);
-            findViewById(R.id.ruler2).setVisibility(View.GONE);
-        }
+                !getResources().getBoolean(R.bool.useCameraInterface);
 
-        // Set the state of the strobing section and hide as appropriate
-        final boolean isStrobing = mPrefs.getBoolean("strobe", false);
-        final LinearLayout strobeLayout = (LinearLayout) findViewById(R.id.strobeRow);
-        int visibility = isStrobing ? View.VISIBLE : View.GONE;
-
-        strobeLayout.setVisibility(visibility);
-        mStrobeSwitch.setChecked(isStrobing);
-        mStrobeSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                int visibility = isChecked ? View.VISIBLE : View.GONE;
-                strobeLayout.setVisibility(visibility);
-                mPrefs.edit().putBoolean("strobe", isChecked).commit();
-            }
-        });
-
-        mButtonOn.setOnClickListener(new OnClickListener() {
+        mLightbulb.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(TorchSwitch.TOGGLE_FLASHLIGHT);
-                intent.putExtra("strobe", mStrobeSwitch.isChecked());
-                intent.putExtra("period", mStrobePeriod);
                 intent.putExtra("bright", mBright);
                 sendBroadcast(intent);
-            }
-        });
-
-        // Strobe frequency slider bar handling
-        setProgressBarVisibility(true);
-        updateStrobePeriod(mPrefs.getInt("strobeperiod", 100));
-        mSlider.setHorizontalScrollBarEnabled(true);
-        mSlider.setProgress(400 - mStrobePeriod);
-
-        mSlider.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                updateStrobePeriod(Math.max(20, 401 - progress));
-
-                Intent intent = new Intent("net.cactii.flash2.SET_STROBE");
-                intent.putExtra("period", mStrobePeriod);
-                sendBroadcast(intent);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
 
@@ -182,7 +150,6 @@ public class MainActivity extends Activity {
 
     @Override
     public void onPause() {
-        mPrefs.edit().putInt("strobeperiod", mStrobePeriod).commit();
         updateWidget();
         unregisterReceiver(mStateReceiver);
         super.onPause();
@@ -196,7 +163,6 @@ public class MainActivity extends Activity {
 
     @Override
     public void onResume() {
-        updateBigButtonState();
         updateWidget();
         registerReceiver(mStateReceiver, new IntentFilter(TorchSwitch.TORCH_STATE_CHANGED));
         super.onResume();
@@ -205,6 +171,13 @@ public class MainActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
+
+        MenuItem brightness = menu.findItem(R.id.action_high_brightness);
+        if (mHasBrightSetting) {
+            brightness.setChecked(mBright);
+        } else {
+            brightness.setVisible(false);
+        }
         return true;
     }
 
@@ -213,14 +186,29 @@ public class MainActivity extends Activity {
         if (menuItem.getItemId() == R.id.action_about) {
             openAboutDialog();
             return true;
+        } else if (menuItem.getItemId() == R.id.action_high_brightness) {
+            boolean isChecked = false;
+            menuItem.setChecked(isChecked = !menuItem.isChecked());
+            if (isChecked && !mPrefs.contains("bright")) {
+                // reverse reverse!
+                menuItem.setChecked(!isChecked);
+                openBrightDialog();
+            } else if (isChecked) {
+                mBright = true;
+                mPrefs.edit().putBoolean("bright", true).commit();
+            } else {
+                mBright = false;
+                mPrefs.edit().putBoolean("bright", false).commit();
+            }
+            return true;
         }
         return false;
     }
 
-    private void updateStrobePeriod(int period) {
-        mStrobeLabel.setText(getString(R.string.setting_frequency_title) + ": " +
-                666 / period + "Hz / " + 40000 / period + "BPM");
-        mStrobePeriod = period;
+    @Override
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        mFullScreenScale = getMeasureScale();
     }
 
     private void openAboutDialog() {
@@ -244,7 +232,6 @@ public class MainActivity extends Activity {
                 .setNegativeButton(R.string.brightwarn_negative, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int whichButton) {
-                        mBrightSwitch.setChecked(false);
                     }
                 })
                 .setPositiveButton(R.string.brightwarn_accept, new DialogInterface.OnClickListener() {
@@ -261,10 +248,15 @@ public class MainActivity extends Activity {
         mWidgetProvider.updateAllStates(this);
     }
 
-    private void updateBigButtonState() {
-        mButtonOn.setChecked(mTorchOn);
-        mBrightSwitch.setEnabled(!mTorchOn && mHasBrightSetting);
-        mStrobeSwitch.setEnabled(!mTorchOn);
-        mSlider.setEnabled(!mTorchOn || mStrobeSwitch.isChecked());
+    private float getMeasureScale() {
+        WindowManager wm = getWindowManager();
+        Display display = wm.getDefaultDisplay();
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        display.getMetrics(outMetrics);
+
+        float displayHeight = outMetrics.heightPixels;
+        float displayWidth  = outMetrics.widthPixels;
+        return (Math.max(displayHeight, displayWidth) /
+                mContext.getResources().getDimensionPixelSize(R.dimen.button_size)) * 2;
     }
 }

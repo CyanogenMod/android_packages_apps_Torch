@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">Нет, спасибо</string>
   <string name="brightwarn_accept">Согласиться</string>
   <string name="label_high">Максимальная яркость</string>
-  <string name="label_strobe">Стробоскоп</string>
   <string name="widget_options">Настройки виджета</string>
   <string name="setting_widget_bright">Максимальная яркость</string>
-  <string name="setting_widget_strobe">Стробоскоп</string>
-  <string name="setting_frequency_title">Частота стробоскопа</string>
-  <string name="setting_frequency_dialog">Частота</string>
   <string name="setting_add_widget">Добавить виджет</string>
   <string name="not_torch_title">Фонарик включён</string>
   <string name="not_torch_toggle">Выключить фонарик</string>

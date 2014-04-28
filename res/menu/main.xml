@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2013 The CyanogenMod Project
+     Copyright (C) 2014 The CyanogenMod Project
 
      This program is free software; you can redistribute it and/or
      modify it under the terms of the GNU General Public License
@@ -17,8 +17,13 @@
      MA  02110-1301, USA.
 -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:id="@+id/action_about"
-          android:title="@string/about_title"
-          android:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/about_title"
+        android:showAsAction="never" />
+    <item
+        android:id="@+id/action_high_brightness"
+        android:title="@string/label_high"
+        android:showAsAction="never"
+        android:checkable="true" />
 </menu>

@@ -44,12 +44,8 @@
   <string name="brightwarn_negative">Не, хвала</string>
   <string name="brightwarn_accept">Прихватам</string>
   <string name="label_high">Пуна јачина</string>
-  <string name="label_strobe">Стробоскоп</string>
   <string name="widget_options">Опште поставке</string>
   <string name="setting_widget_bright">Пуна јачина</string>
-  <string name="setting_widget_strobe">Стробоскоп</string>
-  <string name="setting_frequency_title">Фреквенција стробоскопа</string>
-  <string name="setting_frequency_dialog">Фреквенција</string>
   <string name="setting_add_widget">Додајте виџет</string>
   <string name="not_torch_title">Бакља укључена</string>
   <string name="not_torch_toggle">Искључи бакљу</string>

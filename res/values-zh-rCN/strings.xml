@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">拒绝</string>
   <string name="brightwarn_accept">接受</string>
   <string name="label_high">高亮模式</string>
-  <string name="label_strobe">闪烁</string>
   <string name="widget_options">常规选项</string>
   <string name="setting_widget_bright">高亮模式</string>
-  <string name="setting_widget_strobe">闪烁</string>
-  <string name="setting_frequency_title">频率</string>
-  <string name="setting_frequency_dialog">频率</string>
   <string name="setting_add_widget">添加小部件</string>
   <string name="not_torch_title">手电筒已开启</string>
   <string name="not_torch_toggle">关闭手电筒</string>

@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">Nein Danke</string>
   <string name="brightwarn_accept">Akzeptieren</string>
   <string name="label_high">Hohe Helligkeit</string>
-  <string name="label_strobe">Stroboskop</string>
   <string name="widget_options">Allgemeine Optionen</string>
   <string name="setting_widget_bright">Helles Widget</string>
-  <string name="setting_widget_strobe">Stroboskop</string>
-  <string name="setting_frequency_title">Blitzfrequenz</string>
-  <string name="setting_frequency_dialog">Frequenz</string>
   <string name="setting_add_widget">Widget hinzufügen</string>
   <string name="not_torch_title">Taschenlampe an</string>
   <string name="not_torch_toggle">Ausschalten</string>

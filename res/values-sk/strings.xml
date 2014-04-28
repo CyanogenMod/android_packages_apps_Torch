@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">Nie, ďakujem</string>
   <string name="brightwarn_accept">Prijímam</string>
   <string name="label_high">Vysoký jas</string>
-  <string name="label_strobe">Blikanie</string>
   <string name="widget_options">Všeobecné nastavenia</string>
   <string name="setting_widget_bright">Miniaplikácia jasu</string>
-  <string name="setting_widget_strobe">Blikanie</string>
-  <string name="setting_frequency_title">Frekvencia blikania</string>
-  <string name="setting_frequency_dialog">Frekvencia</string>
   <string name="setting_add_widget">Pridať miniaplikáciu</string>
   <string name="not_torch_title">Svietidlo zapnuté</string>
   <string name="not_torch_toggle">Vypnúť svietidlo</string>

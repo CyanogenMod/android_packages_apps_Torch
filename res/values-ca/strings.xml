@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">No, gràcies</string>
   <string name="brightwarn_accept">Accepta</string>
   <string name="label_high">Brillantor alta</string>
-  <string name="label_strobe">Estroboscòpic</string>
   <string name="widget_options">Opcions generals</string>
   <string name="setting_widget_bright">Widget Brillantor</string>
-  <string name="setting_widget_strobe">Flash estroboscòpic</string>
-  <string name="setting_frequency_title">Freqüència estroboscòpica</string>
-  <string name="setting_frequency_dialog">Freqüència</string>
   <string name="setting_add_widget">Afegeix widget</string>
   <string name="not_torch_title">Torxa engegada</string>
   <string name="not_torch_toggle">Apaga la torxa</string>

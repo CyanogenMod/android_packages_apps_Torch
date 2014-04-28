@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">No gracias</string>
   <string name="brightwarn_accept">Aceptar</string>
   <string name="label_high">Brillo alto</string>
-  <string name="label_strobe">Parpadeo</string>
   <string name="widget_options">Opciones</string>
   <string name="setting_widget_bright">Widget con brillo alto</string>
-  <string name="setting_widget_strobe">Parpadeo activo</string>
-  <string name="setting_frequency_title">Frecuencia del parpadeo</string>
-  <string name="setting_frequency_dialog">Frecuencia</string>
   <string name="setting_add_widget">Añadir widget</string>
   <string name="not_torch_title">Linterna encendida</string>
   <string name="not_torch_toggle">Apagar linterna</string>

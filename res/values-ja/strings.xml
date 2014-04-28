@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">やめておく</string>
   <string name="brightwarn_accept">同意する</string>
   <string name="label_high">高輝度</string>
-  <string name="label_strobe">ストロボ</string>
   <string name="widget_options">オプション</string>
   <string name="setting_widget_bright">高輝度ウィジェット</string>
-  <string name="setting_widget_strobe">ストロボフラッシュ</string>
-  <string name="setting_frequency_title">ストロボの発光間隔</string>
-  <string name="setting_frequency_dialog">発光間隔</string>
   <string name="setting_add_widget">ウィジェットを追加</string>
   <string name="not_torch_title">トーチON</string>
   <string name="not_torch_toggle">トーチOFF</string>
