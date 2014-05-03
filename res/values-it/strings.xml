@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">No grazie</string>
   <string name="brightwarn_accept">Accetto</string>
   <string name="label_high">Alta Luminosità</string>
-  <string name="label_strobe">Strobo</string>
   <string name="widget_options">Impostazioni generali</string>
   <string name="setting_widget_bright">Widget alta luminosità</string>
-  <string name="setting_widget_strobe">Flash strobo</string>
-  <string name="setting_frequency_title">Frequenza strobo</string>
-  <string name="setting_frequency_dialog">Frequenza</string>
   <string name="setting_add_widget">Aggiungi widget</string>
   <string name="not_torch_title">Torcia attiva</string>
   <string name="not_torch_toggle">Spegni la torcia</string>

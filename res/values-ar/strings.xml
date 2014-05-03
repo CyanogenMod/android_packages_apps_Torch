@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">لا، شكراً</string>
   <string name="brightwarn_accept">موافقة</string>
   <string name="label_high">سطوع عالي</string>
-  <string name="label_strobe">قوي</string>
   <string name="widget_options">خيارات عامة</string>
   <string name="setting_widget_bright">زر سطوع في اللنشر</string>
-  <string name="setting_widget_strobe">فلاش قوي</string>
-  <string name="setting_frequency_title">الترددات القوية</string>
-  <string name="setting_frequency_dialog">التردد</string>
   <string name="setting_add_widget">إدراج زر في اللنشر</string>
   <string name="not_torch_title">الشعلة تعمل</string>
   <string name="not_torch_toggle">إيقاف تشغيل الشعلة</string>

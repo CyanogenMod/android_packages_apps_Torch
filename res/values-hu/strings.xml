@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">Nem, köszönöm</string>
   <string name="brightwarn_accept">Elfogadás</string>
   <string name="label_high">Zseblámpa</string>
-  <string name="label_strobe">Stroboszkóp</string>
   <string name="widget_options">Általános opciók</string>
   <string name="setting_widget_bright">Zseblámpa</string>
-  <string name="setting_widget_strobe">Stroboszkóp</string>
-  <string name="setting_frequency_title">Stroboszkóp frekvencia</string>
-  <string name="setting_frequency_dialog">Frekvencia</string>
   <string name="setting_add_widget">Modul hozzáadása</string>
   <string name="not_torch_title">Zseblámpa</string>
   <string name="not_torch_toggle">Zseblámpa kikapcsolása</string>

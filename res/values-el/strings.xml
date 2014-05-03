@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">Όχι, ευχαριστώ</string>
   <string name="brightwarn_accept">Αποδοχή</string>
   <string name="label_high">Υψηλή φωτεινότητα</string>
-  <string name="label_strobe">Στροβιλισμός</string>
   <string name="widget_options">Γενικές ρυθμίσεις</string>
   <string name="setting_widget_bright">Υψηλή φωτεινότητα</string>
-  <string name="setting_widget_strobe">Στροβιλισμός</string>
-  <string name="setting_frequency_title">Συχνότητα στροβιλισμού</string>
-  <string name="setting_frequency_dialog">Συχνότητα</string>
   <string name="setting_add_widget">Προσθήκη widget</string>
   <string name="not_torch_title">Φακός ενεργός</string>
   <string name="not_torch_toggle">Απενεργοποίηση φακού</string>

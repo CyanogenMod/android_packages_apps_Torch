@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2013 The CyanogenMod Project
+     Copyright (C) 2014 The CyanogenMod Project
 
      This program is free software; you can redistribute it and/or
      modify it under the terms of the GNU General Public License
@@ -25,15 +25,6 @@
                 android:key="widget_bright"
                 android:title="@string/setting_widget_bright"
                 android:defaultValue="false" />
-
-            <CheckBoxPreference
-                android:key="widget_strobe"
-                android:title="@string/setting_widget_strobe"
-                android:defaultValue="false" />    
-
-                    <net.cactii.flash2.SeekBarPreference 
-                        android:key="widget_strobe_freq"
-                        android:title="@string/setting_frequency_title" />
 
     </PreferenceCategory>
 

@@ -18,9 +18,9 @@
 -->
 <resources>
     <!-- New Colors for Theme Chooser to be compatible -->
-    <color name="background">#FF000000</color>
     <color name="divider_color">#FF555555</color>
     <color name="text_about">#FFff8080</color>
     <color name="text_color">#FFFFFFFF</color>
     <color name="text_warn">#FFff0000</color>
+    <color name="bg_color">#FF00b1e5</color>
 </resources>

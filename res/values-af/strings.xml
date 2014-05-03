@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">Kanselleer</string>
   <string name="brightwarn_accept">Aanvaar</string>
   <string name="label_high">Volle helderheid</string>
-  <string name="label_strobe">Flikker</string>
   <string name="widget_options">Legstuk instellings</string>
   <string name="setting_widget_bright">Helder legstuk</string>
-  <string name="setting_widget_strobe">Flikker legstuk</string>
-  <string name="setting_frequency_title">Flikker frekwensie</string>
-  <string name="setting_frequency_dialog">Frekwensie</string>
   <string name="setting_add_widget">Voeg legstuk by</string>
   <string name="not_torch_title">Flits aan</string>
   <string name="not_torch_toggle">Skakel flits af</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2013 The CyanogenMod Project
+     Copyright (C) 2014 The CyanogenMod Project
 
      This program is free software; you can redistribute it and/or
      modify it under the terms of the GNU General Public License
@@ -16,18 +16,15 @@
      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
      MA  02110-1301, USA.
 -->
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<resources>
 
-    <item
-        android:drawable="@drawable/widget_presslayer"
-        android:state_pressed="true" />
+    <style name="AppTheme" parent="android:Theme.Holo">
+    </style>
 
-    <item
-        android:drawable="@drawable/widget_presslayer"
-        android:state_enabled="true" android:state_focused="true"
-        android:state_window_focused="true" />
-
-    <item
-        android:drawable="@android:color/transparent" />
-
-</selector>
+    <style name="AppTheme.Translucent" parent="AppTheme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowTitleSize">0dp</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+</resources>

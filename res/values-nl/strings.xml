@@ -53,12 +53,8 @@ Tik op \'Accepteren\u2019 om op eigen risico te gebruiken.</string>
   <string name="brightwarn_negative">Annuleren</string>
   <string name="brightwarn_accept">Accepteren</string>
   <string name="label_high">Fel licht</string>
-  <string name="label_strobe">Knipperen</string>
   <string name="widget_options">Algemeen</string>
   <string name="setting_widget_bright">Helderheidswidget</string>
-  <string name="setting_widget_strobe">Knipperend licht</string>
-  <string name="setting_frequency_title">Knipperfrequentie</string>
-  <string name="setting_frequency_dialog">Frequentie</string>
   <string name="setting_add_widget">Widget toevoegen</string>
   <string name="not_torch_title">Zaklamp actief</string>
   <string name="not_torch_toggle">Zaklamp uitschakelen</string>

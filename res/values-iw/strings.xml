@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">לא תודה</string>
   <string name="brightwarn_accept">קבל</string>
   <string name="label_high">בהירות גבוהה</string>
-  <string name="label_strobe">הבהוב</string>
   <string name="widget_options">אפשרויות כלליות</string>
   <string name="setting_widget_bright">‏Widget אור בהיר</string>
-  <string name="setting_widget_strobe">הבהוב</string>
-  <string name="setting_frequency_title">תדירות הבהוב</string>
-  <string name="setting_frequency_dialog">תדירות</string>
   <string name="setting_add_widget">הוסף Widget</string>
   <string name="not_torch_title">פנס פועל</string>
   <string name="not_torch_toggle">כבה פנס</string>

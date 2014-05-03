@@ -17,6 +17,6 @@
      MA  02110-1301, USA.
 -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_checked="true" android:drawable="@drawable/bulb_on" />
-    <item android:drawable="@drawable/bulb_off" />
+    <item android:state_checked="true" android:drawable="@drawable/ic_lightbulb_on" />
+    <item android:drawable="@drawable/ic_lightbulb" />
 </selector>

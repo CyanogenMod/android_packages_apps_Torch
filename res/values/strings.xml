@@ -30,14 +30,9 @@
     <string name="brightwarn_accept">Accept</string>
 
     <string name="label_high">High brightness</string>
-    <string name="label_strobe">Strobe</string>
 
     <string name="widget_options">General options</string>
     <string name="setting_widget_bright">Bright widget</string>
-    <string name="setting_widget_strobe">Strobe flash</string>
-    <string name="setting_frequency_title">Strobe frequency</string>
-    <string name="setting_frequency_dialog">Frequency</string>
-    <string name="setting_frequency_hz" translatable="false"> Hz</string>
     <string name="setting_add_widget">Add widget</string>
 
     <string name="not_torch_title">Torch on</string>

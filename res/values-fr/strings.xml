@@ -29,12 +29,8 @@
   <string name="brightwarn_negative">Non merci</string>
   <string name="brightwarn_accept">Accepter</string>
   <string name="label_high">Luminosité maximale</string>
-  <string name="label_strobe">Stroboscope</string>
   <string name="widget_options">Options générales</string>
   <string name="setting_widget_bright">Widget luminosité maximale</string>
-  <string name="setting_widget_strobe">Flash stroboscopique</string>
-  <string name="setting_frequency_title">Fréquence stroboscope</string>
-  <string name="setting_frequency_dialog">Fréquence</string>
   <string name="setting_add_widget">Ajouter le widget</string>
   <string name="not_torch_title">Torche active</string>
   <string name="not_torch_toggle">Éteindre la torche</string>
