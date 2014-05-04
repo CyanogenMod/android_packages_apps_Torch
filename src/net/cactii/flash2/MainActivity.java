@@ -140,12 +140,6 @@ public class MainActivity extends Activity {
                 sendBroadcast(intent);
             }
         });
-
-        // Show the about dialog, the first time the user runs the app.
-        if (!mPrefs.getBoolean("aboutSeen", false)) {
-            openAboutDialog();
-            mPrefs.edit().putBoolean("aboutSeen", true).commit();
-        }
     }
 
     @Override
