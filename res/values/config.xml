@@ -42,6 +42,6 @@
     <!-- Highest setting, leave -1 if it doesn't exist -->
     <integer name="valueDeathRay">3</integer>
 
-    <!-- If the device does not support high brightness mode, disable this -->
-    <bool name="hasHighBrightness">true</bool>
+    <!-- If the device supports high brightness mode, enable this -->
+    <bool name="hasHighBrightness">false</bool>
 </resources>
