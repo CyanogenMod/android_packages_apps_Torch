@@ -30,6 +30,7 @@
   <string name="brightwarn_accept">Acceptera</string>
   <string name="label_high">Hög ljusstyrka</string>
   <string name="widget_options">Allmänna inställningar</string>
+  <string name="setting_widget_bright">Hög ljusstyrka</string>
   <string name="setting_add_widget">Lägg till widget</string>
   <string name="not_torch_title">Ficklampa på</string>
   <string name="not_torch_toggle">Stäng av ficklampan</string>
