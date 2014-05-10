@@ -81,6 +81,9 @@ public class MainActivity extends Activity {
         if (mBackgroundShape == null) {
             return;
         }
+        if (mFullScreenScale <= 0.0f) {
+            mFullScreenScale = getMeasureScale();
+        }
         getActionBar().hide();
         mBackgroundShape.animate()
                 .scaleX(mFullScreenScale)
