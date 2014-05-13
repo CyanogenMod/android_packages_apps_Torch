@@ -87,6 +87,9 @@ public class FlashDevice {
 
     public synchronized void setFlashMode(int mode) {
 	Log.d(MSG_TAG, "setFlashMode " + mode);
+
+        if (mFlashMode == mode) return;
+
         try {
             int value = mode;
             switch (mode) {
