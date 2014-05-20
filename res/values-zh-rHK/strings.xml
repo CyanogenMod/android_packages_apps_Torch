@@ -17,10 +17,21 @@
      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
      MA  02110-1301, USA.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">手電筒</string>
   <string name="about_title">關於</string>
   <string name="about_close">關閉</string>
+  <string name="description">本應用程式操控相機的 LED\n</string>
+  <string name="warning">警告：長期開啟 LED 會使其過熱。\n\n經測試高亮模式可「長開」半小時，但仍是有令 LED 損壞的風險。\n</string>
   <string name="license">原本的程式碼來自 Ben Buxton 編寫的 Nexus One Torch，在 GPL, v3 的規管下釋出。\nhttp://n1torch.googlecode.com/\n\n鳴謝 David Prieto 提供新介面設計。\n\n經過 Steve Kondik 修改在 CyanogenMod 上使用。\n\n</string>
+  <string name="warning_label">警告</string>
+  <string name="brightwarn">高亮模式曾經成功測試過能夠開啟 \u00BD 小時，但會變得很熱，並於 45 分鐘後開始 (暫時性的) 忽暗忽亮。目前未知是否會有長期性的副作用。 \n\n此模式尚未在桌面小部件上支持。 \n\n如果您願意承受該風險，請點擊 「接受」按鈕。</string>
+  <string name="brightwarn_negative">不用了</string>
+  <string name="brightwarn_accept">接受</string>
+  <string name="label_high">高亮度</string>
+  <string name="widget_options">一般選項</string>
+  <string name="setting_widget_bright">亮度小工具</string>
+  <string name="setting_add_widget">新增小工具</string>
   <string name="not_torch_title">手電筒開啟</string>
+  <string name="not_torch_toggle">關閉手電筒</string>
 </resources>

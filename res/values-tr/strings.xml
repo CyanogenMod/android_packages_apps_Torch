@@ -17,7 +17,7 @@
      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
      MA  02110-1301, USA.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">El feneri</string>
   <string name="about_title">Hakkında</string>
   <string name="about_close">Kapat</string>
@@ -25,7 +25,7 @@
   <string name="warning">Dikkat: LED\'i uzun süre açık bırakmak aşırı ısınmasına neden olabilir.\n\nTam parlaklıkta \"her zaman açık\" \u00BD saat boyunca test edilmiştir, ancak LED ışığında hasar meydana gelmesi olasıdır.\n</string>
   <string name="license">Özgün çalışma \'Nexus One Torch\' Ben Buxton tarafından hazırlanmış, GPL, v3 ile yayınlanmıştır.\nhttp://n1torch.googlecode.com/\n\nDavid Prieto\'ya yeni arayüz tasarımı için teşekkürler.\n\nCyanogenMod için Steve Kondik tarafından düzenlenmiştir.\n\n</string>
   <string name="warning_label">Uyarı</string>
-  <string name="brightwarn">Tam parlaklık \u00BD saat boyunca başarılı olarak test edilmiştir, fakat aşırı ısınmaya yol açmış ve 45. dakikada ışık göz kırpmaya (geçici olarak) başlamıştır. Uzun süreli etkileri bilinmemektedir.\n\nBu özellik widget üzerinde desteklenmemektedir.\n\nKendi sorumluluğunuzda kullanmak istiyorsanız \"Kabul et\" tuşuna basınız.</string>
+  <string name="brightwarn">Tam parlaklık \u00BD saat boyunca başarılı olarak test edilmiştir, fakat aşırı ısınmaya yol açmış ve 45. dakikada ışık (geçici olarak) yanıp sönmeye başlamıştır. Uzun süreli etkileri bilinmemektedir.\n\nBu özellik widget üzerinde desteklenmemektedir.\n\nKendi sorumluluğunuzda kullanmak istiyorsanız \"Kabul et\" tuşuna basınız.</string>
   <string name="brightwarn_negative">Hayır, teşekkürler</string>
   <string name="brightwarn_accept">Kabul et</string>
   <string name="label_high">Yüksek parlaklık</string>
