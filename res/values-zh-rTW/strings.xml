@@ -17,7 +17,7 @@
      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
      MA  02110-1301, USA.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">手電筒</string>
   <string name="about_title">關於</string>
   <string name="about_close">關閉</string>

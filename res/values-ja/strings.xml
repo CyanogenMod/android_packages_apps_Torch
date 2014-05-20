@@ -17,7 +17,7 @@
      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
      MA  02110-1301, USA.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">トーチ</string>
   <string name="about_title">情報</string>
   <string name="about_close">閉じる</string>
@@ -25,7 +25,7 @@
   <string name="warning">注意: 長時間LEDをつけたままにすると、オーバーヒートする可能性があります。\n\n高輝度を“常に有効”にした状態でのテストは30分間行っていますが、LEDにダメージを与える危険性があります。\n</string>
   <string name="license">オリジナルソースコードはBen BuxtonのNexus One Torchで、GPLv3に基づいてリリースされています。\nhttp://n1torch.googlecode.com/\n\n新しいUIのデザインを提供してくれたDavid Prietoに感謝します。\n\nCyanogenMod向けの変更はSteve Kondikが行ないました。\n\n</string>
   <string name="warning_label">警告</string>
-  <string name="brightwarn">高輝度は30分間のテストに成功していますが、とても熱くなり、45分ほどで一時的に明滅するようになりました。長時間の使用による影響はわかりません。\n\nウィジェットはまだサポートしていません。.\n\n\自己責任での使用を望むのであれば「同意する」を押してください。</string>
+  <string name="brightwarn">高輝度は30分間のテストに成功していますが、とても熱くなり、45分ほどで一時的に明滅するようになりました。長時間の使用による影響はわかりません。\n\nウィジェットはまだサポートされていません。.\n\n\自己責任での使用を望むのであれば「同意する」を押してください。</string>
   <string name="brightwarn_negative">やめておく</string>
   <string name="brightwarn_accept">同意する</string>
   <string name="label_high">高輝度</string>

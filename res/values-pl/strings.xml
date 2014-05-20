@@ -17,7 +17,7 @@
      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
      MA  02110-1301, USA.
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">Latarka</string>
   <string name="about_title">O latarce</string>
   <string name="about_close">Zamknij</string>
