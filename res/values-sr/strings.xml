@@ -46,7 +46,7 @@
   <string name="label_high">Пуна јачина</string>
   <string name="widget_options">Опште поставке</string>
   <string name="setting_widget_bright">Пуна јачина</string>
-  <string name="setting_add_widget">Додајте виџет</string>
+  <string name="setting_add_widget">Додај виџет</string>
   <string name="not_torch_title">Бакља укључена</string>
   <string name="not_torch_toggle">Искључи бакљу</string>
 </resources>
