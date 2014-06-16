@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    android:layout_height="200dp"
+    android:paddingLeft="15dp"
+    android:paddingTop="15dp" >
+
+    <Switch
+        android:id="@+id/switchStrobe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:fontFamily="sans-serif-light"
+        android:paddingBottom="75dp"
+        android:paddingRight="10dp"
+        android:text="@string/strobe"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textColorLink="@android:color/holo_blue_light"
+        android:textSize="22sp" />
+    <SeekBar
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/switchStrobe"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="13dp"
+        android:max="400"
+        android:paddingBottom="30dp" />
+
+</RelativeLayout>

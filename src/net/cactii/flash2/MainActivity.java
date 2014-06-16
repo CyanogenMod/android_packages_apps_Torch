@@ -26,21 +26,28 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.widget.DrawerLayout;
 import android.util.DisplayMetrics;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
 
@@ -51,17 +58,23 @@ public class MainActivity extends Activity {
     private Context mContext;
 
     private boolean mBright;
-    private boolean mTorchOn;
+    public boolean mTorchOn;
+
+    // Period of strobe, in milliseconds
+    public int mStrobePeriod;
 
     // Preferences
-    private SharedPreferences mPrefs;
+    public SharedPreferences mPrefs;
 
-    private boolean mHasBrightSetting = false;
+    public boolean mHasBrightSetting = false;
 
     private float mFullScreenScale;
 
     private ImageView mLightbulb, mLightbulbOn;
     private ImageView mBackgroundShape;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     private final BroadcastReceiver mStateReceiver = new BroadcastReceiver() {
         @Override
@@ -85,14 +98,11 @@ public class MainActivity extends Activity {
             mFullScreenScale = getMeasureScale();
         }
         getActionBar().hide();
-        mBackgroundShape.animate()
-                .scaleX(mFullScreenScale)
+        mBackgroundShape.animate().scaleX(mFullScreenScale)
                 .scaleY(mFullScreenScale)
                 .setInterpolator(new AccelerateDecelerateInterpolator())
                 .setDuration(ANIMATION_DURATION);
-        mLightbulbOn.animate()
-                .alpha(1f)
-                .setDuration(ANIMATION_DURATION);
+        mLightbulbOn.animate().alpha(1f).setDuration(ANIMATION_DURATION);
     }
 
     private void onFlashOff() {
@@ -100,14 +110,10 @@ public class MainActivity extends Activity {
             return;
         }
         getActionBar().show();
-        mBackgroundShape.animate()
-                .scaleX(1)
-                .scaleY(1)
+        mBackgroundShape.animate().scaleX(1).scaleY(1)
                 .setInterpolator(new OvershootInterpolator())
                 .setDuration(ANIMATION_DURATION);
-        mLightbulbOn.animate()
-                .alpha(0f)
-                .setDuration(ANIMATION_DURATION);
+        mLightbulbOn.animate().alpha(0f).setDuration(ANIMATION_DURATION);
     }
 
     /** Called when the activity is first created. */
@@ -131,18 +137,49 @@ public class MainActivity extends Activity {
         // Preferences
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         mBright = mPrefs.getBoolean("bright", false);
+        mStrobePeriod = mPrefs.getInt("period", 100);
 
-        mHasBrightSetting = getResources().getBoolean(R.bool.hasHighBrightness) &&
-                !getResources().getBoolean(R.bool.useCameraInterface);
+        mHasBrightSetting = getResources().getBoolean(R.bool.hasHighBrightness)
+                && !getResources().getBoolean(R.bool.useCameraInterface);
 
         mLightbulb.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                mTorchOn = !mTorchOn;
+
                 Intent intent = new Intent(TorchSwitch.TOGGLE_FLASHLIGHT);
                 intent.putExtra("bright", mBright);
                 sendBroadcast(intent);
             }
         });
+
+        // Handle Navigation Drawer
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout.setDrawerShadow(R.drawable.navbar_shadow, Gravity.LEFT);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        mDrawerList.setAdapter(new DrawerListAdapter(MainActivity.this));
+        mDrawerList.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                    int position, long id) {
+                if (view.getTag().equals("About")) {
+                    mDrawerLayout.closeDrawers();
+                    openAboutDialog();
+                }
+
+            }
+
+        });
+
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
+                R.drawable.ic_drawer, R.string.drawer_open,
+                R.string.drawer_close);
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
     }
 
     @Override
@@ -161,42 +198,20 @@ public class MainActivity extends Activity {
     @Override
     public void onResume() {
         updateWidget();
-        registerReceiver(mStateReceiver, new IntentFilter(TorchSwitch.TORCH_STATE_CHANGED));
+        registerReceiver(mStateReceiver, new IntentFilter(
+                TorchSwitch.TORCH_STATE_CHANGED));
         super.onResume();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-
-        MenuItem brightness = menu.findItem(R.id.action_high_brightness);
-        if (mHasBrightSetting) {
-            brightness.setChecked(mBright);
-        } else {
-            brightness.setVisible(false);
-        }
-        return true;
+        return false;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() == R.id.action_about) {
-            openAboutDialog();
-            return true;
-        } else if (menuItem.getItemId() == R.id.action_high_brightness) {
-            boolean isChecked = false;
-            menuItem.setChecked(isChecked = !menuItem.isChecked());
-            if (isChecked && !mPrefs.contains("bright")) {
-                // reverse reverse!
-                menuItem.setChecked(!isChecked);
-                openBrightDialog();
-            } else if (isChecked) {
-                mBright = true;
-                mPrefs.edit().putBoolean("bright", true).commit();
-            } else {
-                mBright = false;
-                mPrefs.edit().putBoolean("bright", false).commit();
-            }
+
+        if (mDrawerToggle.onOptionsItemSelected(menuItem)) {
             return true;
         }
         return false;
@@ -208,37 +223,61 @@ public class MainActivity extends Activity {
         mFullScreenScale = getMeasureScale();
     }
 
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
+
     private void openAboutDialog() {
         LayoutInflater inflater = LayoutInflater.from(this);
         View view = inflater.inflate(R.layout.aboutview, null);
 
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.about_title)
-                .setView(view)
-                .setNegativeButton(R.string.about_close, null)
+        new AlertDialog.Builder(this).setTitle(R.string.about_title)
+                .setView(view).setNegativeButton(R.string.about_close, null)
                 .show();
     }
 
-    private void openBrightDialog() {
+    public void openBrightDialog(final CompoundButton ref) {
         LayoutInflater inflater = LayoutInflater.from(this);
+        mDrawerLayout.closeDrawers();
         View view = inflater.inflate(R.layout.brightwarn, null);
 
         new AlertDialog.Builder(this)
                 .setTitle(R.string.warning_label)
                 .setView(view)
-                .setNegativeButton(R.string.brightwarn_negative, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                    }
-                })
-                .setPositiveButton(R.string.brightwarn_accept, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        mBright = true;
-                        mPrefs.edit().putBoolean("bright", true).commit();
-                    }
-                })
-                .show();
+                .setNegativeButton(R.string.brightwarn_negative,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                    int whichButton) {
+                                mBright = false;
+                                mPrefs.edit().putBoolean("bright", false)
+                                        .commit();
+
+                                if (ref != null)
+                                    ref.setChecked(false);
+                            }
+                        })
+                .setPositiveButton(R.string.brightwarn_accept,
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                    int whichButton) {
+                                mBright = true;
+                                mPrefs.edit().putBoolean("bright", true)
+                                        .commit();
+
+                                if (ref != null)
+                                    ref.setChecked(true);
+                            }
+                        }).show();
     }
 
     private void updateWidget() {
@@ -252,8 +291,8 @@ public class MainActivity extends Activity {
         display.getMetrics(outMetrics);
 
         float displayHeight = outMetrics.heightPixels;
-        float displayWidth  = outMetrics.widthPixels;
-        return (Math.max(displayHeight, displayWidth) /
-                mContext.getResources().getDimensionPixelSize(R.dimen.button_size)) * 2;
+        float displayWidth = outMetrics.widthPixels;
+        return (Math.max(displayHeight, displayWidth) / mContext.getResources()
+                .getDimensionPixelSize(R.dimen.button_size)) * 2;
     }
 }
