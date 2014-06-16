@@ -16,9 +16,12 @@
      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
      MA  02110-1301, USA.
 -->
+
 <resources>
 
     <style name="AppTheme" parent="android:Theme.Holo">
+        <item name="android:actionBarStyle">@style/ActionBarTheme</item>
+        <item name="android:actionBarItemBackground">@drawable/actionbar_color</item>
     </style>
 
     <style name="AppTheme.Translucent" parent="AppTheme">
@@ -27,4 +30,10 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
+
+    <style name="ActionBarTheme" parent="android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/bg_color</item>
+        <item name="android:icon">@drawable/ic_actionbar</item>
+    </style>
+
 </resources>

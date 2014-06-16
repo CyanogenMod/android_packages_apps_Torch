@@ -16,30 +16,50 @@
      Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
      MA  02110-1301, USA.
 -->
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="false">
+    android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/bg"
-        android:layout_width="@dimen/button_size"
-        android:layout_height="@dimen/button_size"
-        android:layout_gravity="center"
-        android:src="@drawable/bg_color" />
-    <ImageView
-        android:id="@+id/lightbulb"
-        android:layout_width="@dimen/lighbulb_size"
-        android:layout_height="@dimen/lighbulb_size"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_lightbulb" />
-    <ImageView
-        android:id="@+id/lightbulb_on"
-        android:layout_width="@dimen/lighbulb_size"
-        android:layout_height="@dimen/lighbulb_size"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_lightbulb_on"
-        android:alpha="0" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false" >
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/bg"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_gravity="center"
+            android:src="@drawable/bg_color" />
+
+        <ImageView
+            android:id="@+id/lightbulb"
+            android:layout_width="@dimen/lighbulb_size"
+            android:layout_height="@dimen/lighbulb_size"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_lightbulb" />
+
+        <ImageView
+            android:id="@+id/lightbulb_on"
+            android:layout_width="@dimen/lighbulb_size"
+            android:layout_height="@dimen/lighbulb_size"
+            android:layout_gravity="center"
+            android:alpha="0"
+            android:src="@drawable/ic_lightbulb_on" />
+    </FrameLayout>
+
+    <!-- The navigation drawer -->
+
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#8C000000"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp" />
+
+</android.support.v4.widget.DrawerLayout>

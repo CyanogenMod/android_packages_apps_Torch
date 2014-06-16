@@ -22,10 +22,10 @@
     <string name="about_close">Close</string>
 
     <string name="description">This program manipulates the camera LED.\n</string>
-    <string name="warning">Warning: Leaving the LED on for a long time might overheat it.\n\nFull brightness \'always on\' has been tested running for \u00BD hr, but there is the risk this could damage the LED.\n</string>
-    <string name="license">Original code from Nexus One Torch by Ben Buxton, released under the GPL, v3.\nhttp://n1torch.googlecode.com/\n\nThanks to David Prieto for new UI design.\n\nModified for CyanogenMod by Steve Kondik.\n\n</string>
+    <string name="warning">Warning: Leaving the LED on for a long period of time may cause it to overheat.\n\nHigh brightness has been tested successfully for a \u00BD hour of operation, but there is the risk that this could damage the LED.\n</string>
+    <string name="license">Original code from Nexus One Torch by Ben Buxton, released under the GPL, v3.\nhttp://n1torch.googlecode.com/\n\nThanks to David Prieto, Preston Mueller, and Mikhail Chowdhury for the new UI design.\n\nModified for CyanogenMod by Steve Kondik.\n\n</string>
     <string name="warning_label">Warning</string>
-    <string name="brightwarn">Full brightness has been tested successfully for \u00BD hour of operation, but got quite hot, and started flickering (temporarily) at 45 mins. Long term effects are unknown.\n\nThis is not supported on the widget yet.\n\nClick \'Accept\' if you want to use it at your own risk.</string>
+    <string name="brightwarn">High brightness has been tested successfully for a \u00BD hour of operation, but became quite hot, and started flickering (temporarily) at 45 mins. Long term effects are unknown.\n\nClick \'Accept\' if you want to use it at your own risk.</string>
     <string name="brightwarn_negative">No thanks</string>
     <string name="brightwarn_accept">Accept</string>
 
@@ -33,8 +33,13 @@
 
     <string name="widget_options">General options</string>
     <string name="setting_widget_bright">Bright widget</string>
+    <string name="setting_frequency_dialog">Frequency</string>   
+ 	<string name="setting_frequency_hz" translatable="false"> Hz</string> 
     <string name="setting_add_widget">Add widget</string>
 
     <string name="not_torch_title">Torch on</string>
     <string name="not_torch_toggle">Turn torch off</string>
+    <string name="drawer_open">Open navigation panel</string>
+    <string name="drawer_close">Close navigation panel</string>
+    <string name="strobe">Strobe</string>
 </resources>
