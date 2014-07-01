@@ -21,8 +21,11 @@ package net.cactii.flash2;
 import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
+import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.util.Log;
 
 import net.cactii.flash2.R;
@@ -117,6 +120,13 @@ public class FlashDevice {
             }
             if (mUseCameraInterface) {
                 if (mCamera == null) {
+                    // disable torch
+                    IBinder b = ServiceManager.getService(Context.TORCH_SERVICE);
+                    android.hardware.ITorchService torchService = android.hardware.ITorchService.Stub.asInterface(b);
+                    try {
+                        torchService.onStartingTorch();
+                    } catch (RemoteException e) {
+                    }
                     mCamera = Camera.open();
                 }
                 if (value == OFF) {
