@@ -21,8 +21,12 @@ package net.cactii.flash2;
 import android.content.Context;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
+import android.hardware.ITorchService;
+import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.util.Log;
 
 import net.cactii.flash2.R;
@@ -61,6 +65,7 @@ public class FlashDevice {
     private int mFlashMode = OFF;
 
     private Camera mCamera = null;
+    private ITorchService mTorchService;
     private SurfaceTexture mSurfaceTexture = null;
 
     private FlashDevice(Context context) {
@@ -73,6 +78,9 @@ public class FlashDevice {
         mFlashDeviceLuminosity = context.getResources().getString(R.string.flashDeviceLuminosity);
         mFlashDeviceLuminosity2 = context.getResources().getString(R.string.flashDeviceLuminosity2);
         mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
+
+        IBinder torchBinder = ServiceManager.getService(Context.TORCH_SERVICE);
+        mTorchService = ITorchService.Stub.asInterface(torchBinder);
 
         PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         this.mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Torch");
@@ -117,6 +125,11 @@ public class FlashDevice {
             }
             if (mUseCameraInterface) {
                 if (mCamera == null) {
+                    // disable torch
+                    try {
+                        mTorchService.onStartingTorch();
+                    } catch (RemoteException e) {
+                    }
                     mCamera = Camera.open();
                 }
                 if (value == OFF) {
