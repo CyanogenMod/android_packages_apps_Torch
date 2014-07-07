@@ -48,6 +48,9 @@ public class TorchSwitch extends BroadcastReceiver {
 
             Intent i = new Intent(context, TorchService.class);
             if (stop || torchServiceRunning(context)) {
+                if (stop) {
+                    FlashDevice.instance(context).setFlashMode(FlashDevice.OFF);
+                }
                 context.stopService(i);
             } else {
                 i.putExtra("bright", bright);

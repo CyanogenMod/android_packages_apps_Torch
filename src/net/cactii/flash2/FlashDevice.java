@@ -68,6 +68,12 @@ public class FlashDevice {
     private ITorchService mTorchService;
     private SurfaceTexture mSurfaceTexture = null;
 
+    public static class InitializationException extends RuntimeException {
+        public InitializationException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
+
     private FlashDevice(Context context) {
         mValueOff = context.getResources().getInteger(R.integer.valueOff);
         mValueOn = context.getResources().getInteger(R.integer.valueOn);
@@ -94,7 +100,7 @@ public class FlashDevice {
     }
 
     public synchronized void setFlashMode(int mode) {
-	Log.d(MSG_TAG, "setFlashMode " + mode);
+        Log.d(MSG_TAG, "setFlashMode " + mode);
 
         if (mFlashMode == mode) return;
 
@@ -125,12 +131,7 @@ public class FlashDevice {
             }
             if (mUseCameraInterface) {
                 if (mCamera == null) {
-                    // disable torch
-                    try {
-                        mTorchService.onStartingTorch();
-                    } catch (RemoteException e) {
-                    }
-                    mCamera = Camera.open();
+                    mCamera = initializeCamera();
                 }
                 if (value == OFF) {
                     Camera.Parameters params = mCamera.getParameters();
@@ -275,8 +276,38 @@ public class FlashDevice {
             if (mWakeLock.isHeld()) {
                 mWakeLock.release();
             }
-            throw new RuntimeException("Can't open flash device", e);
+            throw new InitializationException("Can't open flash device", e);
         }
+    }
+
+    private static int findBackFacingCamera() {
+        int numberOfCameras = Camera.getNumberOfCameras();
+        Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
+        for (int i = 0; i < numberOfCameras; i++) {
+            Camera.getCameraInfo(i, cameraInfo);
+            if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private Camera initializeCamera() {
+        int cameraId = findBackFacingCamera();
+        if (cameraId < 0) {
+            Log.wtf(MSG_TAG, "No back facing camera found");
+            throw new InitializationException("No camera available", null);
+        }
+        // disable torch
+        boolean result = false;
+        try {
+            result = mTorchService.onStartingTorch(cameraId);
+        } catch (RemoteException e) {
+        }
+        if (!result) {
+            throw new InitializationException("Camera is busy", null);
+        }
+        return Camera.open(cameraId);
     }
 
     public synchronized int getFlashMode() {
