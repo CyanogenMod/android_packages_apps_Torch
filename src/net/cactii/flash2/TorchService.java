@@ -31,23 +31,28 @@ public class TorchService extends Service {
     private static final String MSG_TAG = "TorchRoot";
 
     private int mFlashMode;
+    private FlashDevice mFlashDevice;
+    private boolean mUseCameraInterface;
 
     private static final int MSG_UPDATE_FLASH = 1;
 
     private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            final FlashDevice flash = FlashDevice.instance(TorchService.this);
-
             switch (msg.what) {
                 case MSG_UPDATE_FLASH:
-                    flash.setFlashMode(mFlashMode);
-                    removeMessages(MSG_UPDATE_FLASH);
+                    setFlashModeOrStop();
                     sendEmptyMessageDelayed(MSG_UPDATE_FLASH, 100);
                     break;
             }
         }
     };
+
+    @Override
+    public void onCreate() {
+        mFlashDevice = FlashDevice.instance(this);
+        mUseCameraInterface = getResources().getBoolean(R.bool.useCameraInterface);
+    }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
@@ -60,8 +65,14 @@ public class TorchService extends Service {
 
         mFlashMode = intent.getBooleanExtra("bright", false)
                 ? FlashDevice.DEATH_RAY : FlashDevice.ON;
-
-        mHandler.sendEmptyMessage(MSG_UPDATE_FLASH);
+        if (mUseCameraInterface) {
+            // Devices with camera interface don't need constant refresh, so don't do
+            // it in order to avoid the refresh from interfering with the synchronous
+            // torch shutdown when starting the camera app
+            setFlashModeOrStop();
+        } else {
+            mHandler.sendEmptyMessage(MSG_UPDATE_FLASH);
+        }
 
         startForeground(getString(R.string.app_name).hashCode(), getNotification());
         updateState(true);
@@ -99,6 +110,15 @@ public class TorchService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         return null;
+    }
+
+    private void setFlashModeOrStop() {
+        try {
+            mFlashDevice.setFlashMode(mFlashMode);
+        } catch (FlashDevice.InitializationException e) {
+            Log.w(MSG_TAG, "Could not set flash mode " + mFlashMode, e);
+            stopSelf();
+        }
     }
 
     private void updateState(boolean on) {
