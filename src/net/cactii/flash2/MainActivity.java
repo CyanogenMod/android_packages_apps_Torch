@@ -140,6 +140,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(TorchSwitch.TOGGLE_FLASHLIGHT);
                 intent.putExtra("bright", mBright);
+                intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
                 sendBroadcast(intent);
             }
         });
