@@ -83,6 +83,7 @@ public class TorchWidgetProvider extends AppWidgetProvider {
 
             if (buttonId == 0) {
                 Intent pendingIntent = new Intent(TorchSwitch.TOGGLE_FLASHLIGHT);
+                pendingIntent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
                 pendingIntent.putExtra("bright",
                         mPrefs.getBoolean("widget_bright_" + widgetId, false));
                 context.sendBroadcast(pendingIntent);
