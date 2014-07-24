@@ -28,10 +28,10 @@
   <string name="brightwarn">최대 밝기는 30분동안 성공적으로 작동하였지만 살짝 뜨거워졌으며, 45분 후부터는 일시적으로 깜빡이기 시작하였습니다. 길게 작동하였을 때의 문제는 아직 알려지지 않았습니다.\n\n이 방법은 위젯에서 아직 지원되지 안습니다.\n\n위험을 감수하고 사용하시겠다면 “확인” 버튼을 눌러 사용하시기 바랍니다.</string>
   <string name="brightwarn_negative">아니오</string>
   <string name="brightwarn_accept">확인</string>
-  <string name="label_high">고휘도</string>
+  <string name="label_high">높은 밝기</string>
   <string name="widget_options">일반 옵션</string>
   <string name="setting_widget_bright">고휘도 위젯</string>
   <string name="setting_add_widget">위젯 추가</string>
-  <string name="not_torch_title">전등 켜짐</string>
+  <string name="not_torch_title">전등 켜기</string>
   <string name="not_torch_toggle">전등 끄기</string>
 </resources>
