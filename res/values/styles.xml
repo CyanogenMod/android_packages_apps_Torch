@@ -17,8 +17,8 @@
      MA  02110-1301, USA.
 -->
 <resources>
-
     <style name="AppTheme" parent="android:Theme.Holo">
+        <item name="android:actionBarStyle">@style/TorchActionBar</item>
     </style>
 
     <style name="AppTheme.Translucent" parent="AppTheme">
@@ -26,5 +26,9 @@
         <item name="android:windowTitleSize">0dp</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="TorchActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/actionbar_background</item>
     </style>
 </resources>
