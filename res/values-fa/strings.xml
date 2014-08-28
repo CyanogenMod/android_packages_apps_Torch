@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2013 The CyanogenMod Project
+
+     This program is free software; you can redistribute it and/or
+     modify it under the terms of the GNU General Public License
+     version 3 as published by the Free Software Foundation.
+
+     This program is distributed in the hope that it will be useful,
+     but WITHOUT ANY WARRANTY; without even the implied warranty of
+     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+     GNU General Public License for more details.
+
+     You should have received a copy of the GNU General Public License
+     along with this program; if not, write to the Free Software
+     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+     MA  02110-1301, USA.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">چراغ قوه</string>
+    <string name="about_title">درباره</string>
+    <string name="about_close">خروج</string>
+
+    <string name="description">این برنامه تغییری در LED دستگاه ایجاد می کند.\n</string>
+    <string name="warning">هشدار: از رها کردن LED برای مدت طولانی بپرهیزید .ممکن است آن را بیش از حد گرم است \n روشنایی \nFull "همیشه" شده است تست شده در حال اجرا برای ½ ساعت است، اما خطر این می تواند آسیب LED وجود دارد \n به.</string>
+    <string name="license">Original code from Nexus One Torch by Ben Buxton, released under the GPL, v3.\nhttp://n1torch.googlecode.com/\n\nThanks to David Prieto for new UI design.\n\nModified for CyanogenMod by Steve Kondik.\n\n</string>
+    <string name="warning_label">هشدار</string>
+    <string name="brightwarn">Full brightness has been tested successfully for &#189; hour of operation, but got quite hot, and started flickering (temporarily) at 45 mins. Long term effects are unknown.\n\nThis is not supported on the widget yet.\n\nClick &#8220;Accept&#8221; if you want to use it at your own risk.</string>
+    <string name="brightwarn_negative">انصراف</string>
+    <string name="brightwarn_accept">پذیرش</string>
+
+    <string name="label_high">روشنایی بالا</string>
+    <string name="label_strobe">انعکاس چشمک زن</string>
+
+    <string name="widget_options">گزینه های عمومی</string>
+    <string name="setting_widget_bright">ویجت روشن</string>
+    <string name="setting_widget_strobe">فلش چشمک زن</string>
+    <string name="setting_frequency_title">فرکانس چشمک</string>
+    <string name="setting_frequency_dialog">فرکانس</string>
+    <string name="setting_add_widget">افزودن ابزارک</string>
+
+    <string name="not_torch_title">روشن کردن چراغ</string>
+    <string name="not_torch_toggle">خاموش کردن چراغ</string>
+</resources>
