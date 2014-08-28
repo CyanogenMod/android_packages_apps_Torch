@@ -181,6 +181,11 @@ public class FlashDevice {
 
                     switch (mode) {
                         case ON:
+                            try {
+                                mTorchService.onStopTorch();
+                            } catch (RemoteException e) {
+                                // ignore
+                            }
                             mFlashDeviceLuminosityWriter.write(String.valueOf(mValueLow));
                             mFlashDeviceLuminosityWriter.flush();
                             if (mFlashDeviceLuminosityWriter2 != null) {
@@ -192,6 +197,11 @@ public class FlashDevice {
                             }
                             break;
                         case OFF:
+                            try {
+                                mTorchService.onStopTorch();
+                            } catch (RemoteException e) {
+                                // ignore
+                            }
                             mFlashDeviceLuminosityWriter.write(String.valueOf(mValueLow));
                             mFlashDeviceLuminosityWriter.close();
                             mFlashDeviceLuminosityWriter = null;
@@ -208,6 +218,11 @@ public class FlashDevice {
                             }
                             break;
                         case STROBE:
+                            try {
+                                mTorchService.onStopTorch();
+                            } catch (RemoteException e) {
+                                // ignore
+                            }
                             mFlashDeviceWriter.write(String.valueOf(OFF));
                             mFlashDeviceWriter.flush();
                             if (!mWakeLock.isHeld()) {
@@ -215,6 +230,11 @@ public class FlashDevice {
                             }
                             break;
                         case DEATH_RAY:
+                            try {
+                                mTorchService.onStopTorch();
+                            } catch (RemoteException e) {
+                                // ignore
+                            }
                             if (mValueDeathRay >= 0) {
                                 mFlashDeviceLuminosityWriter.write(String.valueOf(mValueDeathRay));
                                 mFlashDeviceLuminosityWriter.flush();
@@ -263,10 +283,21 @@ public class FlashDevice {
                         }
                     }
                     if (mode == OFF) {
+                        try {
+                            mTorchService.onStopTorch();
+                        } catch (RemoteException e) {
+                            // ignore
+                        }
                         mFlashDeviceWriter.close();
                         mFlashDeviceWriter = null;
                         if (mWakeLock.isHeld()) {
                             mWakeLock.release();
+                        }
+                    } else {
+                        try {
+                            mTorchService.onStartingTorch(-1);
+                        } catch (RemoteException e) {
+                            // ignore
                         }
                     }
                 }
