@@ -179,6 +179,10 @@ public class FlashDevice {
                     mFlashDeviceWriter.write(String.valueOf(mValueOn));
                     mFlashDeviceWriter.flush();
 
+                    if (mode != OFF) {
+                        onStartTorch(-1);
+                    }
+
                     switch (mode) {
                         case ON:
                             mFlashDeviceLuminosityWriter.write(String.valueOf(mValueLow));
@@ -250,6 +254,11 @@ public class FlashDevice {
                             break;
                     }
                 } else {
+
+                    if (mode != OFF) {
+                        onStartTorch(-1);
+                    }
+
                     // Devices with just a sysfs toggle
                     if (mFlashDeviceWriter == null) {
                         mFlashDeviceWriter = new FileWriter(mFlashDevice);
@@ -277,6 +286,29 @@ public class FlashDevice {
                 mWakeLock.release();
             }
             throw new InitializationException("Can't open flash device", e);
+        } finally {
+            if (mode == OFF) {
+                onStopTorch();
+            }
+        }
+    }
+
+    private void onStartTorch(int cameraId) {
+        boolean result = false;
+        try {
+            result = mTorchService.onStartingTorch(cameraId);
+        } catch (RemoteException e) {
+        }
+        if (!result) {
+            throw new InitializationException("Camera is busy", null);
+        }
+    }
+
+    private void onStopTorch() {
+        try {
+            mTorchService.onStopTorch();
+        } catch (RemoteException e) {
+            // ignore
         }
     }
 
@@ -299,14 +331,7 @@ public class FlashDevice {
             throw new InitializationException("No camera available", null);
         }
         // disable torch
-        boolean result = false;
-        try {
-            result = mTorchService.onStartingTorch(cameraId);
-        } catch (RemoteException e) {
-        }
-        if (!result) {
-            throw new InitializationException("Camera is busy", null);
-        }
+        onStartTorch(cameraId);
         return Camera.open(cameraId);
     }
 
