@@ -24,7 +24,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -35,8 +34,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.RemoteViews;
 
-public class WidgetOptionsActivity extends PreferenceActivity implements
-        OnSharedPreferenceChangeListener {
+public class WidgetOptionsActivity extends PreferenceActivity {
 
     private int mAppWidgetId;
     private SharedPreferences mPreferences;
@@ -57,9 +55,6 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
 
         CheckBoxPreference brightPref = (CheckBoxPreference) findPreference("widget_bright");
         brightPref.setChecked(false);
-
-        //keeps 'Strobe frequency' option available
-        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
     }
 
     void addWidget() {
@@ -112,9 +107,5 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     }
 }
