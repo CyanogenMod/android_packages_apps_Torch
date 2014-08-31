@@ -23,7 +23,7 @@
   <string name="about_close">Zavrieť</string>
   <string name="description">Tento program ovláda LED diódu fotoaparátu.\n</string>
   <string name="warning">Upozornenie: Príliš dlhé svietenie LED diódy môže spôsobiť prehriatie.\n\nVysoký jas bol odskúšaný po dobu pol hodiny, ale zapnutím môžete riskovať poškodenie LED diódy.\n</string>
-  <string name="license">Pôvodný kód z Nexus One Torch od Bena Buxtona, vydaný po licenciou GPL, v3.\nhttp://n1torch.googlecode.com/\n\nPoďakovanie patrí Davidovi Prietovi za nový dizajn užívateľského rozhrania.\n\nPre CyanogenMod upravil Steve Kondik.\n\n</string>
+  <string name="license">Pôvodný kód z Nexus One Torch od Bena Buxtona, vydaný pod licenciou GPLv3, upravený pre CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Upozornenie</string>
   <string name="brightwarn">Vysoký jas bol úspešne odskúšaný po dobu pol hodiny, ale dióda sa zahriala a začala blikať (dočasne) po 45-tich minútach. Dlhodobé účinky nie sú známe.\n\nToto zatiaľ nie je podporované v miniaplikácii.\n\nKliknite na \'Prijímam\', ak chcete pokračovať na vlastné riziko.</string>
   <string name="brightwarn_negative">Nie, ďakujem</string>

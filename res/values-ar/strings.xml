@@ -23,7 +23,6 @@
   <string name="about_close">إغلاق</string>
   <string name="description">هذا البرنامج يقوم بالتلاعب الكاميرا LED.\n</string>
   <string name="warning">تحذير: ترك LED لوقت طويل قد أسخن .\n\nFull السطوع \'على الدوام\' وقد تم اختبار تشغيل للموارد البشرية \u00BD، ولكن هناك المخاطر وهذا يمكن أن يلحق الضرر LED.\n</string>
-  <string name="license">التعليمات البرمجية الأصلية من \"الشعلة واحد العلاقة\" Ben Buxton، أطلق  بموجب الترخيص GPL, v3. \nhttp://n1torch.googlecode.com/\n\n/ الشكر إلى ديفيد بريتو ل design.\n\nModified واجهة المستخدم الجديدة ل CyanogenMod من Steve  Kondik.\n\n</string>
   <string name="warning_label">تحذير</string>
   <string name="brightwarn">السطوع الكامل قد تم اختبارها بنجاح لمدة ساعة \u00BD من العملية، لكن حصلت حار جداً، وبدأ الخفقان (مؤقتاً) في 45 دقيقة. الآثار على المدى الطويل مجهول.\n\nThis غير معتمد في بغد.\n\nأضغط  \'قبول\' إذا كنت ترغب في استخدامه على مسؤوليتك الخاصة.</string>
   <string name="brightwarn_negative">لا، شكراً</string>

@@ -29,19 +29,6 @@ Let op: als de led te lang aan staat, kan dit leiden tot oververhitting.
 De led fel aan is een half uur lang getest zonder problemen, maar het risico bestaat dat dit schadelijk kan zijn voor de led.
 \n
     </string>
-  <string name="license">
-Originele code van \'Nexus One Torch\u2019, ontwikkeld door Ben Buxton, uitgegeven onder de GPL versie 3.
-\n
-http://n1torch.googlecode.com/
-\n
-\n
-Met dank aan David Prieto voor de nieuwe layout.
-\n
-\n
-Aangepast voor CyanogenMod door Steve Kondik.
-\n
-\n
-    </string>
   <string name="warning_label">Let op</string>
   <string name="brightwarn">
 Fel licht is een half uur lang getest zonder problemen, maar de led werd heet en begon bij 45 minuten te knipperen. De effecten op de lange termijn zijn niet bekend.

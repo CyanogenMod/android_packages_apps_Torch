@@ -22,7 +22,6 @@
   <string name="about_title">Iwwer</string>
   <string name="about_close">Zoumaachen</string>
   <string name="description">Dëse Programm manipuléiert d\'LED vum Fotoapparat.\n</string>
-  <string name="license">Original-Code vun der \"Nexus One Torch\"-App vum Ben Buxton, fräi ginn ënner der GPL, v3.\nhttp://n1torch.googlecode.com/\n\nMerci un den David Prieto fir deen neien UI-Design.\n\nModifizéiert fir CyanogenMod vum Steve Kondik.\n\n</string>
   <string name="warning_label">Warnung</string>
   <string name="not_torch_title">Täscheluucht un</string>
   <string name="not_torch_toggle">Täscheluucht ausmaachen</string>

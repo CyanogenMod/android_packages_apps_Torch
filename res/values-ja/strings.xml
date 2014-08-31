@@ -22,8 +22,8 @@
   <string name="about_title">情報</string>
   <string name="about_close">閉じる</string>
   <string name="description">このプログラムはカメラのLEDを操作します。\n</string>
-  <string name="warning">注意: LEDを長時間つけたままにすると、過熱する可能性があります。\n\n高輝度を「常に有効」にした状態での30分間のテストは行っていますが、LEDに損傷を与える危険性があります。\n</string>
-  <string name="license">オリジナルのソースコードはBen BuxtonのNexus One Torchで、GPLv3に基づいてリリースされています。\nhttp://n1torch.googlecode.com/\n\n新しいUIデザインを提供してくれたDavid Prietoに感謝します。\n\nCyanogenMod向けの変更はSteve Kondikが行ないました。\n\n</string>
+  <string name="warning">注意: LEDを長時間つけたままにすると、過熱する可能性があります。\n\n高輝度を「常にON」にした状態での30分間のテストは行っていますが、LEDに損傷を与える危険性があります。\n</string>
+  <string name="license">オリジナルのコードはBen BuxtonのNexus One Torchで、GPLv3に基づいてリリースされており、CyanogenMod向けに変更が加えられています。\nhttp://n1torch.googlecode.com/\n\n</string>
   <string name="warning_label">警告</string>
   <string name="brightwarn">高輝度は30分間のテストに成功していますが、とても熱くなり、45分ほどで一時的に明滅するようになりました。長時間の使用による影響はわかりません。\n\nウィジェットはまだサポートされていません。\n\n自己責任での使用を望むのであれば「同意する」を押してください。</string>
   <string name="brightwarn_negative">やめておく</string>
@@ -33,5 +33,5 @@
   <string name="setting_widget_bright">高輝度ウィジェット</string>
   <string name="setting_add_widget">ウィジェットを追加</string>
   <string name="not_torch_title">トーチON</string>
-  <string name="not_torch_toggle">トーチOFF</string>
+  <string name="not_torch_toggle">トーチをOFFにする</string>
 </resources>

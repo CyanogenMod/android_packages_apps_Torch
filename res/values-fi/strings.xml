@@ -23,7 +23,7 @@
   <string name="about_close">Sulje</string>
   <string name="description">Tämä ohjelma käyttää kameran LED-salamaa.\n</string>
   <string name="warning">Varoitus: LEDin pitkäaikainen yhtäjaksoinen käyttö saattaa aiheuttaa ylikuumenemista.\n\nTäyttä kirkkautta “aina päällä” on kokeiltu yhtäjaksoisesti puoli tuntia, mutta on olemassa riski, että se vahingoittaa LED-salamaa.\n</string>
-  <string name="license">Alkuperäinen koodi: Nexus One Torch by Ben Buxton, released under the GPL, v3.\nhttp://n1torch.googlecode.com/\n\nKiitos David Prieto uudesta ulkoasusta.\n\nMuokannut CyanogenModiin Steve Kondik.\n\n</string>
+  <string name="license">Alkuperäinen koodi: Nexus One Torch by Ben Buxton, released under the GPL, v3, muokattu CyanogenModille.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Varoitus</string>
   <string name="brightwarn">Täyttä kirkkautta on testattu onnistuneesti puolen tunnin ajan, jonka aikana LED-salama kuumeni ja 45 minuutin kohdalla alkoi vilkkua. Pitkäaikainen käyttö voi vahingoittaa LED-salamaa.\n\nWidget ei vielä tue tämä toimintoa.\n\nValitse “Hyväksy” jos haluat kuitenkin käyttää tätä omalla vastuulla.</string>
   <string name="brightwarn_negative">Hylkää</string>

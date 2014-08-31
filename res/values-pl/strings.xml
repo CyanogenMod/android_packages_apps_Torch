@@ -23,7 +23,6 @@
   <string name="about_close">Zamknij</string>
   <string name="description">Ten program używa diody LED aparatu.\n</string>
   <string name="warning">Uwaga: Zostawienie diody włączonej na dłuższy czas może spowodować jej przegrzanie.\n\nPrzeprowadzono pomyślne ½ godzinne testy przy maksymalnej jasności, ale istnieje ryzyko uszkodzenia diody.\n</string>
-  <string name="license">Oryginalny kod Nexus One Torch Bena Buxtona, na licencji GPL, v3.\nhttp://n1torch.googlecode.com/\n\nPodziękowania dla Davida Prieto za nowy interfejs.\n\nZmodyfikowany na potrzeby CyanogenMod przez Steve\'a Kondika.\n\n</string>
   <string name="warning_label">Uwaga</string>
   <string name="brightwarn">Przeprowadzono pomyślne ½ godzinne testy przy maksymalnej jasności, ale dioda się nagrzała, i zaczeła migotać (chwilowo) przy 45 min. Skutki długotrwałe są nieznane.\n\nFunkcja nie jest jeszcze wspierana przez widget.\n\nKliknij “Akceptuj” jeśli chcesz kontynuować na własne ryzyko.</string>
   <string name="brightwarn_negative">Anuluj</string>

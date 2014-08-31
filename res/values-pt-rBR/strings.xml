@@ -23,7 +23,7 @@
   <string name="about_close">Fechar</string>
   <string name="description">Esse programa manipula o LED da câmera.\n</string>
   <string name="warning">Aviso: Deixar o LED aceso por muito tempo pode sobreaquecê-lo.\n\nBrilho máximo “sempre ativo” foi testado por 30min, mas há um risco de dano ao LED.\n</string>
-  <string name="license">Código original do Nexus One por by Ben Buxton, lançado sobre a GPL, v3.\nhttp://n1torch.googlecode.com/\n\nObrigado a David Prieto pelo novo design de IU.\n\nModificado por CyanogenMod por Steve Kondik.\n\n</string>
+  <string name="license">Código original do Nexus One Torch por Ben Buxton, lançado sob a licença GPLv3, modificada para o CyanogenMod.\nhttp://n1torch.googlecode.com/\n\n</string>
   <string name="warning_label">Aviso</string>
   <string name="brightwarn">Brilho máximo foi testado bem sucedido por 30min de operação, mas ficou bem quente, e começou a oscilar (temporariamente) em 45 mins. Efeito a longo prazo é desconhecido.\n\nIsto não é suportado no widget ainda.\n\nClique “Aceitar” se você quer usar em seu próprio risco.</string>
   <string name="brightwarn_negative">Não obrigado</string>

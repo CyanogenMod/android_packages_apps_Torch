@@ -27,12 +27,7 @@
       прегреје.\n\n„Увек укључена“ пуна јачина је тестирана у периоду од
       ½ сата, али постоји ризик да може да оштети блиц.\n
     </string>
-  <string name="license">
-      Оригинални код из Nexus One Torch-а од Бена Бакстона, објављен
-      под ГПЛ, в3.\nhttp://n1torch.googlecode.com/\n\nХвала Давиду
-      Приету за нови дизајн сучеља.\n\nМодификовао за CyanogenMod Стив
-      Кондик.\n\n
-    </string>
+  <string name="license">Оригиналан код од Nexus One Бакља (Ben Buxton), објављеном под GPLv3, модификованом за CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Упозорење</string>
   <string name="brightwarn">
       Пуна јачина је успешно тестирана у периоду од ½ сата, али

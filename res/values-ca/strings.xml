@@ -23,7 +23,7 @@
   <string name="about_close">Tanca</string>
   <string name="description">Aquest programa manipula el led de la càmera.\n</string>
   <string name="warning">Advertència: Deixar el LED encès durant molt de temps el podria sobreescalfar.\n\nS\'han fet proves amb brillantor completa \'sempre encès\' durant \u00BD hora, però hi ha el risc que això pugui danyar el LED.\n</string>
-  <string name="license">Codi original del Nexus One Torch per Ben Buxton, publicat sota la GPL, v3.\nhttp://n1torch.googlecode.com/\n\nGràcies a David Prieto pel nou disseny de la interfície.\n\nModificat per CyanogenMod per Steve Kondik.\n\n</string>
+  <string name="license">Codi original de la Torxa de Nexus One de Ben Buxton, publicat sota la GPLv3, modificat per CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Avís</string>
   <string name="brightwarn">La brillantor completa s\'ha provat amb èxit durant mitja hora d\'operació, però es va escalfar considerablement i als 45 minuts va començar a parpellejar (temporalment). Els efectes a llarg termini són desconeguts.\n\nEncara no s\'ha creat un widget.\n\nPrem \'Accepta\' si vols fer-lo servir sota el teu propi risc.</string>
   <string name="brightwarn_negative">No, gràcies</string>
