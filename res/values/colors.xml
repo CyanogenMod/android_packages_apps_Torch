@@ -23,4 +23,5 @@
     <color name="text_color">#FFFFFFFF</color>
     <color name="text_warn">#FFff0000</color>
     <color name="bg_color">#FF00b1e5</color>
+    <color name="actionbar_background">#00000000</color>
 </resources>

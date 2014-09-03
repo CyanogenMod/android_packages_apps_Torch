@@ -24,7 +24,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
@@ -35,31 +34,37 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.RemoteViews;
 
-public class WidgetOptionsActivity extends PreferenceActivity implements
-        OnSharedPreferenceChangeListener {
+public class WidgetOptionsActivity extends PreferenceActivity {
 
     private int mAppWidgetId;
     private SharedPreferences mPreferences;
 
+    private boolean mHasBrightSetting = false;
+
     @SuppressWarnings("deprecation")
-    //No need to go to fragments right now
+    // No need to go to fragments right now
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.layout.optionsview);
-
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             mAppWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID,
                     AppWidgetManager.INVALID_APPWIDGET_ID);
         }
 
-        CheckBoxPreference brightPref = (CheckBoxPreference) findPreference("widget_bright");
-        brightPref.setChecked(false);
+        mHasBrightSetting = getResources().getBoolean(R.bool.hasHighBrightness) &&
+                !getResources().getBoolean(R.bool.useCameraInterface);
 
-        //keeps 'Strobe frequency' option available
-        getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+        if (mHasBrightSetting) {
+            addPreferencesFromResource(R.layout.optionsview);
+
+            CheckBoxPreference brightPref = (CheckBoxPreference) findPreference("widget_bright");
+            brightPref.setChecked(false);
+        } else {
+            addWidget();
+        }
     }
 
     void addWidget() {
@@ -69,7 +74,7 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
                 mPreferences.getBoolean("widget_bright", false));
         editor.commit();
 
-        //Initialize widget view for first update
+        // Initialize widget view for first update
         Context context = getApplicationContext();
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
         Intent launchIntent = new Intent();
@@ -92,7 +97,7 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
         resultValue.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
         setResult(RESULT_OK, resultValue);
 
-        //close the activity
+        // Close the activity
         finish();
     }
 
@@ -106,15 +111,11 @@ public class WidgetOptionsActivity extends PreferenceActivity implements
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.saveSetting : //Changes are accepted
+            case R.id.saveSetting : // Changes are accepted
                 addWidget();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
     }
 }
