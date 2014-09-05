@@ -79,7 +79,7 @@ public class FlashDevice {
         mValueLow = context.getResources().getInteger(R.integer.valueLow);
         mValueHigh = context.getResources().getInteger(R.integer.valueHigh);
         mValueDeathRay = context.getResources().getInteger(R.integer.valueDeathRay);
-        mFlashDevice = context.getResources().getString(R.string.flashDevice);
+        mFlashDevice = getFlashDevice(context);
         mFlashDeviceLuminosity = context.getResources().getString(R.string.flashDeviceLuminosity);
         mFlashDeviceLuminosity2 = context.getResources().getString(R.string.flashDeviceLuminosity2);
         mUseCameraInterface = context.getResources().getBoolean(R.bool.useCameraInterface);
@@ -89,6 +89,18 @@ public class FlashDevice {
 
         PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         this.mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Torch");
+    }
+
+    private String getFlashDevice(final Context context) {
+        final String path = context.getResources().getString(R.string.flashDevice);
+        if (!new File(path).exists()) {
+            final String[] paths = context.getResources().getStringArray(R.array.flashDevices);
+            for (final String s : paths) {
+                // if one of these sysfs paths exist, return it
+                if (new File(s).exists()) return s;
+            }
+        }
+        return path;
     }
 
     public static synchronized FlashDevice instance(Context context) {

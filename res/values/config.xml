@@ -44,4 +44,9 @@
 
     <!-- If the device supports high brightness mode, enable this -->
     <bool name="hasHighBrightness">false</bool>
+
+    <!-- A list of full paths to the sysfs toggle -->
+    <string-array name="flashDevices">
+        <item>/sys/class/leds/flashlight/brightness</item>
+    </string-array>
 </resources>
