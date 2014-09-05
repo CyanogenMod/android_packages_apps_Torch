@@ -31,6 +31,7 @@ import android.util.Log;
 
 import net.cactii.flash2.R;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -125,7 +126,7 @@ public class FlashDevice {
                     }
                     break;
             }
-            if (mUseCameraInterface) {
+            if (mUseCameraInterface || !new File(mFlashDevice).exists()) {
                 if (mCamera == null) {
                     mCamera = initializeCamera();
                 }
