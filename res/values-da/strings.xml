@@ -23,8 +23,9 @@
   <string name="about_close">Luk</string>
   <string name="description">Dette program manipulerer med kameraets LED-lys.\n</string>
   <string name="warning">Advarsel: Hvis man efterlader LED-lyset tændt i lang tid er der risiko for overophedning.\n\nFuld lysstyrke er blevet testet i en ½ time i træk uden problemer, men der er risiko for at det kan skade LED\'en.\n</string>
+  <string name="license">Oprindelig kode fra Nexus One\'s lommelygte-app af Ben Buxton, udgivet under GPLv3, modificeret til CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Advarsel</string>
-  <string name="brightwarn">Fuld lysstyrke er blevet testet uden problemer i ½ time i træk, men efter 45 minutter blev den ret varm og begyndte at flimre (midlertidigt). Langtidseffekten er ukendt.\n\nWidgeten understøtter ikke denne funktionalitet endnu.\n\nTryk “Acceptér”, hvis du ønsker at bruge det på eget ansvar.</string>
+  <string name="brightwarn">Fuld lysstyrke er blevet tested uden problemer i ½ time i træk, men efter 45 minutter blev den ret varm og begyndte at flimre (midlertidigt). Langtidseffekten er ukendt.\n\nWidgeten understøtter ikke denne funktionalitet endnu.\n\nTryk “Accepter” hvis du ønsker at bruge det på eget ansvar.</string>
   <string name="brightwarn_negative">Nej tak</string>
   <string name="brightwarn_accept">Acceptér</string>
   <string name="label_high">Høj lysstyrke</string>

@@ -23,8 +23,9 @@
   <string name="about_close">Kapat</string>
   <string name="description">Bu program kamera LED\'ini kullanır.\n</string>
   <string name="warning">Dikkat: LED\'i uzun süre açık bırakmak aşırı ısınmasına neden olabilir.\n\nTam parlaklıkta \"her zaman açık\" \u00BD saat boyunca test edilmiştir, ancak LED ışığında hasar meydana gelmesi olasıdır.\n</string>
+  <string name="license">Özgün kodu, Ben Buxton\'un GPLv3 lisansıyla yayınlanan Nexus One Torch uygulamasından alınmış CyanogenMod tarafından değiştirilmiştir.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Uyarı</string>
-  <string name="brightwarn">Tam parlaklık \u00BD saat boyunca başarılı olarak test edilmiştir, fakat aşırı ısınmaya yol açmış ve 45. dakikada ışık (geçici olarak) yanıp sönmeye başlamıştır. Uzun süreli etkileri bilinmemektedir.\n\nBu özellik widget üzerinde desteklenmemektedir.\n\nKendi sorumluluğunuzda kullanmak istiyorsanız \"Kabul et\" tuşuna basınız.</string>
+  <string name="brightwarn">Tam parlaklık \u00BD saat boyunca başarılı olarak test edilmiştir, fakat aşırı ısınmaya yol açmış ve 45. dakikada ışık (geçici olarak) yanıp sönmeye başlamıştır. Uzun süreli etkileri bilinmemektedir.\n\nKendi sorumluluğunuzda kullanmak istiyorsanız \"Kabul et\" tuşuna basınız.</string>
   <string name="brightwarn_negative">Hayır, teşekkürler</string>
   <string name="brightwarn_accept">Kabul et</string>
   <string name="label_high">Yüksek parlaklık</string>

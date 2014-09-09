@@ -23,8 +23,9 @@
   <string name="about_close">Uždaryti</string>
   <string name="description">Ši programa naudoja fotoaparato šviesos diodą.\n</string>
   <string name="warning">Įspėjimas: Paliekant šviesos diodą įjungtą ilgesniam laikui jis gali perkaisti.\n\nVisu šviesumu buvo bandoma ½ val., yra rizika jog tai gali sugadinti šviesos diodą.\n</string>
+  <string name="license">Originalus kodas iš „Nexus One Torch“ pagal Ben Buxton, išleistas pagal GPL, v3, modifikuotas „CyanogenMod“.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Įspėjimas</string>
-  <string name="brightwarn">Pilnu šviesumas buvo bandoma ½ val., bet šviesos diodas tapo pakankamai karštas ir pradėjo mirksėti (laikinai) praėjus 45 minutėms. Ilgalaikės pasekmės yra nežinomos.\n\nDar nepalaikomas kaip valdiklis.\n\nSpauskite „Sutinku“ jei norite naudoti tai savo paties rizika.</string>
+  <string name="brightwarn">Pilnu šviesumas buvo bandoma \u00BD val., bet šviesos diodas tapo pakankamai karštas ir pradėjo mirksėti (laikinai) praėjus 45 minutėms. Ilgalaikės pasekmės yra nežinomos.\n\nSpauskite „Sutinku“, jei norite naudoti tai savo paties rizika.</string>
   <string name="brightwarn_negative">Ne, ačiū</string>
   <string name="brightwarn_accept">Sutinku</string>
   <string name="label_high">Didelis šviesumas</string>

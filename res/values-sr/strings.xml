@@ -29,13 +29,7 @@
     </string>
   <string name="license">Оригиналан код од Nexus One Бакља (Ben Buxton), објављеном под GPLv3, модификованом за CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Упозорење</string>
-  <string name="brightwarn">
-      Пуна јачина је успешно тестирана у периоду од ½ сата, али
-      се блиц јако угрејао и почео да трепери (привремено) за 45
-      минута. Дуготрајни ефекти су непознати.\n\nОво још није подржано
-      на виџету.\n\nКликните на „Прихватам“ ако желите да користите
-      ову опцију на сопствени ризик.
-    </string>
+  <string name="brightwarn">Пуна јачина је успешно тестирана за \u00BD сата операције, али се блиц јако угрејао, и почео да трепери (привремено) за 45 минута. Дуготрајни ефекти су непознати.\n\nКликни на \'Прихватам\' ако желиш да користиш ову опцију на сопствени ризик.</string>
   <string name="brightwarn_negative">Не, хвала</string>
   <string name="brightwarn_accept">Прихватам</string>
   <string name="label_high">Пуна јачина</string>

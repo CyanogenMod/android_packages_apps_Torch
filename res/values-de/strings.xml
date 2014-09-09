@@ -23,8 +23,9 @@
   <string name="about_close">Schließen</string>
   <string name="description">Dieses Programm manipuliert die Kamera-LED.\n</string>
   <string name="warning">Warnung: Langes Einschalten kann zur Überhitzung der LED führen.\n\nVolle Helligkeit wurde für eine halbe Stunde getestet, aber es besteht das Risiko, die LED zu beschädigen.\n</string>
+  <string name="license">Für CyanogenMod angepasste Version der Nexus One Torch von Ben Buxton, welche unter der GPLv3-Lizenz veröffentlicht wurde.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Warnung</string>
-  <string name="brightwarn">Volle Helligkeit wurde erfolgreich für die Dauer einer halben Stunde getestet, aber die LED wurde dabei sehr warm und begann nach 45 Minuten vorübergehend zu flackern. Langzeiteffekte sind unbekannt.\n\nBisher gibt es keine Unterstützung für das Widget.\n\nDurch Auswahl von “Akzeptieren” bestätigen Sie, diese Funktion auf eigene Gefahr zu nutzen.</string>
+  <string name="brightwarn">Volle Helligkeit wurde erfolgreich für die Dauer einer halben Stunde getestet, aber die LED wurde dabei sehr warm und begann nach 45 Minuten (vorübergehend) zu flackern. Langzeiteffekte sind unbekannt.\n\nDurch Auswahl von “Akzeptieren” bestätigen Sie, diese Funktion auf eigene Gefahr zu nutzen.</string>
   <string name="brightwarn_negative">Nein Danke</string>
   <string name="brightwarn_accept">Akzeptieren</string>
   <string name="label_high">Hohe Helligkeit</string>
