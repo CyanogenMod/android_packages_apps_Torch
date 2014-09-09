@@ -23,8 +23,9 @@
   <string name="about_close">Tutup</string>
   <string name="description">Program ini memanipulasi kamera LED.\n</string>
   <string name="warning">Peringatan: Meninggalkan LED untuk waktu yang lama mungkin akan membuat terlalu panas.\n\nKecerahan full \'selalu aktif\' telah diuji untuk menjalankan \u00BD hr, tapi ada risiko ini dapat merusak LED.\n</string>
+  <string name="license">Kode asli dari Nexus One Torch oleh Ben Buxton, dirilis di bawah GPLv3, dimodifikasi untuk CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Peringatan</string>
-  <string name="brightwarn">Kecerahan full telah berhasil diuji selama \u00BD jam operasi, tetapi menyebabkan cukup panas, dan mulai berkedip-kedip (sementara) pada 45 menit. Efek jangka panjang tidak diketahui.\n\nIni belum didukung pada widget.\n\nC=Klik \'Terima\' jika Anda ingin menggunakannya risiko Anda sendiri.</string>
+  <string name="brightwarn">Kecerahan full telah berhasil diuji selama \u00BD jam operasi, tetapi ini menyebabkan perangkat menjadi cukup panas, dan mulai berkedip-kedip (sementara) pada 45 menit. Efek jangka panjang tidak diketahui.\n\nKlik \'Terima\' jika Anda ingin menggunakannya dengan risiko Anda sendiri.</string>
   <string name="brightwarn_negative">Tidak terima kasih</string>
   <string name="brightwarn_accept">Terima</string>
   <string name="label_high">Kecerahan tinggi</string>

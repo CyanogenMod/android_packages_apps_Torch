@@ -23,8 +23,9 @@
   <string name="about_close">Bezárás</string>
   <string name="description">Ezzel a programmal a telefon kamerájához tartozó LED-et lehet vezérelni.\n</string>
   <string name="warning">Figyelmeztetés: A LED hosszú ideig történő használata túlmelegedéshez vezethet.\n\nAz alkalmazást ½ órán át teszteltük “Folyamatos fény” opcióval, de ettől még fennáll az esélye hogy károsodhat a LED.\n</string>
+  <string name="license">Az eredeti forráskód a Nexus One Torch kódjából származik, amit Ben Buxton adott ki GPL v3 licensz alatt, CyanogenMod számára módosítva.\nhttp://n1torch.googlecode.com/\n\n</string>
   <string name="warning_label">Figyelmeztetés</string>
-  <string name="brightwarn">A folyamatos LED használattal futtatott tesztünk során az alkalmazás megfelelően működött, viszont a készülék eléggé melegedett, valamint ¾ óra elteltével ideiglenes villogásba is kezdett. Hosszabb távú hatásai nem ismertek.\n\nJelenleg nincs modul gomb az alkalmazáshoz.\n\nKattintson az “Elfogadás” gombra, ha saját felelősségre mégis használni kívánja.</string>
+  <string name="brightwarn">A teljes fényerőt sikeresen teszteltük \u00BD órán keresztül, viszont a készülék eléggé melegedett és 45 perc elteltével pislákolni kezdett (ideiglenesen). Hosszabb távú hatásai nem ismertek.\n\nKattintson az \"Elfogadás\" gombra, ha saját felelősségre mégis használni kívánja.</string>
   <string name="brightwarn_negative">Nem, köszönöm</string>
   <string name="brightwarn_accept">Elfogadás</string>
   <string name="label_high">Zseblámpa</string>

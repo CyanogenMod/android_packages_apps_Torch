@@ -23,6 +23,7 @@
   <string name="about_close">ปิด</string>
   <string name="description">โปรแกรมนี้ใช้ไฟฉายจาก LED ของกล้อง\n</string>
   <string name="warning">คำเตือน : การเปิด LED เป็นเวลานานจะทำให้มีความร้อนสูง\n\nการเปิดแสงเต็มที่ \"ตลอดเวลา\" ได้รับการทดสอบสำหรับ  ½ ชั่วโมง แต่มันทำอันตรายกับ LED ของคุณได้\n</string>
+  <string name="license">โค้ดดั่งเดินจาก Nexus One Torch โดย Ben Buxton แจกจ่ายภายใต้ใบอนุญาต GPLv3 ปรับปรุงใหม่โดย CyanogenMod \nhttp://n1tourch.googlecode.com</string>
   <string name="warning_label">คำเตือน</string>
   <string name="brightwarn">ไม่ควรเปิดเป็นเวลานาน แสงสว่างเต็มที่ได้รับการทดสอบเพียง ½ ชั่วโมง มันจะเริ่มช็อต (ชั่วคราว) เมื่อผ่านไป 45 นาที อาจมีผลกระทบระยะยาวได้\n\nตอบ \"ตกลง\" ถ้าคุณต้องการที่จะใช้แสงสว่างเต็มที่</string>
   <string name="brightwarn_negative">ไม่เป็นไร</string>

@@ -23,8 +23,8 @@
   <string name="about_close">Закрити</string>
   <string name="description">дозволяє керувати спалахом камери.\n</string>
   <string name="warning">Попередження: світлодіод спалаху, залишений увімкнутим на довгий час, може перегрітися.\n\nРежим повної яскравості був протестований протягом \u00BD год, але все ж існує ризик пошкодження світлодіода.\n</string>
+  <string name="license">Оригінальний код з Nexus One Torch від автора Ben Buxton, випущено під GPLv3, модифіковано для CyanogenMod.\nhttp://n1torch.googlecode.com/\n\n</string>
   <string name="warning_label">Увага</string>
-  <string name="brightwarn">Робота спалаху в режимі повної яскравості була успішно протестована протягом \u00BD год, але викликала сильне нагрівання та тимчасове мерехтіння спалаху (через 45 хвилин). Наслідки довгострокового застосування невідомі.\n\nПідтримка режиму віджетом поки що не реалізована.\n\nНатисніть \'Прийняти\', якщо бажаєте використовувати режим на свій страх і ризик.</string>
   <string name="brightwarn_negative">Ні, дякую</string>
   <string name="brightwarn_accept">Прийняти</string>
   <string name="label_high">Висока яскравість</string>

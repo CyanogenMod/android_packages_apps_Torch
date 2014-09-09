@@ -22,9 +22,10 @@
   <string name="about_title">O aplikaci</string>
   <string name="about_close">Zavřít</string>
   <string name="description">Ovládání osvětlení LED fotoaparátu.\n</string>
-  <string name="warning">Upozornění: Pokud ponecháte zapnuté osvětlení LED delší dobu, riskujete jeho přehřátí a poškození.</string>
+  <string name="warning">Upozornění: Pokud ponecháte zapnuté osvětlení LED delší dobu, riskujete jeho přehřátí a poškození.\n\nVysoký jas byl testován po dobu půl hodiny, ale je zde riziko poškození LED osvětlení.\n</string>
+  <string name="license">Původní kód z Nexus One Svítilna od Bena Buxtona, uvolněn pod licencí GPLv3, upravený pro CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Upozornění</string>
-  <string name="brightwarn">Vysoký jas byl úspěšně testován po dobu půl hodiny, ale poté bylo osvětlení velmi horké a poblikávalo (dočasně pod dobu 45 minut). Dlouhodobé účinky nejsou známi.\n\nToto zatím není ve widgetu podporováno.\n\nKlikněte na \u201aPřijmout\u2018 pokud chcete vyzkoušet na vlastní nebezpečí.</string>
+  <string name="brightwarn">Vysoký jas byl úspěšně testován po dobu půl hodiny, ale poté bylo osvětlení velmi horké a poblikávalo (dočasně pod dobu 45 minut). Dlouhodobé účinky nejsou známé.\n\nDotykem na „Přijmout“ přijmete toto riziko na vlastní nebezpečí.</string>
   <string name="brightwarn_negative">Ne děkuji</string>
   <string name="brightwarn_accept">Přijmout</string>
   <string name="label_high">Vysoký jas</string>

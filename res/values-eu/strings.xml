@@ -24,7 +24,6 @@
   <string name="description">Programa honek kameraren LED-a kudeatzen du.\n</string>
   <string name="warning">Kontuz: LED-a denbora luzez piztuta mantentzeak bere gainberotzea sor dezake.\n\n \u00ABDiztira altua\u00BB modua ordu erdiz frogatua izan da, baina LED-a puskatzeko arriskua dago.\n</string>
   <string name="warning_label">Kontuz</string>
-  <string name="brightwarn">\u00ABDiztira altua\u00BB modua ordu erdiz frogatua izan da, baina 45 minutu eta gero LED-a berotu eta dir-dir egiten hasi zen (denbora batez). Denbora luzeetan gertatu daitekeena ez da ezagutzen.\n\nMomentuz widget-ak ez du modu hau jasaten\n\n\u00ABOndo da\u00BB -n sakatu zure ardurapean erabili nahi baduzu.</string>
   <string name="brightwarn_negative">Ez, eskerrik asko</string>
   <string name="brightwarn_accept">Ondo da</string>
   <string name="label_high">Diztira altua</string>

@@ -23,8 +23,9 @@
   <string name="about_close">Zamknij</string>
   <string name="description">Ten program używa diody LED aparatu.\n</string>
   <string name="warning">Uwaga: Zostawienie diody włączonej na dłuższy czas może spowodować jej przegrzanie.\n\nPrzeprowadzono pomyślne ½ godzinne testy przy maksymalnej jasności, ale istnieje ryzyko uszkodzenia diody.\n</string>
+  <string name="license">Oryginalny kod wzięty z latarki Nexus\'a One Bena Buxtona, wydanej na licencji GPL v3, zmodyfikowanej dla CyanogenModa.\nhttp://n1torch.googlecode.com/</string>
   <string name="warning_label">Uwaga</string>
-  <string name="brightwarn">Przeprowadzono pomyślne ½ godzinne testy przy maksymalnej jasności, ale dioda się nagrzała, i zaczeła migotać (chwilowo) przy 45 min. Skutki długotrwałe są nieznane.\n\nFunkcja nie jest jeszcze wspierana przez widget.\n\nKliknij “Akceptuj” jeśli chcesz kontynuować na własne ryzyko.</string>
+  <string name="brightwarn">Maksymalna jasność została przetestowana pomyślnie przez \u00BD godzin(y). Po 45 minutach zaobserwowano nagrzanie i (chwilowe) migotanie diody. Długotrwałe skutki są nieznane.\n\nDotknij \"Akceptuj\" aby kontynuować na własną odpowiedzialność.</string>
   <string name="brightwarn_negative">Anuluj</string>
   <string name="brightwarn_accept">Akceptuj</string>
   <string name="label_high">Maksymalna jasność</string>

@@ -23,8 +23,9 @@
   <string name="about_close">Fermer</string>
   <string name="description">Ce programme agit sur la LED de l\'appareil photo.\n</string>
   <string name="warning">Attention : Laisser la LED activée pendant un long moment pourrait la faire surchauffer.\n\nLe réglage “Luminosité maximale” a été testé pendant une demi-heure, mais le risque d\'endommager la LED existe.\n</string>
+  <string name="license">Code original de Nexus One Torch par Ben Buxton, publié sous license GPLv3, modifié pour CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Attention</string>
-  <string name="brightwarn">La luminosité maximale a été testée avec succès pendant une demi-heure, mais la LED est devenue plutôt chaude, et a commencé a scintiller (temporairement) après 45 minutes. Les effets à long terme sont inconnus.\n\nCeci n\'est pas encore supporté par le widget.\n\nChoisissez Accepter si vous souhaitez l\'utiliser à vos propres risques.</string>
+  <string name="brightwarn">La luminosité maximale a été essayée avec succès pendant une demi-heure, mais la LED est devenue plutôt chaude, et a commencé à scintiller (temporairement) après 45 minutes. Les effets à long terme sont inconnus.\n\nChoisissez \'Accepter\' si vous souhaitez l\'utiliser à vos propres risques.</string>
   <string name="brightwarn_negative">Non merci</string>
   <string name="brightwarn_accept">Accepter</string>
   <string name="label_high">Luminosité maximale</string>

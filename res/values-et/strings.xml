@@ -24,7 +24,6 @@
   <string name="description">See programm manipuleerib kaamera LEDiga.\n</string>
   <string name="warning">Hoiatus: Jättes LEDi kauaks sisse võib see ülekuumeneda.\n\nTäisheledus \'alati sees\' on testitud \u00BD tunniks, kuid on siiski võimalus, et LED võib kahjustuda.\n</string>
   <string name="warning_label">Hoiatus</string>
-  <string name="brightwarn">Täisheledus on edukalt testitud \u00BD tunni jooksul, aga muutus üsna kuumaks ning hakkas virvendama (ajutiselt) 45 minuti järel. Pikaajaline mõju on teadmata.\n\nSee ei ole veel vidinal toetatud.\n\nKliki \'Nõustu\' kui tahate seda kasutada omal vastutusel.</string>
   <string name="brightwarn_negative">Tänan ei</string>
   <string name="brightwarn_accept">Nõustu</string>
   <string name="label_high">Kõrge heledus</string>

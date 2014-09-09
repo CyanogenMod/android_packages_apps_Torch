@@ -23,8 +23,9 @@
   <string name="about_close">סגור</string>
   <string name="description">יישום זה משתמש בנורת הLED של המצלמה.\n</string>
   <string name="warning">אזהרה: השארת נורת הLED של המצלמה דולקת לזמן ארוך עלולה לגרום לחימום יתר שלה.\n\nבהירות מלאה “תמיד דולק” נבדקה למשך כחצי שעה, אך הסיכון לגרימת נזק לנורת הLED קיים.\n</string>
+  <string name="license">קוד מקורי מהפנס של Nexus One מ-Ben Buxton, ששוחרר תחת GPLv3, ששונה בשביל CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">אזהרה</string>
-  <string name="brightwarn">בהירות מלאה נבדקה בהצלחה למשך חצי שעת פעולה, אבל גרמה לנורה להתחמם, וגרמה להבהובים (זמניים) לאחר 45 דקות. השפעות לטווח הארוך לא ידועות.\n\n מצב זה לא נתמך עדיין בWidget.\n\n לחיצה על “קבל” משמעה שהשימוש במצב זה הוא על אחריותך בלבד.</string>
+  <string name="brightwarn">בהירות מלאה נבדקה בהצלחה למשך \u00BD שעת פעולה, אבל גרמה לנורה להתחמם, וגרמה להבהובים (זמניים) לאחר 45 דקות. השפעות לטווח הארוך לא ידועות.\n\nלחץ \'מסכים\' אם אתה לוקח את האחריות על עצמך.</string>
   <string name="brightwarn_negative">לא תודה</string>
   <string name="brightwarn_accept">קבל</string>
   <string name="label_high">בהירות גבוהה</string>

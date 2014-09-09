@@ -24,7 +24,6 @@
   <string name="description">Detta program manipulerar kamerans LED.\n</string>
   <string name="warning">Varning: Att lämna LED-lampan på under en längre tid kan överhetta den.\n\nMaximal ljusstyrka “alltid på” har testats i 30 minuter, men risken finns att detta skadar LED-lampan.\n</string>
   <string name="warning_label">Varning</string>
-  <string name="brightwarn">Maximal ljusstyrka har testats under en halvtimmes drift med framgång. Lampan blev dock ganska varm och började flimra (temporärt) efter 45 minuter. Långtidseffekter är okända.\n\nDetta stöds inte av widgeten än.\n\nKlicka på “Acceptera” om du vill använda detta på egen risk.</string>
   <string name="brightwarn_negative">Nej tack</string>
   <string name="brightwarn_accept">Acceptera</string>
   <string name="label_high">Hög ljusstyrka</string>

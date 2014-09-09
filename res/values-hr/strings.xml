@@ -24,7 +24,6 @@
   <string name="description">Ovaj program koristi LED diodu (bljeskalicu) kamere.\n</string>
   <string name="warning">Upozorenje: Ostavljanje LED diode upaljene na dulje vrijeme bi je moglo pregrijati.\n\nVisoka svjetlina “uvijek upaljena” je bila testirana ½ sata ali postoji rizik da bi ovo moglo oštetiti LED diodu.\n</string>
   <string name="warning_label">Upozorenje</string>
-  <string name="brightwarn">Visoka svjetlina je testirana uspješno za ½sata rada ali je postala prilično vruća i počela treperiti (privremeno) na 45 minuta. Dugotrajne posljedice su nepoznate\n\n Ovo još nije podržano na widgetu.\n\nPritisni “Prihvaćam” ako je želite koristiti na vlastitu odgovornost.</string>
   <string name="brightwarn_negative">Ne hvala</string>
   <string name="brightwarn_accept">Prihvaćam</string>
   <string name="label_high">Visoka svjetilna</string>

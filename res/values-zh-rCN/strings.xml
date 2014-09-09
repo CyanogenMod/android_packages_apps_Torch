@@ -25,7 +25,7 @@
   <string name="warning">警告：长期开启 LED 会使其过热。\n\n经测试闪光灯高亮模式可以“长开”半小时，但仍然有令 LED 损坏的风险。\n</string>
   <string name="license">原始代码来自 Ben Buxton 编写的 Nexus One 手电筒，在 GPLv3 授权下发布，修改后供 CyanogenMod 使用。 \nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">警告</string>
-  <string name="brightwarn">高亮模式曾经成功测试过能够开启半小时，但会变得很热，并于 45 分钟后开始（暂时性的）忽暗忽亮。目前未知是否会有长期性的副作用。\n\n此模式尚未在桌面小部件上支持。\n\n如果您愿意承受该风险，请点击“接受”按钮。</string>
+  <string name="brightwarn">高亮模式曾经成功测试过能够开启 \u00BD 小时，但会变得很热，并于 45 分钟后开始（暂时性的）忽暗忽亮。目前未知是否会有长期性的副作用。\n\n如果您愿意承受该风险，请点击“接受”按钮。</string>
   <string name="brightwarn_negative">拒绝</string>
   <string name="brightwarn_accept">接受</string>
   <string name="label_high">高亮模式</string>

@@ -25,7 +25,7 @@
   <string name="warning">경고: LED를 오랫동안 켜두면 과열될 수 있습니다.\n\n최대 밝기 “항상 켬”은 30분동안 시험해 보았지만 LED가 고장날 위험이 있습니다.</string>
   <string name="license">원본 코드는 GPL v3로 배포된 Ben Buxton의 Nexus One Torch이며, CyanogenMod에 맞게 수정되었습니다.\nhttp://n1torch.googlecode.com/\n\n</string>
   <string name="warning_label">경고</string>
-  <string name="brightwarn">최대 밝기는 30분동안 성공적으로 작동하였지만 살짝 뜨거워졌으며, 45분 후부터는 일시적으로 깜빡이기 시작하였습니다. 길게 작동하였을 때의 문제는 아직 알려지지 않았습니다.\n\n이 방법은 위젯에서 아직 지원되지 안습니다.\n\n위험을 감수하고 사용하시겠다면 “확인” 버튼을 눌러 사용하시기 바랍니다.</string>
+  <string name="brightwarn">최대 밝기는 30분동안 성공적으로 작동하였지만 살짝 뜨거워졌으며, 45분 후부터는 일시적으로 깜빡이기 시작하였습니다. 오래 작동시켰을 때의 문제점은 아직 알려지지 않았습니다.\n\n위험을 감수하고 사용하려면 “확인” 버튼을 눌러주십시오.</string>
   <string name="brightwarn_negative">아니오</string>
   <string name="brightwarn_accept">확인</string>
   <string name="label_high">높은 밝기</string>

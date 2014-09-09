@@ -25,7 +25,6 @@
   <string name="warning">Atenție: LED-ul lăsat aprins pentru o perioadă îndelungată îl poate supraîncălzi.\n\nLuminozitatea maximă „tot timpul” a fost testată pentru \u00BD ore, dar poate apărea riscul de defectare a LED-ului.\n</string>
   <string name="license">Codul original de la Nexus One Torch de Ben Buxton, lansat sub GPLv3, modificat pentru CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Avertisment</string>
-  <string name="brightwarn">Luminozitatea maximă a fost testată cu succes pentru \u00BD ore de operare, dar a devenit destul de fierbinte și a început să lumineze intermitent (temporar) la 45 de minute. Efectele pe termen lung nu sunt cunoscute.\n\nAceasta nu este suportată pentru widget, încă.\n\nApasă „Accept” dacă vrei să o folosești pe proprie răspundere.</string>
   <string name="brightwarn_negative">Nu, mulțumesc</string>
   <string name="brightwarn_accept">Accept</string>
   <string name="label_high">Luminozitate ridicată</string>
