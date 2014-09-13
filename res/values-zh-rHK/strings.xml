@@ -24,6 +24,7 @@
   <string name="description">本應用程式操控相機的 LED\n</string>
   <string name="warning">警告：長期開啟 LED 會使其過熱。\n\n經測試高亮模式可「長開」半小時，但仍是有令 LED 損壞的風險。\n</string>
   <string name="warning_label">警告</string>
+  <string name="brightwarn">高亮模式曾經成功測試過能夠開啟 \u00BD 小時，但會變得很熱，並於 45 分鐘後開始暫時性的忽暗忽亮。目前未知是否會有長期性的副作用。\n\n如果你願意承受該風險，請輕按「接受」按鈕。</string>
   <string name="brightwarn_negative">不用了</string>
   <string name="brightwarn_accept">接受</string>
   <string name="label_high">高亮度</string>

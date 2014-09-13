@@ -25,6 +25,7 @@
   <string name="warning">Avisu: Dexar el led encesu abondu tiempu pue producir un sobrecalecimientu del mesmu.\n\nEl mou \u00ABbrillu altu\u00BB probóse mientres media hora, pero hai riesgu de que pueda frañase\'l led.\n</string>
   <string name="license">Códigu orixinal pa Nexus One Torch por Ben Buxton, lliberáu baxo llicencia GPLv3, modificáu pa CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Avisu</string>
+  <string name="brightwarn">El mou Brillu altu probóse correchamente mientres \u00BD hora continuada, pero a partir de los 45 minutos, el led calecióse y entamó a parpaguiar (temporalmente). Los efeutos a plazu llargu desconócense.\n\nToca en \u00ABAceutar\u00BB si quies usalu y asumir el riesgu.</string>
   <string name="brightwarn_negative">Non gracies</string>
   <string name="brightwarn_accept">Aceutar</string>
   <string name="label_high">Brillu altu</string>
