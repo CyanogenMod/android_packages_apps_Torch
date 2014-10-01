@@ -25,6 +25,7 @@
   <string name="warning">Advarsel: Langvarig bruk av LED-lyset kan forårsake overoppheting.\n\nFull lys-styrke har blitt testet i 2 timer men det er fortsatt en mulighet for at dette kan skade LED-lyset.\n</string>
   <string name="license">Opprinnelig kode fra Nexus One Torch av Ben Buxton, utgit tunder GPLv3, modifisert for CyanogenMod.\nhttp://n1torch,googlecode.com</string>
   <string name="warning_label">Advarsel</string>
+  <string name="brightwarn">Full lysstyrke har blitt testet med suksess i \u00BD timer test, men ble ganske varmt, og startet flimring (midlertidig) etter 45 minutter. Langsiktige effekter er ukjente.\n\nTrykk \'godta\' Hvis du vil bruke det på egen risiko.</string>
   <string name="brightwarn_negative">Nei takk</string>
   <string name="brightwarn_accept">Godta</string>
   <string name="label_high">Høy lysstyrke</string>
