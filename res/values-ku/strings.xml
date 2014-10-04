@@ -23,7 +23,9 @@
   <string name="about_close">داخستن</string>
   <string name="description">ئەم بەرنامەیە بەکاردێت لەگەڵ لایتی کامێراکە.\n</string>
   <string name="warning">ئاگاداربه‌:وازهێنانی فلاشه‌که‌ و به‌جێهێشتنی بۆ ماوه‌یه‌کی زۆر له‌وانه‌یه‌ زۆر گه‌رمی بکات.\n\nڕووناکی به‌رده‌وام \"به‌رده‌وام کاربکات\" تاقیکراوه‌ته‌وه‌ بۆ \u00BD کاژێر. به‌ڵام له‌وانه‌یه‌ کێشه‌ت بۆ دروستبکات.\n</string>
+  <string name="license">کۆدی بنەڕەتی لە Nexus One Torch لە لایەن Ben Buxton, لە ژێر GPLv3 دەرکراوە, پاشان گوڕدراوە بۆ سایانۆجنمۆد.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">ئاگادارکردنه‌وه‌</string>
+  <string name="brightwarn">پڕ ڕووناکی به‌ سه‌رکه‌وتوویی تاقیکرایه‌وه‌ بۆ  \u00BD کاژێر کارکردن. به‌ڵام بە تەواوی گەرم بوو. پاشان له‌ دوای (نزیکەی) ٤٥ خوله‌ک دەستی کرد بە ترپەترپ کردن. کاریگەرییەکان بۆ ماوەیەکی درێژ نەزانراون.\n\n\'وەرگرتن\' لێدە ئه‌گه‌ر ئه‌ته‌وێ به‌ کاری بهێنی لە سەر ڕیسکی خۆت.</string>
   <string name="brightwarn_negative">نا سوپاس</string>
   <string name="brightwarn_accept">پەسەند کردن</string>
   <string name="label_high">ڕۆشنایی بەرز</string>
