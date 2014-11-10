@@ -23,6 +23,12 @@
   <string name="about_close">Zoumaachen</string>
   <string name="description">Dëse Programm manipuléiert d\'LED vum Fotoapparat.\n</string>
   <string name="warning_label">Warnung</string>
+  <string name="brightwarn_negative">Nee Merci</string>
+  <string name="brightwarn_accept">Acceptéieren</string>
+  <string name="label_high">Héich Hellegkeet</string>
+  <string name="widget_options">Allgemeng Optiounen</string>
+  <string name="setting_widget_bright">Helle Widget</string>
+  <string name="setting_add_widget">Widget dobäisetzen</string>
   <string name="not_torch_title">Täscheluucht un</string>
   <string name="not_torch_toggle">Täscheluucht ausmaachen</string>
 </resources>
