@@ -22,13 +22,7 @@
   <string name="about_title">Over</string>
   <string name="about_close">Sluiten</string>
   <string name="description">Deze app manipuleert de cameraled.\n</string>
-  <string name="warning">
-Let op: als de led te lang aan staat, kan dit leiden tot oververhitting.
-\n
-\n
-De led fel aan is een half uur lang getest zonder problemen, maar het risico bestaat dat dit schadelijk kan zijn voor de led.
-\n
-    </string>
+  <string name="warning">Let op: als de led te lang aan staat, kan dit leiden tot oververhitting.\n\nDe led fel aan is een half uur lang getest zonder problemen, maar het risico bestaat dat dit schadelijk kan zijn voor de led.\n</string>
   <string name="license">Originele code van \'Nexus One Torch\u2019 ontwikkeld door Ben Buxton, uitgegeven onder GPLv3, aangepast voor CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Let op</string>
   <string name="brightwarn">Fel licht is een half uur lang getest zonder problemen, maar de led werd heet en begon bij 45 minuten te knipperen. De effecten op de lange termijn zijn niet bekend.\n\nTik op \'Accepteren\u2019 om op eigen risico te gebruiken.</string>

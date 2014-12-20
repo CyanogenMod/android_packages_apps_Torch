@@ -22,7 +22,10 @@
   <string name="about_title">Iwwer</string>
   <string name="about_close">Zoumaachen</string>
   <string name="description">Dëse Programm manipuléiert d\'LED vum Fotoapparat.\n</string>
+  <string name="warning">Warnung: Wann d\'LED fir eng laang Zäit un ass kéint s\'iwwerhëtzen.\n\nVoll Hellegkeet gouf erfollegräich fir \u00BD Stonn getest, awer et besteet de Risiko d\'LED doduerch ze beschiedegen.\n</string>
+  <string name="license">Original-Code aus der \"Nexus One Torch\" vum Ben Buxton, déi ënnert der GPLv3 verëffentlecht gouf, geännert fir CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Warnung</string>
+  <string name="brightwarn">Voll Hellegkeet gouf erfollegräich fir \u00BD Stonn getest, awer se ass zimmlech waarm ginn, an huet bei 45 Minutte (kuerzzäiteg) mat Flackeren ugefaangen. D\'Laangzäiteffekter sinn onbekannt.\n\nDëst ass duerch de Widget nach net ënnerstëtzt.\n\nKlick \'Acceptéieren\' wann s du et op eegene Risiko wëlls benotzen.</string>
   <string name="brightwarn_negative">Nee Merci</string>
   <string name="brightwarn_accept">Acceptéieren</string>
   <string name="label_high">Héich Hellegkeet</string>
