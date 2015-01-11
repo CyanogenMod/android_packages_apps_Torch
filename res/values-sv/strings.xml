@@ -23,6 +23,7 @@
   <string name="about_close">Stäng</string>
   <string name="description">Detta program manipulerar kamerans LED.\n</string>
   <string name="warning">Varning: Att lämna LED-lampan på under en längre tid kan överhetta den.\n\nMaximal ljusstyrka “alltid på” har testats i 30 minuter, men risken finns att detta skadar LED-lampan.\n</string>
+  <string name="license">Ursprunglig kod från Nexus One Torch av Ben Buxton, släppt under GPLv3, modifierad för CyanogenMod.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Varning</string>
   <string name="brightwarn_negative">Nej tack</string>
   <string name="brightwarn_accept">Acceptera</string>
