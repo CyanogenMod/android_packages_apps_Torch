@@ -21,7 +21,11 @@
   <string name="app_name">Əl fənəri</string>
   <string name="about_title">Haqqında</string>
   <string name="about_close">Bağla</string>
+  <string name="description">Bu program kamera LED-dən istifadə edir.\n</string>
+  <string name="warning">Diqqət: LEDi uzun müddət açıq buraxmaq həddən artıq qızmaya səbəb ola bilər.\n\nTam parlaqlıqda \'həmişə açıq\' \u00BD saat ərzində test edilib, amma LED işığında zədələnmə riski var.\n</string>
+  <string name="license">Orijinal kodu Ben Buxton\'un GPLv3 lisenziya ilə yayımlanan Nexus One Torch tətbiqetməsindən alınıb, CyanogenMod tərəfindən dəyişdirilmişdir.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Xәbәrdarlıq</string>
+  <string name="brightwarn">Tam parlaqlıq \u00BD saat ərzində uğurla test edildi, ancaq həddən artıq qızdı və 45. dəqiqədə işıq (müvəqqəti olaraq) yanıb sönməyə başladı. Uzun müddət təsiri bilinmir.\n\nÖz məsuliyyətinizdə işlətmək istəsəniz \'Qəbul et\' düyməsinə basın.</string>
   <string name="brightwarn_negative">Xeyir təşəkkürlər</string>
   <string name="brightwarn_accept">Qəbul et</string>
   <string name="label_high">Yüksək parlaqlıq</string>
