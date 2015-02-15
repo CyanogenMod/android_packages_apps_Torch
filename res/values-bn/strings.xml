@@ -21,4 +21,7 @@
   <string name="app_name">মশাল</string>
   <string name="about_title">সম্বন্ধে</string>
   <string name="about_close">বন্ধ</string>
+  <string name="warning_label">সতর্কতা</string>
+  <string name="brightwarn_negative">না, ধন্যবাদ</string>
+  <string name="brightwarn_accept">গ্রহন</string>
 </resources>

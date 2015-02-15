@@ -26,7 +26,7 @@
   <string name="license">Für CyanogenMod angepasste Version der Nexus One Torch von Ben Buxton, welche unter der GPLv3-Lizenz veröffentlicht wurde.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Warnung</string>
   <string name="brightwarn">Volle Helligkeit wurde erfolgreich für die Dauer einer halben Stunde getestet, aber die LED wurde dabei sehr warm und begann nach 45 Minuten (vorübergehend) zu flackern. Langzeiteffekte sind unbekannt.\n\nDurch Auswahl von “Akzeptieren” bestätigen Sie, diese Funktion auf eigene Gefahr zu nutzen.</string>
-  <string name="brightwarn_negative">Nein Danke</string>
+  <string name="brightwarn_negative">Nein, danke</string>
   <string name="brightwarn_accept">Akzeptieren</string>
   <string name="label_high">Hohe Helligkeit</string>
   <string name="widget_options">Allgemeine Optionen</string>
