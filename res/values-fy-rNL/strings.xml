@@ -18,17 +18,6 @@
      MA  02110-1301, USA.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Linterna</string>
-  <string name="about_title">Honi buruz</string>
-  <string name="about_close">Itxi</string>
-  <string name="description">Programa honek kameraren LED-a kudeatzen du.\n</string>
-  <string name="license">Ben Buxtonek garatutako Nexus One Torch-eko kode originala, GPLv3 lizentziapean askatuta, CyanogenMod-erako eraldatua.\nhttp://n1torch.googlecode.com</string>
-  <string name="warning_label">Kontuz</string>
-  <string name="brightwarn_negative">Ez, eskerrik asko</string>
-  <string name="brightwarn_accept">Ondo da</string>
-  <string name="label_high">Distira altua</string>
-  <string name="widget_options">Ezarpen orokorrak</string>
-  <string name="setting_add_widget">Widget-a gehitu</string>
-  <string name="not_torch_title">Linterna piztuta</string>
-  <string name="not_torch_toggle">linterna itzali</string>
+  <string name="about_title">Oer</string>
+  <string name="about_close">Slute</string>
 </resources>
