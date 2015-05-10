@@ -28,7 +28,8 @@
   <string name="brightwarn_accept">Ondo da</string>
   <string name="label_high">Distira altua</string>
   <string name="widget_options">Ezarpen orokorrak</string>
-  <string name="setting_add_widget">Widget-a gehitu</string>
+  <string name="setting_widget_bright">Trepeta argia</string>
+  <string name="setting_add_widget">Gehitu trepeta</string>
   <string name="not_torch_title">Linterna piztuta</string>
   <string name="not_torch_toggle">linterna itzali</string>
 </resources>
