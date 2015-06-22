@@ -21,7 +21,7 @@
   <string name="app_name">Linterna</string>
   <string name="about_title">Honi buruz</string>
   <string name="about_close">Itxi</string>
-  <string name="description">Programa honek kameraren LED-a kudeatzen du.\n</string>
+  <string name="description">Programa honek kameraren LEDa kudeatzen du.\n</string>
   <string name="warning">Kontuz: LEDa denbora luzez piztuta mantentzeak bere gainberotzea sor dezake.\n\nDistira altua \'beti piztuta\' modua ordu erdiz frogatu da, baina LEDa puskatzeko arriskua dago.\n</string>
   <string name="license">Ben Buxtonek garatutako Nexus One Torch-eko kode originala, GPLv3 lizentziapean askatuta, CyanogenMod-erako eraldatua.\nhttp://n1torch.googlecode.com</string>
   <string name="warning_label">Kontuz</string>
