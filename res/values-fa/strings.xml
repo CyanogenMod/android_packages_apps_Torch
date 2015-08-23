@@ -20,5 +20,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">چراغ‌قوه</string>
   <string name="about_title">درباره</string>
+  <string name="widget_options">گزینه‌های عمومی</string>
+  <string name="setting_add_widget">افزودن ابزارک</string>
   <string name="not_torch_toggle">خاموش کردن چراغ‌قوه</string>
 </resources>

@@ -18,18 +18,18 @@
      MA  02110-1301, USA.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">Baklja</string>
+  <string name="app_name">Svjetiljka</string>
   <string name="about_title">O</string>
   <string name="about_close">Zatvori</string>
-  <string name="description">Ovaj program koristi LED diodu (bljeskalicu) kamere.\n</string>
+  <string name="description">Ovaj program rukuje LED diodom (bljeskalicom) fotoaparata.\n</string>
   <string name="warning">Upozorenje: Ostavljanje LED diode upaljene na dulje vrijeme bi je moglo pregrijati.\n\nVisoka svjetlina “uvijek upaljena” je bila testirana ½ sata ali postoji rizik da bi ovo moglo oštetiti LED diodu.\n</string>
   <string name="warning_label">Upozorenje</string>
-  <string name="brightwarn_negative">Ne hvala</string>
-  <string name="brightwarn_accept">Prihvaćam</string>
+  <string name="brightwarn_negative">Ne, hvala</string>
+  <string name="brightwarn_accept">Prihvati</string>
   <string name="label_high">Visoka svjetilna</string>
-  <string name="widget_options">Osnovne opcije</string>
-  <string name="setting_widget_bright">Svijetli widget</string>
-  <string name="setting_add_widget">Dodaj widget</string>
-  <string name="not_torch_title">Uključi baklju</string>
-  <string name="not_torch_toggle">Isključi baklju</string>
+  <string name="widget_options">Opće mogućnosti</string>
+  <string name="setting_widget_bright">Svijetli dodatak</string>
+  <string name="setting_add_widget">Dodaj dodatak</string>
+  <string name="not_torch_title">Svjetiljka je uključena.</string>
+  <string name="not_torch_toggle">Isključite svjetiljku.</string>
 </resources>
